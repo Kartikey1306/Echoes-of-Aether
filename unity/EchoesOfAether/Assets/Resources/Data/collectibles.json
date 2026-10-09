@@ -1,0 +1,29 @@
+{
+  "collectibles": [
+    { "id": "c_frag_01", "kind": "fragment", "zone": "plaza", "hidden": false, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_02", "kind": "fragment", "zone": "plaza", "hidden": false, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_03", "kind": "fragment", "zone": "plaza", "hidden": true, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_04", "kind": "fragment", "zone": "plaza", "hidden": false, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_05", "kind": "fragment", "zone": "plaza", "hidden": false, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_06", "kind": "fragment", "zone": "metro", "hidden": false, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_07", "kind": "fragment", "zone": "metro", "hidden": true, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_08", "kind": "fragment", "zone": "facility", "hidden": false, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_09", "kind": "fragment", "zone": "facility", "hidden": false, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_10", "kind": "fragment", "zone": "rooftops", "hidden": false, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_11", "kind": "fragment", "zone": "rooftops", "hidden": true, "give": { "aether_fragment": 1 } },
+    { "id": "c_frag_12", "kind": "fragment", "zone": "vault", "hidden": false, "give": { "aether_fragment": 1 } },
+
+    { "id": "c_rec_01", "kind": "recording", "zone": "plaza", "hidden": false, "give": { "lore_rec_01": 1 } },
+    { "id": "c_rec_02", "kind": "recording", "zone": "plaza", "hidden": false, "give": { "lore_rec_02": 1 } },
+    { "id": "c_rec_03", "kind": "recording", "zone": "metro", "hidden": false, "give": { "lore_rec_03": 1 } },
+    { "id": "c_rec_04", "kind": "recording", "zone": "facility", "hidden": false, "give": { "lore_rec_04": 1 } },
+    { "id": "c_rec_05", "kind": "recording", "zone": "facility", "hidden": true, "give": { "lore_rec_05": 1 } },
+    { "id": "c_rec_06", "kind": "recording", "zone": "vault", "hidden": false, "give": { "lore_rec_06": 1 } },
+
+    { "id": "c_cache_01", "kind": "cache", "zone": "plaza", "hidden": true, "give": { "pu_overcharge": 1, "pu_shield_fragment": 1 } },
+    { "id": "c_cache_02", "kind": "cache", "zone": "metro", "hidden": true, "give": { "pu_phase_core": 1, "pu_echo_fragment": 1 } },
+    { "id": "c_cache_03", "kind": "cache", "zone": "facility", "hidden": true, "give": { "aether_core": 1 } },
+    { "id": "c_cache_04", "kind": "cache", "zone": "rooftops", "hidden": true, "give": { "pu_aether_shard": 2, "pu_overcharge": 1 } },
+    { "id": "c_cache_05", "kind": "cache", "zone": "vault", "hidden": false, "give": { "aether_core": 1, "pu_echo_fragment": 1 } }
+  ]
+}

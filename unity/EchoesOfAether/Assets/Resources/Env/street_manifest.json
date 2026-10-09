@@ -1,0 +1,4463 @@
+{
+ "name": "Echoes of Aether - CityStreet kit (street-level storefronts, clutter, overhead signs, HD street surfaces, decals)",
+ "generated": "2026-10-04T22:22:40",
+ "generator": "blender/city_street (Blender 5.2 headless + numpy; no AI images). See STREET_ASSETS.md",
+ "conventions": {
+  "units": "metres; FBX as the environment kit (import at scale 1, identity rotation)",
+  "axes": "Unity Y up, asset front +Z. Wall-mounted assets (storefronts, AC, fire escape, hanging signs): pivot at the wall plane, they extend toward +Z.",
+  "materials": "Slots named after materials: st_* / emit_st_* are defined here; all other slot names are environment-kit materials.",
+  "atlases": "emit_st_signs and emit_st_interiors use authored atlas UVs (uvMode world0, tiling 1)."
+ },
+ "materials": {
+  "st_asphalt": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 6.0,
+   "tiling": [
+    0.166667,
+    0.166667
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_asphalt/st_asphalt_BaseColor.png",
+    "Normal": "Textures/st_asphalt/st_asphalt_Normal.png",
+    "MaskMap": "Textures/st_asphalt/st_asphalt_MaskMap.png",
+    "Occlusion": "Textures/st_asphalt/st_asphalt_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "streetShader": "EOA/StreetSurface (CityStreetKit builds it at runtime from this material's maps)",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.196,
+     0.195,
+     0.195
+    ],
+    "smooth_mean": 0.272
+   }
+  },
+  "st_asphalt_worn": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 6.0,
+   "tiling": [
+    0.166667,
+    0.166667
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_asphalt_worn/st_asphalt_worn_BaseColor.png",
+    "Normal": "Textures/st_asphalt_worn/st_asphalt_worn_Normal.png",
+    "MaskMap": "Textures/st_asphalt_worn/st_asphalt_worn_MaskMap.png",
+    "Occlusion": "Textures/st_asphalt_worn/st_asphalt_worn_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "streetShader": "EOA/StreetSurface (CityStreetKit builds it at runtime from this material's maps)",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.256,
+     0.255,
+     0.254
+    ],
+    "smooth_mean": 0.294
+   }
+  },
+  "st_pavers": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 3.6,
+   "tiling": [
+    0.277778,
+    0.277778
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_pavers/st_pavers_BaseColor.png",
+    "Normal": "Textures/st_pavers/st_pavers_Normal.png",
+    "MaskMap": "Textures/st_pavers/st_pavers_MaskMap.png",
+    "Occlusion": "Textures/st_pavers/st_pavers_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "streetShader": "EOA/StreetSurface (CityStreetKit builds it at runtime from this material's maps)",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.407,
+     0.405,
+     0.399
+    ],
+    "smooth_mean": 0.278
+   }
+  },
+  "st_slab": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 3.6,
+   "tiling": [
+    0.277778,
+    0.277778
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_slab/st_slab_BaseColor.png",
+    "Normal": "Textures/st_slab/st_slab_Normal.png",
+    "MaskMap": "Textures/st_slab/st_slab_MaskMap.png",
+    "Occlusion": "Textures/st_slab/st_slab_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "streetShader": "EOA/StreetSurface (CityStreetKit builds it at runtime from this material's maps)",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.47,
+     0.469,
+     0.469
+    ],
+    "smooth_mean": 0.244
+   }
+  },
+  "st_curb": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_curb/st_curb_BaseColor.png",
+    "Normal": "Textures/st_curb/st_curb_Normal.png",
+    "MaskMap": "Textures/st_curb/st_curb_MaskMap.png",
+    "Occlusion": "Textures/st_curb/st_curb_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "streetShader": "EOA/StreetSurface (CityStreetKit builds it at runtime from this material's maps)",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.352,
+     0.332,
+     0.307
+    ],
+    "smooth_mean": 0.363
+   }
+  },
+  "st_gutter": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "strip",
+   "tileSizeMeters": 8.0,
+   "tiling": [
+    0.125,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_gutter/st_gutter_BaseColor.png",
+    "Normal": "Textures/st_gutter/st_gutter_Normal.png",
+    "MaskMap": "Textures/st_gutter/st_gutter_MaskMap.png",
+    "Occlusion": "Textures/st_gutter/st_gutter_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "streetShader": "EOA/StreetSurface (CityStreetKit builds it at runtime from this material's maps)",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.231,
+     0.227,
+     0.223
+    ],
+    "smooth_mean": 0.499
+   }
+  },
+  "st_paint_white": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_paint_white/st_paint_white_BaseColor.png",
+    "Normal": "Textures/st_paint_white/st_paint_white_Normal.png",
+    "MaskMap": "Textures/st_paint_white/st_paint_white_MaskMap.png",
+    "Occlusion": "Textures/st_paint_white/st_paint_white_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "streetShader": "EOA/StreetSurface (CityStreetKit builds it at runtime from this material's maps)",
+   "alphaClip": 0.5,
+   "stats": {
+    "albedo_mean_srgb": [
+     0.644,
+     0.644,
+     0.644
+    ],
+    "smooth_mean": 0.611
+   }
+  },
+  "st_paint_yellow": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_paint_yellow/st_paint_yellow_BaseColor.png",
+    "Normal": "Textures/st_paint_yellow/st_paint_yellow_Normal.png",
+    "MaskMap": "Textures/st_paint_yellow/st_paint_yellow_MaskMap.png",
+    "Occlusion": "Textures/st_paint_yellow/st_paint_yellow_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "streetShader": "EOA/StreetSurface (CityStreetKit builds it at runtime from this material's maps)",
+   "alphaClip": 0.5,
+   "stats": {
+    "albedo_mean_srgb": [
+     0.73,
+     0.552,
+     0.102
+    ],
+    "smooth_mean": 0.61
+   }
+  },
+  "st_shutter": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 1.0,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_shutter/st_shutter_BaseColor.png",
+    "Normal": "Textures/st_shutter/st_shutter_Normal.png",
+    "MaskMap": "Textures/st_shutter/st_shutter_MaskMap.png",
+    "Occlusion": "Textures/st_shutter/st_shutter_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0
+  },
+  "st_awning_red": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 1.0,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_awning_red/st_awning_red_BaseColor.png",
+    "Normal": "Textures/st_awning_red/st_awning_red_Normal.png",
+    "MaskMap": "Textures/st_awning_red/st_awning_red_MaskMap.png",
+    "Occlusion": "Textures/st_awning_red/st_awning_red_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "cull": "Off"
+  },
+  "st_awning_teal": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 1.0,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_awning_teal/st_awning_teal_BaseColor.png",
+    "Normal": "Textures/st_awning_teal/st_awning_teal_Normal.png",
+    "MaskMap": "Textures/st_awning_teal/st_awning_teal_MaskMap.png",
+    "Occlusion": "Textures/st_awning_teal/st_awning_teal_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "cull": "Off"
+  },
+  "st_awning_stripe": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 1.0,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_awning_stripe/st_awning_stripe_BaseColor.png",
+    "Normal": "Textures/st_awning_stripe/st_awning_stripe_Normal.png",
+    "MaskMap": "Textures/st_awning_stripe/st_awning_stripe_MaskMap.png",
+    "Occlusion": "Textures/st_awning_stripe/st_awning_stripe_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "cull": "Off"
+  },
+  "st_tile_wall": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 1.2,
+   "tiling": [
+    0.833333,
+    0.833333
+   ],
+   "textures": {
+    "BaseColor": "Textures/st_tile_wall/st_tile_wall_BaseColor.png",
+    "Normal": "Textures/st_tile_wall/st_tile_wall_Normal.png",
+    "MaskMap": "Textures/st_tile_wall/st_tile_wall_MaskMap.png",
+    "Occlusion": "Textures/st_tile_wall/st_tile_wall_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0
+  },
+  "emit_st_signs": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world0",
+   "tileSizeMeters": 1.0,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/emit_st_signs/emit_st_signs_BaseColor.png",
+    "MaskMap": "Textures/emit_st_signs/emit_st_signs_MaskMap.png",
+    "Emission": "Textures/emit_st_signs/emit_st_signs_Emission.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "emissionColor": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionIntensity": 3.0
+  },
+  "emit_st_interiors": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world0",
+   "tileSizeMeters": 1.0,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/emit_st_interiors/emit_st_interiors_BaseColor.png",
+    "Emission": "Textures/emit_st_interiors/emit_st_interiors_Emission.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "emissionColor": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionIntensity": 2.6
+  },
+  "st_bag_black": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.03,
+    0.032,
+    0.035,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.78
+  },
+  "st_bag_blue": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.06,
+    0.16,
+    0.38,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.72
+  },
+  "st_bag_white": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.42,
+    0.43,
+    0.41,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.55
+  },
+  "st_paper_wet": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.52,
+    0.5,
+    0.44,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.35
+  },
+  "st_steel_dark": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.07,
+    0.075,
+    0.08,
+    1.0
+   ],
+   "metallic": 0.8,
+   "smoothness": 0.55
+  },
+  "emit_st_lantern_red": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.75,
+    0.12,
+    0.06,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.4,
+   "emission": [
+    1.0,
+    0.22,
+    0.1
+   ],
+   "emissionIntensity": 3.2
+  },
+  "emit_st_lantern_warm": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.85,
+    0.55,
+    0.25,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.4,
+   "emission": [
+    1.0,
+    0.62,
+    0.3
+   ],
+   "emissionIntensity": 3.0
+  },
+  "emit_st_led_white": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.85,
+    0.88,
+    0.9,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.6,
+   "emission": [
+    0.92,
+    0.96,
+    1.0
+   ],
+   "emissionIntensity": 3.5
+  },
+  "emit_st_led_cyan": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.1,
+    0.6,
+    0.7,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.6,
+   "emission": [
+    0.2,
+    0.9,
+    1.0
+   ],
+   "emissionIntensity": 4.0
+  },
+  "emit_st_led_magenta": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.7,
+    0.1,
+    0.55,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.6,
+   "emission": [
+    1.0,
+    0.17,
+    0.84
+   ],
+   "emissionIntensity": 4.0
+  },
+  "emit_st_led_amber": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "baseColor": [
+    0.8,
+    0.5,
+    0.1,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.6,
+   "emission": [
+    1.0,
+    0.6,
+    0.15
+   ],
+   "emissionIntensity": 3.5
+  }
+ },
+ "assets": [
+  {
+   "name": "St_HangingBox_A",
+   "category": "overhead",
+   "file": "Models/Overhead/St_HangingBox_A.fbx",
+   "meshes": {
+    "LOD0": "St_HangingBox_A_LOD0",
+    "LOD1": "St_HangingBox_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 96,
+    "LOD1": 38
+   },
+   "size": [
+    0.24,
+    1.42,
+    1.85
+   ],
+   "boundsCenter": [
+    -0.0,
+    -0.51,
+    0.925
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_signs"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Square double-sided lightbox on chains under a short bracket; pivot at the wall plane, bracket height.",
+   "light": {
+    "position": [
+     0.0,
+     -0.77,
+     1.4
+    ],
+    "color": "#00e5ff",
+    "range": 4.0,
+    "intensity": 0.8
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      -0.77,
+      1.4
+     ],
+     "color": "#00e5ff",
+     "range": 4.0,
+     "intensity": 0.8
+    }
+   ],
+   "glow": "#00e5ff",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_HangingBox_B",
+   "category": "overhead",
+   "file": "Models/Overhead/St_HangingBox_B.fbx",
+   "meshes": {
+    "LOD0": "St_HangingBox_B_LOD0",
+    "LOD1": "St_HangingBox_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 96,
+    "LOD1": 38
+   },
+   "size": [
+    0.24,
+    1.42,
+    1.85
+   ],
+   "boundsCenter": [
+    -0.0,
+    -0.51,
+    0.925
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_signs"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Square double-sided lightbox on chains under a short bracket; pivot at the wall plane, bracket height.",
+   "light": {
+    "position": [
+     0.0,
+     -0.77,
+     1.4
+    ],
+    "color": "#00e5ff",
+    "range": 4.0,
+    "intensity": 0.8
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      -0.77,
+      1.4
+     ],
+     "color": "#00e5ff",
+     "range": 4.0,
+     "intensity": 0.8
+    }
+   ],
+   "glow": "#00e5ff",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_HangingBox_C",
+   "category": "overhead",
+   "file": "Models/Overhead/St_HangingBox_C.fbx",
+   "meshes": {
+    "LOD0": "St_HangingBox_C_LOD0",
+    "LOD1": "St_HangingBox_C_LOD1"
+   },
+   "tris": {
+    "LOD0": 96,
+    "LOD1": 38
+   },
+   "size": [
+    0.24,
+    1.42,
+    1.85
+   ],
+   "boundsCenter": [
+    -0.0,
+    -0.51,
+    0.925
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_signs"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Square double-sided lightbox on chains under a short bracket; pivot at the wall plane, bracket height.",
+   "light": {
+    "position": [
+     0.0,
+     -0.77,
+     1.4
+    ],
+    "color": "#00e5ff",
+    "range": 4.0,
+    "intensity": 0.8
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      -0.77,
+      1.4
+     ],
+     "color": "#00e5ff",
+     "range": 4.0,
+     "intensity": 0.8
+    }
+   ],
+   "glow": "#00e5ff",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_HangingBox_D",
+   "category": "overhead",
+   "file": "Models/Overhead/St_HangingBox_D.fbx",
+   "meshes": {
+    "LOD0": "St_HangingBox_D_LOD0",
+    "LOD1": "St_HangingBox_D_LOD1"
+   },
+   "tris": {
+    "LOD0": 96,
+    "LOD1": 38
+   },
+   "size": [
+    0.24,
+    1.42,
+    1.85
+   ],
+   "boundsCenter": [
+    -0.0,
+    -0.51,
+    0.925
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_signs"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Square double-sided lightbox on chains under a short bracket; pivot at the wall plane, bracket height.",
+   "light": {
+    "position": [
+     0.0,
+     -0.77,
+     1.4
+    ],
+    "color": "#00e5ff",
+    "range": 4.0,
+    "intensity": 0.8
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      -0.77,
+      1.4
+     ],
+     "color": "#00e5ff",
+     "range": 4.0,
+     "intensity": 0.8
+    }
+   ],
+   "glow": "#00e5ff",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_HangingSign_A",
+   "category": "overhead",
+   "file": "Models/Overhead/St_HangingSign_A.fbx",
+   "meshes": {
+    "LOD0": "St_HangingSign_A_LOD0",
+    "LOD1": "St_HangingSign_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 140,
+    "LOD1": 56
+   },
+   "size": [
+    0.3,
+    2.965,
+    2.293
+   ],
+   "boundsCenter": [
+    -0.0,
+    -1.132,
+    1.147
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_signs"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Double-sided blade lightbox (invented glyphs) hanging from a 1.9 m cantilever bracket; pivot at the wall plane at the bracket top. Mount 6-7 m up.",
+   "light": {
+    "position": [
+     0.0,
+     -1.3,
+     1.85
+    ],
+    "color": "#ff4fd8",
+    "range": 5.0,
+    "intensity": 1.0
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      -1.3,
+      1.85
+     ],
+     "color": "#ff4fd8",
+     "range": 5.0,
+     "intensity": 1.0
+    }
+   ],
+   "glow": "#ff4fd8",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_HangingSign_B",
+   "category": "overhead",
+   "file": "Models/Overhead/St_HangingSign_B.fbx",
+   "meshes": {
+    "LOD0": "St_HangingSign_B_LOD0",
+    "LOD1": "St_HangingSign_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 140,
+    "LOD1": 56
+   },
+   "size": [
+    0.3,
+    2.965,
+    2.693
+   ],
+   "boundsCenter": [
+    -0.0,
+    -1.132,
+    1.347
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_signs"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Double-sided blade lightbox (invented glyphs) hanging from a 1.9 m cantilever bracket; pivot at the wall plane at the bracket top. Mount 6-7 m up.",
+   "light": {
+    "position": [
+     0.0,
+     -1.3,
+     2.25
+    ],
+    "color": "#ff4fd8",
+    "range": 5.0,
+    "intensity": 1.0
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      -1.3,
+      2.25
+     ],
+     "color": "#ff4fd8",
+     "range": 5.0,
+     "intensity": 1.0
+    }
+   ],
+   "glow": "#ff4fd8",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_HangingSign_C",
+   "category": "overhead",
+   "file": "Models/Overhead/St_HangingSign_C.fbx",
+   "meshes": {
+    "LOD0": "St_HangingSign_C_LOD0",
+    "LOD1": "St_HangingSign_C_LOD1"
+   },
+   "tris": {
+    "LOD0": 140,
+    "LOD1": 56
+   },
+   "size": [
+    0.3,
+    2.965,
+    2.293
+   ],
+   "boundsCenter": [
+    -0.0,
+    -1.132,
+    1.147
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_signs"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Double-sided blade lightbox (invented glyphs) hanging from a 1.9 m cantilever bracket; pivot at the wall plane at the bracket top. Mount 6-7 m up.",
+   "light": {
+    "position": [
+     0.0,
+     -1.3,
+     1.85
+    ],
+    "color": "#ff4fd8",
+    "range": 5.0,
+    "intensity": 1.0
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      -1.3,
+      1.85
+     ],
+     "color": "#ff4fd8",
+     "range": 5.0,
+     "intensity": 1.0
+    }
+   ],
+   "glow": "#ff4fd8",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_HangingSign_D",
+   "category": "overhead",
+   "file": "Models/Overhead/St_HangingSign_D.fbx",
+   "meshes": {
+    "LOD0": "St_HangingSign_D_LOD0",
+    "LOD1": "St_HangingSign_D_LOD1"
+   },
+   "tris": {
+    "LOD0": 140,
+    "LOD1": 56
+   },
+   "size": [
+    0.3,
+    3.565,
+    2.793
+   ],
+   "boundsCenter": [
+    -0.0,
+    -1.433,
+    1.397
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_signs"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Double-sided blade lightbox (invented glyphs) hanging from a 1.9 m cantilever bracket; pivot at the wall plane at the bracket top. Mount 6-7 m up.",
+   "light": {
+    "position": [
+     0.0,
+     -1.6,
+     2.25
+    ],
+    "color": "#ff4fd8",
+    "range": 5.0,
+    "intensity": 1.0
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      -1.6,
+      2.25
+     ],
+     "color": "#ff4fd8",
+     "range": 5.0,
+     "intensity": 1.0
+    }
+   ],
+   "glow": "#ff4fd8",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_HangingSign_E",
+   "category": "overhead",
+   "file": "Models/Overhead/St_HangingSign_E.fbx",
+   "meshes": {
+    "LOD0": "St_HangingSign_E_LOD0",
+    "LOD1": "St_HangingSign_E_LOD1"
+   },
+   "tris": {
+    "LOD0": 140,
+    "LOD1": 56
+   },
+   "size": [
+    0.3,
+    3.565,
+    2.393
+   ],
+   "boundsCenter": [
+    -0.0,
+    -1.433,
+    1.197
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_signs"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Double-sided blade lightbox (invented glyphs) hanging from a 1.9 m cantilever bracket; pivot at the wall plane at the bracket top. Mount 6-7 m up.",
+   "light": {
+    "position": [
+     0.0,
+     -1.6,
+     1.85
+    ],
+    "color": "#ff4fd8",
+    "range": 5.0,
+    "intensity": 1.0
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      -1.6,
+      1.85
+     ],
+     "color": "#ff4fd8",
+     "range": 5.0,
+     "intensity": 1.0
+    }
+   ],
+   "glow": "#ff4fd8",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_HangingSign_F",
+   "category": "overhead",
+   "file": "Models/Overhead/St_HangingSign_F.fbx",
+   "meshes": {
+    "LOD0": "St_HangingSign_F_LOD0",
+    "LOD1": "St_HangingSign_F_LOD1"
+   },
+   "tris": {
+    "LOD0": 140,
+    "LOD1": 56
+   },
+   "size": [
+    0.3,
+    3.565,
+    2.793
+   ],
+   "boundsCenter": [
+    -0.0,
+    -1.433,
+    1.397
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_signs"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Double-sided blade lightbox (invented glyphs) hanging from a 1.9 m cantilever bracket; pivot at the wall plane at the bracket top. Mount 6-7 m up.",
+   "light": {
+    "position": [
+     0.0,
+     -1.6,
+     2.25
+    ],
+    "color": "#ff4fd8",
+    "range": 5.0,
+    "intensity": 1.0
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      -1.6,
+      2.25
+     ],
+     "color": "#ff4fd8",
+     "range": 5.0,
+     "intensity": 1.0
+    }
+   ],
+   "glow": "#ff4fd8",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_Lantern_Paper",
+   "category": "overhead",
+   "file": "Models/Overhead/St_Lantern_Paper.fbx",
+   "meshes": {
+    "LOD0": "St_Lantern_Paper_LOD0",
+    "LOD1": "St_Lantern_Paper_LOD1"
+   },
+   "tris": {
+    "LOD0": 604,
+    "LOD1": 116
+   },
+   "size": [
+    0.322,
+    0.72,
+    0.322
+   ],
+   "boundsCenter": [
+    -0.0,
+    -0.36,
+    -0.0
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "emit_st_lantern_red",
+    "black"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Single red paper lantern with tassel; pivot at the hanging point (top).",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_Lantern_Paper_Warm",
+   "category": "overhead",
+   "file": "Models/Overhead/St_Lantern_Paper_Warm.fbx",
+   "meshes": {
+    "LOD0": "St_Lantern_Paper_Warm_LOD0",
+    "LOD1": "St_Lantern_Paper_Warm_LOD1"
+   },
+   "tris": {
+    "LOD0": 604,
+    "LOD1": 116
+   },
+   "size": [
+    0.322,
+    0.72,
+    0.322
+   ],
+   "boundsCenter": [
+    -0.0,
+    -0.36,
+    -0.0
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "emit_st_lantern_warm",
+    "black"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Single warm paper lantern; pivot at the hanging point (top).",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_NeonColumn_A",
+   "category": "overhead",
+   "file": "Models/Overhead/St_NeonColumn_A.fbx",
+   "meshes": {
+    "LOD0": "St_NeonColumn_A_LOD0",
+    "LOD1": "St_NeonColumn_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 524,
+    "LOD1": 208
+   },
+   "size": [
+    0.9,
+    4.3,
+    0.466
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.15,
+    0.233
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "metal_dark",
+    "emit_neon_magenta",
+    "emit_neon_cyan"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "4-glyph vertical neon tube sign on a dark backer, 4.3 m tall, stands off the facade 0.35 m.",
+   "light": {
+    "position": [
+     0.0,
+     2.15,
+     0.8
+    ],
+    "color": "#00e5ff",
+    "range": 6.0,
+    "intensity": 1.4
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.15,
+      0.8
+     ],
+     "color": "#00e5ff",
+     "range": 6.0,
+     "intensity": 1.4
+    }
+   ],
+   "glow": "#00e5ff",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_NeonColumn_B",
+   "category": "overhead",
+   "file": "Models/Overhead/St_NeonColumn_B.fbx",
+   "meshes": {
+    "LOD0": "St_NeonColumn_B_LOD0",
+    "LOD1": "St_NeonColumn_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 404,
+    "LOD1": 160
+   },
+   "size": [
+    0.9,
+    3.3,
+    0.466
+   ],
+   "boundsCenter": [
+    -0.0,
+    1.65,
+    0.233
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "metal_dark",
+    "emit_neon_yellow",
+    "emit_neon_magenta"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "3-glyph neon column (magenta / yellow).",
+   "light": {
+    "position": [
+     0.0,
+     1.65,
+     0.8
+    ],
+    "color": "#00e5ff",
+    "range": 6.0,
+    "intensity": 1.4
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      1.65,
+      0.8
+     ],
+     "color": "#00e5ff",
+     "range": 6.0,
+     "intensity": 1.4
+    }
+   ],
+   "glow": "#00e5ff",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_Shop_Arcade_A",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Arcade_A.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Arcade_A_LOD0",
+    "LOD1": "St_Shop_Arcade_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 684,
+    "LOD1": 284
+   },
+   "size": [
+    6.02,
+    5.12,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.56,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "carbon_panel",
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_magenta",
+    "plastic_dark",
+    "emit_st_led_white",
+    "emit_st_signs",
+    "metal_bare",
+    "emit_neon_magenta",
+    "rubber",
+    "paint_glossy_dark"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      6.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Arcade: open front with magenta neon frame, cabinets at the mouth, glowing cabinet hall interior. Width 6.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     0.0,
+     2.0,
+     1.0
+    ],
+    "color": "#ff4fd8",
+    "range": 6.0,
+    "intensity": 1.6
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.0,
+      1.0
+     ],
+     "color": "#ff4fd8",
+     "range": 6.0,
+     "intensity": 1.6
+    }
+   ],
+   "glow": "#ff4fd8",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Arcade_B",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Arcade_B.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Arcade_B_LOD0",
+    "LOD1": "St_Shop_Arcade_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 684,
+    "LOD1": 284
+   },
+   "size": [
+    6.02,
+    5.12,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.56,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "carbon_panel",
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_magenta",
+    "plastic_dark",
+    "emit_st_led_white",
+    "emit_st_signs",
+    "metal_bare",
+    "emit_neon_violet",
+    "rubber",
+    "paint_glossy_dark"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      6.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Arcade variant (violet neon, lightbox marquee). Width 6.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     0.0,
+     2.0,
+     1.0
+    ],
+    "color": "#ff4fd8",
+    "range": 6.0,
+    "intensity": 1.6
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.0,
+      1.0
+     ],
+     "color": "#ff4fd8",
+     "range": 6.0,
+     "intensity": 1.6
+    }
+   ],
+   "glow": "#ff4fd8",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Capsule_A",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Capsule_A.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Capsule_A_LOD0",
+    "LOD1": "St_Shop_Capsule_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 622,
+    "LOD1": 248
+   },
+   "size": [
+    4.02,
+    5.37,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.685,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "paint_glossy_white",
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_white",
+    "plastic_dark",
+    "emit_st_signs",
+    "metal_bare",
+    "st_tile_wall",
+    "glass"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      4.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Capsule hotel entrance: recessed sliding glass doors, lit threshold, capsule-corridor interior, blade sign. Width 4.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     -0.56,
+     2.6,
+     1.0
+    ],
+    "color": "#dfe9ff",
+    "range": 5.0,
+    "intensity": 1.5
+   },
+   "lights": [
+    {
+     "position": [
+      -0.56,
+      2.6,
+      1.0
+     ],
+     "color": "#dfe9ff",
+     "range": 5.0,
+     "intensity": 1.5
+    }
+   ],
+   "glow": "#dfe9ff",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Capsule_B",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Capsule_B.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Capsule_B_LOD0",
+    "LOD1": "St_Shop_Capsule_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 622,
+    "LOD1": 248
+   },
+   "size": [
+    4.02,
+    5.37,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.685,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "paint_glossy_white",
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_white",
+    "plastic_dark",
+    "emit_st_signs",
+    "metal_bare",
+    "st_tile_wall",
+    "glass"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      4.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Capsule hotel variant (violet neon). Width 4.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     -0.56,
+     2.6,
+     1.0
+    ],
+    "color": "#dfe9ff",
+    "range": 5.0,
+    "intensity": 1.5
+   },
+   "lights": [
+    {
+     "position": [
+      -0.56,
+      2.6,
+      1.0
+     ],
+     "color": "#dfe9ff",
+     "range": 5.0,
+     "intensity": 1.5
+    }
+   ],
+   "glow": "#dfe9ff",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Clinic_A",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Clinic_A.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Clinic_A_LOD0",
+    "LOD1": "St_Shop_Clinic_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 736,
+    "LOD1": 294
+   },
+   "size": [
+    6.02,
+    5.12,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.56,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_cyan",
+    "plastic_dark",
+    "emit_st_led_white",
+    "emit_st_signs",
+    "metal_bare",
+    "carbon_panel",
+    "glass",
+    "glass_dark",
+    "paint_glossy_white",
+    "chrome_scratched",
+    "holo_cyan"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      6.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Cyberware clinic: dark metal, smoked privacy band, cyan LED edges, holo panel, surgical interior. Width 6.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     0.0,
+     2.6,
+     1.0
+    ],
+    "color": "#5fe8ff",
+    "range": 6.0,
+    "intensity": 1.5
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.6,
+      1.0
+     ],
+     "color": "#5fe8ff",
+     "range": 6.0,
+     "intensity": 1.5
+    }
+   ],
+   "glow": "#5fe8ff",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Clinic_B",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Clinic_B.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Clinic_B_LOD0",
+    "LOD1": "St_Shop_Clinic_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 736,
+    "LOD1": 294
+   },
+   "size": [
+    6.02,
+    5.12,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.56,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_cyan",
+    "plastic_dark",
+    "emit_st_led_white",
+    "emit_st_signs",
+    "metal_bare",
+    "carbon_panel",
+    "glass",
+    "glass_dark",
+    "paint_glossy_white",
+    "chrome_scratched",
+    "holo_cyan"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      6.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Cyberware clinic variant (blue lightbox). Width 6.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     0.0,
+     2.6,
+     1.0
+    ],
+    "color": "#5fe8ff",
+    "range": 6.0,
+    "intensity": 1.5
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.6,
+      1.0
+     ],
+     "color": "#5fe8ff",
+     "range": 6.0,
+     "intensity": 1.5
+    }
+   ],
+   "glow": "#5fe8ff",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Noodle_A",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Noodle_A.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Noodle_A_LOD0",
+    "LOD1": "St_Shop_Noodle_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 3520,
+    "LOD1": 810
+   },
+   "size": [
+    6.02,
+    4.22,
+    1.864
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.11,
+    0.928
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "st_tile_wall",
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_white",
+    "plastic_dark",
+    "st_awning_red",
+    "emit_st_signs",
+    "metal_bare",
+    "wood",
+    "paint_glossy_white",
+    "emit_st_lantern_red"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      6.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Noodle bar: open tiled counter with stools, noren cloths, red paper lanterns, red awning, warm kitchen interior. Width 6.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     2.4,
+     2.75,
+     1.45
+    ],
+    "color": "#ff5a2a",
+    "range": 4.0,
+    "intensity": 1.2
+   },
+   "lights": [
+    {
+     "position": [
+      2.4,
+      2.75,
+      1.45
+     ],
+     "color": "#ff5a2a",
+     "range": 4.0,
+     "intensity": 1.2
+    },
+    {
+     "position": [
+      -2.4,
+      2.75,
+      1.45
+     ],
+     "color": "#ff5a2a",
+     "range": 4.0,
+     "intensity": 1.2
+    },
+    {
+     "position": [
+      0.0,
+      2.2,
+      1.2
+     ],
+     "color": "#ffb46a",
+     "range": 6.0,
+     "intensity": 1.6
+    }
+   ],
+   "glow": "#ff5a2a",
+   "steam": [
+    [
+     0.0,
+     1.2,
+     0.6
+    ]
+   ],
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Noodle_B",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Noodle_B.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Noodle_B_LOD0",
+    "LOD1": "St_Shop_Noodle_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 3520,
+    "LOD1": 810
+   },
+   "size": [
+    6.02,
+    4.22,
+    1.864
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.11,
+    0.928
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "wood",
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_white",
+    "plastic_dark",
+    "st_awning_red",
+    "emit_st_signs",
+    "metal_bare",
+    "st_tile_wall",
+    "paint_glossy_white",
+    "emit_st_lantern_red"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      6.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Noodle bar variant (wood cladding, orange neon fascia). Width 6.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     2.4,
+     2.75,
+     1.45
+    ],
+    "color": "#ff5a2a",
+    "range": 4.0,
+    "intensity": 1.2
+   },
+   "lights": [
+    {
+     "position": [
+      2.4,
+      2.75,
+      1.45
+     ],
+     "color": "#ff5a2a",
+     "range": 4.0,
+     "intensity": 1.2
+    },
+    {
+     "position": [
+      -2.4,
+      2.75,
+      1.45
+     ],
+     "color": "#ff5a2a",
+     "range": 4.0,
+     "intensity": 1.2
+    },
+    {
+     "position": [
+      0.0,
+      2.2,
+      1.2
+     ],
+     "color": "#ffb46a",
+     "range": 6.0,
+     "intensity": 1.6
+    }
+   ],
+   "glow": "#ff5a2a",
+   "steam": [
+    [
+     0.0,
+     1.2,
+     0.6
+    ]
+   ],
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Pawn_A",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Pawn_A.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Pawn_A_LOD0",
+    "LOD1": "St_Shop_Pawn_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 1714,
+    "LOD1": 684
+   },
+   "size": [
+    4.02,
+    4.22,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.11,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "metal_painted",
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_amber",
+    "plastic_dark",
+    "emit_st_led_white",
+    "emit_st_signs",
+    "metal_bare",
+    "metal_rusted",
+    "glass",
+    "screen_ad_c",
+    "screen_ad_a",
+    "st_shutter"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      4.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Pawn / electronics: half-down roll shutter, security grille, cluttered lit interior with screens. Width 4.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     0.0,
+     2.6,
+     1.0
+    ],
+    "color": "#ffd890",
+    "range": 5.0,
+    "intensity": 1.2
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.6,
+      1.0
+     ],
+     "color": "#ffd890",
+     "range": 5.0,
+     "intensity": 1.2
+    }
+   ],
+   "glow": "#ffd890",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Pawn_B",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Pawn_B.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Pawn_B_LOD0",
+    "LOD1": "St_Shop_Pawn_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 1814,
+    "LOD1": 724
+   },
+   "size": [
+    4.02,
+    4.22,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.11,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "metal_painted",
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_amber",
+    "plastic_dark",
+    "emit_st_led_white",
+    "emit_st_signs",
+    "metal_bare",
+    "metal_rusted",
+    "glass",
+    "screen_ad_a",
+    "screen_ad_c",
+    "st_shutter"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      4.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Pawn / electronics variant (amber neon fascia). Width 4.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     0.0,
+     2.6,
+     1.0
+    ],
+    "color": "#ffd890",
+    "range": 5.0,
+    "intensity": 1.2
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.6,
+      1.0
+     ],
+     "color": "#ffd890",
+     "range": 5.0,
+     "intensity": 1.2
+    }
+   ],
+   "glow": "#ffd890",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Pharmacy_A",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Pharmacy_A.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Pharmacy_A_LOD0",
+    "LOD1": "St_Shop_Pharmacy_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 994,
+    "LOD1": 386
+   },
+   "size": [
+    4.02,
+    5.12,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.56,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "paint_glossy_white",
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_white",
+    "plastic_dark",
+    "emit_st_signs",
+    "metal_bare",
+    "glass",
+    "st_tile_wall",
+    "car_paint_white",
+    "paint_glossy_red",
+    "car_paint_teal",
+    "car_paint_yellow"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      4.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Pharmacy: white gloss front, glass door, cross-pictogram blade sign, bright shelving interior. Width 4.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     0.0,
+     2.4,
+     1.0
+    ],
+    "color": "#e8fff2",
+    "range": 6.0,
+    "intensity": 1.8
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.4,
+      1.0
+     ],
+     "color": "#e8fff2",
+     "range": 6.0,
+     "intensity": 1.8
+    }
+   ],
+   "glow": "#e8fff2",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Pharmacy_B",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Pharmacy_B.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Pharmacy_B_LOD0",
+    "LOD1": "St_Shop_Pharmacy_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 978,
+    "LOD1": 386
+   },
+   "size": [
+    4.02,
+    5.12,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.56,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "paint_glossy_white",
+    "metal_dark",
+    "emit_st_interiors",
+    "black",
+    "emit_st_led_white",
+    "plastic_dark",
+    "emit_st_signs",
+    "metal_bare",
+    "glass",
+    "st_tile_wall",
+    "paint_glossy_red",
+    "car_paint_teal",
+    "car_paint_yellow",
+    "car_paint_white"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      4.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Pharmacy variant (neon fascia). Width 4.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "light": {
+    "position": [
+     0.0,
+     2.4,
+     1.0
+    ],
+    "color": "#e8fff2",
+    "range": 6.0,
+    "intensity": 1.8
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.4,
+      1.0
+     ],
+     "color": "#e8fff2",
+     "range": 6.0,
+     "intensity": 1.8
+    }
+   ],
+   "glow": "#e8fff2",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Shuttered_A",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Shuttered_A.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Shuttered_A_LOD0",
+    "LOD1": "St_Shop_Shuttered_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 454,
+    "LOD1": 194
+   },
+   "size": [
+    4.02,
+    4.22,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.11,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "concrete_dark",
+    "metal_dark",
+    "black",
+    "emit_st_led_white",
+    "emit_st_signs",
+    "metal_bare",
+    "st_shutter"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      4.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Closed shop: full roll shutter (graffiti decals are added in game), dead fascia. Width 4.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Shuttered_B",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Shuttered_B.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Shuttered_B_LOD0",
+    "LOD1": "St_Shop_Shuttered_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 454,
+    "LOD1": 194
+   },
+   "size": [
+    4.02,
+    4.22,
+    1.77
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.11,
+    0.885
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "concrete_dark",
+    "metal_dark",
+    "black",
+    "emit_st_led_white",
+    "emit_st_signs",
+    "metal_bare",
+    "st_shutter"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      4.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Closed shop variant. Width 4.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Shop_Wall_2m",
+   "category": "storefront",
+   "file": "Models/Shops/St_Shop_Wall_2m.fbx",
+   "meshes": {
+    "LOD0": "St_Shop_Wall_2m_LOD0",
+    "LOD1": "St_Shop_Wall_2m_LOD1"
+   },
+   "tris": {
+    "LOD0": 444,
+    "LOD1": 172
+   },
+   "size": [
+    2.02,
+    3.5,
+    1.75
+   ],
+   "boundsCenter": [
+    -0.0,
+    1.75,
+    0.875
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "concrete",
+    "metal_dark",
+    "emit_st_led_amber",
+    "emit_st_led_white",
+    "concrete_dark",
+    "metal_painted",
+    "metal_bare",
+    "metal_painted_white",
+    "metal_rusted"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.6,
+      0.375
+     ],
+     "size": [
+      2.0,
+      3.2,
+      0.75
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Filler bay: concrete with a steel service door, meter box, conduit, amber lamp; canopy continues. Width 2.0 m, body 0.75 m, canopy 1.75 m, height 4.25 m; pivot at the wall plane / pavement.",
+   "lodTransitions": [
+    0.22,
+    0.06
+   ]
+  },
+  {
+   "name": "St_Bollard_LED",
+   "category": "streetprop",
+   "file": "Models/Props/St_Bollard_LED.fbx",
+   "meshes": {
+    "LOD0": "St_Bollard_LED_LOD0",
+    "LOD1": "St_Bollard_LED_LOD1"
+   },
+   "tris": {
+    "LOD0": 307,
+    "LOD1": 121
+   },
+   "size": [
+    0.216,
+    1.02,
+    0.216
+   ],
+   "boundsCenter": [
+    -0.0,
+    0.51,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_dark",
+    "metal_bare",
+    "emit_st_led_cyan",
+    "metal_painted_yellow"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      0.5,
+      0
+     ],
+     "size": [
+      0.22,
+      1.0,
+      0.22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Steel bollard with cyan LED ring and yellow band.",
+   "light": {
+    "position": [
+     0.0,
+     0.75,
+     0.0
+    ],
+    "color": "#40e0ff",
+    "range": 2.0,
+    "intensity": 0.6
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      0.75,
+      0.0
+     ],
+     "color": "#40e0ff",
+     "range": 2.0,
+     "intensity": 0.6
+    }
+   ],
+   "glow": "#40e0ff",
+   "lodTransitions": [
+    0.25,
+    0.03
+   ]
+  },
+  {
+   "name": "St_CapsuleToys",
+   "category": "streetprop",
+   "file": "Models/Props/St_CapsuleToys.fbx",
+   "meshes": {
+    "LOD0": "St_CapsuleToys_LOD0",
+    "LOD1": "St_CapsuleToys_LOD1"
+   },
+   "tris": {
+    "LOD0": 1884,
+    "LOD1": 348
+   },
+   "size": [
+    1.5,
+    1.52,
+    0.5
+   ],
+   "boundsCenter": [
+    -0.0,
+    0.76,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_dark",
+    "paint_glossy_red",
+    "metal_bare",
+    "glass",
+    "car_paint_teal",
+    "car_paint_magenta",
+    "paint_glossy_white",
+    "emit_st_led_magenta",
+    "car_paint_yellow",
+    "emit_st_led_cyan",
+    "emit_st_led_amber"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      0.75,
+      0
+     ],
+     "size": [
+      1.5,
+      1.5,
+      0.5
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bank of 6 capsule-toy machines (clear domes, coloured capsules, lit headers) on a stand.",
+   "light": {
+    "position": [
+     0.0,
+     1.0,
+     0.4
+    ],
+    "color": "#ff4fd8",
+    "range": 2.5,
+    "intensity": 0.8
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      1.0,
+      0.4
+     ],
+     "color": "#ff4fd8",
+     "range": 2.5,
+     "intensity": 0.8
+    }
+   ],
+   "glow": "#ff4fd8",
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_ChargeTotem",
+   "category": "streetprop",
+   "file": "Models/Props/St_ChargeTotem.fbx",
+   "meshes": {
+    "LOD0": "St_ChargeTotem_LOD0",
+    "LOD1": "St_ChargeTotem_LOD1"
+   },
+   "tris": {
+    "LOD0": 188,
+    "LOD1": 84
+   },
+   "size": [
+    0.54,
+    2.02,
+    0.502
+   ],
+   "boundsCenter": [
+    -0.0,
+    1.01,
+    0.061
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "paint_glossy_dark",
+    "screen_ad_c",
+    "emit_st_led_cyan",
+    "metal_bare",
+    "rubber"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.0,
+      0
+     ],
+     "size": [
+      0.55,
+      2.0,
+      0.4
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "EV / phone charging totem with ad screen, cyan LED edges and two holstered cables.",
+   "light": {
+    "position": [
+     0.0,
+     1.3,
+     0.3
+    ],
+    "color": "#40e0ff",
+    "range": 2.5,
+    "intensity": 0.8
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      1.3,
+      0.3
+     ],
+     "color": "#40e0ff",
+     "range": 2.5,
+     "intensity": 0.8
+    }
+   ],
+   "glow": "#40e0ff",
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_DataBooth",
+   "category": "streetprop",
+   "file": "Models/Props/St_DataBooth.fbx",
+   "meshes": {
+    "LOD0": "St_DataBooth_LOD0",
+    "LOD1": "St_DataBooth_LOD1"
+   },
+   "tris": {
+    "LOD0": 170,
+    "LOD1": 68
+   },
+   "size": [
+    1.15,
+    2.67,
+    1.154
+   ],
+   "boundsCenter": [
+    -0.0,
+    1.335,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_dark",
+    "emit_st_signs",
+    "glass",
+    "paint_glossy_dark",
+    "screen_ad_a",
+    "rubber"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.495,
+      1.175,
+      0
+     ],
+     "size": [
+      0.08,
+      2.35,
+      1.05
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -0.495,
+      1.175,
+      0
+     ],
+     "size": [
+      0.08,
+      2.35,
+      1.05
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0,
+      1.175,
+      -0.495
+     ],
+     "size": [
+      1.05,
+      2.35,
+      0.08
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Glass data / phone booth with lit roof sign and terminal screen; open front +Z.",
+   "light": {
+    "position": [
+     0.0,
+     2.25,
+     0.0
+    ],
+    "color": "#5fe8ff",
+    "range": 3.0,
+    "intensity": 1.0
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.25,
+      0.0
+     ],
+     "color": "#5fe8ff",
+     "range": 3.0,
+     "intensity": 1.0
+    }
+   ],
+   "glow": "#5fe8ff",
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_Dumpster_Blue",
+   "category": "streetprop",
+   "file": "Models/Props/St_Dumpster_Blue.fbx",
+   "meshes": {
+    "LOD0": "St_Dumpster_Blue_LOD0",
+    "LOD1": "St_Dumpster_Blue_LOD1"
+   },
+   "tris": {
+    "LOD0": 996,
+    "LOD1": 320
+   },
+   "size": [
+    2.02,
+    2.296,
+    1.21
+   ],
+   "boundsCenter": [
+    -0.0,
+    1.15,
+    -0.005
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_painted",
+    "metal_dark",
+    "rubber",
+    "plastic_dark",
+    "st_bag_black",
+    "cardboard_wet",
+    "metal_painted_white"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      0.605,
+      0
+     ],
+     "size": [
+      2.02,
+      1.21,
+      1.18
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Dumpster, blue-grey paint, one lid propped open.",
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_Dumpster_Green",
+   "category": "streetprop",
+   "file": "Models/Props/St_Dumpster_Green.fbx",
+   "meshes": {
+    "LOD0": "St_Dumpster_Green_LOD0",
+    "LOD1": "St_Dumpster_Green_LOD1"
+   },
+   "tris": {
+    "LOD0": 996,
+    "LOD1": 320
+   },
+   "size": [
+    2.02,
+    1.518,
+    1.19
+   ],
+   "boundsCenter": [
+    -0.0,
+    0.762,
+    0.005
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_painted_green",
+    "metal_dark",
+    "rubber",
+    "plastic_dark",
+    "st_bag_black",
+    "cardboard_wet",
+    "metal_painted_white"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      0.605,
+      0
+     ],
+     "size": [
+      2.02,
+      1.21,
+      1.18
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Steel dumpster 1.9 x 1.15 x 1.1 m, tapered body, plastic lids, forklift sleeves, castors, overflow bag.",
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_FoodCart_Yatai",
+   "category": "streetprop",
+   "file": "Models/Props/St_FoodCart_Yatai.fbx",
+   "meshes": {
+    "LOD0": "St_FoodCart_Yatai_LOD0",
+    "LOD1": "St_FoodCart_Yatai_LOD1"
+   },
+   "tris": {
+    "LOD0": 1238,
+    "LOD1": 550
+   },
+   "size": [
+    2.902,
+    2.378,
+    1.847
+   ],
+   "boundsCenter": [
+    -0.201,
+    1.189,
+    0.271
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "wood",
+    "st_awning_red",
+    "emit_st_signs",
+    "emit_st_lantern_red",
+    "metal_bare",
+    "metal_dark"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      -0.1,
+      0.6,
+      0
+     ],
+     "size": [
+      2.8,
+      1.2,
+      1.2
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Yatai noodle cart: wooden cart on spoked wheels, red roof, noren cloths, red lanterns, three steaming pots (steam anchors), menu board, stools.",
+   "light": {
+    "position": [
+     0.95,
+     1.5,
+     0.8
+    ],
+    "color": "#ff6a3a",
+    "range": 3.5,
+    "intensity": 1.0
+   },
+   "lights": [
+    {
+     "position": [
+      0.95,
+      1.5,
+      0.8
+     ],
+     "color": "#ff6a3a",
+     "range": 3.5,
+     "intensity": 1.0
+    },
+    {
+     "position": [
+      -0.95,
+      1.5,
+      0.8
+     ],
+     "color": "#ff6a3a",
+     "range": 3.5,
+     "intensity": 1.0
+    },
+    {
+     "position": [
+      0.0,
+      1.8,
+      0.5
+     ],
+     "color": "#ffb46a",
+     "range": 6.0,
+     "intensity": 1.6
+    }
+   ],
+   "glow": "#ff6a3a",
+   "steam": [
+    [
+     0.55,
+     1.27,
+     -0.1
+    ],
+    [
+     0.0,
+     1.27,
+     -0.1
+    ],
+    [
+     -0.5,
+     1.27,
+     -0.1
+    ]
+   ],
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_Manhole",
+   "category": "streetprop",
+   "file": "Models/Props/St_Manhole.fbx",
+   "meshes": {
+    "LOD0": "St_Manhole_LOD0",
+    "LOD1": "St_Manhole_LOD1"
+   },
+   "tris": {
+    "LOD0": 1120,
+    "LOD1": 120
+   },
+   "size": [
+    0.836,
+    0.024,
+    0.836
+   ],
+   "boundsCenter": [
+    -0.0,
+    0.008,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_dark",
+    "metal_rusted",
+    "metal_bare",
+    "black"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Cast manhole cover with rim, raised rings and ribs (sits 1.5 cm proud).",
+   "lodTransitions": [
+    0.25,
+    0.03
+   ]
+  },
+  {
+   "name": "St_SteamGrate",
+   "category": "streetprop",
+   "file": "Models/Props/St_SteamGrate.fbx",
+   "meshes": {
+    "LOD0": "St_SteamGrate_LOD0",
+    "LOD1": "St_SteamGrate_LOD1"
+   },
+   "tris": {
+    "LOD0": 240,
+    "LOD1": 96
+   },
+   "size": [
+    1.2,
+    0.044,
+    0.7
+   ],
+   "boundsCenter": [
+    -0.0,
+    -0.008,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_dark",
+    "black",
+    "metal_rusted"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Road / pavement steam grate 1.2 x 0.7 m (steam anchor).",
+   "steam": [
+    [
+     0.0,
+     0.05,
+     0.0
+    ]
+   ],
+   "lodTransitions": [
+    0.25,
+    0.03
+   ]
+  },
+  {
+   "name": "St_TramShelter",
+   "category": "streetprop",
+   "file": "Models/Props/St_TramShelter.fbx",
+   "meshes": {
+    "LOD0": "St_TramShelter_LOD0",
+    "LOD1": "St_TramShelter_LOD1"
+   },
+   "tris": {
+    "LOD0": 334,
+    "LOD1": 132
+   },
+   "size": [
+    4.4,
+    2.875,
+    1.91
+   ],
+   "boundsCenter": [
+    -0.0,
+    1.438,
+    0.105
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_dark",
+    "glass_dark",
+    "emit_st_led_white",
+    "glass",
+    "screen_ad_b",
+    "screen_ad_a",
+    "wood",
+    "emit_st_signs",
+    "black"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      2.0,
+      1.375,
+      0
+     ],
+     "size": [
+      0.25,
+      2.75,
+      1.6
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -1.35,
+      1.375,
+      -0.7
+     ],
+     "size": [
+      1.5,
+      2.75,
+      0.3
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.7,
+      1.375,
+      -0.75
+     ],
+     "size": [
+      2.6,
+      2.75,
+      0.12
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Tram / bus shelter 4.2 m: cantilever roof with LED edge, glass back wall, double-sided ad lightboxes (screen_ad), bench, route map, timetable board. Open front +Z.",
+   "light": {
+    "position": [
+     0.0,
+     2.55,
+     0.0
+    ],
+    "color": "#dfeaff",
+    "range": 5.0,
+    "intensity": 1.2
+   },
+   "lights": [
+    {
+     "position": [
+      0.0,
+      2.55,
+      0.0
+     ],
+     "color": "#dfeaff",
+     "range": 5.0,
+     "intensity": 1.2
+    }
+   ],
+   "glow": "#dfeaff",
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_TrashBags_A",
+   "category": "streetprop",
+   "file": "Models/Props/St_TrashBags_A.fbx",
+   "meshes": {
+    "LOD0": "St_TrashBags_A_LOD0",
+    "LOD1": "St_TrashBags_A_LOD1"
+   },
+   "tris": {
+    "LOD0": 1860,
+    "LOD1": 100
+   },
+   "size": [
+    1.471,
+    0.707,
+    1.046
+   ],
+   "boundsCenter": [
+    -0.036,
+    0.321,
+    -0.051
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "st_bag_white",
+    "st_bag_black",
+    "cardboard_wet",
+    "metal_bare"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      0.3,
+      0
+     ],
+     "size": [
+      1.4,
+      0.6,
+      0.95
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Pile of 5 garbage bags with a soggy box. Low collider.",
+   "lodTransitions": [
+    0.25,
+    0.03
+   ]
+  },
+  {
+   "name": "St_TrashBags_B",
+   "category": "streetprop",
+   "file": "Models/Props/St_TrashBags_B.fbx",
+   "meshes": {
+    "LOD0": "St_TrashBags_B_LOD0",
+    "LOD1": "St_TrashBags_B_LOD1"
+   },
+   "tris": {
+    "LOD0": 2588,
+    "LOD1": 140
+   },
+   "size": [
+    1.5,
+    0.765,
+    1.053
+   ],
+   "boundsCenter": [
+    -0.037,
+    0.35,
+    -0.069
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "st_bag_white",
+    "st_bag_blue",
+    "st_bag_black",
+    "cardboard_wet",
+    "metal_bare"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      0.3,
+      0
+     ],
+     "size": [
+      1.4,
+      0.6,
+      0.95
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Pile of 7 garbage bags (black / blue / grey).",
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_TrashBags_C",
+   "category": "streetprop",
+   "file": "Models/Props/St_TrashBags_C.fbx",
+   "meshes": {
+    "LOD0": "St_TrashBags_C_LOD0",
+    "LOD1": "St_TrashBags_C_LOD1"
+   },
+   "tris": {
+    "LOD0": 1132,
+    "LOD1": 60
+   },
+   "size": [
+    1.504,
+    0.477,
+    0.963
+   ],
+   "boundsCenter": [
+    -0.052,
+    0.206,
+    -0.138
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "st_bag_black",
+    "cardboard_wet",
+    "metal_bare"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      0.3,
+      0
+     ],
+     "size": [
+      1.4,
+      0.6,
+      0.95
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Small pile of 3 black bags.",
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_WaterBarrier_Orange",
+   "category": "streetprop",
+   "file": "Models/Props/St_WaterBarrier_Orange.fbx",
+   "meshes": {
+    "LOD0": "St_WaterBarrier_Orange_LOD0",
+    "LOD1": "St_WaterBarrier_Orange_LOD1"
+   },
+   "tris": {
+    "LOD0": 156,
+    "LOD1": 62
+   },
+   "size": [
+    1.8,
+    0.88,
+    0.588
+   ],
+   "boundsCenter": [
+    -0.0,
+    0.44,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "plastic_orange",
+    "metal_painted_white"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      0.43,
+      0
+     ],
+     "size": [
+      1.8,
+      0.86,
+      0.6
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Water-filled plastic road barrier 1.8 m.",
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_WaterBarrier_White",
+   "category": "streetprop",
+   "file": "Models/Props/St_WaterBarrier_White.fbx",
+   "meshes": {
+    "LOD0": "St_WaterBarrier_White_LOD0",
+    "LOD1": "St_WaterBarrier_White_LOD1"
+   },
+   "tris": {
+    "LOD0": 156,
+    "LOD1": 62
+   },
+   "size": [
+    1.8,
+    0.88,
+    0.588
+   ],
+   "boundsCenter": [
+    -0.0,
+    0.44,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "paint_glossy_white",
+    "metal_painted_white"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      0.43,
+      0
+     ],
+     "size": [
+      1.8,
+      0.86,
+      0.6
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Water-filled plastic road barrier 1.8 m (white).",
+   "lodTransitions": [
+    0.2,
+    0.015
+   ]
+  },
+  {
+   "name": "St_AC_Unit_Wall",
+   "category": "wallprop",
+   "file": "Models/Wall/St_AC_Unit_Wall.fbx",
+   "meshes": {
+    "LOD0": "St_AC_Unit_Wall_LOD0",
+    "LOD1": "St_AC_Unit_Wall_LOD1"
+   },
+   "tris": {
+    "LOD0": 1068,
+    "LOD1": 116
+   },
+   "size": [
+    0.908,
+    1.2,
+    0.422
+   ],
+   "boundsCenter": [
+    -0.024,
+    0.0,
+    0.209
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "metal_painted_white",
+    "black",
+    "metal_bare",
+    "rubber",
+    "plastic_dark",
+    "metal_rusted"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Split AC outdoor unit on rusty L-brackets, fan guard, louvres, pipes, drip hose. Pivot at the wall plane, bracket base.",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_CableAnchor",
+   "category": "wallprop",
+   "file": "Models/Wall/St_CableAnchor.fbx",
+   "meshes": {
+    "LOD0": "St_CableAnchor_LOD0",
+    "LOD1": "St_CableAnchor_LOD1"
+   },
+   "tris": {
+    "LOD0": 244,
+    "LOD1": 96
+   },
+   "size": [
+    0.36,
+    0.24,
+    0.2
+   ],
+   "boundsCenter": [
+    -0.0,
+    0.0,
+    0.1
+   ],
+   "pivot": "wall-centre",
+   "materials": [
+    "metal_rusted",
+    "metal_bare",
+    "plastic_dark"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Wall anchor plate with insulators where overhead cables terminate.",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  },
+  {
+   "name": "St_FireEscape_2F",
+   "category": "wallprop",
+   "file": "Models/Wall/St_FireEscape_2F.fbx",
+   "meshes": {
+    "LOD0": "St_FireEscape_2F_LOD0",
+    "LOD1": "St_FireEscape_2F_LOD1"
+   },
+   "tris": {
+    "LOD0": 1708,
+    "LOD1": 682
+   },
+   "size": [
+    3.06,
+    6.714,
+    1.14
+   ],
+   "boundsCenter": [
+    -0.0,
+    1.057,
+    0.56
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "grating",
+    "metal_dark"
+   ],
+   "colliders": [
+    {
+     "type": "none"
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Fire escape segment: two grating landings 3.4 m apart with railings, stair flight and drop ladder. Pivot = wall plane at the lower deck.",
+   "lodTransitions": [
+    0.25,
+    0.04
+   ]
+  }
+ ],
+ "decals": [
+  {
+   "name": "St_Asphalt_Patch_A",
+   "sizeMeters": [
+    3.0,
+    1.6
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Asphalt_Patch_A/St_Asphalt_Patch_A_BaseColor.png",
+    "Normal": "Decals/St_Asphalt_Patch_A/St_Asphalt_Patch_A_Normal.png",
+    "MaskMap": "Decals/St_Asphalt_Patch_A/St_Asphalt_Patch_A_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    544
+   ],
+   "projection": "floor",
+   "use": "Utility-cut asphalt patch with tar-sealed seams (road).",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.9,
+    "drawOrder": 1,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "road",
+    "patch",
+    "street"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Asphalt_Patch_B",
+   "sizeMeters": [
+    2.0,
+    2.0
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Asphalt_Patch_B/St_Asphalt_Patch_B_BaseColor.png",
+    "Normal": "Decals/St_Asphalt_Patch_B/St_Asphalt_Patch_B_Normal.png",
+    "MaskMap": "Decals/St_Asphalt_Patch_B/St_Asphalt_Patch_B_MaskMap.png"
+   },
+   "resolution": 768,
+   "pixels": [
+    768,
+    768
+   ],
+   "projection": "floor",
+   "use": "Square utility-cut patch (road).",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.9,
+    "drawOrder": 1,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "road",
+    "patch",
+    "street"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Graffiti_Stencil_A",
+   "sizeMeters": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Graffiti_Stencil_A/St_Graffiti_Stencil_A_BaseColor.png",
+    "Normal": "Decals/St_Graffiti_Stencil_A/St_Graffiti_Stencil_A_Normal.png",
+    "MaskMap": "Decals/St_Graffiti_Stencil_A/St_Graffiti_Stencil_A_MaskMap.png"
+   },
+   "resolution": 768,
+   "pixels": [
+    768,
+    768
+   ],
+   "projection": "wall",
+   "use": "Spray stencil: cyber-eye pictogram over a bridged glyph row.",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.3,
+    "drawOrder": 3,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "wall",
+    "graffiti",
+    "stencil",
+    "glyph"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Graffiti_Tag_A",
+   "sizeMeters": [
+    1.6,
+    0.8
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Graffiti_Tag_A/St_Graffiti_Tag_A_BaseColor.png",
+    "Normal": "Decals/St_Graffiti_Tag_A/St_Graffiti_Tag_A_Normal.png",
+    "MaskMap": "Decals/St_Graffiti_Tag_A/St_Graffiti_Tag_A_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    512
+   ],
+   "projection": "wall",
+   "use": "Hand tag of invented glyphs with an underline swoosh, outline halo and drips. Shutters, walls, boxes.",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.3,
+    "drawOrder": 3,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "wall",
+    "graffiti",
+    "tag",
+    "glyph"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Graffiti_Tag_B",
+   "sizeMeters": [
+    1.6,
+    0.8
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Graffiti_Tag_B/St_Graffiti_Tag_B_BaseColor.png",
+    "Normal": "Decals/St_Graffiti_Tag_B/St_Graffiti_Tag_B_Normal.png",
+    "MaskMap": "Decals/St_Graffiti_Tag_B/St_Graffiti_Tag_B_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    512
+   ],
+   "projection": "wall",
+   "use": "Hand tag of invented glyphs with an underline swoosh, outline halo and drips. Shutters, walls, boxes.",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.3,
+    "drawOrder": 3,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "wall",
+    "graffiti",
+    "tag",
+    "glyph"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Graffiti_Tag_C",
+   "sizeMeters": [
+    1.6,
+    0.8
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Graffiti_Tag_C/St_Graffiti_Tag_C_BaseColor.png",
+    "Normal": "Decals/St_Graffiti_Tag_C/St_Graffiti_Tag_C_Normal.png",
+    "MaskMap": "Decals/St_Graffiti_Tag_C/St_Graffiti_Tag_C_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    512
+   ],
+   "projection": "wall",
+   "use": "Hand tag of invented glyphs with an underline swoosh, outline halo and drips. Shutters, walls, boxes.",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.3,
+    "drawOrder": 3,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "wall",
+    "graffiti",
+    "tag",
+    "glyph"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Graffiti_Tag_D",
+   "sizeMeters": [
+    1.6,
+    0.8
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Graffiti_Tag_D/St_Graffiti_Tag_D_BaseColor.png",
+    "Normal": "Decals/St_Graffiti_Tag_D/St_Graffiti_Tag_D_Normal.png",
+    "MaskMap": "Decals/St_Graffiti_Tag_D/St_Graffiti_Tag_D_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    512
+   ],
+   "projection": "wall",
+   "use": "Hand tag of invented glyphs with an underline swoosh, outline halo and drips. Shutters, walls, boxes.",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.3,
+    "drawOrder": 3,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "wall",
+    "graffiti",
+    "tag",
+    "glyph"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Graffiti_Throwup_A",
+   "sizeMeters": [
+    2.2,
+    1.1
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Graffiti_Throwup_A/St_Graffiti_Throwup_A_BaseColor.png",
+    "Normal": "Decals/St_Graffiti_Throwup_A/St_Graffiti_Throwup_A_Normal.png",
+    "MaskMap": "Decals/St_Graffiti_Throwup_A/St_Graffiti_Throwup_A_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    512
+   ],
+   "projection": "wall",
+   "use": "Bubble throw-up (fat invented glyphs, two-tone fade fill, dark outline, highlights, colour shadow). Shutters, walls.",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.3,
+    "drawOrder": 3,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "wall",
+    "graffiti",
+    "throwup",
+    "glyph",
+    "shutter"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Graffiti_Throwup_B",
+   "sizeMeters": [
+    2.2,
+    1.1
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Graffiti_Throwup_B/St_Graffiti_Throwup_B_BaseColor.png",
+    "Normal": "Decals/St_Graffiti_Throwup_B/St_Graffiti_Throwup_B_Normal.png",
+    "MaskMap": "Decals/St_Graffiti_Throwup_B/St_Graffiti_Throwup_B_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    512
+   ],
+   "projection": "wall",
+   "use": "Bubble throw-up (fat invented glyphs, two-tone fade fill, dark outline, highlights, colour shadow). Shutters, walls.",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.3,
+    "drawOrder": 3,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "wall",
+    "graffiti",
+    "throwup",
+    "glyph",
+    "shutter"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Pavement_Stains",
+   "sizeMeters": [
+    1.6,
+    1.6
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Pavement_Stains/St_Pavement_Stains_BaseColor.png",
+    "Normal": "Decals/St_Pavement_Stains/St_Pavement_Stains_Normal.png",
+    "MaskMap": "Decals/St_Pavement_Stains/St_Pavement_Stains_MaskMap.png"
+   },
+   "resolution": 768,
+   "pixels": [
+    768,
+    768
+   ],
+   "projection": "floor",
+   "use": "Gum, coffee splash, rust ring (pavement).",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.5,
+    "drawOrder": 1,
+    "projectionDepth": 0.25
+   },
+   "tags": [
+    "sidewalk",
+    "stain",
+    "street"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Posters_D",
+   "sizeMeters": [
+    1.6,
+    1.6
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Posters_D/St_Posters_D_BaseColor.png",
+    "Normal": "Decals/St_Posters_D/St_Posters_D_Normal.png",
+    "MaskMap": "Decals/St_Posters_D/St_Posters_D_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    1024
+   ],
+   "projection": "wall",
+   "use": "Layered torn bill posters (invented glyphs).",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.8,
+    "drawOrder": 4,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "wall",
+    "poster",
+    "flyer",
+    "glyph"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Posters_E",
+   "sizeMeters": [
+    1.6,
+    1.6
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Posters_E/St_Posters_E_BaseColor.png",
+    "Normal": "Decals/St_Posters_E/St_Posters_E_Normal.png",
+    "MaskMap": "Decals/St_Posters_E/St_Posters_E_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    1024
+   ],
+   "projection": "wall",
+   "use": "Layered torn bill posters, dense (invented glyphs).",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.8,
+    "drawOrder": 4,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "wall",
+    "poster",
+    "flyer",
+    "glyph"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Skid_Marks",
+   "sizeMeters": [
+    4.0,
+    1.4
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Skid_Marks/St_Skid_Marks_BaseColor.png",
+    "Normal": "Decals/St_Skid_Marks/St_Skid_Marks_Normal.png",
+    "MaskMap": "Decals/St_Skid_Marks/St_Skid_Marks_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    358
+   ],
+   "projection": "floor",
+   "use": "Tyre skid streaks (road).",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.2,
+    "drawOrder": 2,
+    "projectionDepth": 0.3
+   },
+   "tags": [
+    "road",
+    "skid",
+    "street"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Stickers_A",
+   "sizeMeters": [
+    0.6,
+    0.6
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Stickers_A/St_Stickers_A_BaseColor.png",
+    "Normal": "Decals/St_Stickers_A/St_Stickers_A_Normal.png",
+    "MaskMap": "Decals/St_Stickers_A/St_Stickers_A_MaskMap.png"
+   },
+   "resolution": 512,
+   "pixels": [
+    512,
+    512
+   ],
+   "projection": "wall",
+   "use": "Sticker slap cluster (invented glyphs / icons), torn and grimy.",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.4,
+    "drawOrder": 4,
+    "projectionDepth": 0.25
+   },
+   "tags": [
+    "wall",
+    "sticker",
+    "glyph",
+    "pole"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Stickers_B",
+   "sizeMeters": [
+    0.6,
+    0.6
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Stickers_B/St_Stickers_B_BaseColor.png",
+    "Normal": "Decals/St_Stickers_B/St_Stickers_B_Normal.png",
+    "MaskMap": "Decals/St_Stickers_B/St_Stickers_B_MaskMap.png"
+   },
+   "resolution": 512,
+   "pixels": [
+    512,
+    512
+   ],
+   "projection": "wall",
+   "use": "Sticker slap cluster B.",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 0.4,
+    "drawOrder": 4,
+    "projectionDepth": 0.25
+   },
+   "tags": [
+    "wall",
+    "sticker",
+    "glyph",
+    "pole"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  },
+  {
+   "name": "St_Tactile_Strip",
+   "sizeMeters": [
+    2.4,
+    0.6
+   ],
+   "textures": {
+    "BaseColor": "Decals/St_Tactile_Strip/St_Tactile_Strip_BaseColor.png",
+    "Normal": "Decals/St_Tactile_Strip/St_Tactile_Strip_Normal.png",
+    "MaskMap": "Decals/St_Tactile_Strip/St_Tactile_Strip_MaskMap.png"
+   },
+   "resolution": 1024,
+   "pixels": [
+    1024,
+    256
+   ],
+   "projection": "floor",
+   "use": "Yellow tactile warning paving at a kerb crossing (domes).",
+   "urp": {
+    "shader": "Shader Graphs/Decal",
+    "affectsBaseColor": true,
+    "affectsNormal": true,
+    "affectsMAOS": true,
+    "normalBlend": 1.0,
+    "drawOrder": 2,
+    "projectionDepth": 0.25
+   },
+   "tags": [
+    "sidewalk",
+    "tactile",
+    "crossing"
+   ],
+   "orientation": "+U = decal right, +V = decal up (walls: world up; floors: forward). Pivot centre."
+  }
+ ],
+ "stats": {
+  "assets": 47,
+  "materials": 26,
+  "decals": 16,
+  "textureMB": 121.6,
+  "fbxMB": 2.2
+ }
+}

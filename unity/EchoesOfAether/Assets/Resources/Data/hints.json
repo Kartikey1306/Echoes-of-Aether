@@ -1,0 +1,15 @@
+{
+  "hints": [
+    { "id": "move", "text": "Move with {moveF}{moveL}{moveB}{moveR}. Hold {dash} to sprint. {jump} to jump." },
+    { "id": "combat", "text": "{light} light attack (chain up to 4 hits as Kael, 3 as Giva). {heavy} heavy attack. Tap {bolt} to fire an Aether Bolt, or hold it to aim. {ability} uses your ability." },
+    { "id": "powerup", "text": "Powerups activate on pickup. Stored powerups can be used from the inventory ({inventory}) or with keys 1-5." },
+    { "id": "swap", "text": "Press {swap} to switch between Kael and Giva. Each has different abilities." },
+    { "id": "dash", "text": "Phase Dash and Phase Step are online. Tap {dash} to phase. You're invulnerable for a moment while you do." },
+    { "id": "echo", "text": "Echo Sight unlocked. As Giva, press {ability} to reveal hidden doors, caches and recordings." },
+    { "id": "ultimate", "text": "Ultimate abilities unlocked. When the ring is full, press {ultimate}." },
+    { "id": "lock", "text": "Press {lockon} to lock onto the nearest enemy." },
+    { "id": "save", "text": "Save terminals let you save manually. The game also autosaves at checkpoints." },
+    { "id": "skills", "text": "Spend Aether Fragments in the Ability Matrix ({skills})." },
+    { "id": "drive", "text": "{throttle} to accelerate, {brake} to brake and reverse, {steerLeft}{steerRight} to steer. Hold {handbrake} to drift. {vehicleReset} puts the car back on its wheels, {interact} gets you out." }
+  ]
+}

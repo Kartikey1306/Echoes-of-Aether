@@ -1,0 +1,3107 @@
+{
+ "version": 1,
+ "generator": "tools/audio/render.mjs",
+ "source": "src/audio/AudioEngine.ts",
+ "sampleRate": 44100,
+ "channels": 1,
+ "mix": {
+  "gainNote": "files[].gain is the playback volume that restores the prototype balance (relative recipe levels plus its master compressor at default settings); bus volumes are applied at runtime as v*v like the prototype.",
+  "busDefaults": {
+   "master": 0.85,
+   "music": 0.6,
+   "sfx": 0.8,
+   "voice": 0.9,
+   "ui": 0.6,
+   "ambience": 0.7
+  },
+  "compressor": {
+   "threshold": -14,
+   "knee": 10,
+   "ratio": 4
+  },
+  "sfxPeakDb": -1,
+  "musicRmsDb": -16,
+  "ambienceRmsDb": -18,
+  "ceilingDb": -1,
+  "globalGainRef": 0.64248
+ },
+ "clips": [
+  {
+   "id": "footstep",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/footstep_v1",
+     "samples": 7625,
+     "duration": 0.1729,
+     "peakDb": -1,
+     "rmsDb": -23.25,
+     "srcPeak": 0.09267,
+     "normGain": 9.61724,
+     "compDb": 0,
+     "gain": 0.1618
+    },
+    {
+     "path": "SFX/footstep_v2",
+     "samples": 7628,
+     "duration": 0.173,
+     "peakDb": -1,
+     "rmsDb": -19.65,
+     "srcPeak": 0.06292,
+     "normGain": 14.16583,
+     "compDb": 0,
+     "gain": 0.1099
+    },
+    {
+     "path": "SFX/footstep_v3",
+     "samples": 7627,
+     "duration": 0.1729,
+     "peakDb": -1,
+     "rmsDb": -20.66,
+     "srcPeak": 0.06641,
+     "normGain": 13.41968,
+     "compDb": 0,
+     "gain": 0.116
+    }
+   ]
+  },
+  {
+   "id": "land",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/land_v1",
+     "samples": 10670,
+     "duration": 0.242,
+     "peakDb": -1,
+     "rmsDb": -16.42,
+     "srcPeak": 0.38083,
+     "normGain": 2.34027,
+     "compDb": -0.57,
+     "gain": 0.6228
+    },
+    {
+     "path": "SFX/land_v2",
+     "samples": 10665,
+     "duration": 0.2418,
+     "peakDb": -1,
+     "rmsDb": -15.29,
+     "srcPeak": 0.34997,
+     "normGain": 2.54665,
+     "compDb": -0.38,
+     "gain": 0.585
+    },
+    {
+     "path": "SFX/land_v3",
+     "samples": 10661,
+     "duration": 0.2417,
+     "peakDb": -1,
+     "rmsDb": -16.94,
+     "srcPeak": 0.42205,
+     "normGain": 2.11173,
+     "compDb": -0.87,
+     "gain": 0.6668
+    }
+   ]
+  },
+  {
+   "id": "jump",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/jump_v1",
+     "samples": 10720,
+     "duration": 0.2431,
+     "peakDb": -1,
+     "rmsDb": -19.95,
+     "srcPeak": 0.01834,
+     "normGain": 48.59272,
+     "compDb": 0,
+     "gain": 0.032
+    },
+    {
+     "path": "SFX/jump_v2",
+     "samples": 10724,
+     "duration": 0.2432,
+     "peakDb": -1,
+     "rmsDb": -20.58,
+     "srcPeak": 0.01584,
+     "normGain": 56.26541,
+     "compDb": 0,
+     "gain": 0.0277
+    },
+    {
+     "path": "SFX/jump_v3",
+     "samples": 10714,
+     "duration": 0.2429,
+     "peakDb": -1,
+     "rmsDb": -20.97,
+     "srcPeak": 0.01807,
+     "normGain": 49.31291,
+     "compDb": 0,
+     "gain": 0.0316
+    }
+   ]
+  },
+  {
+   "id": "swing_light",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/swing_light_v1",
+     "samples": 10593,
+     "duration": 0.2402,
+     "peakDb": -1,
+     "rmsDb": -19.26,
+     "srcPeak": 0.0827,
+     "normGain": 10.77655,
+     "compDb": 0,
+     "gain": 0.1444
+    },
+    {
+     "path": "SFX/swing_light_v2",
+     "samples": 10581,
+     "duration": 0.2399,
+     "peakDb": -1,
+     "rmsDb": -19.69,
+     "srcPeak": 0.08882,
+     "normGain": 10.0348,
+     "compDb": 0,
+     "gain": 0.1551
+    },
+    {
+     "path": "SFX/swing_light_v3",
+     "samples": 10593,
+     "duration": 0.2402,
+     "peakDb": -1,
+     "rmsDb": -17.81,
+     "srcPeak": 0.07076,
+     "normGain": 12.59512,
+     "compDb": 0,
+     "gain": 0.1236
+    }
+   ]
+  },
+  {
+   "id": "swing_heavy",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/swing_heavy_v1",
+     "samples": 13646,
+     "duration": 0.3094,
+     "peakDb": -1,
+     "rmsDb": -17.72,
+     "srcPeak": 0.05649,
+     "normGain": 15.77765,
+     "compDb": 0,
+     "gain": 0.0987
+    },
+    {
+     "path": "SFX/swing_heavy_v2",
+     "samples": 13674,
+     "duration": 0.3101,
+     "peakDb": -1,
+     "rmsDb": -17.77,
+     "srcPeak": 0.05494,
+     "normGain": 16.22372,
+     "compDb": 0,
+     "gain": 0.0959
+    },
+    {
+     "path": "SFX/swing_heavy_v3",
+     "samples": 13661,
+     "duration": 0.3098,
+     "peakDb": -1,
+     "rmsDb": -18.55,
+     "srcPeak": 0.06192,
+     "normGain": 14.39401,
+     "compDb": 0,
+     "gain": 0.1081
+    }
+   ]
+  },
+  {
+   "id": "hit",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/hit_v1",
+     "samples": 8025,
+     "duration": 0.182,
+     "peakDb": -1,
+     "rmsDb": -19.46,
+     "srcPeak": 0.55665,
+     "normGain": 1.60109,
+     "compDb": -1.95,
+     "gain": 0.7766
+    },
+    {
+     "path": "SFX/hit_v2",
+     "samples": 8025,
+     "duration": 0.182,
+     "peakDb": -1,
+     "rmsDb": -18.45,
+     "srcPeak": 0.49512,
+     "normGain": 1.80008,
+     "compDb": -1.44,
+     "gain": 0.7326
+    },
+    {
+     "path": "SFX/hit_v3",
+     "samples": 8025,
+     "duration": 0.182,
+     "peakDb": -1,
+     "rmsDb": -18.33,
+     "srcPeak": 0.48707,
+     "normGain": 1.82981,
+     "compDb": -1.37,
+     "gain": 0.7265
+    }
+   ]
+  },
+  {
+   "id": "hit_heavy",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/hit_heavy_v1",
+     "samples": 15963,
+     "duration": 0.362,
+     "peakDb": -1,
+     "rmsDb": -16.74,
+     "srcPeak": 0.72995,
+     "normGain": 1.22097,
+     "compDb": -3.43,
+     "gain": 0.8589
+    },
+    {
+     "path": "SFX/hit_heavy_v2",
+     "samples": 15963,
+     "duration": 0.362,
+     "peakDb": -1,
+     "rmsDb": -17.37,
+     "srcPeak": 0.79735,
+     "normGain": 1.11777,
+     "compDb": -4,
+     "gain": 0.8786
+    },
+    {
+     "path": "SFX/hit_heavy_v3",
+     "samples": 15963,
+     "duration": 0.362,
+     "peakDb": -1,
+     "rmsDb": -16.87,
+     "srcPeak": 0.75483,
+     "normGain": 1.18074,
+     "compDb": -3.64,
+     "gain": 0.8669
+    }
+   ]
+  },
+  {
+   "id": "enemy_hit_metal",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/enemy_hit_metal_v1",
+     "samples": 13714,
+     "duration": 0.311,
+     "peakDb": -1,
+     "rmsDb": -22.75,
+     "srcPeak": 0.3033,
+     "normGain": 2.93855,
+     "compDb": -0.14,
+     "gain": 0.5212
+    },
+    {
+     "path": "SFX/enemy_hit_metal_v2",
+     "samples": 13714,
+     "duration": 0.311,
+     "peakDb": -1,
+     "rmsDb": -23.94,
+     "srcPeak": 0.34891,
+     "normGain": 2.55439,
+     "compDb": -0.37,
+     "gain": 0.5839
+    },
+    {
+     "path": "SFX/enemy_hit_metal_v3",
+     "samples": 13707,
+     "duration": 0.3108,
+     "peakDb": -1,
+     "rmsDb": -23,
+     "srcPeak": 0.31358,
+     "normGain": 2.84216,
+     "compDb": -0.19,
+     "gain": 0.5358
+    }
+   ]
+  },
+  {
+   "id": "enemy_hit_player",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/enemy_hit_player_v1",
+     "samples": 11553,
+     "duration": 0.262,
+     "peakDb": -1,
+     "rmsDb": -16.8,
+     "srcPeak": 0.53144,
+     "normGain": 1.67705,
+     "compDb": -1.74,
+     "gain": 0.7596
+    },
+    {
+     "path": "SFX/enemy_hit_player_v2",
+     "samples": 11553,
+     "duration": 0.262,
+     "peakDb": -1,
+     "rmsDb": -17.02,
+     "srcPeak": 0.54854,
+     "normGain": 1.62477,
+     "compDb": -1.88,
+     "gain": 0.7715
+    },
+    {
+     "path": "SFX/enemy_hit_player_v3",
+     "samples": 11553,
+     "duration": 0.262,
+     "peakDb": -1,
+     "rmsDb": -16.59,
+     "srcPeak": 0.49227,
+     "normGain": 1.81048,
+     "compDb": -1.42,
+     "gain": 0.73
+    }
+   ]
+  },
+  {
+   "id": "shield_hit",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/shield_hit",
+     "samples": 10626,
+     "duration": 0.241,
+     "peakDb": -1,
+     "rmsDb": -18.96,
+     "srcPeak": 0.11755,
+     "normGain": 7.58205,
+     "compDb": 0,
+     "gain": 0.2053
+    }
+   ]
+  },
+  {
+   "id": "shield_break",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/shield_break_v1",
+     "samples": 20417,
+     "duration": 0.463,
+     "peakDb": -1,
+     "rmsDb": -21.95,
+     "srcPeak": 0.44977,
+     "normGain": 1.98156,
+     "compDb": -1.08,
+     "gain": 0.6936
+    },
+    {
+     "path": "SFX/shield_break_v2",
+     "samples": 20412,
+     "duration": 0.4629,
+     "peakDb": -1,
+     "rmsDb": -21.9,
+     "srcPeak": 0.4521,
+     "normGain": 1.97135,
+     "compDb": -1.1,
+     "gain": 0.6956
+    },
+    {
+     "path": "SFX/shield_break_v3",
+     "samples": 20418,
+     "duration": 0.463,
+     "peakDb": -1,
+     "rmsDb": -20.92,
+     "srcPeak": 0.39445,
+     "normGain": 2.2595,
+     "compDb": -0.67,
+     "gain": 0.6377
+    }
+   ]
+  },
+  {
+   "id": "player_hurt",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/player_hurt_v1",
+     "samples": 13757,
+     "duration": 0.312,
+     "peakDb": -1,
+     "rmsDb": -16.42,
+     "srcPeak": 0.46589,
+     "normGain": 1.91299,
+     "compDb": -1.2,
+     "gain": 0.7086
+    },
+    {
+     "path": "SFX/player_hurt_v2",
+     "samples": 13758,
+     "duration": 0.312,
+     "peakDb": -1,
+     "rmsDb": -15.96,
+     "srcPeak": 0.43939,
+     "normGain": 2.02838,
+     "compDb": -1,
+     "gain": 0.6839
+    },
+    {
+     "path": "SFX/player_hurt_v3",
+     "samples": 13758,
+     "duration": 0.312,
+     "peakDb": -1,
+     "rmsDb": -15.83,
+     "srcPeak": 0.44201,
+     "normGain": 2.01634,
+     "compDb": -1.02,
+     "gain": 0.6864
+    }
+   ]
+  },
+  {
+   "id": "player_death",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/player_death_v1",
+     "samples": 74086,
+     "duration": 1.68,
+     "peakDb": -1,
+     "rmsDb": -15.83,
+     "srcPeak": 0.32974,
+     "normGain": 2.70293,
+     "compDb": -0.27,
+     "gain": 0.5582
+    },
+    {
+     "path": "SFX/player_death_v2",
+     "samples": 74086,
+     "duration": 1.68,
+     "peakDb": -1,
+     "rmsDb": -15.85,
+     "srcPeak": 0.32867,
+     "normGain": 2.71172,
+     "compDb": -0.26,
+     "gain": 0.5571
+    },
+    {
+     "path": "SFX/player_death_v3",
+     "samples": 74086,
+     "duration": 1.68,
+     "peakDb": -1,
+     "rmsDb": -16.09,
+     "srcPeak": 0.33818,
+     "normGain": 2.63547,
+     "compDb": -0.31,
+     "gain": 0.5699
+    }
+   ]
+  },
+  {
+   "id": "dash",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/dash_v1",
+     "samples": 12792,
+     "duration": 0.2901,
+     "peakDb": -1,
+     "rmsDb": -17.21,
+     "srcPeak": 0.11684,
+     "normGain": 7.62797,
+     "compDb": 0,
+     "gain": 0.204
+    },
+    {
+     "path": "SFX/dash_v2",
+     "samples": 12788,
+     "duration": 0.29,
+     "peakDb": -1,
+     "rmsDb": -16.65,
+     "srcPeak": 0.10938,
+     "normGain": 8.1479,
+     "compDb": 0,
+     "gain": 0.191
+    },
+    {
+     "path": "SFX/dash_v3",
+     "samples": 12793,
+     "duration": 0.2901,
+     "peakDb": -1,
+     "rmsDb": -16.69,
+     "srcPeak": 0.10467,
+     "normGain": 8.51494,
+     "compDb": 0,
+     "gain": 0.1828
+    }
+   ]
+  },
+  {
+   "id": "step",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/step_v1",
+     "samples": 10105,
+     "duration": 0.2291,
+     "peakDb": -1,
+     "rmsDb": -16.7,
+     "srcPeak": 0.08391,
+     "normGain": 10.62167,
+     "compDb": 0,
+     "gain": 0.1465
+    },
+    {
+     "path": "SFX/step_v2",
+     "samples": 10106,
+     "duration": 0.2292,
+     "peakDb": -1,
+     "rmsDb": -17.23,
+     "srcPeak": 0.08461,
+     "normGain": 10.53401,
+     "compDb": 0,
+     "gain": 0.1478
+    },
+    {
+     "path": "SFX/step_v3",
+     "samples": 10141,
+     "duration": 0.23,
+     "peakDb": -1,
+     "rmsDb": -16.55,
+     "srcPeak": 0.083,
+     "normGain": 10.73826,
+     "compDb": 0,
+     "gain": 0.1449
+    }
+   ]
+  },
+  {
+   "id": "pulse",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/pulse_v1",
+     "samples": 43926,
+     "duration": 0.9961,
+     "peakDb": -1,
+     "rmsDb": -16.88,
+     "srcPeak": 0.96969,
+     "normGain": 0.91911,
+     "compDb": -5.27,
+     "gain": 0.9232
+    },
+    {
+     "path": "SFX/pulse_v2",
+     "samples": 43191,
+     "duration": 0.9794,
+     "peakDb": -1,
+     "rmsDb": -17.74,
+     "srcPeak": 1.08335,
+     "normGain": 0.82268,
+     "compDb": -6,
+     "gain": 0.9482
+    },
+    {
+     "path": "SFX/pulse_v3",
+     "samples": 44126,
+     "duration": 1.0006,
+     "peakDb": -1,
+     "rmsDb": -16.73,
+     "srcPeak": 0.94338,
+     "normGain": 0.94474,
+     "compDb": -5.1,
+     "gain": 0.9159
+    }
+   ]
+  },
+  {
+   "id": "echo",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/echo_v1",
+     "samples": 81141,
+     "duration": 1.8399,
+     "peakDb": -1,
+     "rmsDb": -17.57,
+     "srcPeak": 0.20635,
+     "normGain": 4.31915,
+     "compDb": 0,
+     "gain": 0.3604
+    },
+    {
+     "path": "SFX/echo_v2",
+     "samples": 81141,
+     "duration": 1.8399,
+     "peakDb": -1,
+     "rmsDb": -17.47,
+     "srcPeak": 0.20381,
+     "normGain": 4.37293,
+     "compDb": 0,
+     "gain": 0.3559
+    },
+    {
+     "path": "SFX/echo_v3",
+     "samples": 81141,
+     "duration": 1.8399,
+     "peakDb": -1,
+     "rmsDb": -17.54,
+     "srcPeak": 0.20563,
+     "normGain": 4.33433,
+     "compDb": 0,
+     "gain": 0.3591
+    }
+   ]
+  },
+  {
+   "id": "charge",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/charge",
+     "samples": 20281,
+     "duration": 0.4599,
+     "peakDb": -1,
+     "rmsDb": -16.2,
+     "srcPeak": 0.12134,
+     "normGain": 7.3451,
+     "compDb": 0,
+     "gain": 0.2119
+    }
+   ]
+  },
+  {
+   "id": "ult_charge",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/ult_charge_v1",
+     "samples": 46744,
+     "duration": 1.06,
+     "peakDb": -1,
+     "rmsDb": -16.91,
+     "srcPeak": 0.21506,
+     "normGain": 4.14425,
+     "compDb": 0,
+     "gain": 0.3756
+    },
+    {
+     "path": "SFX/ult_charge_v2",
+     "samples": 46744,
+     "duration": 1.06,
+     "peakDb": -1,
+     "rmsDb": -16.77,
+     "srcPeak": 0.2115,
+     "normGain": 4.2139,
+     "compDb": 0,
+     "gain": 0.3694
+    },
+    {
+     "path": "SFX/ult_charge_v3",
+     "samples": 46744,
+     "duration": 1.06,
+     "peakDb": -1,
+     "rmsDb": -16.9,
+     "srcPeak": 0.21465,
+     "normGain": 4.15209,
+     "compDb": 0,
+     "gain": 0.3749
+    }
+   ]
+  },
+  {
+   "id": "ult_impact",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/ult_impact_v1",
+     "samples": 87730,
+     "duration": 1.9893,
+     "peakDb": -1,
+     "rmsDb": -18.72,
+     "srcPeak": 1.34079,
+     "normGain": 0.66472,
+     "compDb": -7.39,
+     "gain": 1
+    },
+    {
+     "path": "SFX/ult_impact_v2",
+     "samples": 88265,
+     "duration": 2.0015,
+     "peakDb": -1,
+     "rmsDb": -18.46,
+     "srcPeak": 1.28684,
+     "normGain": 0.69259,
+     "compDb": -7.12,
+     "gain": 0.9901
+    },
+    {
+     "path": "SFX/ult_impact_v3",
+     "samples": 90806,
+     "duration": 2.0591,
+     "peakDb": -1,
+     "rmsDb": -17.64,
+     "srcPeak": 1.15138,
+     "normGain": 0.77407,
+     "compDb": -6.39,
+     "gain": 0.9635
+    }
+   ]
+  },
+  {
+   "id": "bolt",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/bolt_v1",
+     "samples": 7981,
+     "duration": 0.181,
+     "peakDb": -1,
+     "rmsDb": -21.35,
+     "srcPeak": 0.21355,
+     "normGain": 4.17341,
+     "compDb": 0,
+     "gain": 0.3729
+    },
+    {
+     "path": "SFX/bolt_v2",
+     "samples": 7981,
+     "duration": 0.181,
+     "peakDb": -1,
+     "rmsDb": -23.02,
+     "srcPeak": 0.25861,
+     "normGain": 3.44636,
+     "compDb": -0.01,
+     "gain": 0.4511
+    },
+    {
+     "path": "SFX/bolt_v3",
+     "samples": 7981,
+     "duration": 0.181,
+     "peakDb": -1,
+     "rmsDb": -20.4,
+     "srcPeak": 0.18966,
+     "normGain": 4.69927,
+     "compDb": 0,
+     "gain": 0.3312
+    }
+   ]
+  },
+  {
+   "id": "drone_shot",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/drone_shot",
+     "samples": 9744,
+     "duration": 0.221,
+     "peakDb": -1,
+     "rmsDb": -20.03,
+     "srcPeak": 0.10252,
+     "normGain": 8.69312,
+     "compDb": 0,
+     "gain": 0.179
+    }
+   ]
+  },
+  {
+   "id": "drone_charge",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/drone_charge",
+     "samples": 25575,
+     "duration": 0.5799,
+     "peakDb": -1,
+     "rmsDb": -15.1,
+     "srcPeak": 0.06977,
+     "normGain": 12.77358,
+     "compDb": 0,
+     "gain": 0.1219
+    }
+   ]
+  },
+  {
+   "id": "drone_dive",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/drone_dive_v1",
+     "samples": 45369,
+     "duration": 1.0288,
+     "peakDb": -1,
+     "rmsDb": -17.21,
+     "srcPeak": 0.04949,
+     "normGain": 18.00729,
+     "compDb": 0,
+     "gain": 0.0864
+    },
+    {
+     "path": "SFX/drone_dive_v2",
+     "samples": 46052,
+     "duration": 1.0443,
+     "peakDb": -1,
+     "rmsDb": -17.21,
+     "srcPeak": 0.04924,
+     "normGain": 18.09966,
+     "compDb": 0,
+     "gain": 0.086
+    },
+    {
+     "path": "SFX/drone_dive_v3",
+     "samples": 46639,
+     "duration": 1.0576,
+     "peakDb": -1,
+     "rmsDb": -17.47,
+     "srcPeak": 0.0505,
+     "normGain": 17.64687,
+     "compDb": 0,
+     "gain": 0.0882
+    }
+   ]
+  },
+  {
+   "id": "drone_death",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/drone_death_v1",
+     "samples": 55789,
+     "duration": 1.2651,
+     "peakDb": -1,
+     "rmsDb": -22.99,
+     "srcPeak": 0.22549,
+     "normGain": 3.95259,
+     "compDb": 0,
+     "gain": 0.3938
+    },
+    {
+     "path": "SFX/drone_death_v2",
+     "samples": 55803,
+     "duration": 1.2654,
+     "peakDb": -1,
+     "rmsDb": -22.53,
+     "srcPeak": 0.21177,
+     "normGain": 4.20859,
+     "compDb": 0,
+     "gain": 0.3698
+    },
+    {
+     "path": "SFX/drone_death_v3",
+     "samples": 55812,
+     "duration": 1.2656,
+     "peakDb": -1,
+     "rmsDb": -22.28,
+     "srcPeak": 0.20271,
+     "normGain": 4.39677,
+     "compDb": 0,
+     "gain": 0.354
+    }
+   ]
+  },
+  {
+   "id": "explosion",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/explosion_v1",
+     "samples": 42423,
+     "duration": 0.962,
+     "peakDb": -1,
+     "rmsDb": -17.42,
+     "srcPeak": 1.01724,
+     "normGain": 0.87615,
+     "compDb": -5.59,
+     "gain": 0.9334
+    },
+    {
+     "path": "SFX/explosion_v2",
+     "samples": 42423,
+     "duration": 0.962,
+     "peakDb": -1,
+     "rmsDb": -18.02,
+     "srcPeak": 1.08477,
+     "normGain": 0.8216,
+     "compDb": -6.01,
+     "gain": 0.9484
+    },
+    {
+     "path": "SFX/explosion_v3",
+     "samples": 42273,
+     "duration": 0.9586,
+     "peakDb": -1,
+     "rmsDb": -17.94,
+     "srcPeak": 1.03368,
+     "normGain": 0.86221,
+     "compDb": -5.69,
+     "gain": 0.9376
+    }
+   ]
+  },
+  {
+   "id": "slam",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/slam_v1",
+     "samples": 24783,
+     "duration": 0.562,
+     "peakDb": -1,
+     "rmsDb": -16.06,
+     "srcPeak": 0.93863,
+     "normGain": 0.94952,
+     "compDb": -5.06,
+     "gain": 0.9155
+    },
+    {
+     "path": "SFX/slam_v2",
+     "samples": 24783,
+     "duration": 0.562,
+     "peakDb": -1,
+     "rmsDb": -16.23,
+     "srcPeak": 0.95231,
+     "normGain": 0.93589,
+     "compDb": -5.16,
+     "gain": 0.9182
+    },
+    {
+     "path": "SFX/slam_v3",
+     "samples": 24783,
+     "duration": 0.562,
+     "peakDb": -1,
+     "rmsDb": -16.63,
+     "srcPeak": 0.95254,
+     "normGain": 0.93566,
+     "compDb": -5.16,
+     "gain": 0.9184
+    }
+   ]
+  },
+  {
+   "id": "sentinel_death",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/sentinel_death",
+     "samples": 56005,
+     "duration": 1.27,
+     "peakDb": -1,
+     "rmsDb": -20.77,
+     "srcPeak": 0.14378,
+     "normGain": 6.19888,
+     "compDb": 0,
+     "gain": 0.2511
+    }
+   ]
+  },
+  {
+   "id": "enemy_telegraph",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/enemy_telegraph",
+     "samples": 29104,
+     "duration": 0.66,
+     "peakDb": -1,
+     "rmsDb": -17.06,
+     "srcPeak": 0.07425,
+     "normGain": 12.00341,
+     "compDb": 0,
+     "gain": 0.1297
+    }
+   ]
+  },
+  {
+   "id": "enemy_stagger",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/enemy_stagger",
+     "samples": 24761,
+     "duration": 0.5615,
+     "peakDb": -1,
+     "rmsDb": -19.72,
+     "srcPeak": 0.17813,
+     "normGain": 5.00328,
+     "compDb": 0,
+     "gain": 0.3111
+    }
+   ]
+  },
+  {
+   "id": "shield_block",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/shield_block_v1",
+     "samples": 13708,
+     "duration": 0.3108,
+     "peakDb": -1,
+     "rmsDb": -23.12,
+     "srcPeak": 0.23829,
+     "normGain": 3.7402,
+     "compDb": 0,
+     "gain": 0.4161
+    },
+    {
+     "path": "SFX/shield_block_v2",
+     "samples": 13707,
+     "duration": 0.3108,
+     "peakDb": -1,
+     "rmsDb": -23.91,
+     "srcPeak": 0.26485,
+     "normGain": 3.36513,
+     "compDb": -0.02,
+     "gain": 0.4615
+    },
+    {
+     "path": "SFX/shield_block_v3",
+     "samples": 13708,
+     "duration": 0.3108,
+     "peakDb": -1,
+     "rmsDb": -22.33,
+     "srcPeak": 0.22179,
+     "normGain": 4.01852,
+     "compDb": 0,
+     "gain": 0.3873
+    }
+   ]
+  },
+  {
+   "id": "pickup",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/pickup",
+     "samples": 22002,
+     "duration": 0.4989,
+     "peakDb": -1,
+     "rmsDb": -13.86,
+     "srcPeak": 0.09585,
+     "normGain": 9.29822,
+     "compDb": 0,
+     "gain": 0.1674
+    }
+   ]
+  },
+  {
+   "id": "powerup_shard",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/powerup_shard",
+     "samples": 36157,
+     "duration": 0.8199,
+     "peakDb": -1,
+     "rmsDb": -16.49,
+     "srcPeak": 0.12343,
+     "normGain": 7.22099,
+     "compDb": 0,
+     "gain": 0.2155
+    }
+   ]
+  },
+  {
+   "id": "powerup_phase",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/powerup_phase",
+     "samples": 40570,
+     "duration": 0.92,
+     "peakDb": -1,
+     "rmsDb": -15.87,
+     "srcPeak": 0.13757,
+     "normGain": 6.47842,
+     "compDb": 0,
+     "gain": 0.2403
+    }
+   ]
+  },
+  {
+   "id": "powerup_overcharge",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/powerup_overcharge",
+     "samples": 25135,
+     "duration": 0.57,
+     "peakDb": -1,
+     "rmsDb": -16.12,
+     "srcPeak": 0.0771,
+     "normGain": 11.5598,
+     "compDb": 0,
+     "gain": 0.1346
+    }
+   ]
+  },
+  {
+   "id": "powerup_shield",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/powerup_shield",
+     "samples": 40570,
+     "duration": 0.92,
+     "peakDb": -1,
+     "rmsDb": -17.08,
+     "srcPeak": 0.16207,
+     "normGain": 5.49933,
+     "compDb": 0,
+     "gain": 0.283
+    }
+   ]
+  },
+  {
+   "id": "powerup_echo",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/powerup_echo",
+     "samples": 55123,
+     "duration": 1.25,
+     "peakDb": -1,
+     "rmsDb": -14.77,
+     "srcPeak": 0.09219,
+     "normGain": 9.66758,
+     "compDb": 0,
+     "gain": 0.161
+    }
+   ]
+  },
+  {
+   "id": "reveal",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/reveal",
+     "samples": 58210,
+     "duration": 1.32,
+     "peakDb": -1,
+     "rmsDb": -15.08,
+     "srcPeak": 0.10473,
+     "normGain": 8.50969,
+     "compDb": 0,
+     "gain": 0.1829
+    }
+   ]
+  },
+  {
+   "id": "interact",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/interact",
+     "samples": 10271,
+     "duration": 0.2329,
+     "peakDb": -1,
+     "rmsDb": -16.85,
+     "srcPeak": 0.07948,
+     "normGain": 11.21359,
+     "compDb": 0,
+     "gain": 0.1388
+    }
+   ]
+  },
+  {
+   "id": "terminal",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/terminal_v1",
+     "samples": 15036,
+     "duration": 0.341,
+     "peakDb": -1,
+     "rmsDb": -15.29,
+     "srcPeak": 0.02949,
+     "normGain": 30.22707,
+     "compDb": 0,
+     "gain": 0.0515
+    },
+    {
+     "path": "SFX/terminal_v2",
+     "samples": 15036,
+     "duration": 0.341,
+     "peakDb": -1,
+     "rmsDb": -15.04,
+     "srcPeak": 0.02882,
+     "normGain": 30.92297,
+     "compDb": 0,
+     "gain": 0.0503
+    },
+    {
+     "path": "SFX/terminal_v3",
+     "samples": 15036,
+     "duration": 0.341,
+     "peakDb": -1,
+     "rmsDb": -15.41,
+     "srcPeak": 0.02989,
+     "normGain": 29.81754,
+     "compDb": 0,
+     "gain": 0.0522
+    }
+   ]
+  },
+  {
+   "id": "door",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/door_v1",
+     "samples": 64472,
+     "duration": 1.462,
+     "peakDb": -1,
+     "rmsDb": -19.63,
+     "srcPeak": 0.24701,
+     "normGain": 3.60813,
+     "compDb": 0,
+     "gain": 0.4314
+    },
+    {
+     "path": "SFX/door_v2",
+     "samples": 64472,
+     "duration": 1.462,
+     "peakDb": -1,
+     "rmsDb": -19.66,
+     "srcPeak": 0.247,
+     "normGain": 3.60825,
+     "compDb": 0,
+     "gain": 0.4314
+    },
+    {
+     "path": "SFX/door_v3",
+     "samples": 64472,
+     "duration": 1.462,
+     "peakDb": -1,
+     "rmsDb": -19.64,
+     "srcPeak": 0.24704,
+     "normGain": 3.60771,
+     "compDb": 0,
+     "gain": 0.4314
+    }
+   ]
+  },
+  {
+   "id": "respawn",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/respawn",
+     "samples": 48949,
+     "duration": 1.11,
+     "peakDb": -1,
+     "rmsDb": -14.73,
+     "srcPeak": 0.12497,
+     "normGain": 7.13195,
+     "compDb": 0,
+     "gain": 0.2182
+    }
+   ]
+  },
+  {
+   "id": "error",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/error",
+     "samples": 12875,
+     "duration": 0.292,
+     "peakDb": -1,
+     "rmsDb": -14.27,
+     "srcPeak": 0.05896,
+     "normGain": 15.1155,
+     "compDb": 0,
+     "gain": 0.103
+    }
+   ]
+  },
+  {
+   "id": "metal_impact",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/metal_impact_v1",
+     "samples": 29148,
+     "duration": 0.661,
+     "peakDb": -1,
+     "rmsDb": -19.72,
+     "srcPeak": 0.18097,
+     "normGain": 4.92495,
+     "compDb": 0,
+     "gain": 0.316
+    },
+    {
+     "path": "SFX/metal_impact_v2",
+     "samples": 29148,
+     "duration": 0.661,
+     "peakDb": -1,
+     "rmsDb": -19.9,
+     "srcPeak": 0.18477,
+     "normGain": 4.82361,
+     "compDb": 0,
+     "gain": 0.3227
+    },
+    {
+     "path": "SFX/metal_impact_v3",
+     "samples": 29139,
+     "duration": 0.6607,
+     "peakDb": -1,
+     "rmsDb": -19.58,
+     "srcPeak": 0.17813,
+     "normGain": 5.00326,
+     "compDb": 0,
+     "gain": 0.3111
+    }
+   ]
+  },
+  {
+   "id": "cinematic_whoosh",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/cinematic_whoosh_v1",
+     "samples": 95254,
+     "duration": 2.16,
+     "peakDb": -1,
+     "rmsDb": -13.37,
+     "srcPeak": 0.21413,
+     "normGain": 4.16224,
+     "compDb": 0,
+     "gain": 0.3739
+    },
+    {
+     "path": "SFX/cinematic_whoosh_v2",
+     "samples": 95254,
+     "duration": 2.16,
+     "peakDb": -1,
+     "rmsDb": -13.44,
+     "srcPeak": 0.21621,
+     "normGain": 4.12216,
+     "compDb": 0,
+     "gain": 0.3776
+    },
+    {
+     "path": "SFX/cinematic_whoosh_v3",
+     "samples": 95254,
+     "duration": 2.16,
+     "peakDb": -1,
+     "rmsDb": -13.3,
+     "srcPeak": 0.21297,
+     "normGain": 4.18485,
+     "compDb": 0,
+     "gain": 0.3719
+    }
+   ]
+  },
+  {
+   "id": "ui_hover",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/ui_hover",
+     "samples": 4011,
+     "duration": 0.091,
+     "peakDb": -1,
+     "rmsDb": -18.87,
+     "srcPeak": 0.03974,
+     "normGain": 22.42601,
+     "compDb": 0,
+     "gain": 0.0694
+    }
+   ]
+  },
+  {
+   "id": "ui_click",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/ui_click",
+     "samples": 6656,
+     "duration": 0.1509,
+     "peakDb": -1,
+     "rmsDb": -17.73,
+     "srcPeak": 0.07845,
+     "normGain": 11.36043,
+     "compDb": 0,
+     "gain": 0.137
+    }
+   ]
+  },
+  {
+   "id": "ui_back",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/ui_back",
+     "samples": 7539,
+     "duration": 0.171,
+     "peakDb": -1,
+     "rmsDb": -16.88,
+     "srcPeak": 0.06829,
+     "normGain": 13.0503,
+     "compDb": 0,
+     "gain": 0.1193
+    }
+   ]
+  },
+  {
+   "id": "error_ui",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/error_ui",
+     "samples": 8024,
+     "duration": 0.182,
+     "peakDb": -1,
+     "rmsDb": -13.62,
+     "srcPeak": 0.04311,
+     "normGain": 20.67384,
+     "compDb": 0,
+     "gain": 0.0753
+    }
+   ]
+  },
+  {
+   "id": "quest_accept",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/quest_accept",
+     "samples": 25796,
+     "duration": 0.5849,
+     "peakDb": -1,
+     "rmsDb": -16.35,
+     "srcPeak": 0.09923,
+     "normGain": 8.98127,
+     "compDb": 0,
+     "gain": 0.1733
+    }
+   ]
+  },
+  {
+   "id": "quest_complete",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/quest_complete",
+     "samples": 57769,
+     "duration": 1.31,
+     "peakDb": -1,
+     "rmsDb": -16.29,
+     "srcPeak": 0.15379,
+     "normGain": 5.79531,
+     "compDb": 0,
+     "gain": 0.2686
+    }
+   ]
+  },
+  {
+   "id": "save",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/save",
+     "samples": 18299,
+     "duration": 0.4149,
+     "peakDb": -1,
+     "rmsDb": -14.81,
+     "srcPeak": 0.0693,
+     "normGain": 12.85993,
+     "compDb": 0,
+     "gain": 0.121
+    }
+   ]
+  },
+  {
+   "id": "load",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/load",
+     "samples": 18299,
+     "duration": 0.4149,
+     "peakDb": -1,
+     "rmsDb": -14.69,
+     "srcPeak": 0.05923,
+     "normGain": 15.04748,
+     "compDb": 0,
+     "gain": 0.1034
+    }
+   ]
+  },
+  {
+   "id": "checkpoint",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/checkpoint",
+     "samples": 25135,
+     "duration": 0.57,
+     "peakDb": -1,
+     "rmsDb": -14.4,
+     "srcPeak": 0.05966,
+     "normGain": 14.93895,
+     "compDb": 0,
+     "gain": 0.1042
+    }
+   ]
+  },
+  {
+   "id": "item",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/item",
+     "samples": 18652,
+     "duration": 0.4229,
+     "peakDb": -1,
+     "rmsDb": -16.36,
+     "srcPeak": 0.06738,
+     "normGain": 13.22737,
+     "compDb": 0,
+     "gain": 0.1177
+    }
+   ]
+  },
+  {
+   "id": "lore",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/lore",
+     "samples": 37924,
+     "duration": 0.86,
+     "peakDb": -1,
+     "rmsDb": -12.94,
+     "srcPeak": 0.05962,
+     "normGain": 14.94975,
+     "compDb": 0,
+     "gain": 0.1041
+    }
+   ]
+  },
+  {
+   "id": "toast",
+   "kind": "sfx",
+   "bus": "ui",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/toast",
+     "samples": 6304,
+     "duration": 0.1429,
+     "peakDb": -1,
+     "rmsDb": -16.68,
+     "srcPeak": 0.03988,
+     "normGain": 22.34992,
+     "compDb": 0,
+     "gain": 0.0696
+    }
+   ]
+  },
+  {
+   "id": "menu",
+   "kind": "music",
+   "bus": "music",
+   "loop": true,
+   "bpm": 64,
+   "cycles": 3,
+   "cycleSec": 30,
+   "files": [
+    {
+     "path": "Music/menu",
+     "samples": 3969000,
+     "duration": 90,
+     "peakDb": -1,
+     "rmsDb": -16,
+     "srcPeak": 0.1145,
+     "srcRmsDb": -33.82,
+     "normGain": 7.7805,
+     "peakLimited": false,
+     "seamJump": 0.00276,
+     "seamResidualDb": -120.2,
+     "seamAt": 7.2,
+     "compDb": 0,
+     "gain": 0.2
+    }
+   ]
+  },
+  {
+   "id": "explore",
+   "kind": "music",
+   "bus": "music",
+   "loop": true,
+   "bpm": 76,
+   "cycles": 4,
+   "cycleSec": 25.2632,
+   "files": [
+    {
+     "path": "Music/explore",
+     "samples": 4456421,
+     "duration": 101.0526,
+     "peakDb": -1,
+     "rmsDb": -18.02,
+     "srcPeak": 0.11226,
+     "srcRmsDb": -36.02,
+     "normGain": 7.93942,
+     "peakLimited": true,
+     "seamJump": 0.00048,
+     "seamResidualDb": -46.5,
+     "seamAt": 5.7,
+     "compDb": 0,
+     "gain": 0.196
+    }
+   ]
+  },
+  {
+   "id": "combat",
+   "kind": "music",
+   "bus": "music",
+   "loop": true,
+   "bpm": 128,
+   "cycles": 5,
+   "cycleSec": 15,
+   "files": [
+    {
+     "path": "Music/combat",
+     "samples": 3307500,
+     "duration": 75,
+     "peakDb": -1,
+     "rmsDb": -21.91,
+     "srcPeak": 0.35903,
+     "srcRmsDb": -29.81,
+     "normGain": 2.48241,
+     "peakLimited": true,
+     "seamJump": 0.00121,
+     "seamResidualDb": -28.8,
+     "seamAt": 0.54,
+     "compDb": 0,
+     "gain": 0.627
+    }
+   ]
+  },
+  {
+   "id": "boss",
+   "kind": "music",
+   "bus": "music",
+   "loop": true,
+   "bpm": 140,
+   "cycles": 6,
+   "cycleSec": 13.7143,
+   "files": [
+    {
+     "path": "Music/boss",
+     "samples": 3628800,
+     "duration": 82.2857,
+     "peakDb": -1,
+     "rmsDb": -21.69,
+     "srcPeak": 0.42339,
+     "srcRmsDb": -28.15,
+     "normGain": 2.10504,
+     "peakLimited": true,
+     "seamJump": 0.00177,
+     "seamResidualDb": -139.7,
+     "seamAt": 6.93,
+     "compDb": 0,
+     "gain": 0.7394
+    }
+   ]
+  },
+  {
+   "id": "sidequest",
+   "kind": "music",
+   "bus": "music",
+   "loop": true,
+   "bpm": 84,
+   "cycles": 3,
+   "cycleSec": 22.8571,
+   "files": [
+    {
+     "path": "Music/sidequest",
+     "samples": 3024000,
+     "duration": 68.5714,
+     "peakDb": -1,
+     "rmsDb": -17.53,
+     "srcPeak": 0.09614,
+     "srcRmsDb": -36.87,
+     "normGain": 9.2705,
+     "peakLimited": true,
+     "seamJump": 0.00418,
+     "seamResidualDb": -143.3,
+     "seamAt": 0.04,
+     "compDb": 0,
+     "gain": 0.1679
+    }
+   ]
+  },
+  {
+   "id": "tension",
+   "kind": "music",
+   "bus": "music",
+   "loop": true,
+   "bpm": 90,
+   "cycles": 4,
+   "cycleSec": 21.3333,
+   "files": [
+    {
+     "path": "Music/tension",
+     "samples": 3763200,
+     "duration": 85.3333,
+     "peakDb": -1,
+     "rmsDb": -19.46,
+     "srcPeak": 0.15844,
+     "srcRmsDb": -34.46,
+     "normGain": 5.62517,
+     "peakLimited": true,
+     "seamJump": 0.00019,
+     "seamResidualDb": -141.4,
+     "seamAt": 5.41,
+     "compDb": 0,
+     "gain": 0.2767
+    }
+   ]
+  },
+  {
+   "id": "ending",
+   "kind": "music",
+   "bus": "music",
+   "loop": true,
+   "bpm": 70,
+   "cycles": 3,
+   "cycleSec": 27.4286,
+   "files": [
+    {
+     "path": "Music/ending",
+     "samples": 3628800,
+     "duration": 82.2857,
+     "peakDb": -1,
+     "rmsDb": -16.3,
+     "srcPeak": 0.12603,
+     "srcRmsDb": -33.29,
+     "normGain": 7.07163,
+     "peakLimited": true,
+     "seamJump": 0.00702,
+     "seamResidualDb": -140.2,
+     "seamAt": 6.97,
+     "compDb": 0,
+     "gain": 0.2201
+    }
+   ]
+  },
+  {
+   "id": "rain_city",
+   "kind": "ambience",
+   "bus": "ambience",
+   "loop": true,
+   "drones": [],
+   "lfos": [
+    0.07
+   ],
+   "sporadicMs": 120,
+   "sporadicEvents": 1095,
+   "files": [
+    {
+     "path": "Ambience/rain_city",
+     "samples": 2557800,
+     "duration": 58,
+     "peakDb": -4.1,
+     "rmsDb": -18,
+     "srcPeak": 0.24326,
+     "srcRmsDb": -26.18,
+     "normGain": 2.56518,
+     "peakLimited": false,
+     "seamJump": 0.02986,
+     "seamResidualDb": -24.6,
+     "seamAt": 0.14,
+     "droneAlign": 0,
+     "lfoAlign": 0.06,
+     "compDb": 0,
+     "gain": 0.6068
+    }
+   ]
+  },
+  {
+   "id": "metro_drip",
+   "kind": "ambience",
+   "bus": "ambience",
+   "loop": true,
+   "drones": [
+    48
+   ],
+   "lfos": [
+    0.05
+   ],
+   "sporadicMs": 400,
+   "sporadicEvents": 336,
+   "files": [
+    {
+     "path": "Ambience/metro_drip",
+     "samples": 2646000,
+     "duration": 60,
+     "peakDb": -3.88,
+     "rmsDb": -18,
+     "srcPeak": 0.26014,
+     "srcRmsDb": -25.82,
+     "normGain": 2.45988,
+     "peakLimited": false,
+     "seamJump": 0.00189,
+     "seamResidualDb": -28.6,
+     "seamAt": 3,
+     "droneAlign": 0,
+     "lfoAlign": 0,
+     "compDb": 0,
+     "gain": 0.6327
+    }
+   ]
+  },
+  {
+   "id": "facility_hum",
+   "kind": "ambience",
+   "bus": "ambience",
+   "loop": true,
+   "drones": [
+    60,
+    120
+   ],
+   "lfos": [
+    0.1
+   ],
+   "sporadicMs": 900,
+   "sporadicEvents": 149,
+   "files": [
+    {
+     "path": "Ambience/facility_hum",
+     "samples": 2646000,
+     "duration": 60,
+     "peakDb": -7.7,
+     "rmsDb": -18,
+     "srcPeak": 0.05651,
+     "srcRmsDb": -35.26,
+     "normGain": 7.29196,
+     "peakLimited": false,
+     "seamJump": 0.00866,
+     "seamResidualDb": -64.1,
+     "seamAt": 2.91,
+     "droneAlign": 0,
+     "lfoAlign": 0,
+     "compDb": 0,
+     "gain": 0.2135
+    }
+   ]
+  },
+  {
+   "id": "vault_hum",
+   "kind": "ambience",
+   "bus": "ambience",
+   "loop": true,
+   "drones": [
+    41,
+    61.7
+   ],
+   "lfos": [
+    0.03
+   ],
+   "sporadicMs": 700,
+   "sporadicEvents": 192,
+   "files": [
+    {
+     "path": "Ambience/vault_hum",
+     "samples": 2646000,
+     "duration": 60,
+     "peakDb": -6.29,
+     "rmsDb": -18,
+     "srcPeak": 0.21266,
+     "srcRmsDb": -25.16,
+     "normGain": 2.27969,
+     "peakLimited": false,
+     "seamJump": 0.00115,
+     "seamResidualDb": -19.1,
+     "seamAt": 0,
+     "droneAlign": 0,
+     "lfoAlign": 0.2,
+     "compDb": 0,
+     "gain": 0.6828
+    }
+   ]
+  },
+  {
+   "id": "wind_roof",
+   "kind": "ambience",
+   "bus": "ambience",
+   "loop": true,
+   "drones": [],
+   "lfos": [
+    0.09,
+    0.13
+   ],
+   "sporadicMs": 0,
+   "sporadicEvents": 0,
+   "files": [
+    {
+     "path": "Ambience/wind_roof",
+     "samples": 2381400,
+     "duration": 54,
+     "peakDb": -2.85,
+     "rmsDb": -18,
+     "srcPeak": 0.18504,
+     "srcRmsDb": -29.81,
+     "normGain": 3.89413,
+     "peakLimited": false,
+     "seamJump": 0.03673,
+     "seamResidualDb": -9.8,
+     "seamAt": 8.2,
+     "droneAlign": 0,
+     "lfoAlign": 0.16,
+     "compDb": 0,
+     "gain": 0.3997
+    }
+   ]
+  },
+  {
+   "id": "core_drone",
+   "kind": "ambience",
+   "bus": "ambience",
+   "loop": true,
+   "drones": [
+    36.7,
+    55,
+    73.4
+   ],
+   "lfos": [
+    0.04,
+    0.2
+   ],
+   "sporadicMs": 0,
+   "sporadicEvents": 0,
+   "files": [
+    {
+     "path": "Ambience/core_drone",
+     "samples": 2205000,
+     "duration": 50,
+     "peakDb": -7.48,
+     "rmsDb": -18,
+     "srcPeak": 0.23394,
+     "srcRmsDb": -23.14,
+     "normGain": 1.80744,
+     "peakLimited": false,
+     "seamJump": 0.00024,
+     "seamResidualDb": -68,
+     "seamAt": 5.86,
+     "droneAlign": 0.0001,
+     "lfoAlign": 0,
+     "compDb": 0,
+     "gain": 0.8611
+    }
+   ]
+  },
+  {
+   "id": "thunder",
+   "kind": "thunder",
+   "bus": "ambience",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "Thunder/thunder_1",
+     "samples": 97346,
+     "duration": 2.2074,
+     "peakDb": -1,
+     "rmsDb": -16.97,
+     "srcPeak": 0.23736,
+     "normGain": 3.75481,
+     "compDb": 0,
+     "gain": 0.4145
+    },
+    {
+     "path": "Thunder/thunder_2",
+     "samples": 97512,
+     "duration": 2.2112,
+     "peakDb": -1,
+     "rmsDb": -17.42,
+     "srcPeak": 0.25257,
+     "normGain": 3.52876,
+     "compDb": 0,
+     "gain": 0.4411
+    },
+    {
+     "path": "Thunder/thunder_3",
+     "samples": 97527,
+     "duration": 2.2115,
+     "peakDb": -1,
+     "rmsDb": -18.63,
+     "srcPeak": 0.30241,
+     "normGain": 2.94721,
+     "compDb": 0,
+     "gain": 0.5281
+    }
+   ]
+  },
+  {
+   "id": "blade_swish",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/blade_swish_v1",
+     "samples": 9443,
+     "duration": 0.2141,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/blade_swish_v2",
+     "samples": 11209,
+     "duration": 0.2542,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/blade_swish_v3",
+     "samples": 9244,
+     "duration": 0.2096,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/combat_sfx.py (procedural)"
+  },
+  {
+   "id": "impact_clang",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/impact_clang_v1",
+     "samples": 18522,
+     "duration": 0.42,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/impact_clang_v2",
+     "samples": 18522,
+     "duration": 0.42,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/impact_clang_v3",
+     "samples": 18522,
+     "duration": 0.42,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/combat_sfx.py (procedural)"
+  },
+  {
+   "id": "impact_zap",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/impact_zap_v1",
+     "samples": 11466,
+     "duration": 0.26,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/impact_zap_v2",
+     "samples": 11466,
+     "duration": 0.26,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/impact_zap_v3",
+     "samples": 11466,
+     "duration": 0.26,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/combat_sfx.py (procedural)"
+  },
+  {
+   "id": "crit_hit",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/crit_hit_v1",
+     "samples": 24255,
+     "duration": 0.55,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/crit_hit_v2",
+     "samples": 24255,
+     "duration": 0.55,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/combat_sfx.py (procedural)"
+  },
+  {
+   "id": "perfect_dodge",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/perfect_dodge_v1",
+     "samples": 33075,
+     "duration": 0.75,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/perfect_dodge_v2",
+     "samples": 33075,
+     "duration": 0.75,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/combat_sfx.py (procedural)"
+  },
+  {
+   "id": "parry",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/parry_v1",
+     "samples": 39690,
+     "duration": 0.9,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/parry_v2",
+     "samples": 39690,
+     "duration": 0.9,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/combat_sfx.py (procedural)"
+  },
+  {
+   "id": "robot_break",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/robot_break_v1",
+     "samples": 39690,
+     "duration": 0.9,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/robot_break_v2",
+     "samples": 39690,
+     "duration": 0.9,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/robot_break_v3",
+     "samples": 39690,
+     "duration": 0.9,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/combat_sfx.py (procedural)"
+  },
+  {
+   "id": "poise_break",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/poise_break_v1",
+     "samples": 26460,
+     "duration": 0.6,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/poise_break_v2",
+     "samples": 26460,
+     "duration": 0.6,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/combat_sfx.py (procedural)"
+  },
+  {
+   "id": "enemy_glint",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/enemy_glint",
+     "samples": 14112,
+     "duration": 0.32,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/combat_sfx.py (procedural)"
+  },
+  {
+   "id": "car_engine_low",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": true,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/car_engine_low",
+     "samples": 88200,
+     "duration": 2.0,
+     "peakDb": -9.0,
+     "rmsDb": -18.0,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_engine_high",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": true,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/car_engine_high",
+     "samples": 88200,
+     "duration": 2.0,
+     "peakDb": -8.09,
+     "rmsDb": -18.0,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_skid_loop",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": true,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/car_skid_loop",
+     "samples": 66150,
+     "duration": 1.5,
+     "peakDb": -4.78,
+     "rmsDb": -18.0,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_road_loop",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": true,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/car_road_loop",
+     "samples": 88200,
+     "duration": 2.0,
+     "peakDb": -6.63,
+     "rmsDb": -20.0,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_horn_loop",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": true,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/car_horn_loop",
+     "samples": 44100,
+     "duration": 1.0,
+     "peakDb": -11.55,
+     "rmsDb": -16.0,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_horn",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/car_horn_v1",
+     "samples": 22050,
+     "duration": 0.5,
+     "peakDb": -4.0,
+     "rmsDb": -8.85,
+     "gain": 0.6
+    },
+    {
+     "path": "SFX/car_horn_v2",
+     "samples": 22050,
+     "duration": 0.5,
+     "peakDb": -4.0,
+     "rmsDb": -8.84,
+     "gain": 0.6
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_impact",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/car_impact_v1",
+     "samples": 48510,
+     "duration": 1.1,
+     "peakDb": -2.0,
+     "rmsDb": -25.0,
+     "gain": 0.9
+    },
+    {
+     "path": "SFX/car_impact_v2",
+     "samples": 48510,
+     "duration": 1.1,
+     "peakDb": -2.0,
+     "rmsDb": -22.16,
+     "gain": 0.9
+    },
+    {
+     "path": "SFX/car_impact_v3",
+     "samples": 48510,
+     "duration": 1.1,
+     "peakDb": -2.0,
+     "rmsDb": -22.89,
+     "gain": 0.9
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_scrape",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/car_scrape_v1",
+     "samples": 14112,
+     "duration": 0.32,
+     "peakDb": -8.0,
+     "rmsDb": -23.07,
+     "gain": 0.5
+    },
+    {
+     "path": "SFX/car_scrape_v2",
+     "samples": 14112,
+     "duration": 0.32,
+     "peakDb": -8.0,
+     "rmsDb": -24.38,
+     "gain": 0.5
+    },
+    {
+     "path": "SFX/car_scrape_v3",
+     "samples": 14112,
+     "duration": 0.32,
+     "peakDb": -8.0,
+     "rmsDb": -23.67,
+     "gain": 0.5
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_door",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/car_door_v1",
+     "samples": 18522,
+     "duration": 0.42,
+     "peakDb": -4.0,
+     "rmsDb": -19.53,
+     "gain": 0.55
+    },
+    {
+     "path": "SFX/car_door_v2",
+     "samples": 18522,
+     "duration": 0.42,
+     "peakDb": -4.0,
+     "rmsDb": -18.9,
+     "gain": 0.55
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_explode",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/car_explode_v1",
+     "samples": 141120,
+     "duration": 3.2,
+     "peakDb": -1.0,
+     "rmsDb": -21.18,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/car_explode_v2",
+     "samples": 141120,
+     "duration": 3.2,
+     "peakDb": -1.0,
+     "rmsDb": -23.73,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/car_explode_v3",
+     "samples": 141120,
+     "duration": 3.2,
+     "peakDb": -1.0,
+     "rmsDb": -21.86,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_ignite",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/car_ignite",
+     "samples": 48510,
+     "duration": 1.1,
+     "peakDb": -4.0,
+     "rmsDb": -19.73,
+     "gain": 0.7
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_fuse",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/car_fuse",
+     "samples": 105840,
+     "duration": 2.4,
+     "peakDb": -6.0,
+     "rmsDb": -23.1,
+     "gain": 0.6
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "car_fire_loop",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": true,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/car_fire_loop",
+     "samples": 132300,
+     "duration": 3.0,
+     "peakDb": -1.0,
+     "rmsDb": -23.59,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/vehicle_sfx.py (procedural)"
+  },
+  {
+   "id": "pistol_shot",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/pistol_shot_v1",
+     "samples": 18522,
+     "duration": 0.42,
+     "peakDb": -3.0,
+     "rmsDb": -25.06,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/pistol_shot_v2",
+     "samples": 18522,
+     "duration": 0.42,
+     "peakDb": -3.0,
+     "rmsDb": -27.02,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/pistol_shot_v3",
+     "samples": 18522,
+     "duration": 0.42,
+     "peakDb": -3.0,
+     "rmsDb": -25.35,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "gauntlet_shot",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/gauntlet_shot_v1",
+     "samples": 16758,
+     "duration": 0.38,
+     "peakDb": -4.0,
+     "rmsDb": -24.17,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/gauntlet_shot_v2",
+     "samples": 16758,
+     "duration": 0.38,
+     "peakDb": -4.0,
+     "rmsDb": -23.49,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/gauntlet_shot_v3",
+     "samples": 16758,
+     "duration": 0.38,
+     "peakDb": -4.0,
+     "rmsDb": -23.38,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "casing_tink",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/casing_tink_v1",
+     "samples": 11025,
+     "duration": 0.25,
+     "peakDb": -14.0,
+     "rmsDb": -30.23,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/casing_tink_v2",
+     "samples": 11025,
+     "duration": 0.25,
+     "peakDb": -14.0,
+     "rmsDb": -30.45,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/casing_tink_v3",
+     "samples": 11025,
+     "duration": 0.25,
+     "peakDb": -14.0,
+     "rmsDb": -30.06,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "blaster_shot",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/blaster_shot_v1",
+     "samples": 13230,
+     "duration": 0.3,
+     "peakDb": -7.0,
+     "rmsDb": -26.88,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/blaster_shot_v2",
+     "samples": 13230,
+     "duration": 0.3,
+     "peakDb": -7.0,
+     "rmsDb": -28.72,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/blaster_shot_v3",
+     "samples": 13230,
+     "duration": 0.3,
+     "peakDb": -7.0,
+     "rmsDb": -27.96,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "impact_energy",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/impact_energy_v1",
+     "samples": 15434,
+     "duration": 0.35,
+     "peakDb": -7.0,
+     "rmsDb": -29.18,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/impact_energy_v2",
+     "samples": 15434,
+     "duration": 0.35,
+     "peakDb": -7.0,
+     "rmsDb": -31.28,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/impact_energy_v3",
+     "samples": 15434,
+     "duration": 0.35,
+     "peakDb": -7.0,
+     "rmsDb": -30.54,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "parry_spark",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/parry_spark_v1",
+     "samples": 17640,
+     "duration": 0.4,
+     "peakDb": -7.0,
+     "rmsDb": -30.19,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/parry_spark_v2",
+     "samples": 17640,
+     "duration": 0.4,
+     "peakDb": -7.0,
+     "rmsDb": -31.52,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/parry_spark_v3",
+     "samples": 17640,
+     "duration": 0.4,
+     "peakDb": -7.0,
+     "rmsDb": -31.49,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "pistol_draw",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/pistol_draw_v1",
+     "samples": 13230,
+     "duration": 0.3,
+     "peakDb": -12.0,
+     "rmsDb": -28.37,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/pistol_draw_v2",
+     "samples": 13230,
+     "duration": 0.3,
+     "peakDb": -12.0,
+     "rmsDb": -28.03,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "pistol_holster",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/pistol_holster_v1",
+     "samples": 11466,
+     "duration": 0.26,
+     "peakDb": -13.0,
+     "rmsDb": -30.96,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/pistol_holster_v2",
+     "samples": 11466,
+     "duration": 0.26,
+     "peakDb": -13.0,
+     "rmsDb": -30.82,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "blade_ignite",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/blade_ignite_v1",
+     "samples": 24255,
+     "duration": 0.55,
+     "peakDb": -12.0,
+     "rmsDb": -30.48,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/blade_ignite_v2",
+     "samples": 24255,
+     "duration": 0.55,
+     "peakDb": -12.0,
+     "rmsDb": -30.42,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "blade_retract",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/blade_retract_v1",
+     "samples": 13230,
+     "duration": 0.3,
+     "peakDb": -16.0,
+     "rmsDb": -29.55,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/blade_retract_v2",
+     "samples": 13230,
+     "duration": 0.3,
+     "peakDb": -16.0,
+     "rmsDb": -29.86,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "claw_extend",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": true,
+   "files": [
+    {
+     "path": "SFX/claw_extend_v1",
+     "samples": 15434,
+     "duration": 0.35,
+     "peakDb": -13.0,
+     "rmsDb": -31.5,
+     "gain": 1.0
+    },
+    {
+     "path": "SFX/claw_extend_v2",
+     "samples": 15434,
+     "duration": 0.35,
+     "peakDb": -13.0,
+     "rmsDb": -32.42,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "cannon_charge",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/cannon_charge",
+     "samples": 41895,
+     "duration": 0.95,
+     "peakDb": -6.0,
+     "rmsDb": -14.39,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  },
+  {
+   "id": "blade_deploy",
+   "kind": "sfx",
+   "bus": "sfx",
+   "loop": false,
+   "randomized": false,
+   "files": [
+    {
+     "path": "SFX/blade_deploy",
+     "samples": 35280,
+     "duration": 0.8,
+     "peakDb": -5.0,
+     "rmsDb": -22.81,
+     "gain": 1.0
+    }
+   ],
+   "source": "tools/audio/weapon_sfx.py (procedural)"
+  }
+ ]
+}

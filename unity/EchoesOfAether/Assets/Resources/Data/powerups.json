@@ -1,0 +1,9 @@
+{
+  "powerups": [
+    { "id": "aether_shard", "item": "pu_aether_shard", "name": "Aether Shard", "duration": 20, "color": "#62d4ff", "icon": "pu_shard", "stat": "damage", "value": 0.3, "sfx": "powerup_shard", "description": "+30% damage" },
+    { "id": "phase_core", "item": "pu_phase_core", "name": "Phase Core", "duration": 25, "color": "#9a7bff", "icon": "pu_phase", "stat": "dashDistance", "value": 0.6, "sfx": "powerup_phase", "description": "Dash distance +60%" },
+    { "id": "overcharge", "item": "pu_overcharge", "name": "Overcharge", "duration": 15, "color": "#ffb45e", "icon": "pu_overcharge", "stat": "attackSpeed", "value": 0.35, "sfx": "powerup_overcharge", "description": "Attack speed +35%" },
+    { "id": "shield_fragment", "item": "pu_shield_fragment", "name": "Shield Fragment", "duration": 0, "color": "#7fe8c8", "icon": "pu_shield", "stat": "shieldRestore", "value": 1, "sfx": "powerup_shield", "description": "Restores shield" },
+    { "id": "echo_fragment", "item": "pu_echo_fragment", "name": "Echo Fragment", "duration": 30, "color": "#c39bff", "icon": "pu_echo", "stat": "reveal", "value": 1, "sfx": "powerup_echo", "description": "Reveals hidden objects" }
+  ]
+}

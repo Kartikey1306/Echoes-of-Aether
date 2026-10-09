@@ -1,0 +1,1001 @@
+{
+ "quests": [
+  {
+   "id": "m1_awakening",
+   "type": "main",
+   "order": 1,
+   "title": "The Awakening",
+   "zone": "plaza",
+   "summary": "You wake in the rain beside the Aether Monument. The city is silent, but something beneath it is calling.",
+   "stages": [
+    {
+     "id": "wake",
+     "objectives": [
+      {
+       "id": "move",
+       "type": "flag",
+       "target": "tut_moved",
+       "text": "Find your footing"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "dialogue",
+       "id": "dlg_m1_comms"
+      },
+      {
+       "do": "hint",
+       "id": "move"
+      }
+     ]
+    },
+    {
+     "id": "monument",
+     "objectives": [
+      {
+       "id": "inspect",
+       "type": "interact",
+       "target": "i_monument",
+       "text": "Inspect the Aether Monument",
+       "marker": "i_monument"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "dialogue",
+       "id": "dlg_m1_signal"
+      }
+     ]
+    },
+    {
+     "id": "fight",
+     "objectives": [
+      {
+       "id": "drones",
+       "type": "kill",
+       "target": "e_plaza_drones",
+       "count": 0,
+       "text": "Destroy the security drones"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "encounter",
+       "id": "e_plaza_drones"
+      },
+      {
+       "do": "hint",
+       "id": "combat"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "dialogue",
+       "id": "dlg_m1_after_fight"
+      }
+     ]
+    },
+    {
+     "id": "powerup",
+     "objectives": [
+      {
+       "id": "shard",
+       "type": "interact",
+       "target": "pickup_m1_shard",
+       "text": "Collect the Aether Shard",
+       "marker": "pickup_m1_shard"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "hint",
+       "id": "powerup"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "spawnPickup",
+       "id": "pickup_m1_shard",
+       "powerup": "aether_shard",
+       "at": "monument_drop"
+      }
+     ]
+    },
+    {
+     "id": "meet",
+     "objectives": [
+      {
+       "id": "camp",
+       "type": "reach",
+       "target": "t_plaza_camp",
+       "text": "Find {partner} at the survivors' camp",
+       "marker": "t_plaza_camp"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "cinematic",
+       "id": "cin_meeting"
+      },
+      {
+       "do": "setFlag",
+       "flag": "swap_unlocked"
+      },
+      {
+       "do": "hint",
+       "id": "swap"
+      }
+     ]
+    }
+   ],
+   "onComplete": [
+    {
+     "do": "give",
+     "item": "aether_fragment",
+     "qty": 1
+    },
+    {
+     "do": "setFlag",
+     "flag": "metro_open"
+    },
+    {
+     "do": "startQuest",
+     "id": "m2_dead_signal"
+    },
+    {
+     "do": "autosave"
+    }
+   ]
+  },
+  {
+   "id": "m2_dead_signal",
+   "type": "main",
+   "order": 2,
+   "title": "Dead Signal",
+   "zone": "metro",
+   "summary": "The monument's signal leads beneath the city, into the flooded transit tunnels of Line B.",
+   "stages": [
+    {
+     "id": "enter",
+     "objectives": [
+      {
+       "id": "metro",
+       "type": "zone",
+       "target": "metro",
+       "text": "Follow the signal into the Abandoned Metro",
+       "marker": "x_plaza_metro"
+      }
+     ]
+    },
+    {
+     "id": "concourse",
+     "objectives": [
+      {
+       "id": "clear",
+       "type": "kill",
+       "target": "e_metro_concourse",
+       "count": 0,
+       "text": "Clear the concourse"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "encounter",
+       "id": "e_metro_concourse"
+      }
+     ]
+    },
+    {
+     "id": "power",
+     "objectives": [
+      {
+       "id": "route",
+       "type": "flag",
+       "target": "metro_power_on",
+       "text": "Restore power: route the junctions in the control room",
+       "marker": "i_generator"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "encounter",
+       "id": "e_metro_platform"
+      }
+     ]
+    },
+    {
+     "id": "transmitter",
+     "objectives": [
+      {
+       "id": "tx",
+       "type": "interact",
+       "target": "i_transmitter",
+       "text": "Investigate the transmitter",
+       "marker": "i_transmitter"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "dialogue",
+       "id": "dlg_maren_message"
+      },
+      {
+       "do": "unlock",
+       "ability": "dash"
+      },
+      {
+       "do": "unlock",
+       "ability": "step"
+      },
+      {
+       "do": "give",
+       "item": "q_facility_pass",
+       "qty": 1
+      },
+      {
+       "do": "setFlag",
+       "flag": "spur_open"
+      },
+      {
+       "do": "hint",
+       "id": "dash"
+      },
+      {
+       "do": "encounter",
+       "id": "e_metro_tunnel"
+      }
+     ]
+    },
+    {
+     "id": "spur",
+     "objectives": [
+      {
+       "id": "facility",
+       "type": "zone",
+       "target": "facility",
+       "text": "Take the spur tunnel to the Research Facility",
+       "marker": "x_metro_facility"
+      }
+     ]
+    }
+   ],
+   "onComplete": [
+    {
+     "do": "give",
+     "item": "aether_fragment",
+     "qty": 1
+    },
+    {
+     "do": "startQuest",
+     "id": "m3_researcher"
+    },
+    {
+     "do": "autosave"
+    }
+   ]
+  },
+  {
+   "id": "m3_researcher",
+   "type": "main",
+   "order": 3,
+   "title": "The Researcher",
+   "zone": "facility",
+   "summary": "Dr. Ilse Maren's message points to her laboratory. Whatever happened to Aether-9 began here.",
+   "stages": [
+    {
+     "id": "labs",
+     "objectives": [
+      {
+       "id": "labs",
+       "type": "reach",
+       "target": "t_fac_labs",
+       "text": "Investigate the laboratories",
+       "marker": "t_fac_labs"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "encounter",
+       "id": "e_fac_labs"
+      }
+     ]
+    },
+    {
+     "id": "logs",
+     "objectives": [
+      {
+       "id": "log1",
+       "type": "interact",
+       "target": "i_log_echo",
+       "text": "Read the research log: Project Echo",
+       "marker": "i_log_echo"
+      },
+      {
+       "id": "log2",
+       "type": "interact",
+       "target": "i_log_keys",
+       "text": "Read the research log: Resonance Keys",
+       "marker": "i_log_keys"
+      },
+      {
+       "id": "log3",
+       "type": "interact",
+       "target": "i_log_cascade",
+       "text": "Read the research log: Cascade Projection",
+       "marker": "i_log_cascade"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "encounter",
+       "id": "e_fac_offices"
+      }
+     ]
+    },
+    {
+     "id": "data",
+     "objectives": [
+      {
+       "id": "data",
+       "type": "interact",
+       "target": "i_maren_terminal",
+       "text": "Recover Dr. Maren's research data",
+       "marker": "i_maren_terminal"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "unlock",
+       "ability": "echo"
+      },
+      {
+       "do": "dialogue",
+       "id": "dlg_echo_unlocked"
+      },
+      {
+       "do": "hint",
+       "id": "echo"
+      }
+     ]
+    },
+    {
+     "id": "truth",
+     "objectives": [
+      {
+       "id": "final",
+       "type": "interact",
+       "target": "i_maren_final",
+       "text": "Use Echo Sight to find Maren's hidden office",
+       "marker": "i_maren_hidden_door"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "dialogue",
+       "id": "dlg_truth"
+      }
+     ]
+    },
+    {
+     "id": "elite",
+     "objectives": [
+      {
+       "id": "warden",
+       "type": "kill",
+       "target": "e_fac_warden",
+       "count": 0,
+       "text": "Defeat the Warden",
+       "marker": "t_fac_atrium"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "encounter",
+       "id": "e_fac_warden"
+      }
+     ]
+    },
+    {
+     "id": "clearance",
+     "objectives": [
+      {
+       "id": "chip",
+       "type": "collect",
+       "target": "q_vault_clearance",
+       "count": 1,
+       "text": "Take Maren's vault clearance",
+       "marker": "pickup_clearance"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "spawnPickup",
+       "id": "pickup_clearance",
+       "item": "q_vault_clearance",
+       "at": "warden_drop"
+      }
+     ]
+    }
+   ],
+   "onComplete": [
+    {
+     "do": "give",
+     "item": "aether_fragment",
+     "qty": 1
+    },
+    {
+     "do": "setFlag",
+     "flag": "facility_gate_open"
+    },
+    {
+     "do": "startQuest",
+     "id": "m4_vault"
+    },
+    {
+     "do": "autosave"
+    }
+   ]
+  },
+  {
+   "id": "m4_vault",
+   "type": "main",
+   "order": 4,
+   "title": "Into the Vault",
+   "zone": "vault",
+   "summary": "Maren's clearance opens the freight lift. Below the facility, the Vault still hums.",
+   "stages": [
+    {
+     "id": "lift",
+     "objectives": [
+      {
+       "id": "lift",
+       "type": "zone",
+       "target": "vault",
+       "text": "Take the freight lift down to the Underground Vault",
+       "marker": "i_freight_lift"
+      }
+     ]
+    },
+    {
+     "id": "traverse",
+     "objectives": [
+      {
+       "id": "lockroom",
+       "type": "reach",
+       "target": "t_vault_lock",
+       "text": "Traverse the vault to the resonance lock",
+       "marker": "t_vault_lock"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "encounter",
+       "id": "e_vault_hall"
+      }
+     ]
+    },
+    {
+     "id": "puzzle",
+     "objectives": [
+      {
+       "id": "lock",
+       "type": "flag",
+       "target": "vault_lock_open",
+       "text": "Tune the three resonators to open the lock (Echo Sight reveals the glyphs)",
+       "marker": "i_vault_lock"
+      }
+     ]
+    },
+    {
+     "id": "upgrade",
+     "objectives": [
+      {
+       "id": "attune",
+       "type": "interact",
+       "target": "i_attunement",
+       "text": "Claim the Aether upgrade",
+       "marker": "i_attunement"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "give",
+       "item": "up_core_attunement",
+       "qty": 1
+      },
+      {
+       "do": "dialogue",
+       "id": "dlg_attuned"
+      },
+      {
+       "do": "hint",
+       "id": "ultimate"
+      },
+      {
+       "do": "encounter",
+       "id": "e_vault_deep"
+      }
+     ]
+    },
+    {
+     "id": "guardian",
+     "objectives": [
+      {
+       "id": "approach",
+       "type": "reach",
+       "target": "t_vault_guardian",
+       "text": "Continue toward the Core access",
+       "marker": "t_vault_guardian"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "encounter",
+       "id": "e_vault_guardian"
+      },
+      {
+       "do": "cinematic",
+       "id": "cin_guardian_reveal"
+      },
+      {
+       "do": "setFlag",
+       "flag": "blastdoor_cycling"
+      }
+     ]
+    },
+    {
+     "id": "survive",
+     "objectives": [
+      {
+       "id": "escape",
+       "type": "reach",
+       "target": "t_vault_blastdoor",
+       "text": "Survive until the blast door opens, then get through",
+       "marker": "t_vault_blastdoor"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "setFlag",
+       "flag": "vault_escaped"
+      },
+      {
+       "do": "despawn",
+       "id": "e_vault_guardian"
+      }
+     ]
+    },
+    {
+     "id": "access",
+     "objectives": [
+      {
+       "id": "corelift",
+       "type": "zone",
+       "target": "core",
+       "text": "Ride the lift down to the Aether Core",
+       "marker": "i_core_lift"
+      }
+     ]
+    }
+   ],
+   "onComplete": [
+    {
+     "do": "give",
+     "item": "aether_fragment",
+     "qty": 1
+    },
+    {
+     "do": "startQuest",
+     "id": "m5_core"
+    }
+   ]
+  },
+  {
+   "id": "m5_core",
+   "type": "main",
+   "order": 5,
+   "title": "The Core",
+   "zone": "core",
+   "summary": "The Aether Core is still holding its breath. It is time to decide what it is waiting for.",
+   "stages": [
+    {
+     "id": "listen",
+     "objectives": [
+      {
+       "id": "terminal",
+       "type": "interact",
+       "target": "i_core_terminal",
+       "text": "Approach the Core",
+       "marker": "i_core_terminal"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "dialogue",
+       "id": "dlg_final_truth"
+      }
+     ]
+    },
+    {
+     "id": "waves",
+     "objectives": [
+      {
+       "id": "waves",
+       "type": "kill",
+       "target": "e_core_waves",
+       "count": 0,
+       "text": "Hold off the Core's defenders"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "encounter",
+       "id": "e_core_waves"
+      }
+     ]
+    },
+    {
+     "id": "boss",
+     "objectives": [
+      {
+       "id": "guardian",
+       "type": "kill",
+       "target": "e_core_guardian",
+       "count": 0,
+       "text": "Defeat the Aether Guardian"
+      }
+     ],
+     "onStart": [
+      {
+       "do": "dialogue",
+       "id": "dlg_boss_intro"
+      },
+      {
+       "do": "encounter",
+       "id": "e_core_guardian"
+      }
+     ]
+    },
+    {
+     "id": "release",
+     "objectives": [
+      {
+       "id": "heart",
+       "type": "interact",
+       "target": "i_core_heart",
+       "text": "Release the echoes",
+       "marker": "i_core_heart"
+      }
+     ]
+    }
+   ],
+   "onComplete": [
+    {
+     "do": "setFlag",
+     "flag": "game_complete"
+    },
+    {
+     "do": "cinematic",
+     "id": "cin_ending"
+    },
+    {
+     "do": "credits"
+    }
+   ]
+  },
+  {
+   "id": "sq_last_signal",
+   "type": "side",
+   "order": 10,
+   "title": "The Last Signal",
+   "zone": "rooftops",
+   "giver": "mira",
+   "summary": "Mira has been listening to a transmitter that should have died years ago. It's broadcasting from the rooftops.",
+   "stages": [
+    {
+     "id": "locate",
+     "objectives": [
+      {
+       "id": "tower",
+       "type": "interact",
+       "target": "i_relay_tower",
+       "text": "Locate the transmitter on the rooftops",
+       "marker": "i_relay_tower"
+      }
+     ]
+    },
+    {
+     "id": "cell",
+     "objectives": [
+      {
+       "id": "cell",
+       "type": "collect",
+       "target": "q_relay_cell",
+       "count": 1,
+       "text": "Find a power cell rated for the relay",
+       "marker": "i_relay_cell"
+      }
+     ]
+    },
+    {
+     "id": "activate",
+     "objectives": [
+      {
+       "id": "socket",
+       "type": "interact",
+       "target": "i_relay_socket",
+       "text": "Activate the relay",
+       "marker": "i_relay_socket"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "dialogue",
+       "id": "dlg_relay_active"
+      }
+     ]
+    },
+    {
+     "id": "hidden",
+     "objectives": [
+      {
+       "id": "hatch",
+       "type": "interact",
+       "target": "i_hidden_hatch",
+       "text": "Find the hidden room the signal is reflecting from (Echo Sight)",
+       "marker": "i_hidden_hatch"
+      }
+     ]
+    },
+    {
+     "id": "recording",
+     "objectives": [
+      {
+       "id": "rec",
+       "type": "collect",
+       "target": "q_anya_recording",
+       "count": 1,
+       "text": "Recover the recording",
+       "marker": "i_anya_recording"
+      }
+     ]
+    },
+    {
+     "id": "return",
+     "objectives": [
+      {
+       "id": "mira",
+       "type": "talk",
+       "target": "mira",
+       "text": "Bring the recording to Mira",
+       "marker": "npc_mira"
+      }
+     ]
+    }
+   ],
+   "onComplete": [
+    {
+     "do": "take",
+     "item": "q_anya_recording",
+     "qty": 1
+    },
+    {
+     "do": "give",
+     "item": "up_echo_amplifier",
+     "qty": 1
+    },
+    {
+     "do": "give",
+     "item": "aether_fragment",
+     "qty": 2
+    }
+   ]
+  },
+  {
+   "id": "sq_broken_guardian",
+   "type": "side",
+   "order": 11,
+   "title": "Broken Guardian",
+   "zone": "plaza",
+   "giver": "oren",
+   "summary": "BOLT kept the camp alive until its actuator burned out. Oren needs three parts to bring it back.",
+   "stages": [
+    {
+     "id": "parts",
+     "objectives": [
+      {
+       "id": "actuator",
+       "type": "collect",
+       "target": "q_actuator",
+       "count": 1,
+       "text": "Find a servo actuator (Metro maintenance bay)",
+       "marker": "i_metro_actuator"
+      },
+      {
+       "id": "cell",
+       "type": "collect",
+       "target": "q_power_cell_bolt",
+       "count": 1,
+       "text": "Find a maintenance power cell (Collapsed Market)",
+       "marker": "i_market_cell"
+      },
+      {
+       "id": "chip",
+       "type": "collect",
+       "target": "q_control_component",
+       "count": 1,
+       "text": "Find a control component (Rooftop maintenance shed)",
+       "marker": "i_control_component"
+      }
+     ]
+    },
+    {
+     "id": "repair",
+     "objectives": [
+      {
+       "id": "bolt",
+       "type": "interact",
+       "target": "i_bolt",
+       "text": "Repair BOLT",
+       "marker": "i_bolt"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "take",
+       "item": "q_actuator",
+       "qty": 1
+      },
+      {
+       "do": "take",
+       "item": "q_power_cell_bolt",
+       "qty": 1
+      },
+      {
+       "do": "take",
+       "item": "q_control_component",
+       "qty": 1
+      },
+      {
+       "do": "setFlag",
+       "flag": "bolt_repaired"
+      },
+      {
+       "do": "dialogue",
+       "id": "dlg_bolt_repaired"
+      }
+     ]
+    }
+   ],
+   "onComplete": [
+    {
+     "do": "give",
+     "item": "up_shield_matrix",
+     "qty": 1
+    },
+    {
+     "do": "give",
+     "item": "aether_fragment",
+     "qty": 2
+    }
+   ]
+  },
+  {
+   "id": "sq_memory_fragments",
+   "type": "side",
+   "order": 12,
+   "title": "Memory Fragments",
+   "zone": "plaza",
+   "giver": "tomas",
+   "summary": "Tomas collects memory recordings so the camp can remember what the city sounded like. Three are still out there.",
+   "stages": [
+    {
+     "id": "find",
+     "objectives": [
+      {
+       "id": "r2",
+       "type": "collect",
+       "target": "lore_rec_02",
+       "count": 1,
+       "text": "Find the Market Day recording (Collapsed Market)",
+       "marker": "c_rec_02"
+      },
+      {
+       "id": "r3",
+       "type": "collect",
+       "target": "lore_rec_03",
+       "count": 1,
+       "text": "Find the Last Train recording (Abandoned Metro)",
+       "marker": "c_rec_03"
+      },
+      {
+       "id": "r5",
+       "type": "collect",
+       "target": "lore_rec_05",
+       "count": 1,
+       "text": "Find the Lullaby recording (Research Facility)",
+       "marker": "c_rec_05"
+      }
+     ]
+    },
+    {
+     "id": "return",
+     "objectives": [
+      {
+       "id": "tomas",
+       "type": "talk",
+       "target": "tomas",
+       "text": "Bring the recordings to Tomas",
+       "marker": "npc_tomas"
+      }
+     ]
+    }
+   ],
+   "onComplete": [
+    {
+     "do": "give",
+     "item": "aether_core",
+     "qty": 1
+    },
+    {
+     "do": "setFlag",
+     "flag": "tomas_concert"
+    }
+   ]
+  },
+  {
+   "id": "sq_hidden_vault",
+   "type": "side",
+   "order": 13,
+   "title": "Hidden Vault",
+   "zone": "vault",
+   "giver": "nia",
+   "requires": "ability:echo",
+   "summary": "Nia, an echo only Echo Sight can see, says one wall beneath the Vault sings louder than the rest.",
+   "stages": [
+    {
+     "id": "find",
+     "objectives": [
+      {
+       "id": "door",
+       "type": "interact",
+       "target": "i_hidden_door",
+       "text": "Find the singing wall in the Underground Vault (Echo Sight)",
+       "marker": "i_hidden_door"
+      }
+     ]
+    },
+    {
+     "id": "claim",
+     "objectives": [
+      {
+       "id": "gift",
+       "type": "interact",
+       "target": "i_hidden_pedestal",
+       "text": "Claim what Maren left behind",
+       "marker": "i_hidden_pedestal"
+      }
+     ],
+     "onComplete": [
+      {
+       "do": "cinematic",
+       "id": "cin_hidden_vault"
+      }
+     ]
+    }
+   ],
+   "onComplete": [
+    {
+     "do": "give",
+     "item": "up_resonant_core",
+     "qty": 1
+    },
+    {
+     "do": "give",
+     "item": "lore_hidden_vault",
+     "qty": 1
+    }
+   ]
+  }
+ ]
+}

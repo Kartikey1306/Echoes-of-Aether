@@ -1,0 +1,2660 @@
+{
+ "version": 1,
+ "hair": [
+  {
+   "id": "side_part_volume",
+   "label": "Slicked Side Part",
+   "hero": "kael",
+   "file": "Hair/kael_side_part_volume",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_side_part_volume",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_side_part_volume_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 30318,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "pipeline": "hair v5 (layered strand cards, soft hairline)"
+  },
+  {
+   "id": "textured_fringe",
+   "label": "Textured Fringe",
+   "hero": "kael",
+   "file": "Hair/kael_textured_fringe",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_textured_fringe",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_textured_fringe_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 12042,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "korean_perm",
+   "label": "Korean Perm",
+   "hero": "kael",
+   "file": "Hair/kael_korean_perm",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_korean_perm",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_korean_perm_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 21734,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "mullet_fade",
+   "label": "Mullet Fade",
+   "hero": "kael",
+   "file": "Hair/kael_mullet_fade",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_mullet_fade",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_mullet_fade_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 20050,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "curtain_bangs",
+   "label": "Curtain Bangs",
+   "hero": "kael",
+   "file": "Hair/kael_curtain_bangs",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_curtain_bangs",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_curtain_bangs_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 15556,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "two_block",
+   "label": "Two Block",
+   "hero": "kael",
+   "file": "Hair/kael_two_block",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_two_block",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_two_block_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 17592,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "textured_crop_design",
+   "label": "Textured Crop + Design",
+   "hero": "kael",
+   "file": "Hair/kael_textured_crop_design",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_textured_crop_design",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_textured_crop_design_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 12870,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "flowing_waves",
+   "label": "Flowing Waves",
+   "hero": "kael",
+   "file": "Hair/kael_flowing_waves",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_flowing_waves",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_flowing_waves_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 22426,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "modern_bowl",
+   "label": "Modern Bowl",
+   "hero": "kael",
+   "file": "Hair/kael_modern_bowl",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_modern_bowl",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_modern_bowl_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 15688,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "man_bun_fade",
+   "label": "Braided Man Bun Fade",
+   "hero": "kael",
+   "file": "Hair/kael_man_bun_fade",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_man_bun_fade",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_man_bun_fade_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 16058,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "wolf_cut",
+   "label": "Wolf Cut",
+   "hero": "kael",
+   "file": "Hair/kael_wolf_cut",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_wolf_cut",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_wolf_cut_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 22888,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "afro_taper",
+   "label": "Soft Afro Taper",
+   "hero": "kael",
+   "file": "Hair/kael_afro_taper",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_afro_taper",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_afro_taper_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 15960,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "textured_crow",
+   "label": "Textured Crown",
+   "hero": "kael",
+   "file": "Hair/kael_textured_crow",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_textured_crow",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_textured_crow_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 12520,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "curly_medium",
+   "label": "Defined Medium Curls",
+   "hero": "kael",
+   "file": "Hair/kael_curly_medium",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_curly_medium",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_curly_medium_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 21666,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "mohawk_fade",
+   "label": "Mohawk Fade",
+   "hero": "kael",
+   "file": "Hair/kael_mohawk_fade",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_mohawk_fade",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_mohawk_fade_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 10448,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "burst_fade_mohawk",
+   "label": "Burst Fade Mohawk",
+   "hero": "kael",
+   "file": "Hair/kael_burst_fade_mohawk",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_burst_fade_mohawk",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_burst_fade_mohawk_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 15404,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "edgy_caesar",
+   "label": "Edgy Caesar",
+   "hero": "kael",
+   "file": "Hair/kael_edgy_caesar",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_edgy_caesar",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_edgy_caesar_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 11096,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "ivy_league",
+   "label": "Ivy League",
+   "hero": "kael",
+   "file": "Hair/kael_ivy_league",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_ivy_league",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_ivy_league_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 14408,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "french_crop_design",
+   "label": "French Crop + Design",
+   "hero": "kael",
+   "file": "Hair/kael_french_crop_design",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_french_crop_design",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_french_crop_design_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 15240,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "emo_fringe",
+   "label": "Emo Fringe",
+   "hero": "kael",
+   "file": "Hair/kael_emo_fringe",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_kael_emo_fringe",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/kael_emo_fringe_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 22648,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "long_waves",
+   "label": "Long Waves",
+   "hero": "lyra",
+   "file": "Hair/lyra_long_waves",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_long_waves",
+   "alphaCutoff": 0.35,
+   "baseMap": "Hair/Textures/lyra_long_waves_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 55322,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "pipeline": "hair v5 (layered strand cards, soft hairline)",
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "long_curls",
+   "label": "Long Curls",
+   "hero": "lyra",
+   "file": "Hair/lyra_long_curls",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_long_curls",
+   "alphaCutoff": 0.38,
+   "baseMap": "Hair/Textures/lyra_long_curls_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 29620,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "sleek_long",
+   "label": "Sleek Long",
+   "hero": "lyra",
+   "file": "Hair/lyra_sleek_long",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_sleek_long",
+   "alphaCutoff": 0.35,
+   "baseMap": "Hair/Textures/lyra_sleek_long_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 20168,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "high_ponytail",
+   "label": "High Ponytail",
+   "hero": "lyra",
+   "file": "Hair/lyra_high_ponytail",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_high_ponytail",
+   "alphaCutoff": 0.38,
+   "baseMap": "Hair/Textures/lyra_high_ponytail_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 10638,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "braided_crown",
+   "label": "Braided Crown",
+   "hero": "lyra",
+   "file": "Hair/lyra_braided_crown",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_braided_crown",
+   "alphaCutoff": 0.38,
+   "baseMap": "Hair/Textures/lyra_braided_crown_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 8786,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "fishtail_braid",
+   "label": "Fishtail Braid",
+   "hero": "lyra",
+   "file": "Hair/lyra_fishtail_braid",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_fishtail_braid",
+   "alphaCutoff": 0.38,
+   "baseMap": "Hair/Textures/lyra_fishtail_braid_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 12480,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "space_buns",
+   "label": "Space Buns",
+   "hero": "lyra",
+   "file": "Hair/lyra_space_buns",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_space_buns",
+   "alphaCutoff": 0.38,
+   "baseMap": "Hair/Textures/lyra_space_buns_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 14378,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "bob_wavy",
+   "label": "Wavy Bob",
+   "hero": "lyra",
+   "file": "Hair/lyra_bob_wavy",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_bob_wavy",
+   "alphaCutoff": 0.36,
+   "baseMap": "Hair/Textures/lyra_bob_wavy_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 18082,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "pixie",
+   "label": "Pixie Cut",
+   "hero": "lyra",
+   "file": "Hair/lyra_pixie",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_pixie",
+   "alphaCutoff": 0.4,
+   "baseMap": "Hair/Textures/lyra_pixie_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 13552,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "side_shave_long",
+   "label": "Side Shave Long",
+   "hero": "lyra",
+   "file": "Hair/lyra_side_shave_long",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_side_shave_long",
+   "alphaCutoff": 0.36,
+   "baseMap": "Hair/Textures/lyra_side_shave_long_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 22654,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "wolf_cut_long",
+   "label": "Long Wolf Cut",
+   "hero": "lyra",
+   "file": "Hair/lyra_wolf_cut_long",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_wolf_cut_long",
+   "alphaCutoff": 0.36,
+   "baseMap": "Hair/Textures/lyra_wolf_cut_long_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 35026,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "curtain_bangs_long",
+   "label": "Long Curtain Bangs",
+   "hero": "lyra",
+   "file": "Hair/lyra_curtain_bangs_long",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_curtain_bangs_long",
+   "alphaCutoff": 0.36,
+   "baseMap": "Hair/Textures/lyra_curtain_bangs_long_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 24754,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "twin_tails",
+   "label": "Twin Tails",
+   "hero": "lyra",
+   "file": "Hair/lyra_twin_tails",
+   "kind": "skinned",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_twin_tails",
+   "alphaCutoff": 0.38,
+   "baseMap": "Hair/Textures/lyra_twin_tails_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 14136,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "bones": [
+    "mixamorig:Head",
+    "mixamorig:Neck",
+    "mixamorig:Spine2"
+   ]
+  },
+  {
+   "id": "messy_bun",
+   "label": "Messy Bun",
+   "hero": "lyra",
+   "file": "Hair/lyra_messy_bun",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/hair_lyra_messy_bun",
+   "alphaCutoff": 0.38,
+   "baseMap": "Hair/Textures/lyra_messy_bun_Hair",
+   "material": "Hair",
+   "tint": "hair",
+   "tris": 12590,
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "eyewear": [
+  {
+   "id": "aviator",
+   "label": "Aviator",
+   "hero": "kael",
+   "file": "Eyewear/kael_aviator",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_kael_aviator",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 6808,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#c8a35a"
+    },
+    "EyewearLens": {
+     "lensTint": "#2f4a3a",
+     "lensAlpha": 0.62
+    }
+   },
+   "frame": {
+    "metallic": 1.0,
+    "smoothness": 0.88
+   },
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "fitted": true
+  },
+  {
+   "id": "round_wire",
+   "label": "Round Wire",
+   "hero": "kael",
+   "file": "Eyewear/kael_round_wire",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_kael_round_wire",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 6572,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#bfc4ca"
+    },
+    "EyewearLens": {
+     "lensTint": "#b9d4e4",
+     "lensAlpha": 0.14
+    }
+   },
+   "frame": {
+    "metallic": 1.0,
+    "smoothness": 0.86
+   },
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "fitted": true
+  },
+  {
+   "id": "rect_smart",
+   "label": "Smart Rectangles",
+   "hero": "kael",
+   "file": "Eyewear/kael_rect_smart",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_kael_rect_smart",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 9428,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#1c1f24"
+    },
+    "EyewearLens": {
+     "lensTint": "#8fdcff",
+     "lensAlpha": 0.16
+    },
+    "Glow": {
+     "color": "#00e5ff",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.0,
+    "smoothness": 0.86
+   },
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "fitted": true
+  },
+  {
+   "id": "cyber_visor",
+   "label": "Cyber Visor",
+   "hero": "kael",
+   "file": "Eyewear/kael_cyber_visor",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_kael_cyber_visor",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 7060,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#1b1e24"
+    },
+    "EyewearLens": {
+     "lensTint": "#18a8ff",
+     "lensAlpha": 0.5
+    },
+    "Glow": {
+     "color": "#00f0ff",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.6,
+    "smoothness": 0.8
+   },
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "fitted": true
+  },
+  {
+   "id": "shades_led",
+   "label": "LED Shades",
+   "hero": "kael",
+   "file": "Eyewear/kael_shades_led",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_kael_shades_led",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 9116,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#0c0c0e"
+    },
+    "EyewearLens": {
+     "lensTint": "#08090b",
+     "lensAlpha": 0.82
+    },
+    "Glow": {
+     "color": "#ff2bd6",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.0,
+    "smoothness": 0.88
+   },
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "fitted": true
+  },
+  {
+   "id": "monocle_hud",
+   "label": "Monocle HUD",
+   "hero": "kael",
+   "file": "Eyewear/kael_monocle_hud",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_kael_monocle_hud",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 5852,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#2a2f37"
+    },
+    "EyewearLens": {
+     "lensTint": "#7ff7ff",
+     "lensAlpha": 0.2
+    },
+    "Glow": {
+     "color": "#00e5ff",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.85,
+    "smoothness": 0.75
+   },
+   "fitted": true,
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)"
+  },
+  {
+   "id": "tactical_goggles",
+   "label": "Tactical Goggles",
+   "hero": "kael",
+   "file": "Eyewear/kael_tactical_goggles",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_kael_tactical_goggles",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 8956,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#2b2f26"
+    },
+    "EyewearLens": {
+     "lensTint": "#ffad2a",
+     "lensAlpha": 0.5
+    },
+    "Glow": {
+     "color": "#00e5ff",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.0,
+    "smoothness": 0.45
+   },
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "fitted": true
+  },
+  {
+   "id": "cat_eye_tech",
+   "label": "Cat-Eye Tech",
+   "hero": "lyra",
+   "file": "Eyewear/lyra_cat_eye_tech",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_lyra_cat_eye_tech",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 7996,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#2a1630"
+    },
+    "EyewearLens": {
+     "lensTint": "#d79bff",
+     "lensAlpha": 0.26
+    },
+    "Glow": {
+     "color": "#ff2bd6",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.0,
+    "smoothness": 0.88
+   },
+   "fitted": true,
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "hides": [
+    "Visor"
+   ]
+  },
+  {
+   "id": "aviator",
+   "label": "Aviator",
+   "hero": "lyra",
+   "file": "Eyewear/lyra_aviator",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_lyra_aviator",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 6808,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#c8a35a"
+    },
+    "EyewearLens": {
+     "lensTint": "#2f4a3a",
+     "lensAlpha": 0.62
+    }
+   },
+   "frame": {
+    "metallic": 1.0,
+    "smoothness": 0.88
+   },
+   "fitted": true,
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "hides": [
+    "Visor"
+   ]
+  },
+  {
+   "id": "round_wire",
+   "label": "Round Wire",
+   "hero": "lyra",
+   "file": "Eyewear/lyra_round_wire",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_lyra_round_wire",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 6572,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#bfc4ca"
+    },
+    "EyewearLens": {
+     "lensTint": "#b9d4e4",
+     "lensAlpha": 0.14
+    }
+   },
+   "frame": {
+    "metallic": 1.0,
+    "smoothness": 0.86
+   },
+   "fitted": true,
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "hides": [
+    "Visor"
+   ]
+  },
+  {
+   "id": "rect_smart",
+   "label": "Smart Rectangles",
+   "hero": "lyra",
+   "file": "Eyewear/lyra_rect_smart",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_lyra_rect_smart",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 9428,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#1c1f24"
+    },
+    "EyewearLens": {
+     "lensTint": "#8fdcff",
+     "lensAlpha": 0.16
+    },
+    "Glow": {
+     "color": "#00e5ff",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.0,
+    "smoothness": 0.86
+   },
+   "fitted": true,
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "hides": [
+    "Visor"
+   ]
+  },
+  {
+   "id": "cyber_visor",
+   "label": "Cyber Visor",
+   "hero": "lyra",
+   "file": "Eyewear/lyra_cyber_visor",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_lyra_cyber_visor",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 7060,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#1b1e24"
+    },
+    "EyewearLens": {
+     "lensTint": "#18a8ff",
+     "lensAlpha": 0.5
+    },
+    "Glow": {
+     "color": "#00f0ff",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.6,
+    "smoothness": 0.8
+   },
+   "fitted": true,
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "hides": [
+    "Visor"
+   ]
+  },
+  {
+   "id": "shades_led",
+   "label": "LED Shades",
+   "hero": "lyra",
+   "file": "Eyewear/lyra_shades_led",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_lyra_shades_led",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 9116,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#0c0c0e"
+    },
+    "EyewearLens": {
+     "lensTint": "#08090b",
+     "lensAlpha": 0.82
+    },
+    "Glow": {
+     "color": "#ff2bd6",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.0,
+    "smoothness": 0.88
+   },
+   "fitted": true,
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "hides": [
+    "Visor"
+   ]
+  },
+  {
+   "id": "monocle_hud",
+   "label": "Monocle HUD",
+   "hero": "lyra",
+   "file": "Eyewear/lyra_monocle_hud",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_lyra_monocle_hud",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 5852,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#2a2f37"
+    },
+    "EyewearLens": {
+     "lensTint": "#7ff7ff",
+     "lensAlpha": 0.2
+    },
+    "Glow": {
+     "color": "#00e5ff",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.85,
+    "smoothness": 0.75
+   },
+   "fitted": true,
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "hides": [
+    "Visor"
+   ]
+  },
+  {
+   "id": "tactical_goggles",
+   "label": "Tactical Goggles",
+   "hero": "lyra",
+   "file": "Eyewear/lyra_tactical_goggles",
+   "kind": "rigid",
+   "bone": "mixamorig:Head",
+   "thumb": "Thumbs/eyewear_lyra_tactical_goggles",
+   "localPos": [
+    0,
+    0,
+    0
+   ],
+   "localRot": [
+    0,
+    0,
+    0
+   ],
+   "tris": 8956,
+   "materials": {
+    "EyewearFrame": {
+     "tint": "#2b2f26"
+    },
+    "EyewearLens": {
+     "lensTint": "#ffad2a",
+     "lensAlpha": 0.5
+    },
+    "Glow": {
+     "color": "#00e5ff",
+     "intensity": 3.0
+    }
+   },
+   "frame": {
+    "metallic": 0.0,
+    "smoothness": 0.45
+   },
+   "fitted": true,
+   "pipeline": "eyewear v2 (fitted to the hero head: brow/cheek clearance, temples over the ears)",
+   "hides": [
+    "Visor"
+   ]
+  }
+ ],
+ "armour": [
+  {
+   "id": "vanguard_mk2",
+   "label": "Vanguard Mk II",
+   "hero": "kael",
+   "file": "Armour/kael_vanguard_mk2",
+   "kind": "skinned",
+   "replaces": [
+    "Top",
+    "Pants",
+    "Collar",
+    "ChestRig",
+    "ChestPlate",
+    "PauldronL",
+    "PauldronLameL",
+    "PauldronR",
+    "PauldronLameR",
+    "KneePadL",
+    "KneePadR",
+    "ForearmGuardR",
+    "Interface",
+    "Belt",
+    "Conduit"
+   ],
+   "keeps": [
+    "Body",
+    "Boots",
+    "Gloves",
+    "Cyberware",
+    "Eyes",
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue"
+   ],
+   "thumb": "Thumbs/armour_kael_vanguard_mk2",
+   "tris": 25766,
+   "blendShapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "m_chin_incr",
+    "m_chin_decr"
+   ],
+   "materials": {
+    "Armor": {
+     "baseMap": "Armour/Textures/kael_vanguard_mk2_Armor_BaseColor",
+     "normal": "Armour/Textures/kael_vanguard_mk2_Armor_Normal",
+     "maskMap": "Armour/Textures/kael_vanguard_mk2_Armor_MaskMap",
+     "tint": "#ffffff"
+    },
+    "SuitSecondary": {
+     "baseMap": "Armour/Textures/kael_vanguard_mk2_Suit_BaseColor",
+     "normal": "Armour/Textures/kael_vanguard_mk2_Suit_Normal",
+     "maskMap": "Armour/Textures/kael_vanguard_mk2_Suit_MaskMap",
+     "tint": "#ffffff"
+    },
+    "Glow": {
+     "color": "#00e5ff",
+     "intensity": 4.0
+    },
+    "Glow2": {
+     "color": "#ff8a1f",
+     "intensity": 4.0
+    },
+    "Screen": {
+     "color": "#38d8ff",
+     "intensity": 1.5
+    }
+   },
+   "maskMapLayout": "R metallic, G occlusion, B detail mask, A smoothness",
+   "pipeline": "v3: high-poly bake (normal, AO, curvature) + PBR material classes; designed colours, tint white"
+  },
+  {
+   "id": "aegis_exo",
+   "label": "Aegis Exo-Frame",
+   "hero": "kael",
+   "file": "Armour/kael_aegis_exo",
+   "kind": "skinned",
+   "replaces": [
+    "Top",
+    "Pants",
+    "Collar",
+    "ChestRig",
+    "ChestPlate",
+    "PauldronL",
+    "PauldronLameL",
+    "PauldronR",
+    "PauldronLameR",
+    "KneePadL",
+    "KneePadR",
+    "ForearmGuardR",
+    "Interface",
+    "Belt",
+    "Conduit"
+   ],
+   "keeps": [
+    "Body",
+    "Boots",
+    "Gloves",
+    "Cyberware",
+    "Eyes",
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue"
+   ],
+   "thumb": "Thumbs/armour_kael_aegis_exo",
+   "tris": 28464,
+   "blendShapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "x_mouthOpen"
+   ],
+   "materials": {
+    "Armor": {
+     "baseMap": "Armour/Textures/kael_aegis_exo_Armor_BaseColor",
+     "normal": "Armour/Textures/kael_aegis_exo_Armor_Normal",
+     "maskMap": "Armour/Textures/kael_aegis_exo_Armor_MaskMap",
+     "tint": "#ffffff"
+    },
+    "SuitSecondary": {
+     "baseMap": "Armour/Textures/kael_aegis_exo_Suit_BaseColor",
+     "normal": "Armour/Textures/kael_aegis_exo_Suit_Normal",
+     "maskMap": "Armour/Textures/kael_aegis_exo_Suit_MaskMap",
+     "tint": "#ffffff"
+    },
+    "Glow": {
+     "color": "#00e5ff",
+     "intensity": 4.0
+    },
+    "Glow2": {
+     "color": "#9dff3a",
+     "intensity": 4.0
+    },
+    "Screen": {
+     "color": "#38d8ff",
+     "intensity": 1.5
+    }
+   },
+   "maskMapLayout": "R metallic, G occlusion, B detail mask, A smoothness",
+   "pipeline": "v3: high-poly bake (normal, AO, curvature) + PBR material classes; designed colours, tint white"
+  },
+  {
+   "id": "phantom_stealth",
+   "label": "Phantom Stealth",
+   "hero": "kael",
+   "file": "Armour/kael_phantom_stealth",
+   "kind": "skinned",
+   "replaces": [
+    "Top",
+    "Pants",
+    "Collar",
+    "ChestRig",
+    "ChestPlate",
+    "PauldronL",
+    "PauldronLameL",
+    "PauldronR",
+    "PauldronLameR",
+    "KneePadL",
+    "KneePadR",
+    "ForearmGuardR",
+    "Interface",
+    "Belt",
+    "Conduit"
+   ],
+   "keeps": [
+    "Body",
+    "Boots",
+    "Gloves",
+    "Cyberware",
+    "Eyes",
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue"
+   ],
+   "thumb": "Thumbs/armour_kael_phantom_stealth",
+   "tris": 22296,
+   "blendShapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_age_incr",
+    "x_mouthOpen"
+   ],
+   "materials": {
+    "Armor": {
+     "baseMap": "Armour/Textures/kael_phantom_stealth_Armor_BaseColor",
+     "normal": "Armour/Textures/kael_phantom_stealth_Armor_Normal",
+     "maskMap": "Armour/Textures/kael_phantom_stealth_Armor_MaskMap",
+     "tint": "#ffffff"
+    },
+    "SuitSecondary": {
+     "baseMap": "Armour/Textures/kael_phantom_stealth_Suit_BaseColor",
+     "normal": "Armour/Textures/kael_phantom_stealth_Suit_Normal",
+     "maskMap": "Armour/Textures/kael_phantom_stealth_Suit_MaskMap",
+     "tint": "#ffffff"
+    },
+    "Glow": {
+     "color": "#00e5ff",
+     "intensity": 4.0
+    },
+    "Glow2": {
+     "color": "#ff2bd6",
+     "intensity": 4.0
+    },
+    "Screen": {
+     "color": "#2a6dff",
+     "intensity": 1.5
+    }
+   },
+   "maskMapLayout": "R metallic, G occlusion, B detail mask, A smoothness",
+   "pipeline": "v3: high-poly bake (normal, AO, curvature) + PBR material classes; designed colours, tint white"
+  },
+  {
+   "id": "samurai_neo",
+   "label": "Samurai Neo",
+   "hero": "kael",
+   "file": "Armour/kael_samurai_neo",
+   "kind": "skinned",
+   "replaces": [
+    "Top",
+    "Pants",
+    "Collar",
+    "ChestRig",
+    "ChestPlate",
+    "PauldronL",
+    "PauldronLameL",
+    "PauldronR",
+    "PauldronLameR",
+    "KneePadL",
+    "KneePadR",
+    "ForearmGuardR",
+    "Interface",
+    "Belt",
+    "Conduit"
+   ],
+   "keeps": [
+    "Body",
+    "Boots",
+    "Gloves",
+    "Cyberware",
+    "Eyes",
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue"
+   ],
+   "thumb": "Thumbs/armour_kael_samurai_neo",
+   "tris": 34660,
+   "blendShapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "x_mouthOpen"
+   ],
+   "materials": {
+    "Armor": {
+     "baseMap": "Armour/Textures/kael_samurai_neo_Armor_BaseColor",
+     "normal": "Armour/Textures/kael_samurai_neo_Armor_Normal",
+     "maskMap": "Armour/Textures/kael_samurai_neo_Armor_MaskMap",
+     "tint": "#ffffff"
+    },
+    "SuitSecondary": {
+     "baseMap": "Armour/Textures/kael_samurai_neo_Suit_BaseColor",
+     "normal": "Armour/Textures/kael_samurai_neo_Suit_Normal",
+     "maskMap": "Armour/Textures/kael_samurai_neo_Suit_MaskMap",
+     "tint": "#ffffff"
+    },
+    "Glow": {
+     "color": "#ff2bd6",
+     "intensity": 4.0
+    },
+    "Glow2": {
+     "color": "#ffd040",
+     "intensity": 4.0
+    },
+    "Screen": {
+     "color": "#ff5ad6",
+     "intensity": 1.5
+    }
+   },
+   "maskMapLayout": "R metallic, G occlusion, B detail mask, A smoothness",
+   "pipeline": "v3: high-poly bake (normal, AO, curvature) + PBR material classes; designed colours, tint white"
+  },
+  {
+   "id": "netrunner_x",
+   "label": "Netrunner X",
+   "hero": "lyra",
+   "file": "Armour/lyra_netrunner_x",
+   "kind": "skinned",
+   "replaces": [
+    "Top",
+    "Jacket",
+    "Pants",
+    "Harness",
+    "ChestUnit",
+    "ChestCore",
+    "ShoulderR",
+    "ForearmGuardL",
+    "HipModule",
+    "ThighRig",
+    "ConduitL",
+    "ConduitR"
+   ],
+   "keeps": [
+    "Body",
+    "Boots",
+    "Gloves",
+    "Cyberware",
+    "Visor",
+    "Eyes",
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue"
+   ],
+   "thumb": "Thumbs/armour_lyra_netrunner_x",
+   "tris": 24300,
+   "blendShapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_bust_incr",
+    "m_bust_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "x_mouthOpen",
+    "corr_LeftForeArm_x_60",
+    "corr_LeftForeArm_x_115",
+    "corr_LeftLeg_x_70",
+    "corr_LeftLeg_x_140",
+    "corr_LeftArm_nz_80",
+    "corr_LeftArm_x_70",
+    "corr_LeftArm_nx_45",
+    "corr_LeftUpLeg_nx_65",
+    "corr_LeftUpLeg_nx_125",
+    "corr_LeftUpLeg_nz_60",
+    "corr_RightForeArm_x_60",
+    "corr_RightForeArm_x_115",
+    "corr_RightLeg_x_70",
+    "corr_RightLeg_x_140",
+    "corr_RightArm_z_80",
+    "corr_RightArm_x_70",
+    "corr_RightArm_nx_45",
+    "corr_RightUpLeg_nx_65",
+    "corr_RightUpLeg_nx_125",
+    "corr_RightUpLeg_z_60"
+   ],
+   "materials": {
+    "Armor": {
+     "baseMap": "Armour/Textures/lyra_netrunner_x_Armor_BaseColor",
+     "normal": "Armour/Textures/lyra_netrunner_x_Armor_Normal",
+     "maskMap": "Armour/Textures/lyra_netrunner_x_Armor_MaskMap",
+     "tint": "#ffffff"
+    },
+    "SuitSecondary": {
+     "baseMap": "Armour/Textures/lyra_netrunner_x_Suit_BaseColor",
+     "normal": "Armour/Textures/lyra_netrunner_x_Suit_Normal",
+     "maskMap": "Armour/Textures/lyra_netrunner_x_Suit_MaskMap",
+     "tint": "#ffffff"
+    },
+    "Glow": {
+     "color": "#ff2bd6",
+     "intensity": 4.0
+    },
+    "Glow2": {
+     "color": "#8a5bff",
+     "intensity": 4.0
+    },
+    "Screen": {
+     "color": "#ff5ae0",
+     "intensity": 1.5
+    }
+   },
+   "maskMapLayout": "R metallic, G occlusion, B detail mask, A smoothness",
+   "pipeline": "v3: high-poly bake (normal, AO, curvature) + PBR material classes; designed colours, tint white"
+  },
+  {
+   "id": "valkyrie",
+   "label": "Valkyrie",
+   "hero": "lyra",
+   "file": "Armour/lyra_valkyrie",
+   "kind": "skinned",
+   "replaces": [
+    "Top",
+    "Jacket",
+    "Pants",
+    "Harness",
+    "ChestUnit",
+    "ChestCore",
+    "ShoulderR",
+    "ForearmGuardL",
+    "HipModule",
+    "ThighRig",
+    "ConduitL",
+    "ConduitR"
+   ],
+   "keeps": [
+    "Body",
+    "Boots",
+    "Gloves",
+    "Cyberware",
+    "Visor",
+    "Eyes",
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue"
+   ],
+   "thumb": "Thumbs/armour_lyra_valkyrie",
+   "tris": 21872,
+   "blendShapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_bust_incr",
+    "m_bust_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "x_mouthOpen",
+    "corr_LeftForeArm_x_60",
+    "corr_LeftForeArm_x_115",
+    "corr_LeftLeg_x_70",
+    "corr_LeftLeg_x_140",
+    "corr_LeftArm_nz_80",
+    "corr_LeftArm_x_70",
+    "corr_LeftArm_nx_45",
+    "corr_LeftUpLeg_nx_65",
+    "corr_LeftUpLeg_nx_125",
+    "corr_LeftUpLeg_nz_60",
+    "corr_RightForeArm_x_60",
+    "corr_RightForeArm_x_115",
+    "corr_RightLeg_x_70",
+    "corr_RightLeg_x_140",
+    "corr_RightArm_z_80",
+    "corr_RightArm_x_70",
+    "corr_RightArm_nx_45",
+    "corr_RightUpLeg_nx_65",
+    "corr_RightUpLeg_nx_125",
+    "corr_RightUpLeg_z_60"
+   ],
+   "materials": {
+    "Armor": {
+     "baseMap": "Armour/Textures/lyra_valkyrie_Armor_BaseColor",
+     "normal": "Armour/Textures/lyra_valkyrie_Armor_Normal",
+     "maskMap": "Armour/Textures/lyra_valkyrie_Armor_MaskMap",
+     "tint": "#ffffff"
+    },
+    "SuitSecondary": {
+     "baseMap": "Armour/Textures/lyra_valkyrie_Suit_BaseColor",
+     "normal": "Armour/Textures/lyra_valkyrie_Suit_Normal",
+     "maskMap": "Armour/Textures/lyra_valkyrie_Suit_MaskMap",
+     "tint": "#ffffff"
+    },
+    "Glow": {
+     "color": "#8ad8ff",
+     "intensity": 4.0
+    },
+    "Glow2": {
+     "color": "#ff2bd6",
+     "intensity": 4.0
+    },
+    "Screen": {
+     "color": "#b79bff",
+     "intensity": 1.5
+    }
+   },
+   "maskMapLayout": "R metallic, G occlusion, B detail mask, A smoothness",
+   "pipeline": "v3: high-poly bake (normal, AO, curvature) + PBR material classes; designed colours, tint white"
+  },
+  {
+   "id": "phantom_stealth_f",
+   "label": "Phantom Stealth",
+   "hero": "lyra",
+   "file": "Armour/lyra_phantom_stealth_f",
+   "kind": "skinned",
+   "replaces": [
+    "Top",
+    "Jacket",
+    "Pants",
+    "Harness",
+    "ChestUnit",
+    "ChestCore",
+    "ShoulderR",
+    "ForearmGuardL",
+    "HipModule",
+    "ThighRig",
+    "ConduitL",
+    "ConduitR"
+   ],
+   "keeps": [
+    "Body",
+    "Boots",
+    "Gloves",
+    "Cyberware",
+    "Visor",
+    "Eyes",
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue"
+   ],
+   "thumb": "Thumbs/armour_lyra_phantom_stealth_f",
+   "tris": 22156,
+   "blendShapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_bust_incr",
+    "m_bust_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "x_mouthOpen",
+    "corr_LeftForeArm_x_60",
+    "corr_LeftForeArm_x_115",
+    "corr_LeftLeg_x_70",
+    "corr_LeftLeg_x_140",
+    "corr_LeftArm_nz_80",
+    "corr_LeftArm_x_70",
+    "corr_LeftArm_nx_45",
+    "corr_LeftUpLeg_nx_65",
+    "corr_LeftUpLeg_nx_125",
+    "corr_LeftUpLeg_nz_60",
+    "corr_RightForeArm_x_60",
+    "corr_RightForeArm_x_115",
+    "corr_RightLeg_x_70",
+    "corr_RightLeg_x_140",
+    "corr_RightArm_z_80",
+    "corr_RightArm_x_70",
+    "corr_RightArm_nx_45",
+    "corr_RightUpLeg_nx_65",
+    "corr_RightUpLeg_nx_125",
+    "corr_RightUpLeg_z_60"
+   ],
+   "materials": {
+    "Armor": {
+     "baseMap": "Armour/Textures/lyra_phantom_stealth_f_Armor_BaseColor",
+     "normal": "Armour/Textures/lyra_phantom_stealth_f_Armor_Normal",
+     "maskMap": "Armour/Textures/lyra_phantom_stealth_f_Armor_MaskMap",
+     "tint": "#ffffff"
+    },
+    "SuitSecondary": {
+     "baseMap": "Armour/Textures/lyra_phantom_stealth_f_Suit_BaseColor",
+     "normal": "Armour/Textures/lyra_phantom_stealth_f_Suit_Normal",
+     "maskMap": "Armour/Textures/lyra_phantom_stealth_f_Suit_MaskMap",
+     "tint": "#ffffff"
+    },
+    "Glow": {
+     "color": "#ff2bd6",
+     "intensity": 4.0
+    },
+    "Glow2": {
+     "color": "#8a5bff",
+     "intensity": 4.0
+    },
+    "Screen": {
+     "color": "#7a3dff",
+     "intensity": 1.5
+    }
+   },
+   "maskMapLayout": "R metallic, G occlusion, B detail mask, A smoothness",
+   "pipeline": "v3: high-poly bake (normal, AO, curvature) + PBR material classes; designed colours, tint white"
+  },
+  {
+   "id": "arc_sentinel",
+   "label": "Arc Sentinel",
+   "hero": "lyra",
+   "file": "Armour/lyra_arc_sentinel",
+   "kind": "skinned",
+   "replaces": [
+    "Top",
+    "Jacket",
+    "Pants",
+    "Harness",
+    "ChestUnit",
+    "ChestCore",
+    "ShoulderR",
+    "ForearmGuardL",
+    "HipModule",
+    "ThighRig",
+    "ConduitL",
+    "ConduitR"
+   ],
+   "keeps": [
+    "Body",
+    "Boots",
+    "Gloves",
+    "Cyberware",
+    "Visor",
+    "Eyes",
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue"
+   ],
+   "thumb": "Thumbs/armour_lyra_arc_sentinel",
+   "tris": 23394,
+   "blendShapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_bust_incr",
+    "m_bust_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "x_mouthOpen",
+    "corr_LeftForeArm_x_60",
+    "corr_LeftForeArm_x_115",
+    "corr_LeftLeg_x_70",
+    "corr_LeftLeg_x_140",
+    "corr_LeftArm_nz_80",
+    "corr_LeftArm_x_70",
+    "corr_LeftArm_nx_45",
+    "corr_LeftUpLeg_nx_65",
+    "corr_LeftUpLeg_nx_125",
+    "corr_LeftUpLeg_nz_60",
+    "corr_RightForeArm_x_60",
+    "corr_RightForeArm_x_115",
+    "corr_RightLeg_x_70",
+    "corr_RightLeg_x_140",
+    "corr_RightArm_z_80",
+    "corr_RightArm_x_70",
+    "corr_RightArm_nx_45",
+    "corr_RightUpLeg_nx_65",
+    "corr_RightUpLeg_nx_125",
+    "corr_RightUpLeg_z_60"
+   ],
+   "materials": {
+    "Armor": {
+     "baseMap": "Armour/Textures/lyra_arc_sentinel_Armor_BaseColor",
+     "normal": "Armour/Textures/lyra_arc_sentinel_Armor_Normal",
+     "maskMap": "Armour/Textures/lyra_arc_sentinel_Armor_MaskMap",
+     "tint": "#ffffff"
+    },
+    "SuitSecondary": {
+     "baseMap": "Armour/Textures/lyra_arc_sentinel_Suit_BaseColor",
+     "normal": "Armour/Textures/lyra_arc_sentinel_Suit_Normal",
+     "maskMap": "Armour/Textures/lyra_arc_sentinel_Suit_MaskMap",
+     "tint": "#ffffff"
+    },
+    "Glow": {
+     "color": "#62dcff",
+     "intensity": 4.0
+    },
+    "Glow2": {
+     "color": "#ff2bd6",
+     "intensity": 4.0
+    },
+    "Screen": {
+     "color": "#62dcff",
+     "intensity": 1.5
+    }
+   },
+   "maskMapLayout": "R metallic, G occlusion, B detail mask, A smoothness",
+   "pipeline": "v3: high-poly bake (normal, AO, curvature) + PBR material classes; designed colours, tint white"
+  }
+ ],
+ "tattoos": [
+  {
+   "id": "circuit_neck",
+   "label": "Circuit Traces",
+   "hero": "kael",
+   "ink": "Tattoos/kael_circuit_neck_Ink",
+   "glow": "Tattoos/kael_circuit_neck_Glow",
+   "thumb": "Thumbs/tattoo_kael_circuit_neck",
+   "visibleOn": [
+    "neck",
+    "temple"
+   ],
+   "glowColors": [
+    [
+     0.0,
+     0.9,
+     1.0
+    ],
+    [
+     1.0,
+     0.17,
+     0.84
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 4636
+  },
+  {
+   "id": "tech_tribal",
+   "label": "Tech-Tribal",
+   "hero": "kael",
+   "ink": "Tattoos/kael_tech_tribal_Ink",
+   "glow": "Tattoos/kael_tech_tribal_Glow",
+   "thumb": "Thumbs/tattoo_kael_tech_tribal",
+   "visibleOn": [
+    "neck",
+    "scalp side"
+   ],
+   "glowColors": [
+    [
+     0.0,
+     0.9,
+     1.0
+    ],
+    [
+     1.0,
+     0.17,
+     0.84
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 62224
+  },
+  {
+   "id": "glyph_collar",
+   "label": "Glyph Collar",
+   "hero": "kael",
+   "ink": "Tattoos/kael_glyph_collar_Ink",
+   "glow": "Tattoos/kael_glyph_collar_Glow",
+   "thumb": "Thumbs/tattoo_kael_glyph_collar",
+   "visibleOn": [
+    "neck",
+    "behind ear"
+   ],
+   "glowColors": [
+    [
+     0.0,
+     0.9,
+     1.0
+    ],
+    [
+     1.0,
+     0.17,
+     0.84
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 17292
+  },
+  {
+   "id": "face_lines",
+   "label": "Face Lines",
+   "hero": "kael",
+   "ink": "Tattoos/kael_face_lines_Ink",
+   "glow": "Tattoos/kael_face_lines_Glow",
+   "thumb": "Thumbs/tattoo_kael_face_lines",
+   "visibleOn": [
+    "face"
+   ],
+   "glowColors": [
+    [
+     0.0,
+     0.9,
+     1.0
+    ],
+    [
+     1.0,
+     0.17,
+     0.84
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 2996
+  },
+  {
+   "id": "spine_piece",
+   "label": "Spine Back Piece",
+   "hero": "kael",
+   "ink": "Tattoos/kael_spine_piece_Ink",
+   "glow": "Tattoos/kael_spine_piece_Glow",
+   "thumb": "Thumbs/tattoo_kael_spine_piece",
+   "visibleOn": [
+    "nape (rest under outfit)"
+   ],
+   "glowColors": [
+    [
+     0.0,
+     0.9,
+     1.0
+    ],
+    [
+     1.0,
+     0.17,
+     0.84
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 3016
+  },
+  {
+   "id": "full_sleeve",
+   "label": "Full Sleeve",
+   "hero": "kael",
+   "ink": "Tattoos/kael_full_sleeve_Ink",
+   "glow": "Tattoos/kael_full_sleeve_Glow",
+   "thumb": "Thumbs/tattoo_kael_full_sleeve",
+   "visibleOn": [
+    "neck (arm part under the jacket sleeve)"
+   ],
+   "glowColors": [
+    [
+     0.0,
+     0.9,
+     1.0
+    ],
+    [
+     1.0,
+     0.17,
+     0.84
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 3785
+  },
+  {
+   "id": "throat_sigil",
+   "label": "Throat Sigil",
+   "hero": "kael",
+   "ink": "Tattoos/kael_throat_sigil_Ink",
+   "glow": "Tattoos/kael_throat_sigil_Glow",
+   "thumb": "Thumbs/tattoo_kael_throat_sigil",
+   "visibleOn": [
+    "throat"
+   ],
+   "glowColors": [
+    [
+     0.0,
+     0.9,
+     1.0
+    ],
+    [
+     1.0,
+     0.17,
+     0.84
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 420
+  },
+  {
+   "id": "hex_temple",
+   "label": "Hex Temple",
+   "hero": "kael",
+   "ink": "Tattoos/kael_hex_temple_Ink",
+   "glow": "Tattoos/kael_hex_temple_Glow",
+   "thumb": "Thumbs/tattoo_kael_hex_temple",
+   "visibleOn": [
+    "temples / shaved sides"
+   ],
+   "glowColors": [
+    [
+     0.0,
+     0.9,
+     1.0
+    ],
+    [
+     1.0,
+     0.17,
+     0.84
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 25553
+  },
+  {
+   "id": "circuit_sleeve",
+   "label": "Circuit Sleeve",
+   "hero": "lyra",
+   "ink": "Tattoos/lyra_circuit_sleeve_Ink",
+   "glow": "Tattoos/lyra_circuit_sleeve_Glow",
+   "thumb": "Thumbs/tattoo_lyra_circuit_sleeve",
+   "visibleOn": [
+    "right forearm"
+   ],
+   "glowColors": [
+    [
+     1.0,
+     0.17,
+     0.84
+    ],
+    [
+     0.55,
+     0.36,
+     1.0
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 0
+  },
+  {
+   "id": "neon_vine",
+   "label": "Neon Vine Sleeve",
+   "hero": "lyra",
+   "ink": "Tattoos/lyra_neon_vine_Ink",
+   "glow": "Tattoos/lyra_neon_vine_Glow",
+   "thumb": "Thumbs/tattoo_lyra_neon_vine",
+   "visibleOn": [
+    "left forearm",
+    "left hand"
+   ],
+   "glowColors": [
+    [
+     1.0,
+     0.17,
+     0.84
+    ],
+    [
+     0.55,
+     0.36,
+     1.0
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 390
+  },
+  {
+   "id": "glyph_sleeves",
+   "label": "Glyph Sleeves",
+   "hero": "lyra",
+   "ink": "Tattoos/lyra_glyph_sleeves_Ink",
+   "glow": "Tattoos/lyra_glyph_sleeves_Glow",
+   "thumb": "Thumbs/tattoo_lyra_glyph_sleeves",
+   "visibleOn": [
+    "both forearms",
+    "wrists"
+   ],
+   "glowColors": [
+    [
+     1.0,
+     0.17,
+     0.84
+    ],
+    [
+     0.55,
+     0.36,
+     1.0
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 511
+  },
+  {
+   "id": "neck_lines",
+   "label": "Neck & Face Lines",
+   "hero": "lyra",
+   "ink": "Tattoos/lyra_neck_lines_Ink",
+   "glow": "Tattoos/lyra_neck_lines_Glow",
+   "thumb": "Thumbs/tattoo_lyra_neck_lines",
+   "visibleOn": [
+    "neck",
+    "face"
+   ],
+   "glowColors": [
+    [
+     1.0,
+     0.17,
+     0.84
+    ],
+    [
+     0.55,
+     0.36,
+     1.0
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 8803
+  },
+  {
+   "id": "back_piece",
+   "label": "Winged Back Piece",
+   "hero": "lyra",
+   "ink": "Tattoos/lyra_back_piece_Ink",
+   "glow": "Tattoos/lyra_back_piece_Glow",
+   "thumb": "Thumbs/tattoo_lyra_back_piece",
+   "visibleOn": [
+    "nape / upper back neckline"
+   ],
+   "glowColors": [
+    [
+     1.0,
+     0.17,
+     0.84
+    ],
+    [
+     0.55,
+     0.36,
+     1.0
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 2541
+  },
+  {
+   "id": "tech_tribal",
+   "label": "Tech-Tribal",
+   "hero": "lyra",
+   "ink": "Tattoos/lyra_tech_tribal_Ink",
+   "glow": "Tattoos/lyra_tech_tribal_Glow",
+   "thumb": "Thumbs/tattoo_lyra_tech_tribal",
+   "visibleOn": [
+    "left arm",
+    "collarbone"
+   ],
+   "glowColors": [
+    [
+     1.0,
+     0.17,
+     0.84
+    ],
+    [
+     0.55,
+     0.36,
+     1.0
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 0
+  },
+  {
+   "id": "cheek_circuit",
+   "label": "Cheek Circuit",
+   "hero": "lyra",
+   "ink": "Tattoos/lyra_cheek_circuit_Ink",
+   "glow": "Tattoos/lyra_cheek_circuit_Glow",
+   "thumb": "Thumbs/tattoo_lyra_cheek_circuit",
+   "visibleOn": [
+    "face"
+   ],
+   "glowColors": [
+    [
+     1.0,
+     0.17,
+     0.84
+    ],
+    [
+     0.55,
+     0.36,
+     1.0
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 3874
+  },
+  {
+   "id": "wrist_bands",
+   "label": "Wrist Bands",
+   "hero": "lyra",
+   "ink": "Tattoos/lyra_wrist_bands_Ink",
+   "glow": "Tattoos/lyra_wrist_bands_Glow",
+   "thumb": "Thumbs/tattoo_lyra_wrist_bands",
+   "visibleOn": [
+    "both wrists"
+   ],
+   "glowColors": [
+    [
+     1.0,
+     0.17,
+     0.84
+    ],
+    [
+     0.55,
+     0.36,
+     1.0
+    ]
+   ],
+   "uv": "Body UV0",
+   "inkImport": "linear (sRGB off), Detail Albedo x2",
+   "glowImport": "sRGB, emission mask",
+   "visibleTexels": 0
+  }
+ ],
+ "defaults": {
+  "kael": {
+   "hair": "swept_fade",
+   "eyewear": "none",
+   "armour": "none",
+   "tattoo": "circuit_neck"
+  },
+  "lyra": {
+   "hair": "waves",
+   "eyewear": "none",
+   "armour": "none",
+   "tattoo": "circuit_sleeve"
+  }
+ },
+ "notes": {
+  "paths": "file / thumb / baseMap / ink / glow are Resources paths without extension (Resources.Load).",
+  "hair": "One material slot 'Hair'. baseMap is a neutral grey RGBA atlas (mean albedo ~0.745): set _BaseColor to the hair colour, alpha clip at alphaCutoff, double sided (cull off), smoothness ~0.35. kind 'rigid': MeshRenderer, parent to bone with identity local transform (localPos/localRot). kind 'skinned': SkinnedMeshRenderer exported with the full hero armature; remap bones by name onto the hero skeleton (weights only on Head/Neck/Spine2).",
+  "eyewear": "Rigid, parent to bone with identity local transform. Slots: EyewearFrame (metal/lacquer), EyewearLens (tinted glass: transparent, smoothness ~0.95, lensTint/lensAlpha), Glow (emissive, tint glow).",
+  "armour": "Skinned with the full hero armature (remap bones by name). Slots: Armor (baseMap/normal/maskMap, tint 'armor'), SuitSecondary (same textures, darker under-suit/soft parts), Glow, Glow2 (emissive strips), Screen (emissive panels). Blend shapes m_* / x_* match the body's customisation morphs: drive them with the body's weights. Hide the hero meshes listed in 'replaces' while worn. MaskMap: R metallic, G occlusion, B detail mask, A smoothness.",
+  "tattoos": "Textures in the hero's Body UV space (the exported Body mesh). ink: Unity Lit Detail Albedo x2 map (neutral grey 0.5 = no change, darker = ink), detail mask can stay white. glow: emission mask RGB (black = none), multiply by an animated intensity. Only skin present in the exported Body can show a tattoo (the outfit covers the rest); 'visibleOn' lists where each design shows with the default outfit."
+ }
+}
