@@ -1,0 +1,288 @@
+{
+ "character": "mira",
+ "name": "Mira",
+ "gender": "female",
+ "height": 1.497,
+ "fbx": "Mira.fbx",
+ "meshes": [
+  {
+   "name": "Body",
+   "kind": "body",
+   "materials": [
+    "Skin"
+   ],
+   "verts": 8201,
+   "tris": 16100,
+   "shapes": [
+    "x_blink_L",
+    "x_blink_R",
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown",
+    "x_browsUp",
+    "x_browsDown",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Cloth_cortu_cargo_pants",
+   "kind": "clothes",
+   "materials": [
+    "Cloth_cortu_cargo_pants"
+   ],
+   "verts": 208,
+   "tris": 384,
+   "shapes": []
+  },
+  {
+   "name": "Brows",
+   "kind": "brows",
+   "materials": [
+    "Brows"
+   ],
+   "verts": 124,
+   "tris": 192,
+   "shapes": [
+    "x_blink_L",
+    "x_blink_R",
+    "x_browsUp",
+    "x_browsDown",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Lashes",
+   "kind": "lashes",
+   "materials": [
+    "Lashes"
+   ],
+   "verts": 250,
+   "tris": 368,
+   "shapes": [
+    "x_blink_L",
+    "x_blink_R",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Hair_default",
+   "kind": "hair",
+   "materials": [
+    "Hair_default"
+   ],
+   "verts": 1653,
+   "tris": 2248,
+   "shapes": [
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown",
+    "x_browsUp",
+    "x_browsDown"
+   ]
+  },
+  {
+   "name": "Eyes",
+   "kind": "eyes",
+   "materials": [
+    "Eyes"
+   ],
+   "verts": 810,
+   "tris": 1520,
+   "shapes": []
+  },
+  {
+   "name": "Teeth",
+   "kind": "teeth",
+   "materials": [
+    "Teeth"
+   ],
+   "verts": 915,
+   "tris": 1423,
+   "shapes": [
+    "x_mouthOpen"
+   ]
+  },
+  {
+   "name": "Boots",
+   "kind": "boots",
+   "materials": [
+    "Boots"
+   ],
+   "verts": 2084,
+   "tris": 4120,
+   "shapes": []
+  },
+  {
+   "name": "Tongue",
+   "kind": "tongue",
+   "materials": [
+    "Tongue"
+   ],
+   "verts": 226,
+   "tris": 448,
+   "shapes": [
+    "x_mouthOpen"
+   ]
+  },
+  {
+   "name": "EarpieceL",
+   "kind": "gear",
+   "materials": [
+    "Gear"
+   ],
+   "verts": 56,
+   "tris": 108,
+   "shapes": []
+  },
+  {
+   "name": "EarpieceR",
+   "kind": "gear",
+   "materials": [
+    "Gear"
+   ],
+   "verts": 56,
+   "tris": 108,
+   "shapes": []
+  },
+  {
+   "name": "Gear",
+   "kind": "gear",
+   "materials": [
+    "Glow2",
+    "Glow"
+   ],
+   "verts": 288,
+   "tris": 480,
+   "shapes": []
+  },
+  {
+   "name": "Hoodie",
+   "kind": "gear",
+   "materials": [
+    "Cloth_Hoodie"
+   ],
+   "verts": 2838,
+   "tris": 5516,
+   "shapes": []
+  },
+  {
+   "name": "Satchel",
+   "kind": "gear",
+   "materials": [
+    "Strap"
+   ],
+   "verts": 56,
+   "tris": 108,
+   "shapes": []
+  },
+  {
+   "name": "SatchelStrap",
+   "kind": "gear",
+   "materials": [
+    "Strap"
+   ],
+   "verts": 52,
+   "tris": 96,
+   "shapes": []
+  }
+ ],
+ "textures": {
+  "Cloth_Hoodie": [
+   "Mira_Cloth_Hoodie_BaseColor.png",
+   "Mira_Cloth_Hoodie_Normal.png",
+   "Mira_Cloth_Hoodie_MaskMap.png"
+  ],
+  "Skin": [
+   "Skin_medium.png",
+   "Skin_Normal.png",
+   "Skin_MaskMap.png"
+  ],
+  "Eyes": [
+   "Eye_grey.png"
+  ],
+  "Hair_default": [
+   "Hair_default_Color.png"
+  ],
+  "Cloth_cortu_cargo_pants": [
+   "Cloth_cortu_cargo_pants_cargo_pants_diff.png",
+   "Cloth_cortu_cargo_pants_cargo_pants_norm.png"
+  ],
+  "Brows": [
+   "Brows_eyebrow009.png",
+   "Brows_eyebrow009.png"
+  ],
+  "Lashes": [
+   "Lashes_eyelashes01.png"
+  ],
+  "Teeth": [
+   "Teeth_teeth.png"
+  ],
+  "Boots": [
+   "Boots_BootsAnkle.png",
+   "Boots_BootsAnkle-norm.png",
+   "Boots_BootsAnkle-spec.png"
+  ],
+  "Tongue": [
+   "Tongue_tongue01_diffuse.png"
+  ]
+ },
+ "defaultHair": "default",
+ "hairStyles": [
+  "default"
+ ],
+ "facialHair": [],
+ "morphs": [],
+ "expressions": [
+  "x_blink_L",
+  "x_blink_R",
+  "x_browsDown",
+  "x_browsUp",
+  "x_frown",
+  "x_mouthOpen",
+  "x_smile",
+  "x_squint"
+ ],
+ "hiddenBodyFacesRemoved": 3144,
+ "visibleTris": 33219,
+ "pipeline": "hd-2026-10",
+ "npc": true,
+ "echo": false,
+ "tints": {
+  "hair": "#1a1726"
+ },
+ "skins": {
+  "medium": "Skin_medium.png"
+ },
+ "skinMaps": {
+  "normal": "Skin_Normal.png",
+  "maskMap": "Skin_MaskMap.png"
+ },
+ "eyeLayout": {
+  "note": "iris centred at uv (0.5, 0.5); ellipse d = sqrt(4*du^2 + dv^2) < 0.085",
+  "variants": [
+   "Eye_grey.png",
+   "Eye_brown.png",
+   "Eye_blue.png",
+   "Eye_green.png"
+  ]
+ },
+ "palette": {
+  "glow": "#00e5ff",
+  "glow2": "#ff2bd6",
+  "hair": "#1a1726"
+ },
+ "hairAlphaCutoff": {
+  "default": 0.4,
+  "beard": 0.35,
+  "Brows": 0.4,
+  "Lashes": 0.3
+ },
+ "materialDefs": {},
+ "tattoo": "Skin_Tattoo.png",
+ "tattooMask": "Skin_TattooMask.png",
+ "tattooColor": [
+  0.25,
+  0.95,
+  0.85
+ ]
+}

@@ -1,0 +1,241 @@
+{
+ "character": "nia",
+ "name": "Nia",
+ "gender": "female",
+ "height": 1.311,
+ "fbx": "Nia.fbx",
+ "meshes": [
+  {
+   "name": "Body",
+   "kind": "body",
+   "materials": [
+    "Skin"
+   ],
+   "verts": 8593,
+   "tris": 16808,
+   "shapes": [
+    "x_blink_L",
+    "x_blink_R",
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown",
+    "x_browsUp",
+    "x_browsDown",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Brows",
+   "kind": "brows",
+   "materials": [
+    "Brows"
+   ],
+   "verts": 124,
+   "tris": 192,
+   "shapes": [
+    "x_blink_L",
+    "x_blink_R",
+    "x_browsUp",
+    "x_browsDown",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Lashes",
+   "kind": "lashes",
+   "materials": [
+    "Lashes"
+   ],
+   "verts": 250,
+   "tris": 368,
+   "shapes": [
+    "x_blink_L",
+    "x_blink_R",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Hair_default",
+   "kind": "hair",
+   "materials": [
+    "Hair_default"
+   ],
+   "verts": 5203,
+   "tris": 8474,
+   "shapes": [
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown",
+    "x_browsUp",
+    "x_browsDown"
+   ]
+  },
+  {
+   "name": "Eyes",
+   "kind": "eyes",
+   "materials": [
+    "Eyes"
+   ],
+   "verts": 814,
+   "tris": 1524,
+   "shapes": []
+  },
+  {
+   "name": "Teeth",
+   "kind": "teeth",
+   "materials": [
+    "Teeth"
+   ],
+   "verts": 917,
+   "tris": 1423,
+   "shapes": [
+    "x_mouthOpen",
+    "x_smile"
+   ]
+  },
+  {
+   "name": "Cloth_toigo_harem_pants",
+   "kind": "clothes",
+   "materials": [
+    "Cloth_toigo_harem_pants"
+   ],
+   "verts": 2273,
+   "tris": 4289,
+   "shapes": []
+  },
+  {
+   "name": "Boots",
+   "kind": "boots",
+   "materials": [
+    "Boots"
+   ],
+   "verts": 556,
+   "tris": 1004,
+   "shapes": []
+  },
+  {
+   "name": "Tongue",
+   "kind": "tongue",
+   "materials": [
+    "Tongue"
+   ],
+   "verts": 226,
+   "tris": 448,
+   "shapes": [
+    "x_mouthOpen"
+   ]
+  },
+  {
+   "name": "Gear",
+   "kind": "gear",
+   "materials": [
+    "Glow2",
+    "Glow"
+   ],
+   "verts": 288,
+   "tris": 480,
+   "shapes": []
+  },
+  {
+   "name": "Hoodie",
+   "kind": "gear",
+   "materials": [
+    "Cloth_Hoodie"
+   ],
+   "verts": 2572,
+   "tris": 4990,
+   "shapes": []
+  }
+ ],
+ "textures": {
+  "Cloth_Hoodie": [
+   "Nia_Cloth_Hoodie_BaseColor.png",
+   "Nia_Cloth_Hoodie_Normal.png",
+   "Nia_Cloth_Hoodie_MaskMap.png"
+  ],
+  "Skin": [
+   "Skin_medium.png",
+   "Skin_Normal.png",
+   "Skin_MaskMap.png"
+  ],
+  "Eyes": [
+   "Eye_grey.png"
+  ],
+  "Hair_default": [
+   "Hair_default_Color.png"
+  ],
+  "Brows": [
+   "Brows_eyebrow010.png",
+   "Brows_eyebrow010.png"
+  ],
+  "Lashes": [
+   "Lashes_eyelashes01.png"
+  ],
+  "Teeth": [
+   "Teeth_teeth.png"
+  ],
+  "Cloth_toigo_harem_pants": [
+   "Cloth_toigo_harem_pants_HaremPants.png"
+  ],
+  "Boots": [
+   "Boots_MJ-shoes3.png",
+   "Boots_MJ-shoes3-NORM.png",
+   "Boots_MJ-shoes-spec.png"
+  ],
+  "Tongue": [
+   "Tongue_tongue01_diffuse.png"
+  ]
+ },
+ "defaultHair": "default",
+ "hairStyles": [
+  "default"
+ ],
+ "facialHair": [],
+ "morphs": [],
+ "expressions": [
+  "x_blink_L",
+  "x_blink_R",
+  "x_browsDown",
+  "x_browsUp",
+  "x_frown",
+  "x_mouthOpen",
+  "x_smile",
+  "x_squint"
+ ],
+ "hiddenBodyFacesRemoved": 2181,
+ "visibleTris": 40000,
+ "pipeline": "hd-2026-10",
+ "npc": true,
+ "echo": true,
+ "tints": {
+  "hair": "#2b1d14"
+ },
+ "skins": {
+  "medium": "Skin_medium.png"
+ },
+ "skinMaps": {
+  "normal": "Skin_Normal.png",
+  "maskMap": "Skin_MaskMap.png"
+ },
+ "eyeLayout": {
+  "note": "iris centred at uv (0.5, 0.5); ellipse d = sqrt(4*du^2 + dv^2) < 0.085",
+  "variants": [
+   "Eye_grey.png",
+   "Eye_brown.png",
+   "Eye_blue.png",
+   "Eye_green.png"
+  ]
+ },
+ "palette": {
+  "glow": "#a9c4ff",
+  "glow2": "#ff9ad6",
+  "hair": "#2b1d14"
+ },
+ "hairAlphaCutoff": {
+  "default": 0.4,
+  "beard": 0.35,
+  "Brows": 0.4,
+  "Lashes": 0.3
+ },
+ "materialDefs": {}
+}

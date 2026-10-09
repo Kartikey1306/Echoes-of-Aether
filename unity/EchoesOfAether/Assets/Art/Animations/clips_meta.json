@@ -1,0 +1,796 @@
+{
+ "male": {
+  "land": {
+   "duration": 0.4,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "k_light1": {
+   "duration": 0.5333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.12,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.22,
+     "name": "combo"
+    },
+    {
+     "t": 0.26,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "k_light2": {
+   "duration": 0.5333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.13,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.23,
+     "name": "combo"
+    },
+    {
+     "t": 0.27,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "k_light3": {
+   "duration": 0.6333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.17,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.3,
+     "name": "combo"
+    },
+    {
+     "t": 0.34,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "k_heavy": {
+   "duration": 0.9333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.36,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.43,
+     "name": "impact"
+    },
+    {
+     "t": 0.5,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "l_quick1": {
+   "duration": 0.3667,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.1,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.17,
+     "name": "combo"
+    },
+    {
+     "t": 0.21,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "l_quick2": {
+   "duration": 0.4,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.12,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.18,
+     "name": "combo"
+    },
+    {
+     "t": 0.22,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "l_heavy": {
+   "duration": 0.7667,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.2,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.32,
+     "name": "impact"
+    },
+    {
+     "t": 0.46,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "dash": {
+   "duration": 0.3667,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "phase_step": {
+   "duration": 0.3,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "k_pulse": {
+   "duration": 0.8667,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.3,
+     "name": "pulse"
+    }
+   ],
+   "speed": 0.0
+  },
+  "k_ult": {
+   "duration": 1.6,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.9,
+     "name": "impact"
+    }
+   ],
+   "speed": 0.0
+  },
+  "l_echo": {
+   "duration": 0.7333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.24,
+     "name": "echo"
+    }
+   ],
+   "speed": 0.0
+  },
+  "l_ult": {
+   "duration": 1.3333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.6,
+     "name": "impact"
+    }
+   ],
+   "speed": 0.0
+  },
+  "aim_r": {
+   "duration": 0.7,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "fire_r": {
+   "duration": 0.3,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.02,
+     "name": "fire"
+    }
+   ],
+   "speed": 0.0
+  },
+  "aim_l": {
+   "duration": 0.7,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "fire_l": {
+   "duration": 0.3,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.02,
+     "name": "fire"
+    }
+   ],
+   "speed": 0.0
+  },
+  "hit": {
+   "duration": 0.3333,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "stagger": {
+   "duration": 0.8667,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "death": {
+   "duration": 1.5,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "interact": {
+   "duration": 0.7,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.36,
+     "name": "use"
+    }
+   ],
+   "speed": 0.0
+  },
+  "pickup": {
+   "duration": 0.7333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.35,
+     "name": "use"
+    }
+   ],
+   "speed": 0.0
+  },
+  "climb": {
+   "duration": 0.9,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "talk": {
+   "duration": 3.2,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "npc_crossed": {
+   "duration": 3.0,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "npc_hips": {
+   "duration": 3.2,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "npc_work": {
+   "duration": 1.6,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "npc_look": {
+   "duration": 5.7,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "npc_react": {
+   "duration": 1.4333,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "wave": {
+   "duration": 1.6,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "sit": {
+   "duration": 2.5667,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "kneel_work": {
+   "duration": 1.4,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "lie": {
+   "duration": 1.0,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "wake": {
+   "duration": 3.4667,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "idle": {
+   "duration": 5.2667,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "walk": {
+   "duration": 1.0667,
+   "loop": true,
+   "events": [],
+   "speed": 1.9
+  },
+  "run": {
+   "duration": 0.6,
+   "loop": true,
+   "events": [],
+   "speed": 5.0
+  },
+  "sprint": {
+   "duration": 0.4,
+   "loop": true,
+   "events": [],
+   "speed": 7.4
+  },
+  "jump": {
+   "duration": 0.4,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "fall": {
+   "duration": 0.8,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "combat_idle": {
+   "duration": 1.1333,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "crouch_idle": {
+   "duration": 5.2667,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "crouch_walk": {
+   "duration": 1.5667,
+   "loop": true,
+   "events": [],
+   "speed": 1.3
+  }
+ },
+ "female": {
+  "land": {
+   "duration": 0.4,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "k_light1": {
+   "duration": 0.5333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.12,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.22,
+     "name": "combo"
+    },
+    {
+     "t": 0.26,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "k_light2": {
+   "duration": 0.5333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.13,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.23,
+     "name": "combo"
+    },
+    {
+     "t": 0.27,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "k_light3": {
+   "duration": 0.6333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.17,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.3,
+     "name": "combo"
+    },
+    {
+     "t": 0.34,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "k_heavy": {
+   "duration": 0.9333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.36,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.43,
+     "name": "impact"
+    },
+    {
+     "t": 0.5,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "l_quick1": {
+   "duration": 0.3667,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.1,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.17,
+     "name": "combo"
+    },
+    {
+     "t": 0.21,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "l_quick2": {
+   "duration": 0.4,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.12,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.18,
+     "name": "combo"
+    },
+    {
+     "t": 0.22,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "l_heavy": {
+   "duration": 0.7667,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.2,
+     "name": "hit_start"
+    },
+    {
+     "t": 0.32,
+     "name": "impact"
+    },
+    {
+     "t": 0.46,
+     "name": "hit_end"
+    }
+   ],
+   "speed": 0.0
+  },
+  "dash": {
+   "duration": 0.3667,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "phase_step": {
+   "duration": 0.3,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "k_pulse": {
+   "duration": 0.8667,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.3,
+     "name": "pulse"
+    }
+   ],
+   "speed": 0.0
+  },
+  "k_ult": {
+   "duration": 1.6,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.9,
+     "name": "impact"
+    }
+   ],
+   "speed": 0.0
+  },
+  "l_echo": {
+   "duration": 0.7333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.24,
+     "name": "echo"
+    }
+   ],
+   "speed": 0.0
+  },
+  "l_ult": {
+   "duration": 1.3333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.6,
+     "name": "impact"
+    }
+   ],
+   "speed": 0.0
+  },
+  "aim_r": {
+   "duration": 0.7,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "fire_r": {
+   "duration": 0.3,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.02,
+     "name": "fire"
+    }
+   ],
+   "speed": 0.0
+  },
+  "aim_l": {
+   "duration": 0.7,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "fire_l": {
+   "duration": 0.3,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.02,
+     "name": "fire"
+    }
+   ],
+   "speed": 0.0
+  },
+  "hit": {
+   "duration": 0.3333,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "stagger": {
+   "duration": 0.8667,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "death": {
+   "duration": 1.5,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "interact": {
+   "duration": 0.7,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.36,
+     "name": "use"
+    }
+   ],
+   "speed": 0.0
+  },
+  "pickup": {
+   "duration": 0.7333,
+   "loop": false,
+   "events": [
+    {
+     "t": 0.35,
+     "name": "use"
+    }
+   ],
+   "speed": 0.0
+  },
+  "climb": {
+   "duration": 0.9,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "talk": {
+   "duration": 3.2,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "npc_crossed": {
+   "duration": 3.0,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "npc_hips": {
+   "duration": 3.2,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "npc_work": {
+   "duration": 1.6,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "npc_look": {
+   "duration": 5.7,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "npc_react": {
+   "duration": 1.4333,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "wave": {
+   "duration": 1.6,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "sit": {
+   "duration": 2.5667,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "kneel_work": {
+   "duration": 1.4,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "lie": {
+   "duration": 1.0,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "wake": {
+   "duration": 3.4667,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "idle": {
+   "duration": 4.3333,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "walk": {
+   "duration": 0.9667,
+   "loop": true,
+   "events": [],
+   "speed": 1.9
+  },
+  "run": {
+   "duration": 0.5667,
+   "loop": true,
+   "events": [],
+   "speed": 5.0
+  },
+  "sprint": {
+   "duration": 0.3667,
+   "loop": true,
+   "events": [],
+   "speed": 7.4
+  },
+  "jump": {
+   "duration": 0.4,
+   "loop": false,
+   "events": [],
+   "speed": 0.0
+  },
+  "fall": {
+   "duration": 0.8,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "combat_idle": {
+   "duration": 1.1333,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "crouch_idle": {
+   "duration": 4.3333,
+   "loop": true,
+   "events": [],
+   "speed": 0.0
+  },
+  "crouch_walk": {
+   "duration": 1.4333,
+   "loop": true,
+   "events": [],
+   "speed": 1.3
+  }
+ }
+}

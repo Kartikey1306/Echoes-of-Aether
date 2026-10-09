@@ -1,0 +1,2194 @@
+{
+  "generated": "2026-10-08 10:21:53 UTC",
+  "incoming": "/Users/kartikey/Desktop/Game/incoming/mixamo",
+  "log": [
+    "UAL UAL1: import settings unchanged (16 clips)",
+    "UAL UAL2: import settings unchanged (6 clips)",
+    "UAL aim_r (Pistol_Aim_Neutral) Male: loop, 0.17s -> 0.17s (Assets/Art/Animations/UAL/Generated/male/aim_r.anim)",
+    "UAL aim_r (Pistol_Aim_Neutral) Female: loop, 0.17s -> 0.17s (Assets/Art/Animations/UAL/Generated/female/aim_r.anim)",
+    "UAL death (Death01) Male: trim, 2.40s -> 2.38s (Assets/Art/Animations/UAL/Generated/male/death.anim)",
+    "UAL death (Death01) Female: trim, 2.40s -> 2.38s (Assets/Art/Animations/UAL/Generated/female/death.anim)",
+    "UAL fall (Jump_Loop) Male: loop, 2.50s -> 2.50s, posture torso 6.2 -> 8.0, neck vs torso 24.0 -> 8.0, gaze -27.9 -> -14.1, knees 72.0 -> 72.0, feet ahead of hips 6.1 -> 5.8 cm, thighs 35.7 -> 35.8 deg (Assets/Art/Animations/UAL/Generated/male/fall.anim)",
+    "UAL fall (Jump_Loop) Female: loop, 2.50s -> 2.50s, posture torso 2.3 -> 8.0, neck vs torso 28.9 -> 8.0, gaze -28.4 -> -13.6, knees 72.0 -> 72.0, feet ahead of hips 4.0 -> 2.6 cm, thighs 35.0 -> 34.9 deg (Assets/Art/Animations/UAL/Generated/female/fall.anim)",
+    "UAL fire_r (Pistol_Shoot) Male: fit, 0.63s -> 0.32s (Assets/Art/Animations/UAL/Generated/male/fire_r.anim)",
+    "UAL fire_r (Pistol_Shoot) Female: fit, 0.63s -> 0.32s (Assets/Art/Animations/UAL/Generated/female/fire_r.anim)",
+    "UAL hit (Hit_Chest) Male: fit, 0.33s -> 0.33s (Assets/Art/Animations/UAL/Generated/male/hit.anim)",
+    "UAL hit (Hit_Chest) Female: fit, 0.33s -> 0.33s (Assets/Art/Animations/UAL/Generated/female/hit.anim)",
+    "UAL idle (Idle_Loop) Male: loop, 2.50s -> 2.50s, posture torso 4.7 -> 3.0, neck vs torso 14.6 -> 5.0, gaze -7.5 -> 3.5, knees 21.4 -> 3.1, feet ahead of hips 4.2 -> 4.3 cm, thighs 12.8 -> 3.5 deg, head yaw -11.1 -> 0.1, arms out 14.5 -> 8.0 (Assets/Art/Animations/UAL/Generated/male/idle.anim)",
+    "UAL idle (Idle_Loop) Female: loop, 2.50s -> 2.50s, posture torso 1.8 -> 1.8, neck vs torso 18.7 -> 5.0, gaze -8.3 -> 4.0, knees 21.4 -> 3.1, feet ahead of hips 2.8 -> 2.8 cm, thighs 11.9 -> 2.3 deg, head yaw -11.1 -> 0.0, arms out 14.5 -> 8.0 (Assets/Art/Animations/UAL/Generated/female/idle.anim)",
+    "UAL interact (Interact) Male: fit, 2.00s -> 0.88s (Assets/Art/Animations/UAL/Generated/male/interact.anim)",
+    "UAL interact (Interact) Female: fit, 2.00s -> 0.88s (Assets/Art/Animations/UAL/Generated/female/interact.anim)",
+    "UAL jump (Jump_Start) Male: fit, 1.33s -> 0.50s (Assets/Art/Animations/UAL/Generated/male/jump.anim)",
+    "UAL jump (Jump_Start) Female: fit, 1.33s -> 0.50s (Assets/Art/Animations/UAL/Generated/female/jump.anim)",
+    "UAL k_heavy (Sword_Attack) Male: strike, 1.53s -> 0.98s (Assets/Art/Animations/UAL/Generated/male/k_heavy.anim)",
+    "UAL k_heavy (Sword_Attack) Female: strike, 1.53s -> 0.98s (Assets/Art/Animations/UAL/Generated/female/k_heavy.anim)",
+    "UAL k_light1 (Punch_Jab) Male: strike, 0.87s -> 0.53s (Assets/Art/Animations/UAL/Generated/male/k_light1.anim)",
+    "UAL k_light1 (Punch_Jab) Female: strike, 0.87s -> 0.53s (Assets/Art/Animations/UAL/Generated/female/k_light1.anim)",
+    "UAL k_light2 (Punch_Cross) Male: strike, 1.00s -> 0.53s (Assets/Art/Animations/UAL/Generated/male/k_light2.anim)",
+    "UAL k_light2 (Punch_Cross) Female: strike, 1.00s -> 0.53s (Assets/Art/Animations/UAL/Generated/female/k_light2.anim)",
+    "UAL k_light3 (Melee_Hook) Male: strike, 0.47s -> 0.60s (Assets/Art/Animations/UAL/Generated/male/k_light3.anim)",
+    "UAL k_light3 (Melee_Hook) Female: strike, 0.47s -> 0.60s (Assets/Art/Animations/UAL/Generated/female/k_light3.anim)",
+    "UAL k_pulse (Spell_Simple_Shoot) Male: strike, 0.50s -> 0.84s (Assets/Art/Animations/UAL/Generated/male/k_pulse.anim)",
+    "UAL k_pulse (Spell_Simple_Shoot) Female: strike, 0.50s -> 0.84s (Assets/Art/Animations/UAL/Generated/female/k_pulse.anim)",
+    "UAL l_echo (OverhandThrow) Male: strike, 1.33s -> 0.73s (Assets/Art/Animations/UAL/Generated/male/l_echo.anim)",
+    "UAL l_echo (OverhandThrow) Female: strike, 1.33s -> 0.73s (Assets/Art/Animations/UAL/Generated/female/l_echo.anim)",
+    "UAL l_heavy (Sword_Regular_C) Male: strike, 2.00s -> 0.96s (Assets/Art/Animations/UAL/Generated/male/l_heavy.anim)",
+    "UAL l_heavy (Sword_Regular_C) Female: strike, 2.00s -> 0.96s (Assets/Art/Animations/UAL/Generated/female/l_heavy.anim)",
+    "UAL l_quick1 (Sword_Regular_A) Male: strike, 0.43s -> 0.37s (Assets/Art/Animations/UAL/Generated/male/l_quick1.anim)",
+    "UAL l_quick1 (Sword_Regular_A) Female: strike, 0.43s -> 0.37s (Assets/Art/Animations/UAL/Generated/female/l_quick1.anim)",
+    "UAL l_quick2 (Sword_Regular_B) Male: strike, 0.53s -> 0.40s (Assets/Art/Animations/UAL/Generated/male/l_quick2.anim)",
+    "UAL l_quick2 (Sword_Regular_B) Female: strike, 0.53s -> 0.40s (Assets/Art/Animations/UAL/Generated/female/l_quick2.anim)",
+    "UAL land (Jump_Land) Male: fit, 1.27s -> 0.50s (Assets/Art/Animations/UAL/Generated/male/land.anim)",
+    "UAL land (Jump_Land) Female: fit, 1.27s -> 0.50s (Assets/Art/Animations/UAL/Generated/female/land.anim)",
+    "UAL npc_crossed (Idle_FoldArms_Loop) Male: loop, 2.50s -> 2.50s, posture torso 6.0 -> 5.0, neck vs torso 14.0 -> 6.0, gaze -5.5 -> 3.3, knees 12.7 -> 6.0, feet ahead of hips 2.7 -> 2.7 cm, thighs 8.1 -> 5.0 deg, head yaw -11.2 -> 0.1 (Assets/Art/Animations/UAL/Generated/male/npc_crossed.anim)",
+    "UAL npc_crossed (Idle_FoldArms_Loop) Female: loop, 2.50s -> 2.50s, posture torso 3.1 -> 3.1, neck vs torso 17.8 -> 6.0, gaze -6.1 -> 4.0, knees 12.7 -> 6.0, feet ahead of hips 2.0 -> 2.0 cm, thighs 7.6 -> 4.4 deg, head yaw -11.2 -> 0.0 (Assets/Art/Animations/UAL/Generated/female/npc_crossed.anim)",
+    "UAL pickup (PickUp_Table) Male: fit, 0.83s -> 0.73s (Assets/Art/Animations/UAL/Generated/male/pickup.anim)",
+    "UAL pickup (PickUp_Table) Female: fit, 0.83s -> 0.73s (Assets/Art/Animations/UAL/Generated/female/pickup.anim)",
+    "UAL sit (Sitting_Idle_Loop) Male: loop, 1.67s -> 1.67s, posture torso 10.2 -> 10.2, neck vs torso 14.3 -> 8.0, gaze -4.7 -> 1.5, knees 84.1 -> 84.1, feet ahead of hips 53.7 -> 53.7 cm, thighs 91.6 -> 91.6 deg (Assets/Art/Animations/UAL/Generated/male/sit.anim)",
+    "UAL sit (Sitting_Idle_Loop) Female: loop, 1.67s -> 1.67s, posture torso 7.4 -> 10.0, neck vs torso 18.5 -> 8.0, gaze -5.5 -> 2.2, knees 84.1 -> 84.1, feet ahead of hips 46.3 -> 46.3 cm, thighs 90.8 -> 90.8 deg (Assets/Art/Animations/UAL/Generated/female/sit.anim)",
+    "UAL talk (Idle_Talking_Loop) Male: loop, 2.93s -> 2.93s, posture torso 4.4 -> 3.0, neck vs torso 14.8 -> 5.0, gaze -8.0 -> 2.9, knees 21.5 -> 3.1, feet ahead of hips 3.6 -> 3.7 cm, thighs 12.4 -> 3.5 deg, head yaw -11.3 -> 0.1 (Assets/Art/Animations/UAL/Generated/male/talk.anim)",
+    "UAL talk (Idle_Talking_Loop) Female: loop, 2.93s -> 2.93s, posture torso 1.5 -> 1.5, neck vs torso 18.9 -> 5.0, gaze -8.8 -> 4.0, knees 21.5 -> 3.1, feet ahead of hips 2.3 -> 2.3 cm, thighs 11.7 -> 2.4 deg, head yaw -11.3 -> 0.0 (Assets/Art/Animations/UAL/Generated/female/talk.anim)"
+  ],
+  "cmuGaits": {
+    "male": {
+      "walk": {
+        "speed": 1.769,
+        "speedOnAuthoringRig": 1.708,
+        "metaSpeed": 1.9,
+        "useMeasured": false,
+        "plantPhase": 0.922
+      },
+      "run": {
+        "speed": 4.558,
+        "speedOnAuthoringRig": 4.421,
+        "metaSpeed": 5.0,
+        "useMeasured": false,
+        "plantPhase": 0.917
+      },
+      "sprint": {
+        "speed": 6.241,
+        "speedOnAuthoringRig": 6.068,
+        "metaSpeed": 7.4,
+        "useMeasured": false,
+        "plantPhase": 0.88
+      },
+      "crouch_walk": {
+        "speed": 1.208,
+        "speedOnAuthoringRig": 1.177,
+        "metaSpeed": 1.3,
+        "useMeasured": false,
+        "plantPhase": 0.926
+      }
+    },
+    "female": {
+      "walk": {
+        "speed": 1.737,
+        "speedOnAuthoringRig": 1.731,
+        "metaSpeed": 1.9,
+        "useMeasured": false,
+        "plantPhase": 0.931
+      },
+      "run": {
+        "speed": 4.176,
+        "speedOnAuthoringRig": 4.165,
+        "metaSpeed": 5.0,
+        "useMeasured": false,
+        "plantPhase": 0.943
+      },
+      "sprint": {
+        "speed": 5.64,
+        "speedOnAuthoringRig": 5.618,
+        "metaSpeed": 7.4,
+        "useMeasured": false,
+        "plantPhase": 0.909
+      },
+      "crouch_walk": {
+        "speed": 1.179,
+        "speedOnAuthoringRig": 1.177,
+        "metaSpeed": 1.3,
+        "useMeasured": false,
+        "plantPhase": 0.93
+      }
+    }
+  },
+  "failed": [],
+  "ualMap": {
+    "aim_r": "UAL1/Pistol_Aim_Neutral",
+    "death": "UAL1/Death01",
+    "fall": "UAL1/Jump_Loop",
+    "fire_r": "UAL1/Pistol_Shoot",
+    "hit": "UAL1/Hit_Chest",
+    "idle": "UAL1/Idle_Loop",
+    "interact": "UAL1/Interact",
+    "jump": "UAL1/Jump_Start",
+    "k_heavy": "UAL1/Sword_Attack",
+    "k_light1": "UAL1/Punch_Jab",
+    "k_light2": "UAL1/Punch_Cross",
+    "k_light3": "UAL2/Melee_Hook",
+    "k_pulse": "UAL1/Spell_Simple_Shoot",
+    "l_echo": "UAL2/OverhandThrow",
+    "l_heavy": "UAL2/Sword_Regular_C",
+    "l_quick1": "UAL2/Sword_Regular_A",
+    "l_quick2": "UAL2/Sword_Regular_B",
+    "land": "UAL1/Jump_Land",
+    "npc_crossed": "UAL2/Idle_FoldArms_Loop",
+    "pickup": "UAL1/PickUp_Table",
+    "sit": "UAL1/Sitting_Idle_Loop",
+    "talk": "UAL1/Idle_Talking_Loop"
+  },
+  "styles": {
+    "male": {
+      "aim_l": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 0.7,
+        "loop": true
+      },
+      "aim_r": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/aim_r.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Pistol_Aim_Neutral",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 0.1667,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.1667,
+            0.1667
+          ]
+        ],
+        "events": [],
+        "length": 0.1667,
+        "metaDuration": 0.7,
+        "measured": "torso 3 (3..3) pitch 3 (3..3), neck 29 (29..29) pitch 29 (29..29) vs torso 26 (26..26), gaze -13 (-13..-13), knee L 21 (21..21) R 14 (14..14), shoulders fwd 0 (0..0) cm, index curl 15 (15..15), head ahead of shoulders 5 (5..5) cm, hands 0.21 m apart, arms out -97 (-97..-97) deg"
+      },
+      "climb": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 0.9,
+        "loop": true
+      },
+      "combat_idle": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 1.1333,
+        "loop": true
+      },
+      "crouch_idle": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 5.2667,
+        "loop": true
+      },
+      "crouch_walk": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 1.5667,
+        "loop": true,
+        "speed": 1.208,
+        "speedOnAuthoringRig": 1.177,
+        "metaSpeed": 1.3,
+        "useMeasured": false,
+        "plantPhase": 0.926
+      },
+      "dash": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 0.3667,
+        "loop": false
+      },
+      "death": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/death.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Death01",
+        "category": "trim",
+        "loop": false,
+        "sourceLength": 2.4,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.679,
+        "inPlace": false,
+        "trimmedLeadIn": 0.017,
+        "warp": [
+          [
+            0.0167,
+            0.0
+          ],
+          [
+            2.4,
+            2.3833
+          ]
+        ],
+        "events": [],
+        "length": 2.3833,
+        "metaDuration": 1.5,
+        "measured": "torso 52 (1..83) pitch -46 (-83..14), neck 61 (1..90) pitch -49 (-90..26) vs torso -4 (-13..16), gaze 42 (-31..80), knee L 35 (0..80) R 45 (0..119), shoulders fwd 3 (-4..13) cm, index curl 23 (16..89), head ahead of shoulders -9 (-21..9) cm, hands 0.91 m apart, arms out 84 (-42..143) deg"
+      },
+      "fall": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/fall.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Jump_Loop",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 2.5,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            2.5,
+            2.5
+          ]
+        ],
+        "events": [],
+        "length": 2.5,
+        "metaDuration": 0.8,
+        "posture": "torso 6.2 -> 8.0, neck vs torso 24.0 -> 8.0, gaze -27.9 -> -14.1, knees 72.0 -> 72.0, feet ahead of hips 6.1 -> 5.8 cm, thighs 35.7 -> 35.8 deg",
+        "offsets": "body 1.8, legs -1.6, neck 16.0, head 0.0, knee 0.0, foot 0.0, turn 0.0, arm 0.0",
+        "footGoals": "LeftFoot: moved with the corrected feet, up to 2.4 cm (body frame, residual spread 0.7 cm); RightFoot: moved with the corrected feet, up to 2.5 cm (body frame, residual spread 0.7 cm)",
+        "measured": "torso 8 (8..9) pitch 8 (8..9), neck 16 (16..17) pitch 16 (16..17) vs torso 8 (8..8), gaze -14 (-16..-12), knee L 106 (99..112) R 39 (26..50), shoulders fwd -5 (-5..-5) cm, index curl 25 (25..25), head ahead of shoulders 8 (7..8) cm, hands 1.48 m apart, arms out 75 (74..76) deg"
+      },
+      "fire_l": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 0.3,
+        "loop": false
+      },
+      "fire_r": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/fire_r.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Pistol_Shoot",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 0.6333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "rate": 2.0,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.6333,
+            0.3167
+          ]
+        ],
+        "events": [
+          {
+            "name": "fire",
+            "t": 0.0211
+          }
+        ],
+        "length": 0.3167,
+        "metaDuration": 0.3,
+        "measured": "torso 4 (3..4) pitch 3 (3..4), neck 30 (29..30) pitch 29 (29..30) vs torso 26 (26..26), gaze -11 (-13..-9), knee L 21 (21..21) R 14 (14..14), shoulders fwd -1 (-2..0) cm, index curl 15 (15..15), head ahead of shoulders 6 (5..8) cm, hands 0.22 m apart, arms out -97 (-97..-96) deg"
+      },
+      "hit": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/hit.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Hit_Chest",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 0.3333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.026,
+        "inPlace": true,
+        "rate": 1.0,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.3333,
+            0.3333
+          ]
+        ],
+        "events": [],
+        "length": 0.3333,
+        "metaDuration": 0.3333,
+        "measured": "torso 6 (0..13) pitch -3 (-13..5), neck 12 (4..19) pitch 6 (-11..19) vs torso 9 (2..14), gaze 16 (-9..35), knee L 25 (21..29) R 18 (14..22), shoulders fwd 1 (-1..4) cm, index curl 77 (61..91), head ahead of shoulders 0 (-6..5) cm, hands 0.77 m apart, arms out 16 (16..17) deg"
+      },
+      "idle": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/idle.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Idle_Loop",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 2.5,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            2.5,
+            2.5
+          ]
+        ],
+        "events": [],
+        "length": 2.5,
+        "metaDuration": 5.2667,
+        "posture": "torso 4.7 -> 3.0, neck vs torso 14.6 -> 5.0, gaze -7.5 -> 3.5, knees 21.4 -> 3.1, feet ahead of hips 4.2 -> 4.3 cm, thighs 12.8 -> 3.5 deg, head yaw -11.1 -> 0.1, arms out 14.5 -> 8.0",
+        "offsets": "body -1.7, legs 10.8, neck 9.6, head 0.0, knee 20.8, foot 11.4, turn 11.1, arm -9.3",
+        "footGoals": "LeftFoot: moved with the corrected feet, up to 4.3 cm (body frame, residual spread 0.5 cm); RightFoot: moved with the corrected feet, up to 10.8 cm (body frame, residual spread 0.5 cm)",
+        "measured": "torso 3 (2..5) pitch 3 (1..4), neck 8 (7..9) pitch 8 (7..9) vs torso 5 (5..5), gaze 4 (2..6), knee L 3 (0..6) R 3 (0..7), shoulders fwd -1 (-1..0) cm, index curl 91 (91..91), head ahead of shoulders 2 (2..3) cm, hands 0.64 m apart, arms out 8 (7..9) deg"
+      },
+      "interact": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/interact.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Interact",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 2.0,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "rate": 2.0,
+        "trimmedLeadIn": 0.033,
+        "warp": [
+          [
+            0.0333,
+            0.0
+          ],
+          [
+            1.7833,
+            0.875
+          ]
+        ],
+        "events": [
+          {
+            "name": "use",
+            "t": 0.45
+          }
+        ],
+        "length": 0.875,
+        "metaDuration": 0.7,
+        "measured": "torso 5 (3..6) pitch 5 (3..6), neck 19 (18..20) pitch 19 (18..20) vs torso 15 (14..15), gaze -7 (-10..-5), knee L 23 (21..27) R 17 (14..23), shoulders fwd -1 (-2..-1) cm, index curl 40 (18..90), head ahead of shoulders 5 (4..5) cm, hands 0.84 m apart, arms out 25 (12..52) deg"
+      },
+      "jump": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/jump.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Jump_Start",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 1.3333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.062,
+        "inPlace": true,
+        "rate": 2.0,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.5
+          ]
+        ],
+        "events": [],
+        "length": 0.5,
+        "metaDuration": 0.4,
+        "measured": "torso 8 (4..28) pitch 3 (-12..28), neck 27 (12..35) pitch 26 (12..35) vs torso 23 (8..29), gaze -15 (-24..11), knee L 112 (14..137) R 78 (0..120), shoulders fwd -2 (-5..7) cm, index curl 38 (25..91), head ahead of shoulders 7 (-5..11) cm, hands 1.29 m apart, arms out 69 (16..92) deg"
+      },
+      "k_heavy": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/k_heavy.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Sword_Attack",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 1.5333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "strike": {
+          "time": 0.396,
+          "limb": "right hand",
+          "speed": 22.78,
+          "detected": true
+        },
+        "anchor": 0.41,
+        "windupRate": 0.764,
+        "recoveryRate": 2.0,
+        "trimmedLeadIn": 0.082,
+        "warp": [
+          [
+            0.0824,
+            0.0
+          ],
+          [
+            0.3957,
+            0.41
+          ],
+          [
+            1.5333,
+            0.9788
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.36
+          },
+          {
+            "name": "impact",
+            "t": 0.43
+          },
+          {
+            "name": "hit_end",
+            "t": 0.5
+          }
+        ],
+        "length": 0.9788,
+        "metaDuration": 0.9333,
+        "measured": "torso 12 (2..28) pitch 8 (-2..20), neck 27 (14..45) pitch 24 (12..37) vs torso 16 (13..22), gaze -19 (-37..0), knee L 64 (50..98) R 72 (54..104), shoulders fwd -4 (-7..-1) cm, index curl 15 (15..15), head ahead of shoulders 8 (4..13) cm, hands 1.32 m apart, arms out 54 (-3..104) deg"
+      },
+      "k_light1": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/k_light1.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Punch_Jab",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 0.8667,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "strike": {
+          "time": 0.147,
+          "limb": "left hand",
+          "speed": 10.56,
+          "detected": true
+        },
+        "anchor": 0.162,
+        "windupRate": 0.5,
+        "recoveryRate": 1.653,
+        "trimmedLeadIn": 0.098,
+        "warp": [
+          [
+            0.0981,
+            0.0
+          ],
+          [
+            0.1472,
+            0.0981
+          ],
+          [
+            0.8667,
+            0.5333
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.12
+          },
+          {
+            "name": "combo",
+            "t": 0.22
+          },
+          {
+            "name": "hit_end",
+            "t": 0.26
+          }
+        ],
+        "length": 0.5333,
+        "metaDuration": 0.5333,
+        "measured": "torso 4 (3..5) pitch -3 (-4..-1), neck 24 (22..28) pitch 24 (22..27) vs torso 27 (27..28), gaze -16 (-20..-14), knee L 43 (43..44) R 27 (18..32), shoulders fwd 1 (0..1) cm, index curl 91 (91..91), head ahead of shoulders 3 (3..4) cm, hands 0.70 m apart, arms out 56 (-55..120) deg"
+      },
+      "k_light2": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/k_light2.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Punch_Cross",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 1.0,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "strike": {
+          "time": 0.183,
+          "limb": "right hand",
+          "speed": 8.82,
+          "detected": true
+        },
+        "anchor": 0.172,
+        "windupRate": 0.5,
+        "recoveryRate": 1.885,
+        "trimmedLeadIn": 0.133,
+        "warp": [
+          [
+            0.1333,
+            0.0
+          ],
+          [
+            0.1833,
+            0.1
+          ],
+          [
+            1.0,
+            0.5333
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.13
+          },
+          {
+            "name": "combo",
+            "t": 0.23
+          },
+          {
+            "name": "hit_end",
+            "t": 0.27
+          }
+        ],
+        "length": 0.5333,
+        "metaDuration": 0.5333,
+        "measured": "torso 4 (0..6) pitch 0 (-5..3), neck 27 (22..31) pitch 26 (22..29) vs torso 26 (26..27), gaze -19 (-23..-16), knee L 37 (32..43) R 33 (15..44), shoulders fwd 0 (-1..1) cm, index curl 91 (91..91), head ahead of shoulders 5 (3..6) cm, hands 0.56 m apart, arms out -37 (-168..0) deg"
+      },
+      "k_light3": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/k_light3.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "Melee_Hook",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 0.4667,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 0.429,
+        "inPlace": false,
+        "strike": {
+          "time": 0.241,
+          "limb": "right hand",
+          "speed": 35.58,
+          "detected": true
+        },
+        "anchor": 0.221,
+        "windupRate": 1.092,
+        "recoveryRate": 0.6,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.2414,
+            0.221
+          ],
+          [
+            0.4667,
+            0.5965
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.17
+          },
+          {
+            "name": "combo",
+            "t": 0.3
+          },
+          {
+            "name": "hit_end",
+            "t": 0.34
+          }
+        ],
+        "length": 0.5965,
+        "metaDuration": 0.6333,
+        "measured": "torso 37 (4..62) pitch 27 (-12..49), neck 46 (14..77) pitch 40 (-11..75) vs torso 13 (1..26), gaze -36 (-66..11), knee L 95 (60..114) R 59 (35..78), shoulders fwd -4 (-10..5) cm, index curl 91 (91..91), head ahead of shoulders 10 (-7..18) cm, hands 1.09 m apart, arms out -4 (-84..107) deg"
+      },
+      "k_pulse": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/k_pulse.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Spell_Simple_Shoot",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 0.5,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "strike": {
+          "time": 0.033,
+          "limb": "left hand",
+          "speed": 0.7,
+          "detected": true
+        },
+        "anchor": 0.3,
+        "windupRate": 0.5,
+        "recoveryRate": 0.6,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0333,
+            0.0667
+          ],
+          [
+            0.5,
+            0.8444
+          ]
+        ],
+        "events": [
+          {
+            "name": "pulse",
+            "t": 0.3
+          }
+        ],
+        "length": 0.8444,
+        "metaDuration": 0.8667,
+        "measured": "torso 3 (3..4) pitch 3 (2..3), neck 18 (18..18) pitch 18 (18..18) vs torso 15 (15..15), gaze -13 (-16..-11), knee L 24 (24..24) R 23 (21..26), shoulders fwd 0 (-1..1) cm, index curl 11 (5..15), head ahead of shoulders 3 (3..4) cm, hands 1.30 m apart, arms out 65 (64..66) deg"
+      },
+      "k_ult": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 1.6,
+        "loop": false
+      },
+      "kneel_work": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 1.4,
+        "loop": true
+      },
+      "l_echo": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/l_echo.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "OverhandThrow",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 1.3333,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "strike": {
+          "time": 0.367,
+          "limb": "right hand",
+          "speed": 21.82,
+          "detected": true
+        },
+        "anchor": 0.24,
+        "windupRate": 1.389,
+        "recoveryRate": 1.96,
+        "trimmedLeadIn": 0.033,
+        "warp": [
+          [
+            0.0333,
+            0.0
+          ],
+          [
+            0.3667,
+            0.24
+          ],
+          [
+            1.3333,
+            0.7333
+          ]
+        ],
+        "events": [
+          {
+            "name": "echo",
+            "t": 0.24
+          }
+        ],
+        "length": 0.7333,
+        "metaDuration": 0.7333,
+        "measured": "torso 34 (1..62) pitch 28 (-11..58), neck 35 (2..56) pitch 30 (-9..54) vs torso 2 (-5..14), gaze -19 (-39..8), knee L 68 (31..100) R 38 (6..63), shoulders fwd -6 (-12..2) cm, index curl 59 (41..91), head ahead of shoulders 11 (-3..20) cm, hands 1.12 m apart, arms out 43 (16..99) deg"
+      },
+      "l_heavy": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/l_heavy.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "Sword_Regular_C",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 2.0,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 1.533,
+        "inPlace": false,
+        "strike": {
+          "time": 0.633,
+          "limb": "right hand",
+          "speed": 30.4,
+          "detected": true
+        },
+        "anchor": 0.3,
+        "windupRate": 2.111,
+        "recoveryRate": 2.0,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.6333,
+            0.3
+          ],
+          [
+            1.9501,
+            0.9584
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.2
+          },
+          {
+            "name": "impact",
+            "t": 0.32
+          },
+          {
+            "name": "hit_end",
+            "t": 0.46
+          }
+        ],
+        "length": 0.9584,
+        "metaDuration": 0.7667,
+        "measured": "torso 32 (6..55) pitch 31 (6..54), neck 42 (5..68) pitch 41 (3..68) vs torso 9 (-17..20), gaze -20 (-46..28), knee L 62 (13..116) R 37 (7..103), shoulders fwd -5 (-9..-1) cm, index curl 47 (19..91), head ahead of shoulders 12 (5..19) cm, hands 1.07 m apart, arms out 33 (-17..110) deg"
+      },
+      "l_quick1": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/l_quick1.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "Sword_Regular_A",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 0.4333,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 0.799,
+        "inPlace": false,
+        "strike": {
+          "time": 0.241,
+          "limb": "right hand",
+          "speed": 28.52,
+          "detected": true
+        },
+        "anchor": 0.133,
+        "windupRate": 1.81,
+        "recoveryRate": 0.824,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.2407,
+            0.133
+          ],
+          [
+            0.4333,
+            0.3667
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.1
+          },
+          {
+            "name": "combo",
+            "t": 0.17
+          },
+          {
+            "name": "hit_end",
+            "t": 0.21
+          }
+        ],
+        "length": 0.3667,
+        "metaDuration": 0.3667,
+        "measured": "torso 20 (7..48) pitch -2 (-14..4), neck 35 (21..65) pitch 13 (-3..25) vs torso 15 (1..21), gaze -17 (-35..-9), knee L 47 (17..71) R 84 (9..101), shoulders fwd 0 (-2..4) cm, index curl 46 (39..91), head ahead of shoulders 2 (-2..6) cm, hands 0.69 m apart, arms out -25 (-57..67) deg"
+      },
+      "l_quick2": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/l_quick2.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "Sword_Regular_B",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 0.5333,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 0.166,
+        "inPlace": false,
+        "strike": {
+          "time": 0.25,
+          "limb": "right hand",
+          "speed": 26.51,
+          "detected": true
+        },
+        "anchor": 0.15,
+        "windupRate": 1.556,
+        "recoveryRate": 1.133,
+        "trimmedLeadIn": 0.017,
+        "warp": [
+          [
+            0.0167,
+            0.0
+          ],
+          [
+            0.25,
+            0.15
+          ],
+          [
+            0.5333,
+            0.4
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.12
+          },
+          {
+            "name": "combo",
+            "t": 0.18
+          },
+          {
+            "name": "hit_end",
+            "t": 0.22
+          }
+        ],
+        "length": 0.4,
+        "metaDuration": 0.4,
+        "measured": "torso 44 (10..55) pitch 40 (9..52), neck 57 (25..69) pitch 52 (16..67) vs torso 12 (2..16), gaze -27 (-39..-15), knee L 30 (7..66) R 105 (94..121), shoulders fwd -7 (-9..-4) cm, index curl 28 (19..39), head ahead of shoulders 14 (6..18) cm, hands 1.07 m apart, arms out 27 (-95..119) deg"
+      },
+      "l_ult": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 1.3333,
+        "loop": false
+      },
+      "land": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/land.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Jump_Land",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 1.2667,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.036,
+        "inPlace": true,
+        "rate": 2.0,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.5
+          ]
+        ],
+        "events": [],
+        "length": 0.5,
+        "metaDuration": 0.4,
+        "measured": "torso 28 (11..41) pitch 28 (11..41), neck 39 (24..48) pitch 39 (24..48) vs torso 10 (7..25), gaze -33 (-42..-22), knee L 67 (21..119) R 72 (19..129), shoulders fwd -4 (-6..-1) cm, index curl 70 (25..91), head ahead of shoulders 11 (6..14) cm, hands 0.95 m apart, arms out 40 (17..73) deg"
+      },
+      "lie": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 1.0,
+        "loop": true
+      },
+      "npc_crossed": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/npc_crossed.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "Idle_FoldArms_Loop",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 2.5,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            2.5,
+            2.5
+          ]
+        ],
+        "events": [],
+        "length": 2.5,
+        "metaDuration": 3.0,
+        "posture": "torso 6.0 -> 5.0, neck vs torso 14.0 -> 6.0, gaze -5.5 -> 3.3, knees 12.7 -> 6.0, feet ahead of hips 2.7 -> 2.7 cm, thighs 8.1 -> 5.0 deg, head yaw -11.2 -> 0.1",
+        "offsets": "body -1.0, legs 4.1, neck 8.0, head 0.0, knee 6.7, foot 3.6, turn 11.2, arm 0.0",
+        "footGoals": "LeftFoot: moved with the corrected feet, up to 1.4 cm (body frame, residual spread 0.8 cm); RightFoot: moved with the corrected feet, up to 3.5 cm (body frame, residual spread 0.4 cm)",
+        "measured": "torso 5 (3..7) pitch 5 (3..7), neck 11 (10..12) pitch 11 (10..12) vs torso 6 (6..6), gaze 3 (3..4), knee L 9 (6..11) R 3 (0..7), shoulders fwd -1 (-2..-1) cm, index curl 91 (91..91), head ahead of shoulders 3 (2..4) cm, hands 0.06 m apart, arms out -74 (-75..-72) deg"
+      },
+      "npc_hips": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 3.2,
+        "loop": true
+      },
+      "npc_look": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 5.7,
+        "loop": true
+      },
+      "npc_react": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 1.4333,
+        "loop": false
+      },
+      "npc_work": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 1.6,
+        "loop": true
+      },
+      "phase_step": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 0.3,
+        "loop": false
+      },
+      "pickup": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/pickup.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "PickUp_Table",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 0.8333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "rate": 1.136,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.8333,
+            0.7333
+          ]
+        ],
+        "events": [
+          {
+            "name": "use",
+            "t": 0.35
+          }
+        ],
+        "length": 0.7333,
+        "metaDuration": 0.7333,
+        "measured": "torso 11 (5..21) pitch 10 (5..20), neck 25 (19..34) pitch 24 (19..34) vs torso 14 (13..15), gaze -19 (-34..-8), knee L 25 (20..34) R 15 (10..20), shoulders fwd -2 (-4..-1) cm, index curl 69 (11..92), head ahead of shoulders 7 (5..10) cm, hands 0.80 m apart, arms out 5 (-22..25) deg"
+      },
+      "run": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 0.6,
+        "loop": true,
+        "speed": 4.558,
+        "speedOnAuthoringRig": 4.421,
+        "metaSpeed": 5.0,
+        "useMeasured": false,
+        "plantPhase": 0.917
+      },
+      "sit": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/sit.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Sitting_Idle_Loop",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 1.6667,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.6667,
+            1.6667
+          ]
+        ],
+        "events": [],
+        "length": 1.6667,
+        "metaDuration": 2.5667,
+        "posture": "torso 10.2 -> 10.2, neck vs torso 14.3 -> 8.0, gaze -4.7 -> 1.5, knees 84.1 -> 84.1, feet ahead of hips 53.7 -> 53.7 cm, thighs 91.6 -> 91.6 deg",
+        "offsets": "body 0.0, legs 0.0, neck 6.3, head 0.0, knee 0.0, foot 0.0, turn 0.0, arm 0.0",
+        "footGoals": "LeftFoot: moved with the corrected feet, up to 0.1 cm (body offset, residual spread 0.2 cm); RightFoot: moved with the corrected feet, up to 0.1 cm (body offset, residual spread 0.2 cm)",
+        "measured": "torso 10 (10..11) pitch 10 (10..11), neck 18 (18..19) pitch 18 (18..19) vs torso 8 (8..8), gaze 2 (0..3), knee L 85 (85..85) R 84 (84..84), shoulders fwd -2 (-3..-2) cm, index curl 21 (20..21), head ahead of shoulders 6 (5..6) cm, hands 0.51 m apart, arms out 1 (1..1) deg"
+      },
+      "sprint": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 0.4,
+        "loop": true,
+        "speed": 6.241,
+        "speedOnAuthoringRig": 6.068,
+        "metaSpeed": 7.4,
+        "useMeasured": false,
+        "plantPhase": 0.88
+      },
+      "stagger": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 0.8667,
+        "loop": false
+      },
+      "talk": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/male/talk.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Idle_Talking_Loop",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 2.9333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            2.9333,
+            2.9333
+          ]
+        ],
+        "events": [],
+        "length": 2.9333,
+        "metaDuration": 3.2,
+        "posture": "torso 4.4 -> 3.0, neck vs torso 14.8 -> 5.0, gaze -8.0 -> 2.9, knees 21.5 -> 3.1, feet ahead of hips 3.6 -> 3.7 cm, thighs 12.4 -> 3.5 deg, head yaw -11.3 -> 0.1",
+        "offsets": "body -1.4, legs 10.2, neck 9.8, head 0.0, knee 20.1, foot 11.0, turn 11.3, arm 0.0",
+        "footGoals": "LeftFoot: moved with the corrected feet, up to 4.3 cm (body frame, residual spread 0.6 cm); RightFoot: moved with the corrected feet, up to 10.3 cm (body frame, residual spread 0.6 cm)",
+        "measured": "torso 3 (1..5) pitch 3 (1..5), neck 8 (7..9) pitch 8 (7..9) vs torso 5 (4..6), gaze 3 (-1..8), knee L 4 (2..6) R 2 (0..4), shoulders fwd -1 (-1..0) cm, index curl 15 (15..15), head ahead of shoulders 2 (1..3) cm, hands 0.47 m apart, arms out -6 (-10..0) deg"
+      },
+      "wake": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 3.4667,
+        "loop": false
+      },
+      "walk": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 1.0667,
+        "loop": true,
+        "speed": 1.769,
+        "speedOnAuthoringRig": 1.708,
+        "metaSpeed": 1.9,
+        "useMeasured": false,
+        "plantPhase": 0.922
+      },
+      "wave": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Male.fbx",
+        "length": 1.6,
+        "loop": false
+      }
+    },
+    "female": {
+      "aim_l": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 0.7,
+        "loop": true
+      },
+      "aim_r": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/aim_r.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Pistol_Aim_Neutral",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 0.1667,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.1667,
+            0.1667
+          ]
+        ],
+        "events": [],
+        "length": 0.1667,
+        "metaDuration": 0.7,
+        "measured": "torso 2 (2..2) pitch 0 (0..0), neck 31 (31..31) pitch 29 (29..29) vs torso 30 (30..30), gaze -12 (-12..-12), knee L 21 (21..21) R 14 (14..14), shoulders fwd 1 (1..1) cm, index curl 16 (16..16), head ahead of shoulders 5 (5..5) cm, hands 0.11 m apart, arms out -86 (-86..-86) deg"
+      },
+      "climb": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 0.9,
+        "loop": true
+      },
+      "combat_idle": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 1.1333,
+        "loop": true
+      },
+      "crouch_idle": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 4.3333,
+        "loop": true
+      },
+      "crouch_walk": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 1.4333,
+        "loop": true,
+        "speed": 1.179,
+        "speedOnAuthoringRig": 1.177,
+        "metaSpeed": 1.3,
+        "useMeasured": false,
+        "plantPhase": 0.93
+      },
+      "dash": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 0.3667,
+        "loop": false
+      },
+      "death": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/death.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Death01",
+        "category": "trim",
+        "loop": false,
+        "sourceLength": 2.4,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.612,
+        "inPlace": false,
+        "trimmedLeadIn": 0.017,
+        "warp": [
+          [
+            0.0167,
+            0.0
+          ],
+          [
+            2.4,
+            2.3833
+          ]
+        ],
+        "events": [],
+        "length": 2.3833,
+        "metaDuration": 1.5,
+        "measured": "torso 54 (1..88) pitch -49 (-88..12), neck 62 (2..91) pitch -48 (-91..27) vs torso 1 (-9..20), gaze 41 (-34..80), knee L 35 (0..80) R 45 (0..119), shoulders fwd 4 (-3..10) cm, index curl 24 (17..89), head ahead of shoulders -10 (-19..8) cm, hands 0.73 m apart, arms out 83 (-40..142) deg"
+      },
+      "fall": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/fall.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Jump_Loop",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 2.5,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            2.5,
+            2.5
+          ]
+        ],
+        "events": [],
+        "length": 2.5,
+        "metaDuration": 0.8,
+        "posture": "torso 2.3 -> 8.0, neck vs torso 28.9 -> 8.0, gaze -28.4 -> -13.6, knees 72.0 -> 72.0, feet ahead of hips 4.0 -> 2.6 cm, thighs 35.0 -> 34.9 deg",
+        "offsets": "body 5.7, legs -4.4, neck 21.0, head 0.0, knee 0.0, foot 0.0, turn 0.0, arm 0.0",
+        "footGoals": "LeftFoot: moved with the corrected feet, up to 5.7 cm (body frame, residual spread 0.6 cm); RightFoot: moved with the corrected feet, up to 5.9 cm (body frame, residual spread 0.7 cm)",
+        "measured": "torso 8 (8..9) pitch 8 (8..9), neck 16 (16..17) pitch 16 (16..16) vs torso 8 (8..8), gaze -14 (-16..-12), knee L 106 (99..112) R 39 (26..50), shoulders fwd -3 (-3..-3) cm, index curl 26 (26..26), head ahead of shoulders 6 (6..7) cm, hands 1.22 m apart, arms out 75 (74..76) deg"
+      },
+      "fire_l": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 0.3,
+        "loop": false
+      },
+      "fire_r": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/fire_r.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Pistol_Shoot",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 0.6333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "rate": 2.0,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.6333,
+            0.3167
+          ]
+        ],
+        "events": [
+          {
+            "name": "fire",
+            "t": 0.0211
+          }
+        ],
+        "length": 0.3167,
+        "metaDuration": 0.3,
+        "measured": "torso 2 (1..2) pitch 0 (0..0), neck 31 (31..31) pitch 29 (29..29) vs torso 29 (29..30), gaze -11 (-12..-8), knee L 21 (21..21) R 14 (14..14), shoulders fwd 0 (0..1) cm, index curl 16 (16..16), head ahead of shoulders 6 (5..7) cm, hands 0.12 m apart, arms out -85 (-86..-84) deg"
+      },
+      "hit": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/hit.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Hit_Chest",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 0.3333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.024,
+        "inPlace": true,
+        "rate": 1.0,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.3333,
+            0.3333
+          ]
+        ],
+        "events": [],
+        "length": 0.3333,
+        "metaDuration": 0.3333,
+        "measured": "torso 7 (1..16) pitch -6 (-16..2), neck 13 (4..21) pitch 7 (-11..21) vs torso 13 (5..18), gaze 16 (-10..34), knee L 25 (21..29) R 18 (14..22), shoulders fwd 2 (0..4) cm, index curl 77 (61..91), head ahead of shoulders 0 (-7..4) cm, hands 0.59 m apart, arms out 16 (16..17) deg"
+      },
+      "idle": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/idle.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Idle_Loop",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 2.5,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            2.5,
+            2.5
+          ]
+        ],
+        "events": [],
+        "length": 2.5,
+        "metaDuration": 4.3333,
+        "posture": "torso 1.8 -> 1.8, neck vs torso 18.7 -> 5.0, gaze -8.3 -> 4.0, knees 21.4 -> 3.1, feet ahead of hips 2.8 -> 2.8 cm, thighs 11.9 -> 2.3 deg, head yaw -11.1 -> 0.0, arms out 14.5 -> 8.0",
+        "offsets": "body 0.0, legs 9.5, neck 13.7, head -1.1, knee 20.8, foot 11.4, turn 11.1, arm -9.5",
+        "footGoals": "LeftFoot: moved with the corrected feet, up to 5.0 cm (body frame, residual spread 0.4 cm); RightFoot: moved with the corrected feet, up to 9.7 cm (body frame, residual spread 0.4 cm)",
+        "measured": "torso 2 (1..3) pitch 2 (0..3), neck 7 (6..8) pitch 7 (6..8) vs torso 5 (5..5), gaze 4 (2..6), knee L 3 (0..6) R 3 (0..7), shoulders fwd 0 (0..1) cm, index curl 91 (91..91), head ahead of shoulders 1 (1..2) cm, hands 0.47 m apart, arms out 8 (7..9) deg"
+      },
+      "interact": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/interact.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Interact",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 2.0,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "rate": 2.0,
+        "trimmedLeadIn": 0.033,
+        "warp": [
+          [
+            0.0333,
+            0.0
+          ],
+          [
+            1.7833,
+            0.875
+          ]
+        ],
+        "events": [
+          {
+            "name": "use",
+            "t": 0.45
+          }
+        ],
+        "length": 0.875,
+        "metaDuration": 0.7,
+        "measured": "torso 2 (1..3) pitch 2 (0..3), neck 21 (19..22) pitch 21 (19..22) vs torso 19 (18..19), gaze -8 (-10..-6), knee L 23 (21..27) R 17 (14..23), shoulders fwd 0 (0..1) cm, index curl 40 (19..90), head ahead of shoulders 4 (4..5) cm, hands 0.67 m apart, arms out 20 (11..40) deg"
+      },
+      "jump": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/jump.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Jump_Start",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 1.3333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.056,
+        "inPlace": true,
+        "rate": 2.0,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.5
+          ]
+        ],
+        "events": [],
+        "length": 0.5,
+        "metaDuration": 0.4,
+        "measured": "torso 6 (3..27) pitch 0 (-13..27), neck 28 (14..40) pitch 28 (14..40) vs torso 29 (13..34), gaze -16 (-25..9), knee L 112 (14..137) R 78 (0..120), shoulders fwd -1 (-4..6) cm, index curl 38 (26..91), head ahead of shoulders 7 (-3..12) cm, hands 1.06 m apart, arms out 69 (16..91) deg"
+      },
+      "k_heavy": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/k_heavy.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Sword_Attack",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 1.5333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "strike": {
+          "time": 0.396,
+          "limb": "right hand",
+          "speed": 19.92,
+          "detected": true
+        },
+        "anchor": 0.41,
+        "windupRate": 0.724,
+        "recoveryRate": 2.0,
+        "trimmedLeadIn": 0.099,
+        "warp": [
+          [
+            0.0989,
+            0.0
+          ],
+          [
+            0.3957,
+            0.41
+          ],
+          [
+            1.5333,
+            0.9788
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.36
+          },
+          {
+            "name": "impact",
+            "t": 0.43
+          },
+          {
+            "name": "hit_end",
+            "t": 0.5
+          }
+        ],
+        "length": 0.9788,
+        "metaDuration": 0.9333,
+        "measured": "torso 10 (2..25) pitch 6 (-3..17), neck 26 (13..42) pitch 22 (10..37) vs torso 16 (12..21), gaze -18 (-32..0), knee L 64 (50..98) R 72 (54..104), shoulders fwd -2 (-5..0) cm, index curl 16 (16..16), head ahead of shoulders 7 (3..12) cm, hands 1.09 m apart, arms out 54 (-6..103) deg"
+      },
+      "k_light1": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/k_light1.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Punch_Jab",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 0.8667,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "strike": {
+          "time": 0.147,
+          "limb": "left hand",
+          "speed": 8.77,
+          "detected": true
+        },
+        "anchor": 0.162,
+        "windupRate": 0.5,
+        "recoveryRate": 1.653,
+        "trimmedLeadIn": 0.098,
+        "warp": [
+          [
+            0.0981,
+            0.0
+          ],
+          [
+            0.1472,
+            0.0981
+          ],
+          [
+            0.8667,
+            0.5333
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.12
+          },
+          {
+            "name": "combo",
+            "t": 0.22
+          },
+          {
+            "name": "hit_end",
+            "t": 0.26
+          }
+        ],
+        "length": 0.5333,
+        "metaDuration": 0.5333,
+        "measured": "torso 6 (3..7) pitch -5 (-7..-3), neck 27 (25..30) pitch 26 (25..29) vs torso 32 (30..32), gaze -17 (-21..-14), knee L 43 (43..44) R 27 (18..32), shoulders fwd 2 (1..2) cm, index curl 91 (91..91), head ahead of shoulders 4 (4..5) cm, hands 0.54 m apart, arms out 37 (-71..103) deg"
+      },
+      "k_light2": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/k_light2.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Punch_Cross",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 1.0,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "strike": {
+          "time": 0.183,
+          "limb": "right hand",
+          "speed": 7.61,
+          "detected": true
+        },
+        "anchor": 0.172,
+        "windupRate": 0.5,
+        "recoveryRate": 1.885,
+        "trimmedLeadIn": 0.133,
+        "warp": [
+          [
+            0.1333,
+            0.0
+          ],
+          [
+            0.1833,
+            0.1
+          ],
+          [
+            1.0,
+            0.5333
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.13
+          },
+          {
+            "name": "combo",
+            "t": 0.23
+          },
+          {
+            "name": "hit_end",
+            "t": 0.27
+          }
+        ],
+        "length": 0.5333,
+        "metaDuration": 0.5333,
+        "measured": "torso 4 (1..7) pitch -2 (-7..1), neck 30 (25..33) pitch 28 (25..30) vs torso 30 (28..32), gaze -20 (-24..-18), knee L 37 (32..43) R 33 (15..44), shoulders fwd 1 (-1..2) cm, index curl 91 (91..91), head ahead of shoulders 5 (3..7) cm, hands 0.41 m apart, arms out -25 (-152..161) deg"
+      },
+      "k_light3": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/k_light3.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "Melee_Hook",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 0.4667,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 0.387,
+        "inPlace": false,
+        "strike": {
+          "time": 0.241,
+          "limb": "right hand",
+          "speed": 31.91,
+          "detected": true
+        },
+        "anchor": 0.221,
+        "windupRate": 1.092,
+        "recoveryRate": 0.6,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.2414,
+            0.221
+          ],
+          [
+            0.4667,
+            0.5965
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.17
+          },
+          {
+            "name": "combo",
+            "t": 0.3
+          },
+          {
+            "name": "hit_end",
+            "t": 0.34
+          }
+        ],
+        "length": 0.5965,
+        "metaDuration": 0.6333,
+        "measured": "torso 34 (4..57) pitch 24 (-13..46), neck 45 (15..74) pitch 38 (-14..71) vs torso 14 (-1..27), gaze -35 (-63..12), knee L 95 (60..114) R 59 (35..78), shoulders fwd -3 (-6..5) cm, index curl 91 (91..91), head ahead of shoulders 10 (-8..17) cm, hands 0.90 m apart, arms out -12 (-87..105) deg"
+      },
+      "k_pulse": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/k_pulse.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Spell_Simple_Shoot",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 0.5,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "strike": {
+          "time": 0.033,
+          "limb": "left hand",
+          "speed": 0.59,
+          "detected": true
+        },
+        "anchor": 0.3,
+        "windupRate": 0.5,
+        "recoveryRate": 0.6,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0333,
+            0.0667
+          ],
+          [
+            0.5,
+            0.8444
+          ]
+        ],
+        "events": [
+          {
+            "name": "pulse",
+            "t": 0.3
+          }
+        ],
+        "length": 0.8444,
+        "metaDuration": 0.8667,
+        "measured": "torso 2 (2..3) pitch 0 (0..1), neck 19 (19..20) pitch 19 (19..20) vs torso 19 (19..19), gaze -14 (-16..-12), knee L 24 (24..24) R 23 (21..26), shoulders fwd 1 (1..1) cm, index curl 11 (4..15), head ahead of shoulders 3 (3..3) cm, hands 1.08 m apart, arms out 63 (62..64) deg"
+      },
+      "k_ult": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 1.6,
+        "loop": false
+      },
+      "kneel_work": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 1.4,
+        "loop": true
+      },
+      "l_echo": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/l_echo.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "OverhandThrow",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 1.3333,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "strike": {
+          "time": 0.367,
+          "limb": "right hand",
+          "speed": 19.11,
+          "detected": true
+        },
+        "anchor": 0.24,
+        "windupRate": 1.389,
+        "recoveryRate": 1.96,
+        "trimmedLeadIn": 0.033,
+        "warp": [
+          [
+            0.0333,
+            0.0
+          ],
+          [
+            0.3667,
+            0.24
+          ],
+          [
+            1.3333,
+            0.7333
+          ]
+        ],
+        "events": [
+          {
+            "name": "echo",
+            "t": 0.24
+          }
+        ],
+        "length": 0.7333,
+        "metaDuration": 0.7333,
+        "measured": "torso 32 (1..58) pitch 25 (-11..54), neck 35 (0..56) pitch 30 (-10..54) vs torso 5 (-3..17), gaze -18 (-39..8), knee L 68 (31..100) R 38 (6..63), shoulders fwd -4 (-9..2) cm, index curl 60 (41..91), head ahead of shoulders 10 (-4..19) cm, hands 0.91 m apart, arms out 41 (16..97) deg"
+      },
+      "l_heavy": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/l_heavy.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "Sword_Regular_C",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 2.0,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 1.381,
+        "inPlace": false,
+        "strike": {
+          "time": 0.633,
+          "limb": "right hand",
+          "speed": 26.38,
+          "detected": true
+        },
+        "anchor": 0.3,
+        "windupRate": 2.111,
+        "recoveryRate": 2.0,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.6333,
+            0.3
+          ],
+          [
+            1.9501,
+            0.9584
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.2
+          },
+          {
+            "name": "impact",
+            "t": 0.32
+          },
+          {
+            "name": "hit_end",
+            "t": 0.46
+          }
+        ],
+        "length": 0.9584,
+        "metaDuration": 0.7667,
+        "measured": "torso 31 (3..54) pitch 30 (3..53), neck 42 (4..67) pitch 41 (3..66) vs torso 10 (-21..22), gaze -20 (-46..28), knee L 62 (13..116) R 37 (7..103), shoulders fwd -4 (-8..0) cm, index curl 47 (20..91), head ahead of shoulders 12 (4..18) cm, hands 0.86 m apart, arms out 33 (-14..112) deg"
+      },
+      "l_quick1": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/l_quick1.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "Sword_Regular_A",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 0.4333,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 0.72,
+        "inPlace": false,
+        "strike": {
+          "time": 0.241,
+          "limb": "right hand",
+          "speed": 24.85,
+          "detected": true
+        },
+        "anchor": 0.133,
+        "windupRate": 1.81,
+        "recoveryRate": 0.824,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.2407,
+            0.133
+          ],
+          [
+            0.4333,
+            0.3667
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.1
+          },
+          {
+            "name": "combo",
+            "t": 0.17
+          },
+          {
+            "name": "hit_end",
+            "t": 0.21
+          }
+        ],
+        "length": 0.3667,
+        "metaDuration": 0.3667,
+        "measured": "torso 21 (4..47) pitch -3 (-15..3), neck 34 (22..67) pitch 10 (-17..22) vs torso 13 (-2..20), gaze -16 (-36..-7), knee L 47 (17..71) R 84 (9..101), shoulders fwd 1 (-1..4) cm, index curl 46 (39..91), head ahead of shoulders 1 (-2..6) cm, hands 0.55 m apart, arms out -23 (-52..56) deg"
+      },
+      "l_quick2": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/l_quick2.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "Sword_Regular_B",
+        "category": "strike",
+        "loop": false,
+        "sourceLength": 0.5333,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 0.149,
+        "inPlace": true,
+        "strike": {
+          "time": 0.25,
+          "limb": "right hand",
+          "speed": 23.88,
+          "detected": true
+        },
+        "anchor": 0.15,
+        "windupRate": 1.556,
+        "recoveryRate": 1.133,
+        "trimmedLeadIn": 0.017,
+        "warp": [
+          [
+            0.0167,
+            0.0
+          ],
+          [
+            0.25,
+            0.15
+          ],
+          [
+            0.5333,
+            0.4
+          ]
+        ],
+        "events": [
+          {
+            "name": "hit_start",
+            "t": 0.12
+          },
+          {
+            "name": "combo",
+            "t": 0.18
+          },
+          {
+            "name": "hit_end",
+            "t": 0.22
+          }
+        ],
+        "length": 0.4,
+        "metaDuration": 0.4,
+        "measured": "torso 43 (11..52) pitch 39 (10..50), neck 57 (23..68) pitch 50 (15..65) vs torso 11 (3..16), gaze -27 (-42..-14), knee L 30 (7..66) R 105 (94..121), shoulders fwd -6 (-8..-3) cm, index curl 28 (19..39), head ahead of shoulders 14 (6..19) cm, hands 0.89 m apart, arms out 28 (-91..114) deg"
+      },
+      "l_ult": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 1.3333,
+        "loop": false
+      },
+      "land": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/land.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Jump_Land",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 1.2667,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.032,
+        "inPlace": true,
+        "rate": 2.0,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.5
+          ]
+        ],
+        "events": [],
+        "length": 0.5,
+        "metaDuration": 0.4,
+        "measured": "torso 27 (9..40) pitch 27 (9..40), neck 43 (26..53) pitch 43 (26..53) vs torso 15 (12..30), gaze -37 (-42..-24), knee L 67 (21..119) R 72 (19..129), shoulders fwd -4 (-6..-1) cm, index curl 71 (26..91), head ahead of shoulders 12 (6..16) cm, hands 0.75 m apart, arms out 37 (16..73) deg"
+      },
+      "lie": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 1.0,
+        "loop": true
+      },
+      "npc_crossed": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/npc_crossed.anim",
+        "library": "Assets/Art/Animations/UAL/UAL2.fbx",
+        "take": "Idle_FoldArms_Loop",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 2.5,
+        "sha1": "f5330bce3d52d3368a37404ee9fba7f13d3ee9c3",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            2.5,
+            2.5
+          ]
+        ],
+        "events": [],
+        "length": 2.5,
+        "metaDuration": 3.0,
+        "posture": "torso 3.1 -> 3.1, neck vs torso 17.8 -> 6.0, gaze -6.1 -> 4.0, knees 12.7 -> 6.0, feet ahead of hips 2.0 -> 2.0 cm, thighs 7.6 -> 4.4 deg, head yaw -11.2 -> 0.0",
+        "offsets": "body 0.0, legs 3.2, neck 11.8, head -1.6, knee 6.7, foot 3.6, turn 11.2, arm 0.0",
+        "footGoals": "LeftFoot: moved with the corrected feet, up to 1.5 cm (body frame, residual spread 0.7 cm); RightFoot: moved with the corrected feet, up to 2.9 cm (body frame, residual spread 0.4 cm)",
+        "measured": "torso 3 (2..5) pitch 3 (1..5), neck 9 (8..10) pitch 9 (8..10) vs torso 6 (6..6), gaze 4 (3..5), knee L 9 (6..11) R 3 (0..7), shoulders fwd 0 (0..1) cm, index curl 91 (91..91), head ahead of shoulders 2 (1..3) cm, hands 0.11 m apart, arms out -69 (-70..-68) deg"
+      },
+      "npc_hips": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 3.2,
+        "loop": true
+      },
+      "npc_look": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 5.7,
+        "loop": true
+      },
+      "npc_react": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 1.4333,
+        "loop": false
+      },
+      "npc_work": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 1.6,
+        "loop": true
+      },
+      "phase_step": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 0.3,
+        "loop": false
+      },
+      "pickup": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/pickup.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "PickUp_Table",
+        "category": "fit",
+        "loop": false,
+        "sourceLength": 0.8333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "rate": 1.136,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.8333,
+            0.7333
+          ]
+        ],
+        "events": [
+          {
+            "name": "use",
+            "t": 0.35
+          }
+        ],
+        "length": 0.7333,
+        "metaDuration": 0.7333,
+        "measured": "torso 9 (2..19) pitch 8 (2..17), neck 26 (21..34) pitch 25 (20..34) vs torso 18 (16..19), gaze -19 (-33..-9), knee L 25 (20..34) R 15 (10..20), shoulders fwd -1 (-3..0) cm, index curl 70 (12..93), head ahead of shoulders 6 (4..10) cm, hands 0.63 m apart, arms out 6 (-20..25) deg"
+      },
+      "run": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 0.5667,
+        "loop": true,
+        "speed": 4.176,
+        "speedOnAuthoringRig": 4.165,
+        "metaSpeed": 5.0,
+        "useMeasured": false,
+        "plantPhase": 0.943
+      },
+      "sit": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/sit.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Sitting_Idle_Loop",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 1.6667,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.6667,
+            1.6667
+          ]
+        ],
+        "events": [],
+        "length": 1.6667,
+        "metaDuration": 2.5667,
+        "posture": "torso 7.4 -> 10.0, neck vs torso 18.5 -> 8.0, gaze -5.5 -> 2.2, knees 84.1 -> 84.1, feet ahead of hips 46.3 -> 46.3 cm, thighs 90.8 -> 90.8 deg",
+        "offsets": "body 2.6, legs -1.5, neck 10.5, head 0.0, knee 0.0, foot 0.0, turn 0.0, arm 0.0",
+        "footGoals": "LeftFoot: moved with the corrected feet, up to 2.6 cm (body frame, residual spread 0.2 cm); RightFoot: moved with the corrected feet, up to 0.6 cm (body offset, residual spread 0.2 cm)",
+        "measured": "torso 10 (9..11) pitch 10 (9..11), neck 18 (18..18) pitch 18 (18..18) vs torso 8 (8..8), gaze 2 (1..4), knee L 85 (85..85) R 84 (84..84), shoulders fwd -1 (-1..-1) cm, index curl 21 (20..22), head ahead of shoulders 5 (5..5) cm, hands 0.36 m apart, arms out 2 (2..2) deg"
+      },
+      "sprint": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 0.3667,
+        "loop": true,
+        "speed": 5.64,
+        "speedOnAuthoringRig": 5.618,
+        "metaSpeed": 7.4,
+        "useMeasured": false,
+        "plantPhase": 0.909
+      },
+      "stagger": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 0.8667,
+        "loop": false
+      },
+      "talk": {
+        "source": "ual",
+        "file": "Assets/Art/Animations/UAL/Generated/female/talk.anim",
+        "library": "Assets/Art/Animations/UAL/UAL1.fbx",
+        "take": "Idle_Talking_Loop",
+        "category": "loop",
+        "loop": true,
+        "sourceLength": 2.9333,
+        "sha1": "2fd61f8ec0458cb52835428201a8c320fad06807",
+        "rootTravel": 0.0,
+        "inPlace": true,
+        "trimmedLeadIn": 0.0,
+        "warp": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            2.9333,
+            2.9333
+          ]
+        ],
+        "events": [],
+        "length": 2.9333,
+        "metaDuration": 3.2,
+        "posture": "torso 1.5 -> 1.5, neck vs torso 18.9 -> 5.0, gaze -8.8 -> 4.0, knees 21.5 -> 3.1, feet ahead of hips 2.3 -> 2.3 cm, thighs 11.7 -> 2.4 deg, head yaw -11.3 -> 0.0",
+        "offsets": "body 0.0, legs 9.2, neck 13.9, head -0.8, knee 20.1, foot 11.0, turn 11.3, arm 0.0",
+        "footGoals": "LeftFoot: moved with the corrected feet, up to 4.8 cm (body frame, residual spread 0.5 cm); RightFoot: moved with the corrected feet, up to 9.3 cm (body frame, residual spread 0.5 cm)",
+        "measured": "torso 2 (1..3) pitch 2 (0..3), neck 7 (5..8) pitch 7 (5..8) vs torso 5 (5..5), gaze 4 (0..9), knee L 4 (2..6) R 2 (0..4), shoulders fwd 0 (0..1) cm, index curl 16 (16..16), head ahead of shoulders 1 (0..2) cm, hands 0.33 m apart, arms out -2 (-4..2) deg"
+      },
+      "wake": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 3.4667,
+        "loop": false
+      },
+      "walk": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 0.9667,
+        "loop": true,
+        "speed": 1.737,
+        "speedOnAuthoringRig": 1.731,
+        "metaSpeed": 1.9,
+        "useMeasured": false,
+        "plantPhase": 0.931
+      },
+      "wave": {
+        "source": "cmu",
+        "file": "Assets/Art/Animations/Anim_Female.fbx",
+        "length": 1.6,
+        "loop": false
+      }
+    }
+  },
+  "summary": "0 Mixamo, 44 UAL, 44 CMU of 88 clip slots",
+  "locomotion": {
+    "male": [
+      {
+        "clip": "walk",
+        "source": "cmu",
+        "authoredSpeed": 1.9,
+        "threshold": 2.2,
+        "timeScale": 1.158
+      },
+      {
+        "clip": "run",
+        "source": "cmu",
+        "authoredSpeed": 5.0,
+        "threshold": 5.2,
+        "timeScale": 1.04
+      },
+      {
+        "clip": "sprint",
+        "source": "cmu",
+        "authoredSpeed": 7.4,
+        "threshold": 7.6,
+        "timeScale": 1.027
+      }
+    ],
+    "female": [
+      {
+        "clip": "walk",
+        "source": "cmu",
+        "authoredSpeed": 1.9,
+        "threshold": 2.2,
+        "timeScale": 1.158
+      },
+      {
+        "clip": "run",
+        "source": "cmu",
+        "authoredSpeed": 5.0,
+        "threshold": 5.2,
+        "timeScale": 1.04
+      },
+      {
+        "clip": "sprint",
+        "source": "cmu",
+        "authoredSpeed": 7.4,
+        "threshold": 7.6,
+        "timeScale": 1.027
+      }
+    ]
+  }
+}

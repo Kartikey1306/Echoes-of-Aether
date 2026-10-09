@@ -1,0 +1,233 @@
+{
+ "character": "maren",
+ "name": "Maren",
+ "gender": "female",
+ "height": 1.578,
+ "fbx": "Maren.fbx",
+ "meshes": [
+  {
+   "name": "Body",
+   "kind": "body",
+   "materials": [
+    "Skin"
+   ],
+   "verts": 10104,
+   "tris": 19612,
+   "shapes": [
+    "x_blink_L",
+    "x_blink_R",
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown",
+    "x_browsUp",
+    "x_browsDown",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Brows",
+   "kind": "brows",
+   "materials": [
+    "Brows"
+   ],
+   "verts": 124,
+   "tris": 192,
+   "shapes": [
+    "x_blink_L",
+    "x_blink_R",
+    "x_browsUp",
+    "x_browsDown",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Lashes",
+   "kind": "lashes",
+   "materials": [
+    "Lashes"
+   ],
+   "verts": 250,
+   "tris": 368,
+   "shapes": [
+    "x_blink_L",
+    "x_blink_R",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Cloth_female_elegantsuit01",
+   "kind": "clothes",
+   "materials": [
+    "Cloth_female_elegantsuit01"
+   ],
+   "verts": 886,
+   "tris": 1436,
+   "shapes": []
+  },
+  {
+   "name": "Hair_default",
+   "kind": "hair",
+   "materials": [
+    "Hair_default"
+   ],
+   "verts": 7831,
+   "tris": 8198,
+   "shapes": []
+  },
+  {
+   "name": "Eyes",
+   "kind": "eyes",
+   "materials": [
+    "Eyes"
+   ],
+   "verts": 810,
+   "tris": 1520,
+   "shapes": []
+  },
+  {
+   "name": "Teeth",
+   "kind": "teeth",
+   "materials": [
+    "Teeth"
+   ],
+   "verts": 916,
+   "tris": 1424,
+   "shapes": [
+    "x_mouthOpen"
+   ]
+  },
+  {
+   "name": "Boots",
+   "kind": "boots",
+   "materials": [
+    "Boots"
+   ],
+   "verts": 1258,
+   "tris": 2500,
+   "shapes": []
+  },
+  {
+   "name": "Tongue",
+   "kind": "tongue",
+   "materials": [
+    "Tongue"
+   ],
+   "verts": 226,
+   "tris": 448,
+   "shapes": [
+    "x_mouthOpen"
+   ]
+  },
+  {
+   "name": "Gear",
+   "kind": "gear",
+   "materials": [
+    "Glow"
+   ],
+   "verts": 208,
+   "tris": 300,
+   "shapes": []
+  },
+  {
+   "name": "LabCoat",
+   "kind": "gear",
+   "materials": [
+    "Cloth_LabCoat"
+   ],
+   "verts": 2100,
+   "tris": 4001,
+   "shapes": []
+  }
+ ],
+ "textures": {
+  "Hair_default": [
+   "Hair_default_Color.png"
+  ],
+  "Cloth_LabCoat": [
+   "Maren_Cloth_LabCoat_BaseColor.png",
+   "Maren_Cloth_LabCoat_Normal.png",
+   "Maren_Cloth_LabCoat_MaskMap.png"
+  ],
+  "Skin": [
+   "Skin_medium.png",
+   "Skin_Normal.png",
+   "Skin_MaskMap.png"
+  ],
+  "Eyes": [
+   "Eye_grey.png"
+  ],
+  "Brows": [
+   "Brows_eyebrow010.png",
+   "Brows_eyebrow010.png"
+  ],
+  "Lashes": [
+   "Lashes_eyelashes01.png"
+  ],
+  "Cloth_female_elegantsuit01": [
+   "Cloth_female_elegantsuit01_female_elegantsuit01_diffuse.png",
+   "Cloth_female_elegantsuit01_female_elegantsuit01_ao.png",
+   "Cloth_female_elegantsuit01_female_elegantsuit01_normal.png"
+  ],
+  "Teeth": [
+   "Teeth_teeth.png"
+  ],
+  "Boots": [
+   "Boots_Shoe.png"
+  ],
+  "Tongue": [
+   "Tongue_tongue01_diffuse.png"
+  ]
+ },
+ "defaultHair": "default",
+ "hairStyles": [
+  "default"
+ ],
+ "facialHair": [],
+ "morphs": [],
+ "expressions": [
+  "x_blink_L",
+  "x_blink_R",
+  "x_browsDown",
+  "x_browsUp",
+  "x_frown",
+  "x_mouthOpen",
+  "x_smile",
+  "x_squint"
+ ],
+ "hiddenBodyFacesRemoved": 1067,
+ "visibleTris": 39999,
+ "pipeline": "hd-2026-10",
+ "npc": true,
+ "echo": true,
+ "tints": {
+  "hair": "#6b5a4a"
+ },
+ "skins": {
+  "medium": "Skin_medium.png"
+ },
+ "skinMaps": {
+  "normal": "Skin_Normal.png",
+  "maskMap": "Skin_MaskMap.png"
+ },
+ "eyeLayout": {
+  "note": "iris centred at uv (0.5, 0.5); ellipse d = sqrt(4*du^2 + dv^2) < 0.085",
+  "variants": [
+   "Eye_grey.png",
+   "Eye_brown.png",
+   "Eye_blue.png",
+   "Eye_green.png"
+  ]
+ },
+ "palette": {
+  "glow": "#8ff0e0",
+  "glow2": "#a77bff",
+  "hair": "#6b5a4a"
+ },
+ "hairAlphaCutoff": {
+  "default": 0.38,
+  "beard": 0.35,
+  "Brows": 0.4,
+  "Lashes": 0.3
+ },
+ "materialDefs": {}
+}
