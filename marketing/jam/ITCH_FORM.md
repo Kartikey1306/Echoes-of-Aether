@@ -6,7 +6,7 @@ Images are in this folder (`marketing/jam/`). Game files are in `Builds/`.
 |---|---|
 | Title | Echoes of Aether |
 | Project URL | echoes-of-aether |
-| Short description or tagline | Two survivors, one silent neon city. A third-person cyberpunk action-adventure with open streets, drivable cars and a 45-minute story. |
+| Short description or tagline (max 120 characters) | Third-person cyberpunk action-adventure: two heroes, an open neon city, drivable cars and a 45-minute story. |
 | Classification | Games |
 | Kind of project | Downloadable |
 | Release status | Released |
