@@ -1,0 +1,8620 @@
+{
+ "name": "Echoes of Aether - city landmarks & district buildings kit",
+ "generated": "2026-10-04T22:07:15",
+ "generator": "blender/city_landmarks (Blender 5.2 headless + numpy, fully procedural). Rebuild: see LANDMARKS.md",
+ "conventions": {
+  "units": "metres; FBX exported with apply_scale_options=FBX_SCALE_ALL, bake_space_transform=True, axis_forward=-Z, axis_up=Y -> import at scale 1, identity rotation",
+  "axes": "Unity Y up, asset FRONT = +Z (Blender -Y). Prototype mapping: Unity = (-x, y, z); a yaw of 0 faces prototype +z (south).",
+  "pivot": "base-centre of the building MASS for landmarks / buildings / plaza blocks; roof sets: base-centre on the roof slab; facade pieces ('wall-base'): centre of the bottom edge on the host wall plane, projecting toward +Z",
+  "lods": "<Name>_LOD0/1/2 siblings -> LODGroup. LOD1 ~25-40% (openings with reveals, big props), LOD2 ~3-6% (flat walls + flush lit window panes so the night silhouette survives). lodTransitions: one value per LOD, last = cull (0 = never, the city culler handles it).",
+  "materials": "Max 8 slots per asset: env-kit tiling materials + this kit's lm_* materials + the shared building atlases (building_trim_atlas, emit_building_atlas; defined in the Environment manifest) + env holo/glass.",
+  "uv0": "metres for tiling materials (world-scale, explicit facade UVs: U along the wall, V = height); atlas faces use 0..1 atlas UVs.",
+  "colliders": "box colliders in Unity local space (centre/size). Landmarks carry their own colliders; plaza blocks / kit buildings: the zone code keeps its mass collider, the manifest box is the mass.",
+  "textures": "BaseColor sRGB, Normal OpenGL (Unity convention), MaskMap linear RGBA (R metallic, G AO, B height, A smoothness); Occlusion points at the MaskMap (URP samples .g)."
+ },
+ "materials": {
+  "lm_concrete_weathered": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 6.0,
+   "tiling": [
+    0.166667,
+    0.166667
+   ],
+   "textures": {
+    "BaseColor": "Textures/lm_concrete_weathered/lm_concrete_weathered_BaseColor.png",
+    "Normal": "Textures/lm_concrete_weathered/lm_concrete_weathered_Normal.png",
+    "MaskMap": "Textures/lm_concrete_weathered/lm_concrete_weathered_MaskMap.png",
+    "Occlusion": "Textures/lm_concrete_weathered/lm_concrete_weathered_MaskMap.png"
+   },
+   "heightDepthMeters": 0.0112,
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "albedo_mean_srgb": [
+     0.498,
+     0.492,
+     0.478
+    ],
+    "rough_mean": 0.852,
+    "metal_mean": 0.0
+   }
+  },
+  "lm_mosaic_tile": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 3.0,
+   "tiling": [
+    0.333333,
+    0.333333
+   ],
+   "textures": {
+    "BaseColor": "Textures/lm_mosaic_tile/lm_mosaic_tile_BaseColor.png",
+    "Normal": "Textures/lm_mosaic_tile/lm_mosaic_tile_Normal.png",
+    "MaskMap": "Textures/lm_mosaic_tile/lm_mosaic_tile_MaskMap.png",
+    "Occlusion": "Textures/lm_mosaic_tile/lm_mosaic_tile_MaskMap.png"
+   },
+   "heightDepthMeters": 0.006,
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "albedo_mean_srgb": [
+     0.582,
+     0.659,
+     0.617
+    ],
+    "rough_mean": 0.497,
+    "metal_mean": 0.0
+   }
+  },
+  "lm_brick_soot": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 4.0,
+   "tiling": [
+    0.25,
+    0.25
+   ],
+   "textures": {
+    "BaseColor": "Textures/lm_brick_soot/lm_brick_soot_BaseColor.png",
+    "Normal": "Textures/lm_brick_soot/lm_brick_soot_Normal.png",
+    "MaskMap": "Textures/lm_brick_soot/lm_brick_soot_MaskMap.png",
+    "Occlusion": "Textures/lm_brick_soot/lm_brick_soot_MaskMap.png"
+   },
+   "heightDepthMeters": 0.0109,
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "albedo_mean_srgb": [
+     0.394,
+     0.294,
+     0.252
+    ],
+    "rough_mean": 0.886,
+    "metal_mean": 0.0
+   }
+  },
+  "lm_cladding_dark": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 4.8,
+   "tiling": [
+    0.208333,
+    0.208333
+   ],
+   "textures": {
+    "BaseColor": "Textures/lm_cladding_dark/lm_cladding_dark_BaseColor.png",
+    "Normal": "Textures/lm_cladding_dark/lm_cladding_dark_Normal.png",
+    "MaskMap": "Textures/lm_cladding_dark/lm_cladding_dark_MaskMap.png",
+    "Occlusion": "Textures/lm_cladding_dark/lm_cladding_dark_MaskMap.png"
+   },
+   "heightDepthMeters": 0.0062,
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "albedo_mean_srgb": [
+     0.166,
+     0.182,
+     0.198
+    ],
+    "rough_mean": 0.423,
+    "metal_mean": 0.809
+   }
+  },
+  "lm_corrugated_painted": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 4.0,
+   "tiling": [
+    0.25,
+    0.25
+   ],
+   "textures": {
+    "BaseColor": "Textures/lm_corrugated_painted/lm_corrugated_painted_BaseColor.png",
+    "Normal": "Textures/lm_corrugated_painted/lm_corrugated_painted_Normal.png",
+    "MaskMap": "Textures/lm_corrugated_painted/lm_corrugated_painted_MaskMap.png",
+    "Occlusion": "Textures/lm_corrugated_painted/lm_corrugated_painted_MaskMap.png"
+   },
+   "heightDepthMeters": 0.0217,
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "albedo_mean_srgb": [
+     0.343,
+     0.415,
+     0.391
+    ],
+    "rough_mean": 0.593,
+    "metal_mean": 0.135
+   }
+  },
+  "lm_plaster_pastel": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 4.0,
+   "tiling": [
+    0.25,
+    0.25
+   ],
+   "textures": {
+    "BaseColor": "Textures/lm_plaster_pastel/lm_plaster_pastel_BaseColor.png",
+    "Normal": "Textures/lm_plaster_pastel/lm_plaster_pastel_Normal.png",
+    "MaskMap": "Textures/lm_plaster_pastel/lm_plaster_pastel_MaskMap.png",
+    "Occlusion": "Textures/lm_plaster_pastel/lm_plaster_pastel_MaskMap.png"
+   },
+   "heightDepthMeters": 0.007,
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "albedo_mean_srgb": [
+     0.711,
+     0.541,
+     0.48
+    ],
+    "rough_mean": 0.839,
+    "metal_mean": 0.0
+   }
+  },
+  "lm_roof_tiles": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/lm_roof_tiles/lm_roof_tiles_BaseColor.png",
+    "Normal": "Textures/lm_roof_tiles/lm_roof_tiles_Normal.png",
+    "MaskMap": "Textures/lm_roof_tiles/lm_roof_tiles_MaskMap.png",
+    "Occlusion": "Textures/lm_roof_tiles/lm_roof_tiles_MaskMap.png"
+   },
+   "heightDepthMeters": 0.0618,
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "albedo_mean_srgb": [
+     0.127,
+     0.281,
+     0.257
+    ],
+    "rough_mean": 0.385,
+    "metal_mean": 0.0
+   }
+  }
+ },
+ "assets": [
+  {
+   "name": "LM_AG_ExchangeAtrium",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_AG_ExchangeAtrium.fbx",
+   "meshes": {
+    "LOD0": "LM_AG_ExchangeAtrium_LOD0",
+    "LOD1": "LM_AG_ExchangeAtrium_LOD1",
+    "LOD2": "LM_AG_ExchangeAtrium_LOD2"
+   },
+   "tris": {
+    "LOD0": 5370,
+    "LOD1": 2454,
+    "LOD2": 606
+   },
+   "size": [
+    51.2,
+    40.063,
+    40.773
+   ],
+   "boundsCenter": [
+    -0.0,
+    19.992,
+    -0.213
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_cladding_dark",
+    "concrete_dark",
+    "holo_cyan",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      10.5,
+      -4.0
+     ],
+     "size": [
+      50.0,
+      21.0,
+      32.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0,
+      5.25,
+      16.0
+     ],
+     "size": [
+      50.0,
+      10.5,
+      8
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Exchange Atrium: four-storey corporate exchange with a raked glass atrium front and an 18 m standing holo ring on the roof.",
+   "lights": [
+    {
+     "position": [
+      0,
+      6,
+      23.0
+     ],
+     "color": "#00e5ff",
+     "range": 26,
+     "intensity": 2.2,
+     "source": "atrium"
+    },
+    {
+     "position": [
+      0,
+      30.4,
+      2
+     ],
+     "color": "#00e5ff",
+     "range": 30,
+     "intensity": 2.5,
+     "source": "holo ring"
+    }
+   ],
+   "roofHeight": 21.0,
+   "height": 40.2,
+   "footprint": [
+    50.0,
+    40.0
+   ],
+   "district": "ArcologyGate",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_AG_HelixArcology",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_AG_HelixArcology.fbx",
+   "meshes": {
+    "LOD0": "LM_AG_HelixArcology_LOD0",
+    "LOD1": "LM_AG_HelixArcology_LOD1",
+    "LOD2": "LM_AG_HelixArcology_LOD2"
+   },
+   "tris": {
+    "LOD0": 36190,
+    "LOD1": 25946,
+    "LOD2": 5806
+   },
+   "size": [
+    53.2,
+    230.4,
+    60.6
+   ],
+   "boundsCenter": [
+    -0.0,
+    115.2,
+    2.7
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_cladding_dark",
+    "concrete_dark",
+    "glass",
+    "holo_cyan",
+    "holo_magenta",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      9.0,
+      0
+     ],
+     "size": [
+      52.0,
+      18.0,
+      54.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0,
+      104.0,
+      0
+     ],
+     "size": [
+      30,
+      172.0,
+      30
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Helix Arcology: megacorp tower on an 18 m podium with a 22 m portal; four-lobed curtain-wall shaft twisting to 190 m, three sky gardens, crown cage with three holo rings and a spire (~230 m).",
+   "lights": [
+    {
+     "position": [
+      0,
+      67.0,
+      13.6
+     ],
+     "color": "#ffd29a",
+     "range": 24,
+     "intensity": 1.5,
+     "source": "sky garden"
+    },
+    {
+     "position": [
+      0,
+      111.0,
+      13.6
+     ],
+     "color": "#ffd29a",
+     "range": 24,
+     "intensity": 1.5,
+     "source": "sky garden"
+    },
+    {
+     "position": [
+      0,
+      153.0,
+      13.6
+     ],
+     "color": "#ffd29a",
+     "range": 24,
+     "intensity": 1.5,
+     "source": "sky garden"
+    },
+    {
+     "position": [
+      0,
+      8,
+      33.0
+     ],
+     "color": "#00e5ff",
+     "range": 28,
+     "intensity": 2.5,
+     "source": "portal"
+    },
+    {
+     "position": [
+      0,
+      202.0,
+      0
+     ],
+     "color": "#00e5ff",
+     "range": 40,
+     "intensity": 3.0,
+     "source": "crown"
+    }
+   ],
+   "screens": [
+    {
+     "center": [
+      0,
+      17.0,
+      28.0
+     ],
+     "size": [
+      18.0,
+      3.6
+     ],
+     "normal": [
+      0,
+      0,
+      1
+     ]
+    }
+   ],
+   "beacons": [
+    [
+     0,
+     230.2,
+     0
+    ]
+   ],
+   "roofHeight": 18.0,
+   "height": 230.4,
+   "footprint": [
+    56.0,
+    58.0
+   ],
+   "district": "ArcologyGate",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_AG_MeridianSpire",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_AG_MeridianSpire.fbx",
+   "meshes": {
+    "LOD0": "LM_AG_MeridianSpire_LOD0",
+    "LOD1": "LM_AG_MeridianSpire_LOD1",
+    "LOD2": "LM_AG_MeridianSpire_LOD2"
+   },
+   "tris": {
+    "LOD0": 15054,
+    "LOD1": 12414,
+    "LOD2": 1808
+   },
+   "size": [
+    45.2,
+    172.35,
+    45.2
+   ],
+   "boundsCenter": [
+    -0.0,
+    86.175,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_plate",
+    "concrete_dark",
+    "lm_cladding_dark",
+    "holo_magenta",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      5.25,
+      0
+     ],
+     "size": [
+      44,
+      10.5,
+      44
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0,
+      71.25,
+      0
+     ],
+     "size": [
+      26,
+      121.5,
+      26
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Meridian Spire: chamfered curtain-wall tower twisting 45 deg to 132 m on a glass lobby podium, LED crown frame, holo band, spire.",
+   "lights": [
+    {
+     "position": [
+      0,
+      4,
+      23
+     ],
+     "color": "#9b5cff",
+     "range": 22,
+     "intensity": 2.0,
+     "source": "lobby"
+    },
+    {
+     "position": [
+      0,
+      140.0,
+      0
+     ],
+     "color": "#ff2bd6",
+     "range": 36,
+     "intensity": 2.5,
+     "source": "crown"
+    }
+   ],
+   "beacons": [
+    [
+     0,
+     172.2,
+     0
+    ]
+   ],
+   "roofHeight": 10.5,
+   "height": 172.4,
+   "footprint": [
+    44.0,
+    44.0
+   ],
+   "district": "ArcologyGate",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_CW_ClockPumpHouse",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_CW_ClockPumpHouse.fbx",
+   "meshes": {
+    "LOD0": "LM_CW_ClockPumpHouse_LOD0",
+    "LOD1": "LM_CW_ClockPumpHouse_LOD1",
+    "LOD2": "LM_CW_ClockPumpHouse_LOD2"
+   },
+   "tris": {
+    "LOD0": 10048,
+    "LOD1": 3928,
+    "LOD2": 446
+   },
+   "size": [
+    35.8,
+    52.9,
+    25.8
+   ],
+   "boundsCenter": [
+    2.1,
+    26.45,
+    -1.9
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_brick_soot",
+    "concrete",
+    "concrete_dark",
+    "lm_corrugated_painted",
+    "holo_cyan",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      6,
+      -4
+     ],
+     "size": [
+      30,
+      12,
+      20
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      14.5,
+      22.3,
+      5.5
+     ],
+     "size": [
+      9,
+      44.6,
+      9
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Clock Pump House: brick pump hall with arched factory glazing and a 48 m clock tower (lit dials, copper cupola, antenna array, holo halo).",
+   "lights": [
+    {
+     "position": [
+      14.5,
+      40.1,
+      12.0
+     ],
+     "color": "#ffd29a",
+     "range": 20,
+     "intensity": 2.0,
+     "source": "clock"
+    },
+    {
+     "position": [
+      0,
+      4,
+      8
+     ],
+     "color": "#ffb070",
+     "range": 16,
+     "intensity": 1.2,
+     "source": "doors"
+    }
+   ],
+   "beacons": [
+    [
+     14.5,
+     52.9,
+     5.5
+    ]
+   ],
+   "roofHeight": 12.0,
+   "height": 52.9,
+   "footprint": [
+    38.0,
+    24.0
+   ],
+   "district": "CanalWard",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_CW_StiltTower",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_CW_StiltTower.fbx",
+   "meshes": {
+    "LOD0": "LM_CW_StiltTower_LOD0",
+    "LOD1": "LM_CW_StiltTower_LOD1",
+    "LOD2": "LM_CW_StiltTower_LOD2"
+   },
+   "tris": {
+    "LOD0": 24971,
+    "LOD1": 12311,
+    "LOD2": 786
+   },
+   "size": [
+    16.345,
+    55.006,
+    18.387
+   ],
+   "boundsCenter": [
+    0.001,
+    27.503,
+    -0.006
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "concrete",
+    "concrete_dark",
+    "lm_plaster_pastel",
+    "lm_brick_soot",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      28.1,
+      0
+     ],
+     "size": [
+      12,
+      44.2,
+      14
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0,
+      3.0,
+      -5
+     ],
+     "size": [
+      4,
+      6.0,
+      4
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      6,
+      3.0,
+      7
+     ],
+     "size": [
+      0.8,
+      6.0,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      6,
+      3.0,
+      -7
+     ],
+     "size": [
+      0.8,
+      6.0,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      2,
+      3.0,
+      7
+     ],
+     "size": [
+      0.8,
+      6.0,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      2,
+      3.0,
+      -7
+     ],
+     "size": [
+      0.8,
+      6.0,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -2,
+      3.0,
+      7
+     ],
+     "size": [
+      0.8,
+      6.0,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -2,
+      3.0,
+      -7
+     ],
+     "size": [
+      0.8,
+      6.0,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -6,
+      3.0,
+      7
+     ],
+     "size": [
+      0.8,
+      6.0,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -6,
+      3.0,
+      -7
+     ],
+     "size": [
+      0.8,
+      6.0,
+      0.8
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Stilt Tower: 13-storey canal tower on a 6 m pier frame over a covered deck, stacked balconies with laundry and plants, rooftop pergola.",
+   "lights": [
+    {
+     "position": [
+      0,
+      4.8,
+      0
+     ],
+     "color": "#ffb070",
+     "range": 14,
+     "intensity": 1.2,
+     "source": "deck"
+    }
+   ],
+   "roofHeight": 50.2,
+   "height": 54.2,
+   "footprint": [
+    12.8,
+    14.8
+   ],
+   "district": "CanalWard",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_CW_WaterfrontRow",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_CW_WaterfrontRow.fbx",
+   "meshes": {
+    "LOD0": "LM_CW_WaterfrontRow_LOD0",
+    "LOD1": "LM_CW_WaterfrontRow_LOD1",
+    "LOD2": "LM_CW_WaterfrontRow_LOD2"
+   },
+   "tris": {
+    "LOD0": 28078,
+    "LOD1": 13167,
+    "LOD2": 862
+   },
+   "size": [
+    44.315,
+    36.974,
+    18.328
+   ],
+   "boundsCenter": [
+    0.019,
+    18.487,
+    0.02
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_brick_soot",
+    "concrete",
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      15.7,
+      0
+     ],
+     "size": [
+      40,
+      31.4,
+      14
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Waterfront Row: five canal houses (6-8 storeys, brick / pastel) over a pier arcade facing the canal, balconies, laundry lines, retrofit cable trays and LED.",
+   "lights": [
+    {
+     "position": [
+      17.875,
+      2.2,
+      7.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      9.625,
+      2.2,
+      7.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      1.875,
+      2.2,
+      7.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -2.375,
+      2.2,
+      7.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -10.125,
+      2.2,
+      7.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -14.0,
+      2.2,
+      7.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      0,
+      3.5,
+      9
+     ],
+     "color": "#ffb070",
+     "range": 18,
+     "intensity": 1.4,
+     "source": "arcade"
+    },
+    {
+     "position": [
+      12,
+      9,
+      9
+     ],
+     "color": "#00e5ff",
+     "range": 12,
+     "intensity": 0.8,
+     "source": "led"
+    }
+   ],
+   "roofHeight": 21.2,
+   "height": 37.4,
+   "footprint": [
+    40.0,
+    14.0
+   ],
+   "district": "CanalWard",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_FR_CoolingTower",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_FR_CoolingTower.fbx",
+   "meshes": {
+    "LOD0": "LM_FR_CoolingTower_LOD0",
+    "LOD1": "LM_FR_CoolingTower_LOD1",
+    "LOD2": "LM_FR_CoolingTower_LOD2"
+   },
+   "tris": {
+    "LOD0": 4848,
+    "LOD1": 1598,
+    "LOD2": 342
+   },
+   "size": [
+    54.0,
+    55.609,
+    54.0
+   ],
+   "boundsCenter": [
+    -0.0,
+    27.746,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "concrete_dark",
+    "lm_concrete_weathered",
+    "concrete",
+    "lm_corrugated_painted",
+    "concrete_wet",
+    "lm_brick_soot",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      -19.5,
+      27.5,
+      -3.0
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -16.887,
+      27.5,
+      -12.75
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -9.75,
+      27.5,
+      -19.887
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -0.0,
+      27.5,
+      -22.5
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      9.75,
+      27.5,
+      -19.887
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      16.887,
+      27.5,
+      -12.75
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      19.5,
+      27.5,
+      -3.0
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      16.887,
+      27.5,
+      6.75
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      9.75,
+      27.5,
+      13.887
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      27.5,
+      16.5
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -9.75,
+      27.5,
+      13.887
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -16.887,
+      27.5,
+      6.75
+     ],
+     "size": [
+      10.0,
+      55.0,
+      10.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      19,
+      4.2,
+      21
+     ],
+     "size": [
+      14,
+      8.4,
+      10
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Cooling Tower: 55 m hyperbolic shell on raker legs with a glowing throat, pump house, pipes, beacons.",
+   "lights": [
+    {
+     "position": [
+      0,
+      52,
+      -3
+     ],
+     "color": "#ff8a2a",
+     "range": 30,
+     "intensity": 2.0,
+     "source": "throat"
+    },
+    {
+     "position": [
+      19,
+      4,
+      27
+     ],
+     "color": "#ffa21f",
+     "range": 14,
+     "intensity": 1.0,
+     "source": "pump house"
+    }
+   ],
+   "beacons": [
+    [
+     -0.0,
+     55.15,
+     -3.0
+    ]
+   ],
+   "roofHeight": 8.4,
+   "height": 55.5,
+   "footprint": [
+    54.0,
+    54.0
+   ],
+   "district": "FoundryRow",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_FR_EmberRefinery",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_FR_EmberRefinery.fbx",
+   "meshes": {
+    "LOD0": "LM_FR_EmberRefinery_LOD0",
+    "LOD1": "LM_FR_EmberRefinery_LOD1",
+    "LOD2": "LM_FR_EmberRefinery_LOD2"
+   },
+   "tris": {
+    "LOD0": 15795,
+    "LOD1": 4350,
+    "LOD2": 1467
+   },
+   "size": [
+    56.0,
+    74.25,
+    58.08
+   ],
+   "boundsCenter": [
+    -0.0,
+    37.125,
+    0.04
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "concrete_dark",
+    "lm_brick_soot",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "concrete",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      13,
+      6.3,
+      22
+     ],
+     "size": [
+      26,
+      12.6,
+      14
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -14,
+      37.0,
+      -18
+     ],
+     "size": [
+      7.2,
+      74,
+      7.2
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -20,
+      33.0,
+      -6
+     ],
+     "size": [
+      6.6,
+      66,
+      6.6
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -6,
+      29.0,
+      -24
+     ],
+     "size": [
+      6.2,
+      58,
+      6.2
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      20,
+      4.5,
+      4
+     ],
+     "size": [
+      12,
+      9,
+      12
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      7,
+      4.0,
+      6
+     ],
+     "size": [
+      10,
+      8,
+      10
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -20,
+      5.0,
+      12
+     ],
+     "size": [
+      13.0,
+      10,
+      13.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      14,
+      19.0,
+      -8
+     ],
+     "size": [
+      3.2,
+      38,
+      3.2
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      8,
+      16.0,
+      -14
+     ],
+     "size": [
+      2.6,
+      32,
+      2.6
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      17,
+      14.0,
+      -20
+     ],
+     "size": [
+      2.2,
+      28,
+      2.2
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      6,
+      12.0,
+      -24
+     ],
+     "size": [
+      2.0,
+      24,
+      2.0
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Ember Refinery: three banded smokestacks (72/64/56 m) with beacons and furnace glow, distillation columns, tanks, pipe racks, control building, flare stack.",
+   "lights": [
+    {
+     "position": [
+      -25.0,
+      48.0,
+      -26.0
+     ],
+     "color": "#ff8a2a",
+     "range": 40,
+     "intensity": 4.0,
+     "source": "flare"
+    },
+    {
+     "position": [
+      -14.0,
+      70.0,
+      -18.0
+     ],
+     "color": "#ff3a2e",
+     "range": 30,
+     "intensity": 2.0,
+     "source": "stack"
+    },
+    {
+     "position": [
+      0,
+      4,
+      31
+     ],
+     "color": "#ffa21f",
+     "range": 18,
+     "intensity": 1.4,
+     "source": "gate"
+    }
+   ],
+   "beacons": [
+    [
+     -14.0,
+     74.3,
+     -18.0
+    ],
+    [
+     -20.0,
+     66.3,
+     -6.0
+    ],
+    [
+     -6.0,
+     58.3,
+     -24.0
+    ],
+    [
+     -25.0,
+     50.0,
+     -26.0
+    ]
+   ],
+   "roofHeight": 12.6,
+   "height": 74.5,
+   "footprint": [
+    56.0,
+    58.0
+   ],
+   "district": "FoundryRow",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_FR_SawtoothWorks",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_FR_SawtoothWorks.fbx",
+   "meshes": {
+    "LOD0": "LM_FR_SawtoothWorks_LOD0",
+    "LOD1": "LM_FR_SawtoothWorks_LOD1",
+    "LOD2": "LM_FR_SawtoothWorks_LOD2"
+   },
+   "tris": {
+    "LOD0": 7025,
+    "LOD1": 2143,
+    "LOD2": 324
+   },
+   "size": [
+    53.8,
+    30.25,
+    41.6
+   ],
+   "boundsCenter": [
+    -1.1,
+    15.125,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_corrugated_painted",
+    "concrete_dark",
+    "concrete_wet",
+    "lm_brick_soot",
+    "concrete",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      5,
+      4.8,
+      0
+     ],
+     "size": [
+      40,
+      9.6,
+      40
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      21,
+      15,
+      -16
+     ],
+     "size": [
+      2.6,
+      30.0,
+      2.6
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -16.0,
+      7,
+      0
+     ],
+     "size": [
+      1.2,
+      14,
+      6.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -25.0,
+      7,
+      0
+     ],
+     "size": [
+      1.2,
+      14,
+      6.0
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Sawtooth Works: north-light hall with an eight-tooth glazed sawtooth roof, brick/corrugated walls, yard gantry crane, containers, chimney, water tower.",
+   "lights": [
+    {
+     "position": [
+      -20,
+      13,
+      0
+     ],
+     "color": "#ffa21f",
+     "range": 22,
+     "intensity": 1.6,
+     "source": "crane"
+    },
+    {
+     "position": [
+      5,
+      5,
+      22
+     ],
+     "color": "#ffb070",
+     "range": 18,
+     "intensity": 1.2,
+     "source": "docks"
+    }
+   ],
+   "roofHeight": 9.6,
+   "height": 30.0,
+   "footprint": [
+    50.0,
+    40.0
+   ],
+   "district": "FoundryRow",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_KS_BridgeTwins",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_KS_BridgeTwins.fbx",
+   "meshes": {
+    "LOD0": "LM_KS_BridgeTwins_LOD0",
+    "LOD1": "LM_KS_BridgeTwins_LOD1",
+    "LOD2": "LM_KS_BridgeTwins_LOD2"
+   },
+   "tris": {
+    "LOD0": 55379,
+    "LOD1": 26756,
+    "LOD2": 1884
+   },
+   "size": [
+    41.056,
+    75.111,
+    21.147
+   ],
+   "boundsCenter": [
+    -0.022,
+    37.556,
+    0.024
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_concrete_weathered",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      4.3,
+      0
+     ],
+     "size": [
+      38,
+      8.6,
+      18
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      11,
+      34.2,
+      0
+     ],
+     "size": [
+      14,
+      68.4,
+      14
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -11,
+      31.0,
+      0
+     ],
+     "size": [
+      14,
+      62.0,
+      14
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bridge Twins: two 20/18-storey tenement towers on a podium joined by four enclosed skybridges, laundry lines, blade sign.",
+   "lights": [
+    {
+     "position": [
+      13.818,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      10.364,
+      2.2,
+      9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      6.909,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      3.455,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -6.909,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -10.364,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -19.8,
+      2.2,
+      7.2
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -19.8,
+      2.2,
+      3.6
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -19.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -19.8,
+      2.2,
+      -7.2
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.8,
+      2.2,
+      -7.2
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.8,
+      2.2,
+      3.6
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.8,
+      2.2,
+      7.2
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.818,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -10.364,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -3.455,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      3.455,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      6.909,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.818,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      18.5,
+      20,
+      9.5
+     ],
+     "color": "#ff2bd6",
+     "range": 18,
+     "intensity": 1.4,
+     "source": "blade"
+    },
+    {
+     "position": [
+      0,
+      4,
+      10
+     ],
+     "color": "#ffb070",
+     "range": 14,
+     "intensity": 1.0,
+     "source": "street"
+    }
+   ],
+   "roofHeight": 66.2,
+   "height": 74.2,
+   "footprint": [
+    38.0,
+    18.0
+   ],
+   "district": "KowloonStacks",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_KS_SignalSpire",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_KS_SignalSpire.fbx",
+   "meshes": {
+    "LOD0": "LM_KS_SignalSpire_LOD0",
+    "LOD1": "LM_KS_SignalSpire_LOD1",
+    "LOD2": "LM_KS_SignalSpire_LOD2"
+   },
+   "tris": {
+    "LOD0": 28295,
+    "LOD1": 14910,
+    "LOD2": 1254
+   },
+   "size": [
+    22.314,
+    90.69,
+    22.337
+   ],
+   "boundsCenter": [
+    0.0,
+    45.345,
+    -0.023
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_concrete_weathered",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      21.2,
+      0
+     ],
+     "size": [
+      18,
+      42.4,
+      18
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Signal Spire: 12-storey tenement crowned by a 38 m red/white lattice telecom mast with beacons and dishes (~88 m).",
+   "lights": [
+    {
+     "position": [
+      7.2,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      3.6,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -3.6,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -7.2,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -9.8,
+      2.2,
+      -3.6
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -9.8,
+      2.2,
+      -7.2
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      9.8,
+      2.2,
+      -7.2
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      9.8,
+      2.2,
+      -3.6
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      9.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      9.8,
+      2.2,
+      7.2
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -7.2,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -3.6,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -9.5,
+      11,
+      10.5
+     ],
+     "color": "#00e5ff",
+     "range": 16,
+     "intensity": 1.2,
+     "source": "blade"
+    }
+   ],
+   "beacons": [
+    [
+     0,
+     58.517,
+     0
+    ],
+    [
+     0,
+     71.183,
+     0
+    ],
+    [
+     0,
+     83.85,
+     0
+    ]
+   ],
+   "roofHeight": 42.4,
+   "height": 90.69,
+   "footprint": [
+    18.0,
+    18.0
+   ],
+   "district": "KowloonStacks",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_KS_TheStack",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_KS_TheStack.fbx",
+   "meshes": {
+    "LOD0": "LM_KS_TheStack_LOD0",
+    "LOD1": "LM_KS_TheStack_LOD1",
+    "LOD2": "LM_KS_TheStack_LOD2"
+   },
+   "tris": {
+    "LOD0": 81734,
+    "LOD1": 42646,
+    "LOD2": 2592
+   },
+   "size": [
+    44.085,
+    91.36,
+    34.341
+   ],
+   "boundsCenter": [
+    -0.013,
+    45.68,
+    0.022
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_concrete_weathered",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      15.5,
+      24.4,
+      8.0
+     ],
+     "size": [
+      9.0,
+      48.8,
+      14.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      6.25,
+      30.8,
+      8.0
+     ],
+     "size": [
+      9.5,
+      61.6,
+      14.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -2.75,
+      21.2,
+      8.0
+     ],
+     "size": [
+      8.5,
+      42.4,
+      14.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -13.5,
+      27.6,
+      8.0
+     ],
+     "size": [
+      13.0,
+      55.2,
+      14.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      15.5,
+      19.6,
+      -7.0
+     ],
+     "size": [
+      9.0,
+      39.2,
+      16.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      6.25,
+      26.0,
+      -7.0
+     ],
+     "size": [
+      9.5,
+      52.0,
+      16.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -2.75,
+      32.7,
+      -7.0
+     ],
+     "size": [
+      8.5,
+      65.4,
+      16.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -13.5,
+      22.8,
+      -7.0
+     ],
+     "size": [
+      13.0,
+      45.6,
+      16.0
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "The Stack: walled-city megablock of eight abutting tenements (38-65 m), cages, cantilevered rooms, AC, laundry, shanty roofs, antenna forest, 22 m lattice mast.",
+   "lights": [
+    {
+     "position": [
+      18.5,
+      2.2,
+      15.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      15.5,
+      2.2,
+      15.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      2.75
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      9.75
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      6.25,
+      2.2,
+      15.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      3.083,
+      2.2,
+      15.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -8.625,
+      2.2,
+      15.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.875,
+      2.2,
+      15.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -15.125,
+      2.2,
+      15.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -18.375,
+      2.2,
+      15.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -20.8,
+      2.2,
+      13.25
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -20.8,
+      2.2,
+      9.75
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -20.8,
+      2.2,
+      6.25
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -20.8,
+      2.2,
+      2.75
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      -13.4
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      -10.2
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      -7.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      -0.6
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      15.5,
+      2.2,
+      -15.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      3.083,
+      2.2,
+      -15.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      6.25,
+      2.2,
+      -15.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      9.417,
+      2.2,
+      -15.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.625,
+      2.2,
+      -15.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -20.8,
+      2.2,
+      -0.6
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -20.8,
+      2.2,
+      -7.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -20.8,
+      2.2,
+      -13.4
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -18.375,
+      2.2,
+      -15.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -15.125,
+      2.2,
+      -15.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.875,
+      2.2,
+      -15.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      0,
+      4,
+      17
+     ],
+     "color": "#ffb070",
+     "range": 14,
+     "intensity": 1.0,
+     "source": "street"
+    },
+    {
+     "position": [
+      10,
+      12,
+      17
+     ],
+     "color": "#00e5ff",
+     "range": 14,
+     "intensity": 0.8,
+     "source": "signs"
+    }
+   ],
+   "beacons": [
+    [
+     -2.75,
+     72.733,
+     -7.0
+    ],
+    [
+     -2.75,
+     80.067,
+     -7.0
+    ],
+    [
+     -2.75,
+     87.4,
+     -7.0
+    ]
+   ],
+   "roofHeight": 65.4,
+   "height": 87.4,
+   "footprint": [
+    40.0,
+    30.0
+   ],
+   "district": "KowloonStacks",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_NM_JadeLanternTower",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_NM_JadeLanternTower.fbx",
+   "meshes": {
+    "LOD0": "LM_NM_JadeLanternTower_LOD0",
+    "LOD1": "LM_NM_JadeLanternTower_LOD1",
+    "LOD2": "LM_NM_JadeLanternTower_LOD2"
+   },
+   "tris": {
+    "LOD0": 41922,
+    "LOD1": 15554,
+    "LOD2": 1492
+   },
+   "size": [
+    29.637,
+    93.8,
+    29.669
+   ],
+   "boundsCenter": [
+    -0.0,
+    46.9,
+    0.016
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_plaster_pastel",
+    "concrete_wet",
+    "lm_roof_tiles",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      4.4,
+      0
+     ],
+     "size": [
+      26.0,
+      8.8,
+      26.0
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Jade Lantern Tower: 7-tier pagoda tower on a 26 m market podium, neon eaves, lantern strings, crown mast (~94 m to the beacon).",
+   "lights": [
+    {
+     "position": [
+      11.143,
+      2.2,
+      13.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      7.429,
+      2.2,
+      13.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      13.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -3.714,
+      2.2,
+      13.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -7.429,
+      2.2,
+      13.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      11.143
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      3.714
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      -3.714
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      -7.429
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      -11.143
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      -7.429
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      -3.714
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      3.714
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      7.429
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      11.143
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -7.429,
+      2.2,
+      -13.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      7.429,
+      2.2,
+      -13.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      0,
+      17.4,
+      10.0
+     ],
+     "color": "#00e5ff",
+     "range": 14,
+     "intensity": 1.2,
+     "source": "eave neon"
+    },
+    {
+     "position": [
+      0,
+      26.6,
+      9.55
+     ],
+     "color": "#ff2bd6",
+     "range": 14,
+     "intensity": 1.2,
+     "source": "eave neon"
+    },
+    {
+     "position": [
+      0,
+      35.8,
+      9.1
+     ],
+     "color": "#ffe14d",
+     "range": 14,
+     "intensity": 1.2,
+     "source": "eave neon"
+    },
+    {
+     "position": [
+      0,
+      45.0,
+      8.65
+     ],
+     "color": "#ff4f9a",
+     "range": 14,
+     "intensity": 1.2,
+     "source": "eave neon"
+    },
+    {
+     "position": [
+      0,
+      54.2,
+      8.2
+     ],
+     "color": "#00e5ff",
+     "range": 14,
+     "intensity": 1.2,
+     "source": "eave neon"
+    },
+    {
+     "position": [
+      0,
+      63.4,
+      7.75
+     ],
+     "color": "#9b5cff",
+     "range": 14,
+     "intensity": 1.2,
+     "source": "eave neon"
+    },
+    {
+     "position": [
+      0,
+      72.6,
+      7.3
+     ],
+     "color": "#ff2bd6",
+     "range": 14,
+     "intensity": 1.2,
+     "source": "eave neon"
+    },
+    {
+     "position": [
+      -13.5,
+      10.0,
+      15.0
+     ],
+     "color": "#ff2bd6",
+     "range": 16,
+     "intensity": 1.4,
+     "source": "blade"
+    }
+   ],
+   "roofHeight": 78.5,
+   "height": 93.8,
+   "footprint": [
+    28.0,
+    28.0
+   ],
+   "beacons": [
+    [
+     0,
+     93.7,
+     0
+    ]
+   ],
+   "district": "NeonMarket",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_NM_NightMarketHall",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_NM_NightMarketHall.fbx",
+   "meshes": {
+    "LOD0": "LM_NM_NightMarketHall_LOD0",
+    "LOD1": "LM_NM_NightMarketHall_LOD1",
+    "LOD2": "LM_NM_NightMarketHall_LOD2"
+   },
+   "tris": {
+    "LOD0": 12517,
+    "LOD1": 5196,
+    "LOD2": 964
+   },
+   "size": [
+    45.837,
+    22.85,
+    33.537
+   ],
+   "boundsCenter": [
+    -0.0,
+    11.425,
+    0.15
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "lm_roof_tiles",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      6.0,
+      -1.5
+     ],
+     "size": [
+      38.0,
+      12.0,
+      23.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      21.0,
+      2.6,
+      12.0
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      13.364,
+      2.6,
+      12.0
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      5.727,
+      2.6,
+      12.0
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -1.909,
+      2.6,
+      12.0
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -9.545,
+      2.6,
+      12.0
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -17.182,
+      2.6,
+      12.0
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      21.0,
+      2.6,
+      8.308
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      21.0,
+      2.6,
+      4.615
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      21.0,
+      2.6,
+      0.923
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      21.0,
+      2.6,
+      -2.769
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      21.0,
+      2.6,
+      -6.462
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      21.0,
+      2.6,
+      -10.154
+     ],
+     "size": [
+      0.8,
+      5.2,
+      0.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      5.0,
+      3.5,
+      15.5
+     ],
+     "size": [
+      0.6,
+      7.0,
+      0.6
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      -5.0,
+      3.5,
+      15.5
+     ],
+     "size": [
+      0.6,
+      7.0,
+      0.6
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Night Market Hall: lacquer colonnade with stalls, clerestory lightboxes, huge hipped pagoda roof, paifang gate.",
+   "lights": [
+    {
+     "position": [
+      17.273,
+      2.2,
+      10.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      10.364,
+      2.2,
+      10.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      6.909,
+      2.2,
+      10.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      3.455,
+      2.2,
+      10.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      10.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -10.364,
+      2.2,
+      10.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.818,
+      2.2,
+      10.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -17.273,
+      2.2,
+      10.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -19.8,
+      2.2,
+      8.083
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -19.8,
+      2.2,
+      -3.417
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -19.8,
+      2.2,
+      -11.083
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.8,
+      2.2,
+      -11.083
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.8,
+      2.2,
+      -7.25
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.8,
+      2.2,
+      -3.417
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.8,
+      2.2,
+      0.417
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.8,
+      2.2,
+      4.25
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.8,
+      2.2,
+      8.083
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      0,
+      6.5,
+      16.5
+     ],
+     "color": "#ff2bd6",
+     "range": 16,
+     "intensity": 1.5,
+     "source": "gate"
+    },
+    {
+     "position": [
+      12,
+      3.0,
+      13.0
+     ],
+     "color": "#ff9a3a",
+     "range": 14,
+     "intensity": 1.2,
+     "source": "stalls"
+    },
+    {
+     "position": [
+      -12,
+      3.0,
+      13.0
+     ],
+     "color": "#ff9a3a",
+     "range": 14,
+     "intensity": 1.2,
+     "source": "stalls"
+    }
+   ],
+   "roofHeight": 12.0,
+   "height": 22.6,
+   "footprint": [
+    44.0,
+    31.0
+   ],
+   "district": "NeonMarket",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LM_NM_SignCanyon",
+   "category": "landmark",
+   "file": "Models/Landmarks/LM_NM_SignCanyon.fbx",
+   "meshes": {
+    "LOD0": "LM_NM_SignCanyon_LOD0",
+    "LOD1": "LM_NM_SignCanyon_LOD1",
+    "LOD2": "LM_NM_SignCanyon_LOD2"
+   },
+   "tris": {
+    "LOD0": 36091,
+    "LOD1": 15115,
+    "LOD2": 1864
+   },
+   "size": [
+    43.686,
+    34.5,
+    26.292
+   ],
+   "boundsCenter": [
+    0.293,
+    17.25,
+    -0.044
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      12.6,
+      0
+     ],
+     "size": [
+      40.0,
+      25.2,
+      22.0
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Sign Canyon: 7-storey market block buried in sign armatures, corner blade towers, 16 x 6 m rooftop billboard and neon glyph frame.",
+   "lights": [
+    {
+     "position": [
+      14.545,
+      2.2,
+      11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      10.909,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      7.273,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      3.636,
+      2.2,
+      11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -10.909,
+      2.2,
+      11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -18.182,
+      2.2,
+      11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -20.8,
+      2.2,
+      5.5
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -20.8,
+      2.2,
+      -1.833
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -20.8,
+      2.2,
+      -9.167
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      -9.167
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      -5.5
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      -1.833
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      1.833
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      5.5
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      20.8,
+      2.2,
+      9.167
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      0,
+      30.2,
+      8.0
+     ],
+     "color": "#ff2bd6",
+     "range": 22,
+     "intensity": 2.0,
+     "source": "billboard"
+    },
+    {
+     "position": [
+      0,
+      12.0,
+      2.0
+     ],
+     "color": "#00e5ff",
+     "range": 18,
+     "intensity": 1.4,
+     "source": "signs"
+    }
+   ],
+   "screens": [
+    {
+     "center": [
+      0,
+      31.2,
+      6.33
+     ],
+     "size": [
+      16.0,
+      6.0
+     ],
+     "normal": [
+      0,
+      0,
+      1
+     ]
+    }
+   ],
+   "roofHeight": 25.2,
+   "height": 34.2,
+   "footprint": [
+    40.0,
+    22.0
+   ],
+   "district": "NeonMarket",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_AG_Office_A",
+   "category": "building",
+   "file": "Models/Buildings/LB_AG_Office_A.fbx",
+   "meshes": {
+    "LOD0": "LB_AG_Office_A_LOD0",
+    "LOD1": "LB_AG_Office_A_LOD1",
+    "LOD2": "LB_AG_Office_A_LOD2"
+   },
+   "tris": {
+    "LOD0": 15152,
+    "LOD1": 4252,
+    "LOD2": 1072
+   },
+   "size": [
+    20.64,
+    61.25,
+    16.92
+   ],
+   "boundsCenter": [
+    -0.0,
+    30.625,
+    0.14
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_cladding_dark",
+    "concrete_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      22.5,
+      0
+     ],
+     "size": [
+      20,
+      45.0,
+      16
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Corporate curtain-wall office, 12 storeys, lobby, LED seams, crown.",
+   "lights": [],
+   "massFootprint": [
+    20,
+    16
+   ],
+   "roofHeight": 45.0,
+   "district": "ArcologyGate",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_AG_Office_B",
+   "category": "building",
+   "file": "Models/Buildings/LB_AG_Office_B.fbx",
+   "meshes": {
+    "LOD0": "LB_AG_Office_B_LOD0",
+    "LOD1": "LB_AG_Office_B_LOD1",
+    "LOD2": "LB_AG_Office_B_LOD2"
+   },
+   "tris": {
+    "LOD0": 16548,
+    "LOD1": 4596,
+    "LOD2": 1136
+   },
+   "size": [
+    16.64,
+    82.85,
+    16.92
+   ],
+   "boundsCenter": [
+    -0.0,
+    41.425,
+    0.14
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_plate",
+    "concrete_dark",
+    "lm_cladding_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      33.3,
+      0
+     ],
+     "size": [
+      16,
+      66.6,
+      16
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Corporate tower, 18 storeys, metal-panel spandrels, violet LED seams.",
+   "lights": [],
+   "massFootprint": [
+    16,
+    16
+   ],
+   "roofHeight": 66.6,
+   "district": "ArcologyGate",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_CW_House_A",
+   "category": "building",
+   "file": "Models/Buildings/LB_CW_House_A.fbx",
+   "meshes": {
+    "LOD0": "LB_CW_House_A_LOD0",
+    "LOD1": "LB_CW_House_A_LOD1",
+    "LOD2": "LB_CW_House_A_LOD2"
+   },
+   "tris": {
+    "LOD0": 6016,
+    "LOD1": 2655,
+    "LOD2": 274
+   },
+   "size": [
+    12.73,
+    26.011,
+    14.305
+   ],
+   "boundsCenter": [
+    -0.0,
+    13.005,
+    0.788
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_brick_soot",
+    "concrete",
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      10.6,
+      0
+     ],
+     "size": [
+      12,
+      21.2,
+      12
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Canal Ward brick house, 6 storeys, balconies with laundry, retrofit cables.",
+   "lights": [
+    {
+     "position": [
+      4.5,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -4.5,
+      2.2,
+      6.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    12,
+    12
+   ],
+   "roofHeight": 21.2,
+   "district": "CanalWard",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_CW_House_B",
+   "category": "building",
+   "file": "Models/Buildings/LB_CW_House_B.fbx",
+   "meshes": {
+    "LOD0": "LB_CW_House_B_LOD0",
+    "LOD1": "LB_CW_House_B_LOD1",
+    "LOD2": "LB_CW_House_B_LOD2"
+   },
+   "tris": {
+    "LOD0": 7929,
+    "LOD1": 3977,
+    "LOD2": 332
+   },
+   "size": [
+    16.73,
+    31.513,
+    14.496
+   ],
+   "boundsCenter": [
+    -0.0,
+    15.756,
+    0.883
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_brick_soot",
+    "concrete",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      12.3,
+      0
+     ],
+     "size": [
+      16,
+      24.6,
+      12
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Canal Ward pastel render house, 7 storeys, balconies, plants.",
+   "lights": [
+    {
+     "position": [
+      3.2,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -3.2,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    16,
+    12
+   ],
+   "roofHeight": 24.6,
+   "district": "CanalWard",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_CW_Warehouse_C",
+   "category": "building",
+   "file": "Models/Buildings/LB_CW_Warehouse_C.fbx",
+   "meshes": {
+    "LOD0": "LB_CW_Warehouse_C_LOD0",
+    "LOD1": "LB_CW_Warehouse_C_LOD1",
+    "LOD2": "LB_CW_Warehouse_C_LOD2"
+   },
+   "tris": {
+    "LOD0": 6020,
+    "LOD1": 2288,
+    "LOD2": 304
+   },
+   "size": [
+    20.5,
+    32.45,
+    15.54
+   ],
+   "boundsCenter": [
+    0.0,
+    16.225,
+    0.649
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_brick_soot",
+    "concrete",
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "concrete_wet",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      8.1,
+      0
+     ],
+     "size": [
+      20,
+      16.2,
+      14
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Canal Ward brick warehouse conversion, 4 storeys of factory glazing, chimney.",
+   "lights": [
+    {
+     "position": [
+      8.0,
+      2.2,
+      7.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      7.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -4.0,
+      2.2,
+      7.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -8.0,
+      2.2,
+      7.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    20,
+    14
+   ],
+   "roofHeight": 16.2,
+   "district": "CanalWard",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_FR_Shed_A",
+   "category": "building",
+   "file": "Models/Buildings/LB_FR_Shed_A.fbx",
+   "meshes": {
+    "LOD0": "LB_FR_Shed_A_LOD0",
+    "LOD1": "LB_FR_Shed_A_LOD1",
+    "LOD2": "LB_FR_Shed_A_LOD2"
+   },
+   "tris": {
+    "LOD0": 2286,
+    "LOD1": 684,
+    "LOD2": 152
+   },
+   "size": [
+    21.6,
+    12.86,
+    15.6
+   ],
+   "boundsCenter": [
+    -0.0,
+    6.43,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_corrugated_painted",
+    "concrete_dark",
+    "concrete_wet",
+    "lm_brick_soot",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      5.1,
+      0
+     ],
+     "size": [
+      20,
+      10.2,
+      14
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Foundry shed, corrugated, roller doors, sawtooth north-light roof.",
+   "lights": [],
+   "massFootprint": [
+    20,
+    14
+   ],
+   "roofHeight": 10.2,
+   "district": "FoundryRow",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_FR_Works_B",
+   "category": "building",
+   "file": "Models/Buildings/LB_FR_Works_B.fbx",
+   "meshes": {
+    "LOD0": "LB_FR_Works_B_LOD0",
+    "LOD1": "LB_FR_Works_B_LOD1",
+    "LOD2": "LB_FR_Works_B_LOD2"
+   },
+   "tris": {
+    "LOD0": 4430,
+    "LOD1": 1542,
+    "LOD2": 258
+   },
+   "size": [
+    17.6,
+    34.85,
+    17.6
+   ],
+   "boundsCenter": [
+    -0.0,
+    17.425,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_brick_soot",
+    "concrete_dark",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "concrete",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      9.3,
+      0
+     ],
+     "size": [
+      16,
+      18.6,
+      16
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Foundry brick works, 4 storeys of steel factory windows, chimney.",
+   "lights": [],
+   "massFootprint": [
+    16,
+    16
+   ],
+   "roofHeight": 18.6,
+   "district": "FoundryRow",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_KS_Slab_C",
+   "category": "building",
+   "file": "Models/Buildings/LB_KS_Slab_C.fbx",
+   "meshes": {
+    "LOD0": "LB_KS_Slab_C_LOD0",
+    "LOD1": "LB_KS_Slab_C_LOD1",
+    "LOD2": "LB_KS_Slab_C_LOD2"
+   },
+   "tris": {
+    "LOD0": 16044,
+    "LOD1": 7812,
+    "LOD2": 518
+   },
+   "size": [
+    20.73,
+    44.863,
+    15.579
+   ],
+   "boundsCenter": [
+    -0.0,
+    22.432,
+    -0.24
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_concrete_weathered",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      18.0,
+      0
+     ],
+     "size": [
+      20,
+      36.0,
+      12
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Kowloon slab block, 11 storeys of caged flats, AC clusters, laundry.",
+   "lights": [
+    {
+     "position": [
+      5.0,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      1.667,
+      2.2,
+      6.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -1.667,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -8.333,
+      2.2,
+      6.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    20,
+    12
+   ],
+   "roofHeight": 36.0,
+   "district": "KowloonStacks",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_KS_Tenement_A",
+   "category": "building",
+   "file": "Models/Buildings/LB_KS_Tenement_A.fbx",
+   "meshes": {
+    "LOD0": "LB_KS_Tenement_A_LOD0",
+    "LOD1": "LB_KS_Tenement_A_LOD1",
+    "LOD2": "LB_KS_Tenement_A_LOD2"
+   },
+   "tris": {
+    "LOD0": 13385,
+    "LOD1": 6791,
+    "LOD2": 498
+   },
+   "size": [
+    12.73,
+    50.932,
+    15.589
+   ],
+   "boundsCenter": [
+    -0.0,
+    25.466,
+    -0.245
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_concrete_weathered",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      21.2,
+      0
+     ],
+     "size": [
+      12,
+      42.4,
+      12
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Kowloon tenement, 13 storeys, cages, cantilevered rooms, shanty roof.",
+   "lights": [
+    {
+     "position": [
+      4.5,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      1.5,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    12,
+    12
+   ],
+   "roofHeight": 42.4,
+   "district": "KowloonStacks",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_KS_Tenement_B",
+   "category": "building",
+   "file": "Models/Buildings/LB_KS_Tenement_B.fbx",
+   "meshes": {
+    "LOD0": "LB_KS_Tenement_B_LOD0",
+    "LOD1": "LB_KS_Tenement_B_LOD1",
+    "LOD2": "LB_KS_Tenement_B_LOD2"
+   },
+   "tris": {
+    "LOD0": 22331,
+    "LOD1": 11322,
+    "LOD2": 860
+   },
+   "size": [
+    16.73,
+    66.16,
+    15.818
+   ],
+   "boundsCenter": [
+    -0.0,
+    33.08,
+    0.052
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_concrete_weathered",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      26.0,
+      0
+     ],
+     "size": [
+      16,
+      52.0,
+      12
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Kowloon tenement, 16 storeys, lattice mast on a shanty roof.",
+   "lights": [
+    {
+     "position": [
+      3.2,
+      2.2,
+      6.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -3.2,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -6.4,
+      2.2,
+      6.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    16,
+    12
+   ],
+   "roofHeight": 52.0,
+   "district": "KowloonStacks",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_NM_Arcade_C",
+   "category": "building",
+   "file": "Models/Buildings/LB_NM_Arcade_C.fbx",
+   "meshes": {
+    "LOD0": "LB_NM_Arcade_C_LOD0",
+    "LOD1": "LB_NM_Arcade_C_LOD1",
+    "LOD2": "LB_NM_Arcade_C_LOD2"
+   },
+   "tris": {
+    "LOD0": 6275,
+    "LOD1": 2660,
+    "LOD2": 276
+   },
+   "size": [
+    20.505,
+    19.247,
+    16.533
+   ],
+   "boundsCenter": [
+    0.112,
+    9.624,
+    0.902
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      7.3,
+      0
+     ],
+     "size": [
+      20,
+      14.6,
+      14
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Neon Market arcade block, 4 storeys over a colonnade, rooftop neon glyph frame.",
+   "lights": [
+    {
+     "position": [
+      8.333,
+      2.2,
+      7.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      5.0,
+      2.2,
+      7.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      1.667,
+      2.2,
+      7.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -8.333,
+      2.2,
+      7.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    20,
+    14
+   ],
+   "roofHeight": 14.6,
+   "district": "NeonMarket",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_NM_Shophouse_A",
+   "category": "building",
+   "file": "Models/Buildings/LB_NM_Shophouse_A.fbx",
+   "meshes": {
+    "LOD0": "LB_NM_Shophouse_A_LOD0",
+    "LOD1": "LB_NM_Shophouse_A_LOD1",
+    "LOD2": "LB_NM_Shophouse_A_LOD2"
+   },
+   "tris": {
+    "LOD0": 5705,
+    "LOD1": 2887,
+    "LOD2": 414
+   },
+   "size": [
+    12.73,
+    27.422,
+    14.414
+   ],
+   "boundsCenter": [
+    -0.0,
+    13.711,
+    0.842
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      10.7,
+      0
+     ],
+     "size": [
+      12,
+      21.4,
+      12
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Neon Market shophouse, 6 storeys, sign armature + corner blade, stalls.",
+   "lights": [
+    {
+     "position": [
+      -0.0,
+      2.2,
+      6.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    12,
+    12
+   ],
+   "roofHeight": 21.4,
+   "district": "NeonMarket",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LB_NM_Shophouse_B",
+   "category": "building",
+   "file": "Models/Buildings/LB_NM_Shophouse_B.fbx",
+   "meshes": {
+    "LOD0": "LB_NM_Shophouse_B_LOD0",
+    "LOD1": "LB_NM_Shophouse_B_LOD1",
+    "LOD2": "LB_NM_Shophouse_B_LOD2"
+   },
+   "tris": {
+    "LOD0": 9834,
+    "LOD1": 4651,
+    "LOD2": 322
+   },
+   "size": [
+    16.73,
+    33.65,
+    14.48
+   ],
+   "boundsCenter": [
+    -0.0,
+    16.825,
+    0.875
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_plaster_pastel",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "lm_roof_tiles",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      12.4,
+      0
+     ],
+     "size": [
+      16,
+      24.8,
+      12
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Neon Market mosaic shophouse, 7 storeys, pagoda roof pavilion with neon eaves.",
+   "lights": [],
+   "massFootprint": [
+    16,
+    12
+   ],
+   "roofHeight": 24.8,
+   "district": "NeonMarket",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_00",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_00.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_00_LOD0",
+    "LOD1": "Plaza_Block_00_LOD1",
+    "LOD2": "Plaza_Block_00_LOD2"
+   },
+   "tris": {
+    "LOD0": 10782,
+    "LOD1": 5504,
+    "LOD2": 432
+   },
+   "size": [
+    24.73,
+    31.36,
+    24.486
+   ],
+   "boundsCenter": [
+    -0.0,
+    15.68,
+    0.878
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      13.0,
+      0
+     ],
+     "size": [
+      24,
+      26,
+      22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 0: mass 24 x 22 m, roof 26 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      10.286,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      6.857,
+      2.2,
+      11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      3.429,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -3.429,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -6.857,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    24,
+    22
+   ],
+   "roofHeight": 26,
+   "plazaBlock": {
+    "index": 0,
+    "x": -58,
+    "z": -60,
+    "faces": "s",
+    "street": "s",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_01",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_01.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_01_LOD0",
+    "LOD1": "Plaza_Block_01_LOD1",
+    "LOD2": "Plaza_Block_01_LOD2"
+   },
+   "tris": {
+    "LOD0": 11809,
+    "LOD1": 5352,
+    "LOD2": 310
+   },
+   "size": [
+    20.73,
+    23.586,
+    23.915
+   ],
+   "boundsCenter": [
+    -0.0,
+    11.793,
+    0.593
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_concrete_weathered",
+    "concrete_wet",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      9.0,
+      0
+     ],
+     "size": [
+      20,
+      18,
+      22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 1: mass 20 x 22 m, roof 18 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      8.333,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      5.0,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -5.0,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -8.333,
+      2.2,
+      11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    20,
+    22
+   ],
+   "roofHeight": 18,
+   "plazaBlock": {
+    "index": 1,
+    "x": -34,
+    "z": -60,
+    "faces": "s",
+    "street": "s",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_02",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_02.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_02_LOD0",
+    "LOD1": "Plaza_Block_02_LOD1",
+    "LOD2": "Plaza_Block_02_LOD2"
+   },
+   "tris": {
+    "LOD0": 3138,
+    "LOD1": 1381,
+    "LOD2": 176
+   },
+   "size": [
+    12.73,
+    18.435,
+    19.721
+   ],
+   "boundsCenter": [
+    -0.0,
+    9.218,
+    0.495
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      6.0,
+      0
+     ],
+     "size": [
+      12,
+      12,
+      18
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 2: mass 12 x 18 m, roof 12 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      4.0,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -4.0,
+      2.2,
+      9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    12,
+    18
+   ],
+   "roofHeight": 12,
+   "plazaBlock": {
+    "index": 2,
+    "x": -20,
+    "z": -62,
+    "faces": "s",
+    "street": "s",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_03",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_03.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_03_LOD0",
+    "LOD1": "Plaza_Block_03_LOD1",
+    "LOD2": "Plaza_Block_03_LOD2"
+   },
+   "tris": {
+    "LOD0": 2100,
+    "LOD1": 1172,
+    "LOD2": 220
+   },
+   "size": [
+    12.5,
+    19.443,
+    18.85
+   ],
+   "boundsCenter": [
+    -0.0,
+    9.722,
+    0.175
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_cladding_dark",
+    "concrete_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      7.0,
+      0
+     ],
+     "size": [
+      12,
+      14,
+      18
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 3: mass 12 x 18 m, roof 14 m (corp style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [],
+   "massFootprint": [
+    12,
+    18
+   ],
+   "roofHeight": 14,
+   "plazaBlock": {
+    "index": 3,
+    "x": 20,
+    "z": -62,
+    "faces": "s",
+    "street": "s",
+    "style": "corp"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_04",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_04.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_04_LOD0",
+    "LOD1": "Plaza_Block_04_LOD1",
+    "LOD2": "Plaza_Block_04_LOD2"
+   },
+   "tris": {
+    "LOD0": 4604,
+    "LOD1": 2244,
+    "LOD2": 400
+   },
+   "size": [
+    20.5,
+    26.227,
+    22.85
+   ],
+   "boundsCenter": [
+    -0.0,
+    13.113,
+    0.175
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_plate",
+    "concrete_dark",
+    "lm_cladding_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      11.0,
+      0
+     ],
+     "size": [
+      20,
+      22,
+      22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 4: mass 20 x 22 m, roof 22 m (corp style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [],
+   "massFootprint": [
+    20,
+    22
+   ],
+   "roofHeight": 22,
+   "plazaBlock": {
+    "index": 4,
+    "x": 34,
+    "z": -60,
+    "faces": "s",
+    "street": "s",
+    "style": "corp"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_05",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_05.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_05_LOD0",
+    "LOD1": "Plaza_Block_05_LOD1",
+    "LOD2": "Plaza_Block_05_LOD2"
+   },
+   "tris": {
+    "LOD0": 8060,
+    "LOD1": 3680,
+    "LOD2": 658
+   },
+   "size": [
+    24.5,
+    36.045,
+    22.85
+   ],
+   "boundsCenter": [
+    -0.0,
+    18.022,
+    0.175
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_cladding_dark",
+    "concrete_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      15.0,
+      0
+     ],
+     "size": [
+      24,
+      30,
+      22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 5: mass 24 x 22 m, roof 30 m (corp style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [],
+   "massFootprint": [
+    24,
+    22
+   ],
+   "roofHeight": 30,
+   "plazaBlock": {
+    "index": 5,
+    "x": 58,
+    "z": -60,
+    "faces": "s",
+    "street": "s",
+    "style": "corp"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_06",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_06.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_06_LOD0",
+    "LOD1": "Plaza_Block_06_LOD1",
+    "LOD2": "Plaza_Block_06_LOD2"
+   },
+   "tris": {
+    "LOD0": 9208,
+    "LOD1": 4282,
+    "LOD2": 304
+   },
+   "size": [
+    24.515,
+    27.023,
+    20.186
+   ],
+   "boundsCenter": [
+    -0.892,
+    13.512,
+    -0.728
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      10.0,
+      0
+     ],
+     "size": [
+      22,
+      20,
+      18
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 6: mass 22 x 18 m, roof 20 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      -11.8,
+      2.2,
+      7.2
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.8,
+      2.2,
+      3.6
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.8,
+      2.2,
+      -7.2
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -5.5,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -1.833,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      9.167,
+      2.2,
+      -9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    22,
+    18
+   ],
+   "roofHeight": 20,
+   "plazaBlock": {
+    "index": 6,
+    "x": -60,
+    "z": -32,
+    "faces": "e",
+    "street": "en",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_07",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_07.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_07_LOD0",
+    "LOD1": "Plaza_Block_07_LOD1",
+    "LOD2": "Plaza_Block_07_LOD2"
+   },
+   "tris": {
+    "LOD0": 9508,
+    "LOD1": 4088,
+    "LOD2": 262
+   },
+   "size": [
+    23.915,
+    21.975,
+    22.73
+   ],
+   "boundsCenter": [
+    -0.593,
+    10.987,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "lm_concrete_weathered",
+    "concrete_dark",
+    "concrete_wet",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      7.5,
+      0
+     ],
+     "size": [
+      22,
+      15,
+      22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 7: mass 22 x 22 m, roof 15 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      -11.8,
+      2.2,
+      9.167
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.8,
+      2.2,
+      5.5
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.8,
+      2.2,
+      1.833
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.8,
+      2.2,
+      -5.5
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.8,
+      2.2,
+      -9.167
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    22,
+    22
+   ],
+   "roofHeight": 15,
+   "plazaBlock": {
+    "index": 7,
+    "x": -62,
+    "z": -10,
+    "faces": "e",
+    "street": "e",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_08",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_08.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_08_LOD0",
+    "LOD1": "Plaza_Block_08_LOD1",
+    "LOD2": "Plaza_Block_08_LOD2"
+   },
+   "tris": {
+    "LOD0": 10040,
+    "LOD1": 4966,
+    "LOD2": 406
+   },
+   "size": [
+    24.512,
+    28.53,
+    22.73
+   ],
+   "boundsCenter": [
+    -0.891,
+    14.265,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      12.0,
+      0
+     ],
+     "size": [
+      22,
+      24,
+      22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 8: mass 22 x 22 m, roof 24 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      -11.8,
+      2.2,
+      9.167
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.8,
+      2.2,
+      5.5
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    22,
+    22
+   ],
+   "roofHeight": 24,
+   "plazaBlock": {
+    "index": 8,
+    "x": -60,
+    "z": 14,
+    "faces": "e",
+    "street": "e",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_09",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_09.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_09_LOD0",
+    "LOD1": "Plaza_Block_09_LOD1",
+    "LOD2": "Plaza_Block_09_LOD2"
+   },
+   "tris": {
+    "LOD0": 12606,
+    "LOD1": 5776,
+    "LOD2": 304
+   },
+   "size": [
+    24.558,
+    23.156,
+    19.947
+   ],
+   "boundsCenter": [
+    -0.914,
+    11.578,
+    0.609
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_concrete_weathered",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      8.5,
+      0
+     ],
+     "size": [
+      22,
+      17,
+      18
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 9: mass 22 x 18 m, roof 17 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      5.5,
+      2.2,
+      9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      1.833,
+      2.2,
+      9.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -1.833,
+      2.2,
+      9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -5.5,
+      2.2,
+      9.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.8,
+      2.2,
+      3.6
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    22,
+    18
+   ],
+   "roofHeight": 17,
+   "plazaBlock": {
+    "index": 9,
+    "x": -62,
+    "z": 36,
+    "faces": "e",
+    "street": "es",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_10",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_10.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_10_LOD0",
+    "LOD1": "Plaza_Block_10_LOD1",
+    "LOD2": "Plaza_Block_10_LOD2"
+   },
+   "tris": {
+    "LOD0": 5794,
+    "LOD1": 2514,
+    "LOD2": 470
+   },
+   "size": [
+    20.85,
+    33.203,
+    20.85
+   ],
+   "boundsCenter": [
+    0.175,
+    16.601,
+    -0.175
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_plate",
+    "concrete_dark",
+    "lm_cladding_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      14.0,
+      0
+     ],
+     "size": [
+      20,
+      28,
+      20
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 10: mass 20 x 20 m, roof 28 m (corp style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [],
+   "massFootprint": [
+    20,
+    20
+   ],
+   "roofHeight": 28,
+   "plazaBlock": {
+    "index": 10,
+    "x": 66,
+    "z": -34,
+    "faces": "w",
+    "street": "wn",
+    "style": "corp"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_11",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_11.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_11_LOD0",
+    "LOD1": "Plaza_Block_11_LOD1",
+    "LOD2": "Plaza_Block_11_LOD2"
+   },
+   "tris": {
+    "LOD0": 4064,
+    "LOD1": 2086,
+    "LOD2": 342
+   },
+   "size": [
+    20.85,
+    21.483,
+    24.5
+   ],
+   "boundsCenter": [
+    0.175,
+    10.741,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_cladding_dark",
+    "concrete_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      9.0,
+      0
+     ],
+     "size": [
+      20,
+      18,
+      24
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 11: mass 20 x 24 m, roof 18 m (corp style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [],
+   "massFootprint": [
+    20,
+    24
+   ],
+   "roofHeight": 18,
+   "plazaBlock": {
+    "index": 11,
+    "x": 66,
+    "z": -8,
+    "faces": "w",
+    "street": "w",
+    "style": "corp"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_12",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_12.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_12_LOD0",
+    "LOD1": "Plaza_Block_12_LOD1",
+    "LOD2": "Plaza_Block_12_LOD2"
+   },
+   "tris": {
+    "LOD0": 4776,
+    "LOD1": 2342,
+    "LOD2": 400
+   },
+   "size": [
+    20.85,
+    29.353,
+    22.371
+   ],
+   "boundsCenter": [
+    0.175,
+    14.676,
+    0.064
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "metal_plate",
+    "concrete_dark",
+    "lm_cladding_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      12.0,
+      0
+     ],
+     "size": [
+      20,
+      24,
+      22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 12: mass 20 x 22 m, roof 24 m (corp style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [],
+   "massFootprint": [
+    20,
+    22
+   ],
+   "roofHeight": 24,
+   "plazaBlock": {
+    "index": 12,
+    "x": 66,
+    "z": 18,
+    "faces": "w",
+    "street": "w",
+    "style": "corp"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_13",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_13.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_13_LOD0",
+    "LOD1": "Plaza_Block_13_LOD1",
+    "LOD2": "Plaza_Block_13_LOD2"
+   },
+   "tris": {
+    "LOD0": 3762,
+    "LOD1": 1826,
+    "LOD2": 330
+   },
+   "size": [
+    20.85,
+    19.403,
+    18.85
+   ],
+   "boundsCenter": [
+    0.175,
+    9.702,
+    0.175
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_cladding_dark",
+    "concrete_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      8.0,
+      0
+     ],
+     "size": [
+      20,
+      16,
+      18
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 13: mass 20 x 18 m, roof 16 m (corp style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [],
+   "massFootprint": [
+    20,
+    18
+   ],
+   "roofHeight": 16,
+   "plazaBlock": {
+    "index": 13,
+    "x": 66,
+    "z": 40,
+    "faces": "w",
+    "street": "ws",
+    "style": "corp"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_14",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_14.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_14_LOD0",
+    "LOD1": "Plaza_Block_14_LOD1",
+    "LOD2": "Plaza_Block_14_LOD2"
+   },
+   "tris": {
+    "LOD0": 6631,
+    "LOD1": 3180,
+    "LOD2": 254
+   },
+   "size": [
+    27.1,
+    22.569,
+    16.73
+   ],
+   "boundsCenter": [
+    -0.0,
+    11.284,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      8.0,
+      0
+     ],
+     "size": [
+      24,
+      16,
+      16
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 14: mass 24 x 16 m, roof 16 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      -12.8,
+      2.2,
+      6.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -12.8,
+      2.2,
+      2.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      -6.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      -2.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      2.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    24,
+    16
+   ],
+   "roofHeight": 16,
+   "plazaBlock": {
+    "index": 14,
+    "x": -30,
+    "z": 52,
+    "faces": "e",
+    "street": "ew",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_15",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_15.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_15_LOD0",
+    "LOD1": "Plaza_Block_15_LOD1",
+    "LOD2": "Plaza_Block_15_LOD2"
+   },
+   "tris": {
+    "LOD0": 11646,
+    "LOD1": 5208,
+    "LOD2": 298
+   },
+   "size": [
+    27.561,
+    25.102,
+    16.73
+   ],
+   "boundsCenter": [
+    0.23,
+    12.551,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_concrete_weathered",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      10.0,
+      0
+     ],
+     "size": [
+      24,
+      20,
+      16
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 15: mass 24 x 16 m, roof 20 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      -12.8,
+      2.2,
+      6.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -12.8,
+      2.2,
+      -2.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      -2.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      2.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      6.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    24,
+    16
+   ],
+   "roofHeight": 20,
+   "plazaBlock": {
+    "index": 15,
+    "x": 30,
+    "z": 52,
+    "faces": "w",
+    "street": "we",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_16",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_16.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_16_LOD0",
+    "LOD1": "Plaza_Block_16_LOD1",
+    "LOD2": "Plaza_Block_16_LOD2"
+   },
+   "tris": {
+    "LOD0": 4295,
+    "LOD1": 2089,
+    "LOD2": 198
+   },
+   "size": [
+    26.597,
+    17.066,
+    10.73
+   ],
+   "boundsCenter": [
+    0.06,
+    8.533,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      6.0,
+      0
+     ],
+     "size": [
+      24,
+      12,
+      10
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 16: mass 24 x 10 m, roof 12 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      -12.8,
+      2.2,
+      3.333
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -12.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -12.8,
+      2.2,
+      -3.333
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      -3.333
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      3.333
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    24,
+    10
+   ],
+   "roofHeight": 12,
+   "plazaBlock": {
+    "index": 16,
+    "x": -30,
+    "z": 66,
+    "faces": "e",
+    "street": "ew",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_17",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_17.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_17_LOD0",
+    "LOD1": "Plaza_Block_17_LOD1",
+    "LOD2": "Plaza_Block_17_LOD2"
+   },
+   "tris": {
+    "LOD0": 8261,
+    "LOD1": 3579,
+    "LOD2": 238
+   },
+   "size": [
+    28.304,
+    19.056,
+    10.73
+   ],
+   "boundsCenter": [
+    0.047,
+    9.528,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_concrete_weathered",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      7.0,
+      0
+     ],
+     "size": [
+      24,
+      14,
+      10
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 17: mass 24 x 10 m, roof 14 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      -12.8,
+      2.2,
+      3.333
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -12.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      -3.333
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.8,
+      2.2,
+      -0.0
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    24,
+    10
+   ],
+   "roofHeight": 14,
+   "plazaBlock": {
+    "index": 17,
+    "x": 30,
+    "z": 66,
+    "faces": "w",
+    "street": "we",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_18",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_18.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_18_LOD0",
+    "LOD1": "Plaza_Block_18_LOD1",
+    "LOD2": "Plaza_Block_18_LOD2"
+   },
+   "tris": {
+    "LOD0": 9156,
+    "LOD1": 4055,
+    "LOD2": 288
+   },
+   "size": [
+    27.915,
+    18.59,
+    24.237
+   ],
+   "boundsCenter": [
+    -0.593,
+    9.295,
+    -0.753
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      7.0,
+      0
+     ],
+     "size": [
+      26,
+      14,
+      22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 18: mass 26 x 22 m, roof 14 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      -13.8,
+      2.2,
+      9.167
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      5.5
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      1.833
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      -9.167
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -3.714,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      3.714,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      7.429,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      11.143,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    26,
+    22
+   ],
+   "roofHeight": 14,
+   "plazaBlock": {
+    "index": 18,
+    "x": -44,
+    "z": 82,
+    "faces": "e",
+    "street": "en",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_19",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_19.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_19_LOD0",
+    "LOD1": "Plaza_Block_19_LOD1",
+    "LOD2": "Plaza_Block_19_LOD2"
+   },
+   "tris": {
+    "LOD0": 12441,
+    "LOD1": 5376,
+    "LOD2": 326
+   },
+   "size": [
+    27.964,
+    24.19,
+    20.73
+   ],
+   "boundsCenter": [
+    -0.617,
+    12.095,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_concrete_weathered",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      9.0,
+      0
+     ],
+     "size": [
+      26,
+      18,
+      20
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 19: mass 26 x 20 m, roof 18 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      -13.8,
+      2.2,
+      8.333
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      1.667
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      -1.667
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -13.8,
+      2.2,
+      -5.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    26,
+    20
+   ],
+   "roofHeight": 18,
+   "plazaBlock": {
+    "index": 19,
+    "x": -44,
+    "z": 104,
+    "faces": "e",
+    "street": "e",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_20",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_20.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_20_LOD0",
+    "LOD1": "Plaza_Block_20_LOD1",
+    "LOD2": "Plaza_Block_20_LOD2"
+   },
+   "tris": {
+    "LOD0": 9209,
+    "LOD1": 4358,
+    "LOD2": 288
+   },
+   "size": [
+    28.251,
+    20.337,
+    21.964
+   ],
+   "boundsCenter": [
+    0.76,
+    10.168,
+    -0.617
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      8.0,
+      0
+     ],
+     "size": [
+      26,
+      16,
+      20
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 20: mass 26 x 20 m, roof 16 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      13.8,
+      2.2,
+      1.667
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      5.0
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -11.143,
+      2.2,
+      -10.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -0.0,
+      2.2,
+      -10.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      3.714,
+      2.2,
+      -10.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      7.429,
+      2.2,
+      -10.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    26,
+    20
+   ],
+   "roofHeight": 16,
+   "plazaBlock": {
+    "index": 20,
+    "x": 44,
+    "z": 80,
+    "faces": "w",
+    "street": "wn",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_21",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_21.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_21_LOD0",
+    "LOD1": "Plaza_Block_21_LOD1",
+    "LOD2": "Plaza_Block_21_LOD2"
+   },
+   "tris": {
+    "LOD0": 14607,
+    "LOD1": 6599,
+    "LOD2": 378
+   },
+   "size": [
+    27.915,
+    27.819,
+    22.73
+   ],
+   "boundsCenter": [
+    0.593,
+    13.909,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_mosaic_tile",
+    "concrete_dark",
+    "lm_concrete_weathered",
+    "concrete_wet",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      11.0,
+      0
+     ],
+     "size": [
+      26,
+      22,
+      22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 21: mass 26 x 22 m, roof 22 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      13.8,
+      2.2,
+      -9.167
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      -5.5
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      -1.833
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      5.5
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      13.8,
+      2.2,
+      9.167
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    26,
+    22
+   ],
+   "roofHeight": 22,
+   "plazaBlock": {
+    "index": 21,
+    "x": 44,
+    "z": 102,
+    "faces": "w",
+    "street": "w",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "Plaza_Block_22",
+   "category": "plaza",
+   "file": "Models/Plaza/Plaza_Block_22.fbx",
+   "meshes": {
+    "LOD0": "Plaza_Block_22_LOD0",
+    "LOD1": "Plaza_Block_22_LOD1",
+    "LOD2": "Plaza_Block_22_LOD2"
+   },
+   "tris": {
+    "LOD0": 24538,
+    "LOD1": 11156,
+    "LOD2": 562
+   },
+   "size": [
+    64.73,
+    26.407,
+    26.118
+   ],
+   "boundsCenter": [
+    -0.0,
+    13.204,
+    -0.088
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "concrete_dark",
+    "lm_mosaic_tile",
+    "concrete_wet",
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0,
+      10.0,
+      0
+     ],
+     "size": [
+      64,
+      20,
+      22
+     ]
+    }
+   ],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Bespoke plaza block 22: mass 64 x 22 m, roof 20 m (market style); PzKit.Building uses it instead of box + facade modules.",
+   "lights": [
+    {
+     "position": [
+      30.222,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      23.111,
+      2.2,
+      11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      19.556,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.444,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      8.889,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      5.333,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -16.0,
+      2.2,
+      11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -19.556,
+      2.2,
+      11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -23.111,
+      2.2,
+      11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -30.222,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -23.111,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -19.556,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -12.444,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -8.889,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -5.333,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      -1.778,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      5.333,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      8.889,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      12.444,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      16.0,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      23.111,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      26.667,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffc890",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    },
+    {
+     "position": [
+      30.222,
+      2.2,
+      -11.8
+     ],
+     "color": "#ffb070",
+     "range": 8,
+     "intensity": 0.8,
+     "source": "shop"
+    }
+   ],
+   "massFootprint": [
+    64,
+    22
+   ],
+   "roofHeight": 20,
+   "plazaBlock": {
+    "index": 22,
+    "x": 0,
+    "z": 126,
+    "faces": "n",
+    "street": "ns",
+    "style": "market"
+   },
+   "district": "",
+   "lodTransitions": [
+    0.22,
+    0.07,
+    0.0
+   ]
+  },
+  {
+   "name": "LMM_Fac_AG_LEDFin",
+   "category": "module",
+   "file": "Models/Modules/LMM_Fac_AG_LEDFin.fbx",
+   "meshes": {
+    "LOD0": "LMM_Fac_AG_LEDFin_LOD0",
+    "LOD1": "LMM_Fac_AG_LEDFin_LOD1",
+    "LOD2": "LMM_Fac_AG_LEDFin_LOD2"
+   },
+   "tris": {
+    "LOD0": 24,
+    "LOD1": 24,
+    "LOD2": 24
+   },
+   "size": [
+    0.6,
+    20.0,
+    0.95
+   ],
+   "boundsCenter": [
+    -0.0,
+    10.0,
+    0.475
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "lm_cladding_dark",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Facade piece: 20 m vertical LED fin for corporate corners.",
+   "footprint": [
+    0.6,
+    1.0
+   ],
+   "height": 20.0,
+   "district": "ArcologyGate",
+   "lodTransitions": [
+    0.25,
+    0.08,
+    0.006
+   ]
+  },
+  {
+   "name": "LMM_Roof_AG_Crown_A",
+   "category": "module",
+   "file": "Models/Modules/LMM_Roof_AG_Crown_A.fbx",
+   "meshes": {
+    "LOD0": "LMM_Roof_AG_Crown_A_LOD0",
+    "LOD1": "LMM_Roof_AG_Crown_A_LOD1",
+    "LOD2": "LMM_Roof_AG_Crown_A_LOD2"
+   },
+   "tris": {
+    "LOD0": 2274,
+    "LOD1": 882,
+    "LOD2": 186
+   },
+   "size": [
+    14.64,
+    21.509,
+    14.64
+   ],
+   "boundsCenter": [
+    -0.0,
+    10.696,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_cladding_dark",
+    "concrete_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Arcology crown 14 x 14 m: two glass storeys, LED cornice, mast.",
+   "footprint": [
+    14.4,
+    14.4
+   ],
+   "height": 21.5,
+   "district": "ArcologyGate",
+   "lodTransitions": [
+    0.25,
+    0.08,
+    0.006
+   ]
+  },
+  {
+   "name": "LMM_Roof_AG_Crown_B",
+   "category": "module",
+   "file": "Models/Modules/LMM_Roof_AG_Crown_B.fbx",
+   "meshes": {
+    "LOD0": "LMM_Roof_AG_Crown_B_LOD0",
+    "LOD1": "LMM_Roof_AG_Crown_B_LOD1",
+    "LOD2": "LMM_Roof_AG_Crown_B_LOD2"
+   },
+   "tris": {
+    "LOD0": 1698,
+    "LOD1": 690,
+    "LOD2": 154
+   },
+   "size": [
+    10.64,
+    21.509,
+    10.64
+   ],
+   "boundsCenter": [
+    -0.0,
+    10.696,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_cladding_dark",
+    "concrete_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Arcology crown 10 x 10 m.",
+   "footprint": [
+    10.4,
+    10.4
+   ],
+   "height": 21.5,
+   "district": "ArcologyGate",
+   "lodTransitions": [
+    0.25,
+    0.08,
+    0.006
+   ]
+  },
+  {
+   "name": "LMM_Roof_AG_Spire",
+   "category": "module",
+   "file": "Models/Modules/LMM_Roof_AG_Spire.fbx",
+   "meshes": {
+    "LOD0": "LMM_Roof_AG_Spire_LOD0",
+    "LOD1": "LMM_Roof_AG_Spire_LOD1",
+    "LOD2": "LMM_Roof_AG_Spire_LOD2"
+   },
+   "tris": {
+    "LOD0": 212,
+    "LOD1": 132,
+    "LOD2": 132
+   },
+   "size": [
+    10.48,
+    21.831,
+    10.48
+   ],
+   "boundsCenter": [
+    -0.0,
+    10.835,
+    -0.0
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_cladding_dark",
+    "holo_magenta",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Arcology pyramidal LED crown with holo ring and spire, 10 x 10 m.",
+   "footprint": [
+    10.0,
+    10.0
+   ],
+   "height": 21.8,
+   "district": "ArcologyGate",
+   "lodTransitions": [
+    0.25,
+    0.08,
+    0.006
+   ]
+  },
+  {
+   "name": "LMM_Fac_CW_Balconies",
+   "category": "module",
+   "file": "Models/Modules/LMM_Fac_CW_Balconies.fbx",
+   "meshes": {
+    "LOD0": "LMM_Fac_CW_Balconies_LOD0",
+    "LOD1": "LMM_Fac_CW_Balconies_LOD1",
+    "LOD2": "LMM_Fac_CW_Balconies_LOD2"
+   },
+   "tris": {
+    "LOD0": 415,
+    "LOD1": 102,
+    "LOD2": 102
+   },
+   "size": [
+    3.3,
+    9.46,
+    1.844
+   ],
+   "boundsCenter": [
+    0.0,
+    4.65,
+    0.922
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "concrete",
+    "lm_brick_soot",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Facade piece: three stacked balconies with laundry and plants, 3.4 m wide.",
+   "footprint": [
+    3.4,
+    1.6
+   ],
+   "height": 10.2,
+   "district": "CanalWard",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.012
+   ]
+  },
+  {
+   "name": "LMM_Roof_CW_Garden",
+   "category": "module",
+   "file": "Models/Modules/LMM_Roof_CW_Garden.fbx",
+   "meshes": {
+    "LOD0": "LMM_Roof_CW_Garden_LOD0",
+    "LOD1": "LMM_Roof_CW_Garden_LOD1",
+    "LOD2": "LMM_Roof_CW_Garden_LOD2"
+   },
+   "tris": {
+    "LOD0": 1298,
+    "LOD1": 482,
+    "LOD2": 409
+   },
+   "size": [
+    8.593,
+    3.3,
+    7.31
+   ],
+   "boundsCenter": [
+    -0.197,
+    1.65,
+    -0.085
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Canal Ward rooftop garden 9 x 8 m: planters, pergola, laundry, tank, string lights.",
+   "footprint": [
+    9.0,
+    8.0
+   ],
+   "height": 4.6,
+   "district": "CanalWard",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.012
+   ]
+  },
+  {
+   "name": "LMM_Fac_FR_PipeRiser",
+   "category": "module",
+   "file": "Models/Modules/LMM_Fac_FR_PipeRiser.fbx",
+   "meshes": {
+    "LOD0": "LMM_Fac_FR_PipeRiser_LOD0",
+    "LOD1": "LMM_Fac_FR_PipeRiser_LOD1",
+    "LOD2": "LMM_Fac_FR_PipeRiser_LOD2"
+   },
+   "tris": {
+    "LOD0": 146,
+    "LOD1": 98,
+    "LOD2": 84
+   },
+   "size": [
+    3.0,
+    12.2,
+    1.2
+   ],
+   "boundsCenter": [
+    -0.0,
+    6.1,
+    0.6
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "building_trim_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Facade piece: pipe riser bundle with brackets and a platform, 3 m wide.",
+   "footprint": [
+    3.0,
+    1.3
+   ],
+   "height": 12.2,
+   "district": "FoundryRow",
+   "lodTransitions": [
+    0.25,
+    0.08,
+    0.006
+   ]
+  },
+  {
+   "name": "LMM_Roof_FR_Vents",
+   "category": "module",
+   "file": "Models/Modules/LMM_Roof_FR_Vents.fbx",
+   "meshes": {
+    "LOD0": "LMM_Roof_FR_Vents_LOD0",
+    "LOD1": "LMM_Roof_FR_Vents_LOD1",
+    "LOD2": "LMM_Roof_FR_Vents_LOD2"
+   },
+   "tris": {
+    "LOD0": 812,
+    "LOD1": 332,
+    "LOD2": 292
+   },
+   "size": [
+    9.5,
+    9.25,
+    6.793
+   ],
+   "boundsCenter": [
+    0.25,
+    4.625,
+    0.304
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Foundry roof plant 10 x 8 m: extract fans, ducts, flue stack.",
+   "footprint": [
+    10.0,
+    8.0
+   ],
+   "height": 9.5,
+   "district": "FoundryRow",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.012
+   ]
+  },
+  {
+   "name": "LMM_Fac_KS_CageStack",
+   "category": "module",
+   "file": "Models/Modules/LMM_Fac_KS_CageStack.fbx",
+   "meshes": {
+    "LOD0": "LMM_Fac_KS_CageStack_LOD0",
+    "LOD1": "LMM_Fac_KS_CageStack_LOD1",
+    "LOD2": "LMM_Fac_KS_CageStack_LOD2"
+   },
+   "tris": {
+    "LOD0": 204,
+    "LOD1": 36,
+    "LOD2": 36
+   },
+   "size": [
+    2.4,
+    10.56,
+    0.567
+   ],
+   "boundsCenter": [
+    -0.0,
+    4.13,
+    0.283
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "building_trim_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Facade piece: 3 storeys of caged windows + AC + laundry, 3 m wide; wall plane at Unity z=0, projects +Z.",
+   "footprint": [
+    3.0,
+    1.4
+   ],
+   "height": 10.2,
+   "district": "KowloonStacks",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.012
+   ]
+  },
+  {
+   "name": "LMM_Fac_KS_Cantilever",
+   "category": "module",
+   "file": "Models/Modules/LMM_Fac_KS_Cantilever.fbx",
+   "meshes": {
+    "LOD0": "LMM_Fac_KS_Cantilever_LOD0",
+    "LOD1": "LMM_Fac_KS_Cantilever_LOD1",
+    "LOD2": "LMM_Fac_KS_Cantilever_LOD2"
+   },
+   "tris": {
+    "LOD0": 94,
+    "LOD1": 52,
+    "LOD2": 28
+   },
+   "size": [
+    2.9,
+    7.907,
+    1.594
+   ],
+   "boundsCenter": [
+    0.0,
+    2.726,
+    0.768
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "lm_corrugated_painted",
+    "emit_building_atlas",
+    "building_trim_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Facade piece: two-storey cantilevered box room 2.8 m wide, projects 1.2 m.",
+   "footprint": [
+    2.8,
+    1.7
+   ],
+   "height": 6.7,
+   "district": "KowloonStacks",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.012
+   ]
+  },
+  {
+   "name": "LMM_Roof_KS_Shanties_A",
+   "category": "module",
+   "file": "Models/Modules/LMM_Roof_KS_Shanties_A.fbx",
+   "meshes": {
+    "LOD0": "LMM_Roof_KS_Shanties_A_LOD0",
+    "LOD1": "LMM_Roof_KS_Shanties_A_LOD1",
+    "LOD2": "LMM_Roof_KS_Shanties_A_LOD2"
+   },
+   "tris": {
+    "LOD0": 1375,
+    "LOD1": 729,
+    "LOD2": 336
+   },
+   "size": [
+    9.002,
+    9.0,
+    7.118
+   ],
+   "boundsCenter": [
+    -0.0,
+    4.5,
+    -0.567
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_corrugated_painted",
+    "concrete_dark",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Kowloon roof set 9 x 9 m: shacks, tanks, antenna forest, dishes, laundry.",
+   "footprint": [
+    9.0,
+    9.0
+   ],
+   "height": 9.0,
+   "district": "KowloonStacks",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.012
+   ]
+  },
+  {
+   "name": "LMM_Roof_KS_Shanties_B",
+   "category": "module",
+   "file": "Models/Modules/LMM_Roof_KS_Shanties_B.fbx",
+   "meshes": {
+    "LOD0": "LMM_Roof_KS_Shanties_B_LOD0",
+    "LOD1": "LMM_Roof_KS_Shanties_B_LOD1",
+    "LOD2": "LMM_Roof_KS_Shanties_B_LOD2"
+   },
+   "tris": {
+    "LOD0": 1359,
+    "LOD1": 753,
+    "LOD2": 336
+   },
+   "size": [
+    12.001,
+    8.55,
+    5.511
+   ],
+   "boundsCenter": [
+    -0.0,
+    4.275,
+    0.101
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Kowloon roof set 12 x 7 m.",
+   "footprint": [
+    12.0,
+    7.0
+   ],
+   "height": 9.0,
+   "district": "KowloonStacks",
+   "lodTransitions": [
+    0.25,
+    0.08,
+    0.006
+   ]
+  },
+  {
+   "name": "LMM_Fac_NM_Blade",
+   "category": "module",
+   "file": "Models/Modules/LMM_Fac_NM_Blade.fbx",
+   "meshes": {
+    "LOD0": "LMM_Fac_NM_Blade_LOD0",
+    "LOD1": "LMM_Fac_NM_Blade_LOD1",
+    "LOD2": "LMM_Fac_NM_Blade_LOD2"
+   },
+   "tris": {
+    "LOD0": 132,
+    "LOD1": 132,
+    "LOD2": 60
+   },
+   "size": [
+    0.34,
+    9.3,
+    1.75
+   ],
+   "boundsCenter": [
+    -0.0,
+    4.5,
+    0.875
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Facade piece: 9 m vertical blade sign projecting 1.6 m.",
+   "footprint": [
+    0.5,
+    1.9
+   ],
+   "height": 9.2,
+   "district": "NeonMarket",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.012
+   ]
+  },
+  {
+   "name": "LMM_Fac_NM_SignStack",
+   "category": "module",
+   "file": "Models/Modules/LMM_Fac_NM_SignStack.fbx",
+   "meshes": {
+    "LOD0": "LMM_Fac_NM_SignStack_LOD0",
+    "LOD1": "LMM_Fac_NM_SignStack_LOD1",
+    "LOD2": "LMM_Fac_NM_SignStack_LOD2"
+   },
+   "tris": {
+    "LOD0": 1300,
+    "LOD1": 314,
+    "LOD2": 86
+   },
+   "size": [
+    4.12,
+    9.84,
+    0.775
+   ],
+   "boundsCenter": [
+    -0.0,
+    5.08,
+    0.387
+   ],
+   "pivot": "wall-base",
+   "materials": [
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Facade piece: sign armature 4 x 10 m with lightboxes, neon glyphs and LED boards.",
+   "footprint": [
+    4.0,
+    1.0
+   ],
+   "height": 10.2,
+   "district": "NeonMarket",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.012
+   ]
+  },
+  {
+   "name": "LMM_Roof_NM_Pagoda",
+   "category": "module",
+   "file": "Models/Modules/LMM_Roof_NM_Pagoda.fbx",
+   "meshes": {
+    "LOD0": "LMM_Roof_NM_Pagoda_LOD0",
+    "LOD1": "LMM_Roof_NM_Pagoda_LOD1",
+    "LOD2": "LMM_Roof_NM_Pagoda_LOD2"
+   },
+   "tris": {
+    "LOD0": 1501,
+    "LOD1": 447,
+    "LOD2": 140
+   },
+   "size": [
+    9.637,
+    8.25,
+    9.859
+   ],
+   "boundsCenter": [
+    -0.0,
+    4.125,
+    -0.111
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "lm_plaster_pastel",
+    "lm_roof_tiles",
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Neon Market rooftop pagoda pavilion 8 x 8 m with neon eaves.",
+   "footprint": [
+    10.4,
+    10.4
+   ],
+   "height": 8.0,
+   "district": "NeonMarket",
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.012
+   ]
+  },
+  {
+   "name": "LMM_Roof_NM_SignFrame",
+   "category": "module",
+   "file": "Models/Modules/LMM_Roof_NM_SignFrame.fbx",
+   "meshes": {
+    "LOD0": "LMM_Roof_NM_SignFrame_LOD0",
+    "LOD1": "LMM_Roof_NM_SignFrame_LOD1",
+    "LOD2": "LMM_Roof_NM_SignFrame_LOD2"
+   },
+   "tris": {
+    "LOD0": 302,
+    "LOD1": 100,
+    "LOD2": 100
+   },
+   "size": [
+    12.14,
+    6.021,
+    2.45
+   ],
+   "boundsCenter": [
+    -0.0,
+    2.989,
+    0.48
+   ],
+   "pivot": "base-centre",
+   "materials": [
+    "building_trim_atlas",
+    "emit_building_atlas"
+   ],
+   "colliders": [],
+   "zones": [
+    "plaza"
+   ],
+   "notes": "Neon Market rooftop sign scaffold 12 m: neon glyph row + LED board, front -Y (Unity +Z).",
+   "footprint": [
+    12.0,
+    3.0
+   ],
+   "height": 6.2,
+   "district": "NeonMarket",
+   "lodTransitions": [
+    0.25,
+    0.08,
+    0.006
+   ]
+  }
+ ],
+ "stats": {
+  "assets": 67,
+  "materials": 7,
+  "textureMB": 37.2,
+  "fbxMB": 25.8,
+  "trisLOD0": 749453
+ }
+}

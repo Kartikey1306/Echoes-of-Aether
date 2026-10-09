@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RainStreaks
+  m_Shader: {fileID: 4800000, guid: 05973e5f602fc4130a76e0c7eebeafdf, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Amount: 1
+    - _Columns: 8
+    - _FlashGain: 3
+    m_Colors:
+    - _Box: {r: 14, g: 14, b: 14, a: 5}
+    - _Fade: {r: 0.35, g: 1.8, b: 0.6, a: 0}
+    - _Light: {r: 0.9, g: 1.4, b: 1.2, a: 0.25}
+    - _Streak: {r: 0.04, g: 0.009, b: 1.1, a: 0.4}
+    - _Tint: {r: 0.72, g: 0.8, b: 0.9, a: 1}
+    - _Velocity: {r: -2, g: -13, b: 0.8, a: 0.22}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

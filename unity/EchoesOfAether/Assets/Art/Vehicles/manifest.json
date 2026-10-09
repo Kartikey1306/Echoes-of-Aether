@@ -1,0 +1,3074 @@
+{
+ "name": "Echoes of Aether - cyberpunk vehicle kit",
+ "generated": "2026-10-04T00:43:34",
+ "generator": "blender/vehicles (Blender 5.2, headless, procedural). Rebuild: see VEHICLES.md",
+ "conventions": {
+  "units": "metres; FBX exported with apply_scale_options=FBX_SCALE_ALL, bake_space_transform=True, axis_forward=-Z, axis_up=Y -> import at scale 1, identity rotation",
+  "axes": "Unity Y up, vehicle FRONT = +Z, right = +X. Pivot = ground centre (bounds centre in X/Z, y = 0 at the lowest point: tyres / thruster pods / hull).",
+  "hierarchy": "<Name>_LOD0/1/2 body meshes at the root; animated parts are empties at their pivot (Wheel_FL/FR/RL/RR, Wheel_F/R for the bike, Thruster_* for flyers) each with <Part>_LOD0/1/2 mesh children at identity local transform.",
+  "lods": "LOD1 ~40% and LOD2 ~12% of LOD0 triangles (body + parts). Assign each <Part>_LODn renderer to LOD n of the root LODGroup.",
+  "uv0": "World-scale metres (box projection) for tiling materials; tiling = 1 / tileSizeMeters. 'fit' materials (veh_decal atlas, veh_navlight, veh_holo_sign) use authored 0..1 UVs.",
+  "uv1": "Not authored.",
+  "normals": "Custom split normals (smooth, sharp > 38 deg) exported; ModelImporter normals = Import, tangents = Calculate Mikktspace.",
+  "materialSlots": "Material slot names == material names below (all prefixed veh_); remap FBX materials by name.",
+  "colliders": "Suggested box colliders in Unity local space (center/size in metres).",
+  "lights": "Anchor points (Unity local) for spot/point lights: headlight / taillight centres plus every light unit under 'all'.",
+  "textures": {
+   "BaseColor": "sRGB RGB (RGBA for veh_glass_cracked / veh_holo_sign: A = opacity). URP Lit _BaseMap.",
+   "Normal": "Tangent-space, OpenGL (+Y up) = Unity convention. Import as Normal map. URP Lit _BumpMap.",
+   "MaskMap": "Linear RGBA: R = metallic, G = ambient occlusion, B = unused (0), A = smoothness. URP Lit _MetallicGlossMap, Smoothness Source = Metallic Alpha, _Smoothness = 1. URP samples occlusion from .g if MaskMap is also set as _OcclusionMap.",
+   "Emission": "sRGB RGB emission colour (emissive materials only). URP Lit _EmissionMap, _EmissionColor = white * emissionIntensity (HDR)."
+  }
+ },
+ "textureImport": {
+  "BaseColor": {
+   "sRGB": true,
+   "textureType": "Default",
+   "alphaSource": "FromInput"
+  },
+  "Normal": {
+   "textureType": "NormalMap"
+  },
+  "MaskMap": {
+   "sRGB": false,
+   "textureType": "Default"
+  },
+  "Emission": {
+   "sRGB": true,
+   "textureType": "Default"
+  },
+  "all": {
+   "wrapMode": "Repeat (fit materials: Clamp)",
+   "maxSize": "desktop 2048 (body paints / wreck / burnt are 2K), WebGL 1024",
+   "mipmaps": true,
+   "anisoLevel": 4
+  }
+ },
+ "urpLitMapping": {
+  "_BaseMap": "BaseColor",
+  "_BaseColor": "white (or 'baseColor' for param materials)",
+  "_BaseMap_ST": "tiling",
+  "_MetallicGlossMap": "MaskMap",
+  "_Metallic": 1.0,
+  "_Smoothness": 1.0,
+  "_SmoothnessTextureChannel": 0,
+  "_BumpMap": "Normal",
+  "_OcclusionMap": "MaskMap (G) - optional",
+  "_EmissionMap": "Emission",
+  "_EmissionColor": "emissionColor * emissionIntensity (enable _EMISSION)"
+ },
+ "materials": {
+  "veh_paint_midnight": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "midnight black (blue-black pearl)",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_paint_midnight/veh_paint_midnight_BaseColor.png",
+    "Normal": "Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Textures/veh_paint_midnight/veh_paint_midnight_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_paint_midnight/veh_paint_midnight_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_paint_midnight/veh_paint_midnight_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "clearCoat": {
+    "mask": 1.0,
+    "smoothness": 0.95,
+    "note": "optional: URP Complex Lit clear coat; Lit works without it"
+   },
+   "stats": {
+    "metal_mean": 0.464,
+    "smooth_mean": 0.878,
+    "albedo_mean_srgb": [
+     0.031,
+     0.036,
+     0.05
+    ]
+   }
+  },
+  "veh_paint_gunmetal": {
+   "kind": "tint",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "gunmetal metallic",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_paint_gunmetal/veh_paint_gunmetal_BaseColor.png",
+    "Normal": "Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Textures/veh_paint_gunmetal/veh_paint_gunmetal_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_paint_gunmetal/veh_paint_gunmetal_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_paint_gunmetal/veh_paint_gunmetal_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "sharesMapsWith": "veh_paint_midnight",
+   "clearCoat": {
+    "mask": 1.0,
+    "smoothness": 0.95,
+    "note": "optional: URP Complex Lit clear coat; Lit works without it"
+   },
+   "stats": {
+    "metal_mean": 0.791,
+    "smooth_mean": 0.818,
+    "albedo_mean_srgb": [
+     0.167,
+     0.182,
+     0.188
+    ]
+   }
+  },
+  "veh_paint_pearl": {
+   "kind": "tint",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "pearl white",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_paint_pearl/veh_paint_pearl_BaseColor.png",
+    "Normal": "Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Textures/veh_paint_pearl/veh_paint_pearl_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_paint_pearl/veh_paint_pearl_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_paint_pearl/veh_paint_pearl_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "sharesMapsWith": "veh_paint_midnight",
+   "clearCoat": {
+    "mask": 1.0,
+    "smoothness": 0.95,
+    "note": "optional: URP Complex Lit clear coat; Lit works without it"
+   },
+   "stats": {
+    "metal_mean": 0.254,
+    "smooth_mean": 0.878,
+    "albedo_mean_srgb": [
+     0.82,
+     0.826,
+     0.816
+    ]
+   }
+  },
+  "veh_paint_magenta": {
+   "kind": "tint",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "candy magenta",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_paint_magenta/veh_paint_magenta_BaseColor.png",
+    "Normal": "Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Textures/veh_paint_magenta/veh_paint_magenta_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_paint_magenta/veh_paint_magenta_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_paint_magenta/veh_paint_magenta_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "sharesMapsWith": "veh_paint_midnight",
+   "clearCoat": {
+    "mask": 1.0,
+    "smoothness": 0.95,
+    "note": "optional: URP Complex Lit clear coat; Lit works without it"
+   },
+   "stats": {
+    "metal_mean": 0.664,
+    "smooth_mean": 0.888,
+    "albedo_mean_srgb": [
+     0.594,
+     0.024,
+     0.37
+    ]
+   }
+  },
+  "veh_paint_cyan": {
+   "kind": "tint",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "cyan chrome",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_paint_cyan/veh_paint_cyan_BaseColor.png",
+    "Normal": "Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Textures/veh_paint_cyan/veh_paint_cyan_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_paint_cyan/veh_paint_cyan_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_paint_cyan/veh_paint_cyan_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "sharesMapsWith": "veh_paint_midnight",
+   "clearCoat": {
+    "mask": 1.0,
+    "smoothness": 0.95,
+    "note": "optional: URP Complex Lit clear coat; Lit works without it"
+   },
+   "stats": {
+    "metal_mean": 0.963,
+    "smooth_mean": 0.898,
+    "albedo_mean_srgb": [
+     0.37,
+     0.802,
+     0.945
+    ]
+   }
+  },
+  "veh_paint_taxi": {
+   "kind": "tint",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "taxi yellow",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_paint_taxi/veh_paint_taxi_BaseColor.png",
+    "Normal": "Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Textures/veh_paint_taxi/veh_paint_taxi_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_paint_taxi/veh_paint_taxi_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_paint_midnight/veh_paint_midnight_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_paint_taxi/veh_paint_taxi_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "sharesMapsWith": "veh_paint_midnight",
+   "clearCoat": {
+    "mask": 1.0,
+    "smoothness": 0.95,
+    "note": "optional: URP Complex Lit clear coat; Lit works without it"
+   },
+   "stats": {
+    "metal_mean": 0.226,
+    "smooth_mean": 0.858,
+    "albedo_mean_srgb": [
+     0.987,
+     0.729,
+     0.041
+    ]
+   }
+  },
+  "veh_paint_wrecked": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "wrecked gunmetal: rust, scorch, chips",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_paint_wrecked/veh_paint_wrecked_BaseColor.png",
+    "Normal": "Textures/veh_paint_wrecked/veh_paint_wrecked_Normal.png",
+    "MaskMap": "Textures/veh_paint_wrecked/veh_paint_wrecked_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_paint_wrecked/veh_paint_wrecked_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_paint_wrecked/veh_paint_wrecked_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_paint_wrecked/veh_paint_wrecked_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "metal_mean": 0.359,
+    "smooth_mean": 0.531,
+    "albedo_mean_srgb": [
+     0.158,
+     0.149,
+     0.147
+    ]
+   }
+  },
+  "veh_burnt": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "fire-gutted steel: char, ash, heat rust",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 2.0,
+   "tiling": [
+    0.5,
+    0.5
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_burnt/veh_burnt_BaseColor.png",
+    "Normal": "Textures/veh_burnt/veh_burnt_Normal.png",
+    "MaskMap": "Textures/veh_burnt/veh_burnt_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_burnt/veh_burnt_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_burnt/veh_burnt_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_burnt/veh_burnt_MaskMap.png"
+   },
+   "textureSize": 2048,
+   "maxTextureSize": {
+    "desktop": 2048,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "metal_mean": 0.039,
+    "smooth_mean": 0.177,
+    "albedo_mean_srgb": [
+     0.086,
+     0.064,
+     0.053
+    ]
+   }
+  },
+  "veh_chrome": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "polished chrome",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 1.0,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_chrome/veh_chrome_BaseColor.png",
+    "Normal": "Textures/veh_chrome/veh_chrome_Normal.png",
+    "MaskMap": "Textures/veh_chrome/veh_chrome_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_chrome/veh_chrome_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_chrome/veh_chrome_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_chrome/veh_chrome_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "metal_mean": 1.0,
+    "smooth_mean": 0.939,
+    "albedo_mean_srgb": [
+     0.936,
+     0.937,
+     0.95
+    ]
+   }
+  },
+  "veh_carbon": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "2x2 twill carbon fibre, clear coated",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.25,
+   "tiling": [
+    4.0,
+    4.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_carbon/veh_carbon_BaseColor.png",
+    "Normal": "Textures/veh_carbon/veh_carbon_Normal.png",
+    "MaskMap": "Textures/veh_carbon/veh_carbon_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_carbon/veh_carbon_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_carbon/veh_carbon_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_carbon/veh_carbon_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "metal_mean": 0.0,
+    "smooth_mean": 0.895,
+    "albedo_mean_srgb": [
+     0.126,
+     0.13,
+     0.143
+    ]
+   }
+  },
+  "veh_metal": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "satin brushed gunmetal (rims, brakes, chassis)",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.5,
+   "tiling": [
+    2.0,
+    2.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_metal/veh_metal_BaseColor.png",
+    "Normal": "Textures/veh_metal/veh_metal_Normal.png",
+    "MaskMap": "Textures/veh_metal/veh_metal_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_metal/veh_metal_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_metal/veh_metal_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_metal/veh_metal_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "metal_mean": 1.0,
+    "smooth_mean": 0.66,
+    "albedo_mean_srgb": [
+     0.44,
+     0.45,
+     0.47
+    ]
+   }
+  },
+  "veh_rubber": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "tyre rubber",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.5,
+   "tiling": [
+    2.0,
+    2.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_rubber/veh_rubber_BaseColor.png",
+    "Normal": "Textures/veh_rubber/veh_rubber_Normal.png",
+    "MaskMap": "Textures/veh_rubber/veh_rubber_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_rubber/veh_rubber_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_rubber/veh_rubber_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_rubber/veh_rubber_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "metal_mean": 0.0,
+    "smooth_mean": 0.24,
+    "albedo_mean_srgb": [
+     0.072,
+     0.072,
+     0.075
+    ]
+   }
+  },
+  "veh_plastic": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "textured matte black plastic (liners, under-tray)",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.5,
+   "tiling": [
+    2.0,
+    2.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_plastic/veh_plastic_BaseColor.png",
+    "Normal": "Textures/veh_plastic/veh_plastic_Normal.png",
+    "MaskMap": "Textures/veh_plastic/veh_plastic_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_plastic/veh_plastic_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_plastic/veh_plastic_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_plastic/veh_plastic_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "metal_mean": 0.0,
+    "smooth_mean": 0.4,
+    "albedo_mean_srgb": [
+     0.09,
+     0.092,
+     0.095
+    ]
+   }
+  },
+  "veh_interior": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "quilted charcoal leather, magenta stitch",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.5,
+   "tiling": [
+    2.0,
+    2.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_interior/veh_interior_BaseColor.png",
+    "Normal": "Textures/veh_interior/veh_interior_Normal.png",
+    "MaskMap": "Textures/veh_interior/veh_interior_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_interior/veh_interior_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_interior/veh_interior_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_interior/veh_interior_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "metal_mean": 0.0,
+    "smooth_mean": 0.42,
+    "albedo_mean_srgb": [
+     0.119,
+     0.1,
+     0.104
+    ]
+   }
+  },
+  "veh_decal": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "atlas: invented-glyph badges, ID plate, checker, hazard, fleet marks",
+   "surface": "Opaque",
+   "uvMode": "fit",
+   "tileSizeMeters": null,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_decal/veh_decal_BaseColor.png",
+    "Normal": "Textures/veh_decal/veh_decal_Normal.png",
+    "MaskMap": "Textures/veh_decal/veh_decal_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_decal/veh_decal_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_decal/veh_decal_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_decal/veh_decal_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "metal_mean": 0.035,
+    "smooth_mean": 0.775,
+    "albedo_mean_srgb": [
+     0.33,
+     0.313,
+     0.22
+    ]
+   }
+  },
+  "veh_trim": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "piano-black gloss trim",
+   "surface": "Opaque",
+   "baseColor": [
+    0.012,
+    0.012,
+    0.014,
+    1.0
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.9
+  },
+  "veh_glass": {
+   "kind": "param",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "tinted glass (param)",
+   "surface": "Transparent",
+   "blend": "Alpha",
+   "cull": "Off",
+   "baseColor": [
+    0.035,
+    0.05,
+    0.065,
+    0.62
+   ],
+   "metallic": 0.0,
+   "smoothness": 0.97
+  },
+  "veh_glass_cracked": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "cracked tinted glass (RGBA, A = opacity)",
+   "surface": "Transparent",
+   "blend": "Alpha",
+   "cull": "Off",
+   "uvMode": "world",
+   "tileSizeMeters": 1.0,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_glass_cracked/veh_glass_cracked_BaseColor.png",
+    "Normal": "Textures/veh_glass_cracked/veh_glass_cracked_Normal.png",
+    "MaskMap": "Textures/veh_glass_cracked/veh_glass_cracked_MaskMap.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_glass_cracked/veh_glass_cracked_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_glass_cracked/veh_glass_cracked_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_glass_cracked/veh_glass_cracked_MaskMap.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "stats": {
+    "metal_mean": 0.0,
+    "smooth_mean": 0.941,
+    "albedo_mean_srgb": [
+     0.062,
+     0.087,
+     0.107
+    ]
+   }
+  },
+  "veh_headlight": {
+   "kind": "tint",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "emissive LED (headlight)",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.25,
+   "tiling": [
+    4.0,
+    4.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_headlight/veh_headlight_BaseColor.png",
+    "Normal": "Textures/veh_led/veh_led_Normal.png",
+    "MaskMap": "Textures/veh_led/veh_led_MaskMap.png",
+    "Emission": "Textures/veh_headlight/veh_headlight_Emission.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_headlight/veh_headlight_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_led/veh_led_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_led/veh_led_MaskMap.png",
+    "Emission": "Assets/Art/Vehicles/Textures/veh_headlight/veh_headlight_Emission.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "sharesMapsWith": "veh_led",
+   "emissive": true,
+   "emissionColor": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionTint": [
+    0.86,
+    0.93,
+    1.0
+   ],
+   "emissionIntensity": 5.0,
+   "animate": "drive _EmissionColor = white * intensity (0 = off); each light type is its own slot",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.626,
+     0.652,
+     0.684
+    ]
+   }
+  },
+  "veh_taillight": {
+   "kind": "tint",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "emissive LED (taillight)",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.25,
+   "tiling": [
+    4.0,
+    4.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_taillight/veh_taillight_BaseColor.png",
+    "Normal": "Textures/veh_led/veh_led_Normal.png",
+    "MaskMap": "Textures/veh_led/veh_led_MaskMap.png",
+    "Emission": "Textures/veh_taillight/veh_taillight_Emission.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_taillight/veh_taillight_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_led/veh_led_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_led/veh_led_MaskMap.png",
+    "Emission": "Assets/Art/Vehicles/Textures/veh_taillight/veh_taillight_Emission.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "sharesMapsWith": "veh_led",
+   "emissive": true,
+   "emissionColor": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionTint": [
+    1.0,
+    0.045,
+    0.06
+   ],
+   "emissionIntensity": 4.5,
+   "animate": "drive _EmissionColor = white * intensity (0 = off); each light type is its own slot",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.326,
+     0.023,
+     0.031
+    ]
+   }
+  },
+  "veh_underglow": {
+   "kind": "tint",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "emissive LED (underglow)",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.25,
+   "tiling": [
+    4.0,
+    4.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_underglow/veh_underglow_BaseColor.png",
+    "Normal": "Textures/veh_led/veh_led_Normal.png",
+    "MaskMap": "Textures/veh_led/veh_led_MaskMap.png",
+    "Emission": "Textures/veh_underglow/veh_underglow_Emission.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_underglow/veh_underglow_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_led/veh_led_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_led/veh_led_MaskMap.png",
+    "Emission": "Assets/Art/Vehicles/Textures/veh_underglow/veh_underglow_Emission.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "sharesMapsWith": "veh_led",
+   "emissive": true,
+   "emissionColor": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionTint": [
+    0.0,
+    0.8,
+    1.0
+   ],
+   "emissionIntensity": 4.0,
+   "animate": "drive _EmissionColor = white * intensity (0 = off); each light type is its own slot",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.432,
+     0.661,
+     0.702
+    ]
+   }
+  },
+  "veh_neon": {
+   "kind": "tint",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "emissive LED (neon)",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.25,
+   "tiling": [
+    4.0,
+    4.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_neon/veh_neon_BaseColor.png",
+    "Normal": "Textures/veh_led/veh_led_Normal.png",
+    "MaskMap": "Textures/veh_led/veh_led_MaskMap.png",
+    "Emission": "Textures/veh_neon/veh_neon_Emission.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_neon/veh_neon_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_led/veh_led_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_led/veh_led_MaskMap.png",
+    "Emission": "Assets/Art/Vehicles/Textures/veh_neon/veh_neon_Emission.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "sharesMapsWith": "veh_led",
+   "emissive": true,
+   "emissionColor": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionTint": [
+    1.0,
+    0.1,
+    0.72
+   ],
+   "emissionIntensity": 5.0,
+   "animate": "drive _EmissionColor = white * intensity (0 = off); each light type is its own slot",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.661,
+     0.271,
+     0.585
+    ]
+   }
+  },
+  "veh_hazard": {
+   "kind": "tint",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "emissive LED (hazard)",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.25,
+   "tiling": [
+    4.0,
+    4.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_hazard/veh_hazard_BaseColor.png",
+    "Normal": "Textures/veh_led/veh_led_Normal.png",
+    "MaskMap": "Textures/veh_led/veh_led_MaskMap.png",
+    "Emission": "Textures/veh_hazard/veh_hazard_Emission.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_hazard/veh_hazard_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_led/veh_led_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_led/veh_led_MaskMap.png",
+    "Emission": "Assets/Art/Vehicles/Textures/veh_hazard/veh_hazard_Emission.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "sharesMapsWith": "veh_led",
+   "emissive": true,
+   "emissionColor": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionTint": [
+    1.0,
+    0.45,
+    0.02
+   ],
+   "emissionIntensity": 4.0,
+   "animate": "drive _EmissionColor = white * intensity (0 = off); each light type is its own slot",
+   "stats": {
+    "albedo_mean_srgb": [
+     0.585,
+     0.295,
+     0.039
+    ]
+   }
+  },
+  "veh_thruster": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "emissive honeycomb thrust grille",
+   "surface": "Opaque",
+   "uvMode": "world",
+   "tileSizeMeters": 0.3,
+   "tiling": [
+    3.333333,
+    3.333333
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_thruster/veh_thruster_BaseColor.png",
+    "Normal": "Textures/veh_thruster/veh_thruster_Normal.png",
+    "MaskMap": "Textures/veh_thruster/veh_thruster_MaskMap.png",
+    "Emission": "Textures/veh_thruster/veh_thruster_Emission.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_thruster/veh_thruster_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_thruster/veh_thruster_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_thruster/veh_thruster_MaskMap.png",
+    "Emission": "Assets/Art/Vehicles/Textures/veh_thruster/veh_thruster_Emission.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "emissive": true,
+   "emissionColor": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionTint": [
+    0.3,
+    0.7,
+    1.0
+   ],
+   "emissionIntensity": 6.0,
+   "animate": "drive _EmissionColor = white * intensity (0 = off); each light type is its own slot",
+   "stats": {
+    "metal_mean": 0.716,
+    "smooth_mean": 0.635,
+    "albedo_mean_srgb": [
+     0.177,
+     0.225,
+     0.294
+    ]
+   }
+  },
+  "veh_navlight": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "nav lights: UV u<0.5 red (port), u>0.5 green (starboard), v>0.75 white strobe",
+   "surface": "Opaque",
+   "uvMode": "fit",
+   "tileSizeMeters": null,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_navlight/veh_navlight_BaseColor.png",
+    "Normal": "Textures/veh_navlight/veh_navlight_Normal.png",
+    "MaskMap": "Textures/veh_navlight/veh_navlight_MaskMap.png",
+    "Emission": "Textures/veh_navlight/veh_navlight_Emission.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_navlight/veh_navlight_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_navlight/veh_navlight_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_navlight/veh_navlight_MaskMap.png",
+    "Emission": "Assets/Art/Vehicles/Textures/veh_navlight/veh_navlight_Emission.png"
+   },
+   "textureSize": 256,
+   "maxTextureSize": {
+    "desktop": 256,
+    "webgl": 256
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "emissive": true,
+   "emissionColor": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionTint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionIntensity": 3.5,
+   "animate": "drive _EmissionColor = white * intensity (0 = off); each light type is its own slot",
+   "stats": {
+    "metal_mean": 0.0,
+    "smooth_mean": 0.9,
+    "albedo_mean_srgb": [
+     0.453,
+     0.451,
+     0.318
+    ]
+   }
+  },
+  "veh_holo_sign": {
+   "kind": "baked",
+   "shader": "Universal Render Pipeline/Lit",
+   "label": "holographic glyph sign (additive, RGBA)",
+   "surface": "Transparent",
+   "blend": "Additive",
+   "cull": "Off",
+   "uvMode": "fit",
+   "tileSizeMeters": null,
+   "tiling": [
+    1.0,
+    1.0
+   ],
+   "textures": {
+    "BaseColor": "Textures/veh_holo_sign/veh_holo_sign_BaseColor.png",
+    "Normal": "Textures/veh_holo_sign/veh_holo_sign_Normal.png",
+    "MaskMap": "Textures/veh_holo_sign/veh_holo_sign_MaskMap.png",
+    "Emission": "Textures/veh_holo_sign/veh_holo_sign_Emission.png"
+   },
+   "texturesAssetPath": {
+    "BaseColor": "Assets/Art/Vehicles/Textures/veh_holo_sign/veh_holo_sign_BaseColor.png",
+    "Normal": "Assets/Art/Vehicles/Textures/veh_holo_sign/veh_holo_sign_Normal.png",
+    "MaskMap": "Assets/Art/Vehicles/Textures/veh_holo_sign/veh_holo_sign_MaskMap.png",
+    "Emission": "Assets/Art/Vehicles/Textures/veh_holo_sign/veh_holo_sign_Emission.png"
+   },
+   "textureSize": 1024,
+   "maxTextureSize": {
+    "desktop": 1024,
+    "webgl": 1024
+   },
+   "normalScale": 1.0,
+   "occlusionStrength": 1.0,
+   "emissive": true,
+   "emissionColor": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionTint": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emissionIntensity": 2.4,
+   "animate": "drive _EmissionColor = white * intensity (0 = off); each light type is its own slot",
+   "stats": {
+    "albedo_mean_srgb": [
+     1.0,
+     0.82,
+     0.18
+    ]
+   }
+  }
+ },
+ "emissiveMaterials": [
+  "veh_headlight",
+  "veh_taillight",
+  "veh_underglow",
+  "veh_neon",
+  "veh_hazard",
+  "veh_thruster",
+  "veh_navlight",
+  "veh_holo_sign"
+ ],
+ "assets": [
+  {
+   "name": "CyberCar_Coupe",
+   "category": "car",
+   "file": "Models/CyberCar_Coupe.fbx",
+   "meshes": {
+    "LOD0": "CyberCar_Coupe_LOD0",
+    "LOD1": "CyberCar_Coupe_LOD1",
+    "LOD2": "CyberCar_Coupe_LOD2"
+   },
+   "tris": {
+    "LOD0": 30838,
+    "LOD1": 12320,
+    "LOD2": 3698
+   },
+   "trisBody": {
+    "LOD0": 17134,
+    "LOD1": 6736,
+    "LOD2": 2562
+   },
+   "size": [
+    2.076,
+    1.105,
+    4.851
+   ],
+   "boundsCenter": [
+    0.0,
+    0.552,
+    0.025
+   ],
+   "pivot": "ground-centre",
+   "materials": [
+    "veh_plastic",
+    "veh_carbon",
+    "veh_paint_magenta",
+    "veh_trim",
+    "veh_glass",
+    "veh_headlight",
+    "veh_taillight",
+    "veh_underglow",
+    "veh_neon",
+    "veh_paint_cyan",
+    "veh_decal",
+    "veh_chrome",
+    "veh_interior",
+    "veh_metal",
+    "veh_rubber"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      0.52,
+      0.0
+     ],
+     "size": [
+      2.0,
+      0.78,
+      4.72
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      0.96,
+      -0.35
+     ],
+     "size": [
+      1.2,
+      0.3,
+      1.9
+     ]
+    }
+   ],
+   "lights": {
+    "headlight": {
+     "center": [
+      0.0,
+      0.405,
+      2.402
+     ]
+    },
+    "taillight": {
+     "center": [
+      0.0,
+      0.84,
+      -2.39
+     ]
+    },
+    "all": {
+     "head": [
+      [
+       0.0,
+       0.405,
+       2.402
+      ]
+     ],
+     "tail": [
+      [
+       0.0,
+       0.84,
+       -2.39
+      ]
+     ]
+    }
+   },
+   "animatedParts": [
+    {
+     "name": "Wheel_FL",
+     "type": "wheel",
+     "pivot": [
+      -0.845,
+      0.36,
+      1.46
+     ],
+     "meshes": {
+      "LOD0": "Wheel_FL_LOD0",
+      "LOD1": "Wheel_FL_LOD1",
+      "LOD2": "Wheel_FL_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.36,
+     "steer": "local Y (yaw); calipers are on the body at the top of each disc so steering is clip-free"
+    },
+    {
+     "name": "Wheel_FR",
+     "type": "wheel",
+     "pivot": [
+      0.845,
+      0.36,
+      1.46
+     ],
+     "meshes": {
+      "LOD0": "Wheel_FR_LOD0",
+      "LOD1": "Wheel_FR_LOD1",
+      "LOD2": "Wheel_FR_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.36,
+     "steer": "local Y (yaw); calipers are on the body at the top of each disc so steering is clip-free"
+    },
+    {
+     "name": "Wheel_RL",
+     "type": "wheel",
+     "pivot": [
+      -0.87,
+      0.36,
+      -1.4
+     ],
+     "meshes": {
+      "LOD0": "Wheel_RL_LOD0",
+      "LOD1": "Wheel_RL_LOD1",
+      "LOD2": "Wheel_RL_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.36
+    },
+    {
+     "name": "Wheel_RR",
+     "type": "wheel",
+     "pivot": [
+      0.87,
+      0.36,
+      -1.4
+     ],
+     "meshes": {
+      "LOD0": "Wheel_RR_LOD0",
+      "LOD1": "Wheel_RR_LOD1",
+      "LOD2": "Wheel_RR_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.36
+    }
+   ],
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.02
+   ],
+   "notes": "Full-width LED bars front (veh_headlight) and rear (veh_taillight); neon fender blades, exhaust-port rings and wheel rings (veh_neon); sill + nose underglow (veh_underglow).",
+   "description": "Cab-forward wedge supercar: one rising line from the blade nose over the canopy, blade character line, deep side cove into a rear intake, scissor-door seams, carbon roof/sills/splitter/diffuser/arch lips, hood vents, floating blade wing, fastback louvres, full-width LED bars front and rear, neon fender blades and exhaust-port rings, sill + nose underglow, 21in aero-disc wheels with neon rings.",
+   "zones": [],
+   "fbxCheck": "ok"
+  },
+  {
+   "name": "CyberCar_Sedan",
+   "category": "car",
+   "file": "Models/CyberCar_Sedan.fbx",
+   "meshes": {
+    "LOD0": "CyberCar_Sedan_LOD0",
+    "LOD1": "CyberCar_Sedan_LOD1",
+    "LOD2": "CyberCar_Sedan_LOD2"
+   },
+   "tris": {
+    "LOD0": 27654,
+    "LOD1": 11026,
+    "LOD2": 3240
+   },
+   "trisBody": {
+    "LOD0": 16542,
+    "LOD1": 6610,
+    "LOD2": 1832
+   },
+   "size": [
+    2.06,
+    1.457,
+    5.34
+   ],
+   "boundsCenter": [
+    0.0,
+    0.729,
+    -0.028
+   ],
+   "pivot": "ground-centre",
+   "materials": [
+    "veh_plastic",
+    "veh_metal",
+    "veh_paint_midnight",
+    "veh_trim",
+    "veh_chrome",
+    "veh_glass",
+    "veh_headlight",
+    "veh_taillight",
+    "veh_underglow",
+    "veh_decal",
+    "veh_interior",
+    "veh_neon",
+    "veh_rubber"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      0.62,
+      0.0
+     ],
+     "size": [
+      2.0,
+      0.9,
+      5.2
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      1.22,
+      -0.45
+     ],
+     "size": [
+      1.5,
+      0.45,
+      2.6
+     ]
+    }
+   ],
+   "lights": {
+    "headlight": {
+     "center": [
+      0.0,
+      0.812,
+      2.571
+     ],
+     "points": [
+      [
+       -0.68,
+       0.835,
+       2.519
+      ],
+      [
+       0.68,
+       0.835,
+       2.52
+      ],
+      [
+       -0.72,
+       0.79,
+       2.622
+      ],
+      [
+       0.72,
+       0.79,
+       2.622
+      ]
+     ],
+     "left": [
+      -0.72,
+      0.79,
+      2.622
+     ],
+     "right": [
+      0.72,
+      0.79,
+      2.622
+     ]
+    },
+    "taillight": {
+     "center": [
+      0.0,
+      0.895,
+      -2.657
+     ],
+     "points": [
+      [
+       0.0,
+       0.93,
+       -2.627
+      ],
+      [
+       0.0,
+       0.86,
+       -2.688
+      ]
+     ],
+     "left": [
+      0.0,
+      0.93,
+      -2.627
+     ],
+     "right": [
+      0.0,
+      0.93,
+      -2.627
+     ]
+    },
+    "all": {
+     "head": [
+      [
+       -0.68,
+       0.835,
+       2.519
+      ],
+      [
+       0.68,
+       0.835,
+       2.52
+      ]
+     ],
+     "head_low": [
+      [
+       -0.72,
+       0.79,
+       2.622
+      ],
+      [
+       0.72,
+       0.79,
+       2.622
+      ]
+     ],
+     "drl": [
+      [
+       0.0,
+       0.36,
+       2.631
+      ]
+     ],
+     "tail_slot": [
+      [
+       0.0,
+       0.93,
+       -2.627
+      ]
+     ],
+     "tail": [
+      [
+       0.0,
+       0.86,
+       -2.688
+      ]
+     ]
+    }
+   },
+   "animatedParts": [
+    {
+     "name": "Wheel_FL",
+     "type": "wheel",
+     "pivot": [
+      -0.885,
+      0.37,
+      1.62
+     ],
+     "meshes": {
+      "LOD0": "Wheel_FL_LOD0",
+      "LOD1": "Wheel_FL_LOD1",
+      "LOD2": "Wheel_FL_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.37,
+     "steer": "local Y (yaw); calipers are on the body at the top of each disc so steering is clip-free"
+    },
+    {
+     "name": "Wheel_FR",
+     "type": "wheel",
+     "pivot": [
+      0.885,
+      0.37,
+      1.62
+     ],
+     "meshes": {
+      "LOD0": "Wheel_FR_LOD0",
+      "LOD1": "Wheel_FR_LOD1",
+      "LOD2": "Wheel_FR_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.37,
+     "steer": "local Y (yaw); calipers are on the body at the top of each disc so steering is clip-free"
+    },
+    {
+     "name": "Wheel_RL",
+     "type": "wheel",
+     "pivot": [
+      -0.885,
+      0.37,
+      -1.55
+     ],
+     "meshes": {
+      "LOD0": "Wheel_RL_LOD0",
+      "LOD1": "Wheel_RL_LOD1",
+      "LOD2": "Wheel_RL_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.37
+    },
+    {
+     "name": "Wheel_RR",
+     "type": "wheel",
+     "pivot": [
+      0.885,
+      0.37,
+      -1.55
+     ],
+     "meshes": {
+      "LOD0": "Wheel_RR_LOD0",
+      "LOD1": "Wheel_RR_LOD1",
+      "LOD2": "Wheel_RR_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.37
+    }
+   ],
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.02
+   ],
+   "notes": "Twin slit headlights + lower DRL bar (veh_headlight); rear light blade + recessed tail slot (veh_taillight); sill underglow (veh_underglow).",
+   "description": "Armoured executive sedan: long hood, faceted creased panels, high armoured beltline with slit glass, chrome window line, chrome spine over hood/roof/boot, vertical chrome grille, twin slit headlights + DRL bar, rear light blade, bolt-on door armour, multi-spoke wheels.",
+   "zones": [],
+   "fbxCheck": "ok"
+  },
+  {
+   "name": "CyberCar_Taxi",
+   "category": "car",
+   "file": "Models/CyberCar_Taxi.fbx",
+   "meshes": {
+    "LOD0": "CyberCar_Taxi_LOD0",
+    "LOD1": "CyberCar_Taxi_LOD1",
+    "LOD2": "CyberCar_Taxi_LOD2"
+   },
+   "tris": {
+    "LOD0": 29196,
+    "LOD1": 11754,
+    "LOD2": 3426
+   },
+   "trisBody": {
+    "LOD0": 18756,
+    "LOD1": 7818,
+    "LOD2": 2018
+   },
+   "size": [
+    1.99,
+    2.029,
+    4.861
+   ],
+   "boundsCenter": [
+    0.0,
+    1.014,
+    0.004
+   ],
+   "pivot": "ground-centre",
+   "materials": [
+    "veh_plastic",
+    "veh_paint_midnight",
+    "veh_paint_taxi",
+    "veh_trim",
+    "veh_glass",
+    "veh_headlight",
+    "veh_taillight",
+    "veh_chrome",
+    "veh_underglow",
+    "veh_neon",
+    "veh_holo_sign",
+    "veh_decal",
+    "veh_hazard",
+    "veh_metal",
+    "veh_interior",
+    "veh_rubber"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      0.62,
+      0.0
+     ],
+     "size": [
+      1.96,
+      0.86,
+      4.72
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      1.3,
+      -0.45
+     ],
+     "size": [
+      1.5,
+      0.6,
+      2.9
+     ]
+    }
+   ],
+   "lights": {
+    "headlight": {
+     "center": [
+      0.0,
+      0.72,
+      2.387
+     ]
+    },
+    "taillight": {
+     "center": [
+      0.0,
+      0.86,
+      -2.374
+     ]
+    },
+    "all": {
+     "head": [
+      [
+       0.0,
+       0.72,
+       2.387
+      ]
+     ],
+     "tail": [
+      [
+       0.0,
+       0.86,
+       -2.374
+      ]
+     ]
+    }
+   },
+   "animatedParts": [
+    {
+     "name": "Wheel_FL",
+     "type": "wheel",
+     "pivot": [
+      -0.86,
+      0.35,
+      1.45
+     ],
+     "meshes": {
+      "LOD0": "Wheel_FL_LOD0",
+      "LOD1": "Wheel_FL_LOD1",
+      "LOD2": "Wheel_FL_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.35,
+     "steer": "local Y (yaw); calipers are on the body at the top of each disc so steering is clip-free"
+    },
+    {
+     "name": "Wheel_FR",
+     "type": "wheel",
+     "pivot": [
+      0.86,
+      0.35,
+      1.45
+     ],
+     "meshes": {
+      "LOD0": "Wheel_FR_LOD0",
+      "LOD1": "Wheel_FR_LOD1",
+      "LOD2": "Wheel_FR_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.35,
+     "steer": "local Y (yaw); calipers are on the body at the top of each disc so steering is clip-free"
+    },
+    {
+     "name": "Wheel_RL",
+     "type": "wheel",
+     "pivot": [
+      -0.86,
+      0.35,
+      -1.42
+     ],
+     "meshes": {
+      "LOD0": "Wheel_RL_LOD0",
+      "LOD1": "Wheel_RL_LOD1",
+      "LOD2": "Wheel_RL_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.35
+    },
+    {
+     "name": "Wheel_RR",
+     "type": "wheel",
+     "pivot": [
+      0.86,
+      0.35,
+      -1.42
+     ],
+     "meshes": {
+      "LOD0": "Wheel_RR_LOD0",
+      "LOD1": "Wheel_RR_LOD1",
+      "LOD2": "Wheel_RR_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.35
+    }
+   ],
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.02
+   ],
+   "notes": "Front light bar (veh_headlight), rear bar (veh_taillight), roof sign (veh_holo_sign additive + veh_neon cap strip), underglow.",
+   "description": "Compact upright cab: yellow body over black lower livery, black roof/pillars, checker band decals, roof holo-sign frame (veh_holo_sign both sides + neon cap strip), sliding rear door seams, light-bar face, rubber bumpers, six-spoke black wheels.",
+   "zones": [],
+   "fbxCheck": "ok"
+  },
+  {
+   "name": "CyberVan",
+   "category": "van",
+   "file": "Models/CyberVan.fbx",
+   "meshes": {
+    "LOD0": "CyberVan_LOD0",
+    "LOD1": "CyberVan_LOD1",
+    "LOD2": "CyberVan_LOD2"
+   },
+   "tris": {
+    "LOD0": 26812,
+    "LOD1": 10683,
+    "LOD2": 3146
+   },
+   "trisBody": {
+    "LOD0": 13972,
+    "LOD1": 5115,
+    "LOD2": 1738
+   },
+   "size": [
+    2.245,
+    2.78,
+    5.585
+   ],
+   "boundsCenter": [
+    -0.0,
+    1.39,
+    0.006
+   ],
+   "pivot": "ground-centre",
+   "materials": [
+    "veh_plastic",
+    "veh_paint_gunmetal",
+    "veh_trim",
+    "veh_glass",
+    "veh_headlight",
+    "veh_metal",
+    "veh_taillight",
+    "veh_decal",
+    "veh_chrome",
+    "veh_paint_taxi",
+    "veh_hazard",
+    "veh_underglow",
+    "veh_interior",
+    "veh_neon",
+    "veh_rubber"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      1.3,
+      0.0
+     ],
+     "size": [
+      2.1,
+      2.0,
+      5.36
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      2.45,
+      -0.4
+     ],
+     "size": [
+      1.8,
+      0.3,
+      4.0
+     ]
+    }
+   ],
+   "lights": {
+    "headlight": {
+     "center": [
+      0.0,
+      0.98,
+      2.702
+     ]
+    },
+    "taillight": {
+     "center": [
+      0.0,
+      1.35,
+      -2.69
+     ]
+    },
+    "all": {
+     "head": [
+      [
+       0.0,
+       0.98,
+       2.702
+      ]
+     ],
+     "tail": [
+      [
+       0.0,
+       1.35,
+       -2.69
+      ]
+     ],
+     "hazard": [
+      [
+       -0.86,
+       2.56,
+       -2.35
+      ],
+      [
+       -0.86,
+       2.56,
+       1.45
+      ],
+      [
+       0.86,
+       2.56,
+       -2.35
+      ],
+      [
+       0.86,
+       2.56,
+       1.45
+      ]
+     ]
+    }
+   },
+   "animatedParts": [
+    {
+     "name": "Wheel_FL",
+     "type": "wheel",
+     "pivot": [
+      -0.89,
+      0.38,
+      1.8
+     ],
+     "meshes": {
+      "LOD0": "Wheel_FL_LOD0",
+      "LOD1": "Wheel_FL_LOD1",
+      "LOD2": "Wheel_FL_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.38,
+     "steer": "local Y (yaw); calipers are on the body at the top of each disc so steering is clip-free"
+    },
+    {
+     "name": "Wheel_FR",
+     "type": "wheel",
+     "pivot": [
+      0.89,
+      0.38,
+      1.8
+     ],
+     "meshes": {
+      "LOD0": "Wheel_FR_LOD0",
+      "LOD1": "Wheel_FR_LOD1",
+      "LOD2": "Wheel_FR_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.38,
+     "steer": "local Y (yaw); calipers are on the body at the top of each disc so steering is clip-free"
+    },
+    {
+     "name": "Wheel_RL",
+     "type": "wheel",
+     "pivot": [
+      -0.89,
+      0.38,
+      -1.62
+     ],
+     "meshes": {
+      "LOD0": "Wheel_RL_LOD0",
+      "LOD1": "Wheel_RL_LOD1",
+      "LOD2": "Wheel_RL_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.38
+    },
+    {
+     "name": "Wheel_RR",
+     "type": "wheel",
+     "pivot": [
+      0.89,
+      0.38,
+      -1.62
+     ],
+     "meshes": {
+      "LOD0": "Wheel_RR_LOD0",
+      "LOD1": "Wheel_RR_LOD1",
+      "LOD2": "Wheel_RR_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.38
+    }
+   ],
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.02
+   ],
+   "notes": "Front bar + rack light bar (veh_headlight), rear corner bars (veh_taillight), roof beacons + side markers (veh_hazard), underglow.",
+   "description": "Forward-control utility van: chamfered box, raked cab glass, sliding cargo door (right side) + rear barn doors, louvred side vents, tubular roof rack with cargo cases and a light bar, amber hazard beacons + side markers, fleet markings, heavy 8-lug steel wheels.",
+   "zones": [],
+   "fbxCheck": "ok"
+  },
+  {
+   "name": "CyberBike",
+   "category": "bike",
+   "file": "Models/CyberBike.fbx",
+   "meshes": {
+    "LOD0": "CyberBike_LOD0",
+    "LOD1": "CyberBike_LOD1",
+    "LOD2": "CyberBike_LOD2"
+   },
+   "tris": {
+    "LOD0": 16042,
+    "LOD1": 6414,
+    "LOD2": 1922
+   },
+   "trisBody": {
+    "LOD0": 10090,
+    "LOD1": 4206,
+    "LOD2": 1394
+   },
+   "size": [
+    0.84,
+    1.2,
+    2.716
+   ],
+   "boundsCenter": [
+    0.0,
+    0.6,
+    0.022
+   ],
+   "pivot": "ground-centre",
+   "materials": [
+    "veh_plastic",
+    "veh_carbon",
+    "veh_paint_midnight",
+    "veh_trim",
+    "veh_headlight",
+    "veh_taillight",
+    "veh_metal",
+    "veh_chrome",
+    "veh_interior",
+    "veh_rubber",
+    "veh_glass",
+    "veh_neon",
+    "veh_underglow",
+    "veh_decal"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      0.62,
+      0.05
+     ],
+     "size": [
+      0.62,
+      0.9,
+      2.7
+     ]
+    }
+   ],
+   "lights": {
+    "headlight": {
+     "center": [
+      0.0,
+      0.86,
+      1.336
+     ]
+    },
+    "taillight": {
+     "center": [
+      0.0,
+      0.94,
+      -1.336
+     ]
+    },
+    "all": {
+     "head": [
+      [
+       0.0,
+       0.86,
+       1.336
+      ]
+     ],
+     "tail": [
+      [
+       0.0,
+       0.94,
+       -1.336
+      ]
+     ]
+    }
+   },
+   "animatedParts": [
+    {
+     "name": "Wheel_F",
+     "type": "wheel",
+     "pivot": [
+      0.0,
+      0.4,
+      0.98
+     ],
+     "meshes": {
+      "LOD0": "Wheel_F_LOD0",
+      "LOD1": "Wheel_F_LOD1",
+      "LOD2": "Wheel_F_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.4,
+     "steer": "local Y (yaw); calipers are on the body at the top of each disc so steering is clip-free"
+    },
+    {
+     "name": "Wheel_R",
+     "type": "wheel",
+     "pivot": [
+      0.0,
+      0.42,
+      -0.86
+     ],
+     "meshes": {
+      "LOD0": "Wheel_R_LOD0",
+      "LOD1": "Wheel_R_LOD1",
+      "LOD2": "Wheel_R_LOD2"
+     },
+     "spinAxis": "local X (Unity +X = vehicle right); positive rotation rolls forward",
+     "radius": 0.42
+    }
+   ],
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.02
+   ],
+   "notes": "Nose slit (veh_headlight), tail slit (veh_taillight), hubless rim glow + side stripes (veh_neon), belly underglow.",
+   "description": "Heavy hubless-wheel motorcycle: low lofted fairing hugging the wheel tops, static inner bearing C-arms, chrome fork blades, single-sided swingarm, battery heat-sink fins, glowing rim bands, neon side stripes, belly underglow, clip-ons and a small screen.",
+   "zones": [],
+   "fbxCheck": "ok"
+  },
+  {
+   "name": "HoverCar_A",
+   "category": "hover",
+   "file": "Models/HoverCar_A.fbx",
+   "meshes": {
+    "LOD0": "HoverCar_A_LOD0",
+    "LOD1": "HoverCar_A_LOD1",
+    "LOD2": "HoverCar_A_LOD2"
+   },
+   "tris": {
+    "LOD0": 21370,
+    "LOD1": 8638,
+    "LOD2": 2494
+   },
+   "trisBody": {
+    "LOD0": 17066,
+    "LOD1": 6462,
+    "LOD2": 1774
+   },
+   "size": [
+    2.04,
+    1.35,
+    4.986
+   ],
+   "boundsCenter": [
+    0.0,
+    0.675,
+    -0.003
+   ],
+   "pivot": "ground-centre",
+   "materials": [
+    "veh_plastic",
+    "veh_paint_midnight",
+    "veh_paint_pearl",
+    "veh_trim",
+    "veh_glass",
+    "veh_headlight",
+    "veh_taillight",
+    "veh_underglow",
+    "veh_navlight",
+    "veh_neon",
+    "veh_carbon",
+    "veh_metal",
+    "veh_decal",
+    "veh_chrome",
+    "veh_interior",
+    "veh_thruster"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      0.53,
+      0.0
+     ],
+     "size": [
+      2.0,
+      0.8,
+      4.8
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      1.03,
+      -0.25
+     ],
+     "size": [
+      1.3,
+      0.4,
+      2.4
+     ]
+    }
+   ],
+   "lights": {
+    "headlight": {
+     "center": [
+      0.0,
+      0.47,
+      2.49
+     ]
+    },
+    "taillight": {
+     "center": [
+      0.0,
+      0.77,
+      -2.486
+     ]
+    },
+    "all": {
+     "head": [
+      [
+       0.0,
+       0.47,
+       2.49
+      ]
+     ],
+     "tail": [
+      [
+       0.0,
+       0.77,
+       -2.486
+      ]
+     ]
+    }
+   },
+   "animatedParts": [
+    {
+     "name": "Thruster_FL",
+     "type": "thruster",
+     "pivot": [
+      -0.74,
+      0.11,
+      1.62
+     ],
+     "meshes": {
+      "LOD0": "Thruster_FL_LOD0",
+      "LOD1": "Thruster_FL_LOD1",
+      "LOD2": "Thruster_FL_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_FR",
+     "type": "thruster",
+     "pivot": [
+      0.74,
+      0.11,
+      1.62
+     ],
+     "meshes": {
+      "LOD0": "Thruster_FR_LOD0",
+      "LOD1": "Thruster_FR_LOD1",
+      "LOD2": "Thruster_FR_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_RL",
+     "type": "thruster",
+     "pivot": [
+      -0.78,
+      0.11,
+      -1.55
+     ],
+     "meshes": {
+      "LOD0": "Thruster_RL_LOD0",
+      "LOD1": "Thruster_RL_LOD1",
+      "LOD2": "Thruster_RL_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_RR",
+     "type": "thruster",
+     "pivot": [
+      0.78,
+      0.11,
+      -1.55
+     ],
+     "meshes": {
+      "LOD0": "Thruster_RR_LOD0",
+      "LOD1": "Thruster_RR_LOD1",
+      "LOD2": "Thruster_RR_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    }
+   ],
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.02
+   ],
+   "notes": "Front/rear light bars, roof beacon bar (veh_neon + veh_underglow halves), nav lights + strobes (veh_navlight), pod nozzles (veh_thruster).",
+   "description": "Spinner-style flyer: long tapered body, raised rear deck, canopy glasshouse, four thruster pods in recessed bays (Thruster_FL/FR/RL/RR), roof beacon bar, tail fins with strobes, nav lights, light bars.",
+   "zones": [],
+   "fbxCheck": "ok"
+  },
+  {
+   "name": "HoverCar_B",
+   "category": "hover",
+   "file": "Models/HoverCar_B.fbx",
+   "meshes": {
+    "LOD0": "HoverCar_B_LOD0",
+    "LOD1": "HoverCar_B_LOD1",
+    "LOD2": "HoverCar_B_LOD2"
+   },
+   "tris": {
+    "LOD0": 17522,
+    "LOD1": 7036,
+    "LOD2": 2074
+   },
+   "trisBody": {
+    "LOD0": 13194,
+    "LOD1": 4848,
+    "LOD2": 1254
+   },
+   "size": [
+    3.26,
+    1.16,
+    4.43
+   ],
+   "boundsCenter": [
+    0.0,
+    0.58,
+    -0.0
+   ],
+   "pivot": "ground-centre",
+   "materials": [
+    "veh_plastic",
+    "veh_carbon",
+    "veh_paint_cyan",
+    "veh_glass",
+    "veh_trim",
+    "veh_headlight",
+    "veh_taillight",
+    "veh_underglow",
+    "veh_navlight",
+    "veh_neon",
+    "veh_decal",
+    "veh_chrome",
+    "veh_interior",
+    "veh_metal",
+    "veh_paint_midnight",
+    "veh_thruster"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      0.46,
+      0.0
+     ],
+     "size": [
+      1.6,
+      0.75,
+      4.3
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      0.92,
+      -0.15
+     ],
+     "size": [
+      1.1,
+      0.5,
+      2.0
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      0.39,
+      0.25
+     ],
+     "size": [
+      3.2,
+      0.3,
+      0.8
+     ]
+    }
+   ],
+   "lights": {
+    "headlight": {
+     "center": [
+      0.0,
+      0.48,
+      2.215
+     ]
+    },
+    "taillight": {
+     "center": [
+      0.0,
+      0.64,
+      -2.205
+     ]
+    },
+    "all": {
+     "head": [
+      [
+       0.0,
+       0.48,
+       2.215
+      ]
+     ],
+     "tail": [
+      [
+       0.0,
+       0.64,
+       -2.205
+      ]
+     ]
+    }
+   },
+   "animatedParts": [
+    {
+     "name": "Thruster_L",
+     "type": "thruster",
+     "pivot": [
+      -1.2,
+      0.36,
+      0.25
+     ],
+     "meshes": {
+      "LOD0": "Thruster_L_LOD0",
+      "LOD1": "Thruster_L_LOD1",
+      "LOD2": "Thruster_L_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_R",
+     "type": "thruster",
+     "pivot": [
+      1.2,
+      0.36,
+      0.25
+     ],
+     "meshes": {
+      "LOD0": "Thruster_R_LOD0",
+      "LOD1": "Thruster_R_LOD1",
+      "LOD2": "Thruster_R_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_RL",
+     "type": "thruster",
+     "pivot": [
+      -0.42,
+      0.1,
+      -1.55
+     ],
+     "meshes": {
+      "LOD0": "Thruster_RL_LOD0",
+      "LOD1": "Thruster_RL_LOD1",
+      "LOD2": "Thruster_RL_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_RR",
+     "type": "thruster",
+     "pivot": [
+      0.42,
+      0.1,
+      -1.55
+     ],
+     "meshes": {
+      "LOD0": "Thruster_RR_LOD0",
+      "LOD1": "Thruster_RR_LOD1",
+      "LOD2": "Thruster_RR_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    }
+   ],
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.02
+   ],
+   "notes": "Ducted fans Thruster_L/R tilt about their local X (pivot at the duct centre); rear pods Thruster_RL/RR.",
+   "description": "Compact two-seat flyer: teardrop pod with a full bubble canopy, two big ducted fans on side pylons (Thruster_L/R, tilt) and two rear pods (Thruster_RL/RR), dorsal fin strobe.",
+   "zones": [],
+   "fbxCheck": "ok"
+  },
+  {
+   "name": "HoverTruck",
+   "category": "hover",
+   "file": "Models/HoverTruck.fbx",
+   "meshes": {
+    "LOD0": "HoverTruck_LOD0",
+    "LOD1": "HoverTruck_LOD1",
+    "LOD2": "HoverTruck_LOD2"
+   },
+   "tris": {
+    "LOD0": 22324,
+    "LOD1": 8866,
+    "LOD2": 2568
+   },
+   "trisBody": {
+    "LOD0": 15724,
+    "LOD1": 5530,
+    "LOD2": 1488
+   },
+   "size": [
+    3.06,
+    3.19,
+    9.474
+   ],
+   "boundsCenter": [
+    0.0,
+    1.595,
+    -0.003
+   ],
+   "pivot": "ground-centre",
+   "materials": [
+    "veh_plastic",
+    "veh_metal",
+    "veh_paint_gunmetal",
+    "veh_trim",
+    "veh_glass",
+    "veh_headlight",
+    "veh_chrome",
+    "veh_hazard",
+    "veh_decal",
+    "veh_navlight",
+    "veh_taillight",
+    "veh_underglow",
+    "veh_interior",
+    "veh_neon",
+    "veh_thruster"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      1.73,
+      -1.1
+     ],
+     "size": [
+      2.6,
+      2.6,
+      7.2
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      1.53,
+      3.4
+     ],
+     "size": [
+      2.5,
+      2.4,
+      2.4
+     ]
+    }
+   ],
+   "lights": {
+    "headlight": {
+     "center": [
+      0.0,
+      0.87,
+      4.726
+     ],
+     "points": [
+      [
+       0.0,
+       1.03,
+       4.732
+      ],
+      [
+       0.0,
+       0.71,
+       4.721
+      ]
+     ],
+     "left": [
+      0.0,
+      1.03,
+      4.732
+     ],
+     "right": [
+      0.0,
+      1.03,
+      4.732
+     ]
+    },
+    "taillight": {
+     "center": [
+      0.0,
+      1.83,
+      -4.72
+     ]
+    },
+    "all": {
+     "head": [
+      [
+       0.0,
+       1.03,
+       4.732
+      ]
+     ],
+     "head_low": [
+      [
+       0.0,
+       0.71,
+       4.721
+      ]
+     ],
+     "tail": [
+      [
+       0.0,
+       1.83,
+       -4.72
+      ]
+     ]
+    }
+   },
+   "animatedParts": [
+    {
+     "name": "Thruster_FL",
+     "type": "thruster",
+     "pivot": [
+      -1.15,
+      0.15,
+      3.55
+     ],
+     "meshes": {
+      "LOD0": "Thruster_FL_LOD0",
+      "LOD1": "Thruster_FL_LOD1",
+      "LOD2": "Thruster_FL_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_FR",
+     "type": "thruster",
+     "pivot": [
+      1.15,
+      0.15,
+      3.55
+     ],
+     "meshes": {
+      "LOD0": "Thruster_FR_LOD0",
+      "LOD1": "Thruster_FR_LOD1",
+      "LOD2": "Thruster_FR_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_ML",
+     "type": "thruster",
+     "pivot": [
+      -1.2,
+      0.15,
+      0.2
+     ],
+     "meshes": {
+      "LOD0": "Thruster_ML_LOD0",
+      "LOD1": "Thruster_ML_LOD1",
+      "LOD2": "Thruster_ML_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_MR",
+     "type": "thruster",
+     "pivot": [
+      1.2,
+      0.15,
+      0.2
+     ],
+     "meshes": {
+      "LOD0": "Thruster_MR_LOD0",
+      "LOD1": "Thruster_MR_LOD1",
+      "LOD2": "Thruster_MR_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_RL",
+     "type": "thruster",
+     "pivot": [
+      -1.2,
+      0.15,
+      -3.4
+     ],
+     "meshes": {
+      "LOD0": "Thruster_RL_LOD0",
+      "LOD1": "Thruster_RL_LOD1",
+      "LOD2": "Thruster_RL_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    },
+    {
+     "name": "Thruster_RR",
+     "type": "thruster",
+     "pivot": [
+      1.2,
+      0.15,
+      -3.4
+     ],
+     "meshes": {
+      "LOD0": "Thruster_RR_LOD0",
+      "LOD1": "Thruster_RR_LOD1",
+      "LOD2": "Thruster_RR_LOD2"
+     },
+     "note": "pivot at the pod's centre of rotation; nozzle faces -Y (down); tilt about local X (pitch) / Z (roll)"
+    }
+   ],
+   "lodTransitions": [
+    0.4,
+    0.15,
+    0.03
+   ],
+   "notes": "Cab light bars (veh_headlight), rear corner bars (veh_taillight), roof beacons (veh_hazard), nav lights + strobe (veh_navlight), six pods (veh_thruster).",
+   "description": "Heavy flying cargo hauler (~9.5 m): faceted cab with wraparound visor, ribbed cargo container with fleet markings, rear doors with lock bars, six thruster pods, roof hazard beacons, nav lights, cab light bars.",
+   "zones": [],
+   "fbxCheck": "ok"
+  },
+  {
+   "name": "CyberCar_Sedan_Wrecked",
+   "category": "wreck",
+   "file": "Models/CyberCar_Sedan_Wrecked.fbx",
+   "meshes": {
+    "LOD0": "CyberCar_Sedan_Wrecked_LOD0",
+    "LOD1": "CyberCar_Sedan_Wrecked_LOD1",
+    "LOD2": "CyberCar_Sedan_Wrecked_LOD2"
+   },
+   "tris": {
+    "LOD0": 28673,
+    "LOD1": 11435,
+    "LOD2": 3381
+   },
+   "trisBody": {
+    "LOD0": 28673,
+    "LOD1": 11435,
+    "LOD2": 3381
+   },
+   "size": [
+    2.083,
+    1.436,
+    5.648
+   ],
+   "boundsCenter": [
+    0.011,
+    0.718,
+    0.125
+   ],
+   "pivot": "ground-centre",
+   "materials": [
+    "veh_plastic",
+    "veh_metal",
+    "veh_paint_wrecked",
+    "veh_trim",
+    "veh_headlight",
+    "veh_chrome",
+    "veh_taillight",
+    "veh_underglow",
+    "veh_decal",
+    "veh_interior",
+    "veh_neon",
+    "veh_glass_cracked",
+    "veh_rubber"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      0.628,
+      0.0
+     ],
+     "size": [
+      2.0,
+      0.9,
+      5.2
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      1.228,
+      -0.45
+     ],
+     "size": [
+      1.5,
+      0.45,
+      2.6
+     ]
+    }
+   ],
+   "lights": {
+    "headlight": {
+     "center": [
+      0.0,
+      0.821,
+      2.334
+     ],
+     "points": [
+      [
+       -0.68,
+       0.843,
+       2.31
+      ],
+      [
+       0.68,
+       0.843,
+       2.352
+      ],
+      [
+       -0.72,
+       0.798,
+       2.299
+      ],
+      [
+       0.72,
+       0.798,
+       2.374
+      ]
+     ],
+     "left": [
+      -0.72,
+      0.798,
+      2.299
+     ],
+     "right": [
+      0.72,
+      0.798,
+      2.374
+     ]
+    },
+    "taillight": {
+     "center": [
+      0.0,
+      0.903,
+      -2.657
+     ],
+     "points": [
+      [
+       0.0,
+       0.938,
+       -2.626
+      ],
+      [
+       0.0,
+       0.868,
+       -2.688
+      ]
+     ],
+     "left": [
+      0.0,
+      0.938,
+      -2.626
+     ],
+     "right": [
+      0.0,
+      0.938,
+      -2.626
+     ]
+    },
+    "all": {
+     "head": [
+      [
+       -0.68,
+       0.843,
+       2.31
+      ],
+      [
+       0.68,
+       0.843,
+       2.352
+      ]
+     ],
+     "head_low": [
+      [
+       -0.72,
+       0.798,
+       2.299
+      ],
+      [
+       0.72,
+       0.798,
+       2.374
+      ]
+     ],
+     "drl": [
+      [
+       0.0,
+       0.368,
+       2.37
+      ]
+     ],
+     "tail_slot": [
+      [
+       0.0,
+       0.938,
+       -2.626
+      ]
+     ],
+     "tail": [
+      [
+       0.0,
+       0.868,
+       -2.688
+      ]
+     ]
+    }
+   },
+   "animatedParts": [],
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.02
+   ],
+   "notes": "Static wreck: light slots kept (dead by default, can flicker), glass is veh_glass_cracked with shattered holes.",
+   "description": "Wrecked armoured sedan (static prop): crumpled front, dented roof and doors, cracked/shattered glass, rust + scorch paint, front-left wheel missing (rests on the hub), flat front-right tyre, debris.",
+   "zones": [],
+   "fbxCheck": "ok"
+  },
+  {
+   "name": "CyberVan_Burnt",
+   "category": "wreck",
+   "file": "Models/CyberVan_Burnt.fbx",
+   "meshes": {
+    "LOD0": "CyberVan_Burnt_LOD0",
+    "LOD1": "CyberVan_Burnt_LOD1",
+    "LOD2": "CyberVan_Burnt_LOD2"
+   },
+   "tris": {
+    "LOD0": 19253,
+    "LOD1": 7658,
+    "LOD2": 2239
+   },
+   "trisBody": {
+    "LOD0": 19253,
+    "LOD1": 7658,
+    "LOD2": 2239
+   },
+   "size": [
+    2.242,
+    2.36,
+    5.589
+   ],
+   "boundsCenter": [
+    0.003,
+    1.18,
+    0.009
+   ],
+   "pivot": "ground-centre",
+   "materials": [
+    "veh_burnt"
+   ],
+   "colliders": [
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      1.3,
+      0.0
+     ],
+     "size": [
+      2.1,
+      2.0,
+      5.36
+     ]
+    },
+    {
+     "type": "box",
+     "center": [
+      0.0,
+      2.45,
+      -0.4
+     ],
+     "size": [
+      1.8,
+      0.3,
+      4.0
+     ]
+    }
+   ],
+   "lights": {
+    "headlight": {
+     "center": [
+      0.0,
+      0.98,
+      2.702
+     ]
+    },
+    "taillight": {
+     "center": [
+      0.0,
+      1.35,
+      -2.69
+     ]
+    },
+    "all": {
+     "head": [
+      [
+       0.0,
+       0.98,
+       2.702
+      ]
+     ],
+     "tail": [
+      [
+       0.0,
+       1.35,
+       -2.69
+      ]
+     ]
+    }
+   },
+   "animatedParts": [],
+   "lodTransitions": [
+    0.3,
+    0.1,
+    0.02
+   ],
+   "notes": "Static burnt-out shell: no emissive slots, all veh_burnt; windows open; sits on the rims.",
+   "description": "Fire-gutted van shell (static prop): charred steel with ash and heat rust, windows burst open, sagging roof, tyres burnt away (sits on the rims).",
+   "zones": [],
+   "fbxCheck": "ok"
+  }
+ ],
+ "stats": {
+  "assets": 10,
+  "materials": 26,
+  "textureMB": 79.4,
+  "fbxMB": 11.7
+ }
+}
