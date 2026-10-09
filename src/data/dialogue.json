@@ -1,0 +1,327 @@
+{
+  "dialogues": [
+    {
+      "id": "cin_intro_lines", "cinematic": true, "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "narrator", "text": "Before the collapse, Aether-9 never slept.", "next": "n2" },
+        { "id": "n2", "speaker": "narrator", "text": "Four thousand researchers, and one reactor that drew power from somewhere no one could name.", "next": "n3" },
+        { "id": "n3", "speaker": "narrator", "text": "We called it the Aether. We thought we were listening to it.", "next": "n4" },
+        { "id": "n4", "speaker": "narrator", "text": "Then, one night, it answered.", "next": "n5" },
+        { "id": "n5", "speaker": "kael", "text": "How long has it been?", "next": "n6" },
+        { "id": "n6", "speaker": "lyra", "text": "Long enough for the city to forget us.", "next": "n7" },
+        { "id": "n7", "speaker": "kael", "text": "The core shouldn't still be running.", "next": "n8" },
+        { "id": "n8", "speaker": "lyra", "text": "It isn't running.", "next": "n9" },
+        { "id": "n9", "speaker": "lyra", "text": "It's waiting." }
+      ]
+    },
+    {
+      "id": "dlg_m1_comms", "start": "k1",
+      "nodes": [
+        { "id": "k1", "speaker": "kael", "text": "Giva? Your signal's faint. Where are you?", "conditions": ["char:kael"], "else": "l1", "next": "k2" },
+        { "id": "k2", "speaker": "lyra", "text": "North-east side of the plaza. Someone pulled me out of the rain. There are survivors here, Kael.", "next": "k3" },
+        { "id": "k3", "speaker": "kael", "text": "Stay with them. I'll find you." },
+        { "id": "l1", "speaker": "lyra", "text": "Kael? I can hear you on the link, but you're faint.", "next": "l2" },
+        { "id": "l2", "speaker": "kael", "text": "North-east corner of the plaza. There are people here. Survivors. They found me in the street.", "next": "l3" },
+        { "id": "l3", "speaker": "lyra", "text": "Don't move. I'm coming to you." }
+      ]
+    },
+    {
+      "id": "dlg_m1_signal", "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "active", "text": "The monument's still drawing power. That shouldn't be possible.", "next": "n2" },
+        { "id": "n2", "speaker": "partner", "text": "I'm reading it too. There's a pulse in it, repeating. It's a signal, and it's coming from under the city.", "next": "n3" },
+        { "id": "n3", "speaker": "active", "text": "Movement. Security drones, three of them, coming in fast.", "next": "n4" },
+        { "id": "n4", "speaker": "partner", "text": "They're not ours anymore. Be careful." }
+      ]
+    },
+    {
+      "id": "dlg_m1_after_fight", "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "active", "text": "One of them was carrying something. Concentrated Aether.", "next": "n2" },
+        { "id": "n2", "speaker": "partner", "text": "An Aether Shard. It'll hit harder for a while. Grab it, then come to the camp." }
+      ]
+    },
+    {
+      "id": "cin_meeting_lines", "cinematic": true, "start": "k1",
+      "nodes": [
+        { "id": "k1", "speaker": "lyra", "text": "You took your time.", "conditions": ["char:kael"], "else": "l1", "next": "k2" },
+        { "id": "k2", "speaker": "kael", "text": "I stopped to argue with some drones.", "next": "k3" },
+        { "id": "k3", "speaker": "lyra", "text": "Did you win?", "next": "k4" },
+        { "id": "k4", "speaker": "kael", "text": "I'm here.", "next": "c1" },
+        { "id": "l1", "speaker": "kael", "text": "You found me.", "next": "l2" },
+        { "id": "l2", "speaker": "lyra", "text": "You weren't exactly hiding. Half the city heard those drones go down.", "next": "l3" },
+        { "id": "l3", "speaker": "kael", "text": "Only half?", "next": "c1" },
+        { "id": "c1", "speaker": "oren", "text": "Seven years, by my count. That's how long it's been since the Core went quiet.", "next": "c2" },
+        { "id": "c2", "speaker": "lyra", "text": "This is Oren. He's kept people alive out here.", "next": "c3" },
+        { "id": "c3", "speaker": "oren", "text": "Kept them hidden, mostly. Those drones used to protect us. Now they protect whatever's down there.", "next": "c4" },
+        { "id": "c4", "speaker": "kael", "text": "The monument's broadcasting. Something under the city is calling.", "next": "c5" },
+        { "id": "c5", "speaker": "oren", "text": "The old Line B transit tunnels. Nobody who's gone down there has come back.", "next": "c6" },
+        { "id": "c6", "speaker": "lyra", "text": "Then we'll be the first." }
+      ]
+    },
+    {
+      "id": "dlg_maren_message", "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "maren", "text": "If this reaches anyone, then the Core kept its promise. Kael. Giva. I'm sorry.", "next": "n2" },
+        { "id": "n2", "speaker": "maren", "text": "I put you to sleep because you were the only two it would listen to. The resonance keys.", "next": "n3" },
+        { "id": "n3", "speaker": "maren", "text": "Everything you need is in my lab. Follow the spur line to the facility. My access code is attached.", "next": "n4" },
+        { "id": "n4", "speaker": "maren", "text": "And don't trust the Guardian. It remembers what I built it to protect. Not why.", "next": "n5" },
+        { "id": "n5", "speaker": "active", "text": "My interface just recalibrated. It's pulling Aether through the transmitter.", "next": "n6" },
+        { "id": "n6", "speaker": "partner", "text": "Same here. Phasing is online. We can move faster than they can track us now.", "next": "n7" },
+        { "id": "n7", "speaker": "system", "text": "Phase Dash and Phase Step unlocked." }
+      ]
+    },
+    {
+      "id": "dlg_echo_unlocked", "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "lyra", "text": "Her research data is talking to my harness. It's tuning itself.", "next": "n2" },
+        { "id": "n2", "speaker": "lyra", "text": "I can see traces. Echoes of where people were standing when it happened.", "next": "n3" },
+        { "id": "n3", "speaker": "kael", "text": "Maren's private office isn't on any of these floor plans.", "next": "n4" },
+        { "id": "n4", "speaker": "lyra", "text": "Then it's hidden. Let me look.", "next": "n5" },
+        { "id": "n5", "speaker": "system", "text": "Echo Sight unlocked. Switch to Giva and use Echo Sight to reveal hidden objects." }
+      ]
+    },
+    {
+      "id": "dlg_truth", "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "maren", "text": "Final entry. The cascade projection was right. In nine minutes the Core will tear itself open and take every one of us with it.", "next": "n2" },
+        { "id": "n2", "speaker": "maren", "text": "So I'm asking it to hold us. Not our bodies. Our echoes. Everything that makes us who we are.", "next": "n3" },
+        { "id": "n3", "speaker": "maren", "text": "It said yes. Four thousand people, folded into the Aether. I don't know if it's mercy or a cage.", "next": "n4" },
+        { "id": "n4", "speaker": "maren", "text": "The Guardian will keep them in. Only a resonance key can tell the Core to let go. That's why I kept you asleep.", "next": "n5" },
+        { "id": "n5", "speaker": "lyra", "text": "The Echo Collapse wasn't an accident. It was a rescue.", "next": "n6" },
+        { "id": "n6", "speaker": "kael", "text": "A rescue that never finished.", "choices": [
+          { "id": "c1", "text": "Then we finish it.", "next": "n7" },
+          { "id": "c2", "text": "She chose for all of them.", "next": "n8" }
+        ] },
+        { "id": "n7", "speaker": "lyra", "text": "Her clearance chip is somewhere in this wing. The Vault is the only way down to the Core." },
+        { "id": "n8", "speaker": "lyra", "text": "She did. Now it's our turn to choose. Her clearance chip is somewhere in this wing." }
+      ]
+    },
+    {
+      "id": "dlg_attuned", "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "active", "text": "The Core's resonance. I can feel it in the interface.", "next": "n2" },
+        { "id": "n2", "speaker": "partner", "text": "We're attuned. Whatever's guarding the Core, we can hit it with the same power it's made of.", "next": "n3" },
+        { "id": "n3", "speaker": "system", "text": "Ultimate abilities unlocked: Core Break and Resonance Burst. Deal and take damage to charge them." }
+      ]
+    },
+    {
+      "id": "cin_guardian_lines", "cinematic": true, "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "lyra", "text": "Kael. That's not a sentinel.", "next": "n2" },
+        { "id": "n2", "speaker": "kael", "text": "It's the thing Maren warned us about.", "next": "n3" },
+        { "id": "n3", "speaker": "guardian", "text": "Echoes detected. Containment is protection. Return to stasis.", "next": "n4" },
+        { "id": "n4", "speaker": "kael", "text": "Not a chance.", "next": "n5" },
+        { "id": "n5", "speaker": "lyra", "text": "The blast door's cycling. We just have to stay alive until it opens!" }
+      ]
+    },
+    {
+      "id": "dlg_final_truth", "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "maren", "text": "You came. Both of you. I'm not a recording this time, Giva. I'm one of them.", "next": "n2" },
+        { "id": "n2", "speaker": "lyra", "text": "Ilse?", "next": "n3" },
+        { "id": "n3", "speaker": "maren", "text": "Four thousand of us, all holding our breath. The Core doesn't know how to let go on its own. It was built to keep.", "next": "n4" },
+        { "id": "n4", "speaker": "maren", "text": "The Guardian won't let you near the heart. It thinks it's protecting us. It is me, in a way. The part of me that was afraid.", "next": "n5" },
+        { "id": "n5", "speaker": "kael", "text": "Then we'll get past it.", "next": "n6" },
+        { "id": "n6", "speaker": "maren", "text": "It's coming. Hold on." }
+      ]
+    },
+    {
+      "id": "dlg_boss_intro", "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "guardian", "text": "Resonance keys. You will not open the heart.", "next": "n2" },
+        { "id": "n2", "speaker": "active", "text": "Watch its core. When the plates open, that's our window.", "next": "n3" },
+        { "id": "n3", "speaker": "partner", "text": "Go!" }
+      ]
+    },
+    {
+      "id": "cin_ending_lines", "cinematic": true, "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "maren", "text": "Thank you. Both of you. We can go now.", "next": "n2" },
+        { "id": "n2", "speaker": "lyra", "text": "Where will they go?", "next": "n3" },
+        { "id": "n3", "speaker": "kael", "text": "I don't know. Somewhere they're not waiting anymore.", "next": "n4" },
+        { "id": "n4", "speaker": "narrator", "text": "For seven years the city held its breath.", "next": "n5" },
+        { "id": "n5", "speaker": "narrator", "text": "That morning, for the first time since the collapse, the rain stopped over Aether-9.", "next": "n6" },
+        { "id": "n6", "speaker": "lyra", "text": "What now?", "next": "n7" },
+        { "id": "n7", "speaker": "kael", "text": "Now we wake the rest of the city." }
+      ]
+    },
+    {
+      "id": "dlg_relay_active", "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "lyra", "text": "The relay's live, but the signal is bouncing off something beneath this roof.", "next": "n2" },
+        { "id": "n2", "speaker": "kael", "text": "A room that isn't on the plans. Again.", "next": "n3" },
+        { "id": "n3", "speaker": "lyra", "text": "Echo Sight should pick it up." }
+      ]
+    },
+    {
+      "id": "dlg_bolt_repaired", "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "bolt", "text": "Systems nominal. Hello, Oren.", "next": "n2" },
+        { "id": "n2", "speaker": "oren", "text": "Hello, old friend. You've been asleep a long time.", "next": "n3" },
+        { "id": "n3", "speaker": "bolt", "text": "Shield emitter calibrated for new users. Please hold still.", "next": "n4" },
+        { "id": "n4", "speaker": "oren", "text": "That's his way of saying thank you. Your shields will hold a lot longer now." }
+      ]
+    },
+    {
+      "id": "cin_hidden_vault_lines", "cinematic": true, "start": "n1",
+      "nodes": [
+        { "id": "n1", "speaker": "maren", "text": "You found my last room. I built it in case I was wrong about everything.", "next": "n2" },
+        { "id": "n2", "speaker": "maren", "text": "The Resonant Core will keep the Guardian's pull off you. Take it. And tell Nia I'm sorry I was late.", "next": "n3" },
+        { "id": "n3", "speaker": "lyra", "text": "We'll tell her." }
+      ]
+    },
+
+    {
+      "id": "dlg_oren", "npc": "oren", "start": "route",
+      "nodes": [
+        { "id": "route", "branch": [
+          { "if": ["quest:sq_broken_guardian:none", "flag:swap_unlocked"], "goto": "offer" },
+          { "if": ["quest:sq_broken_guardian:active", "item:q_actuator", "item:q_power_cell_bolt", "item:q_control_component"], "goto": "ready" },
+          { "if": ["quest:sq_broken_guardian:active"], "goto": "progress" },
+          { "if": ["quest:sq_broken_guardian:done"], "goto": "after" },
+          { "goto": "early" }
+        ] },
+        { "id": "early", "speaker": "oren", "text": "Keep your voice down. The drones hunt by sound when they can't see." },
+        { "id": "offer", "speaker": "oren", "text": "That heap by the generator is BOLT. Kept the camp lights on for years before his actuator burned out.", "next": "offer2" },
+        { "id": "offer2", "speaker": "oren", "text": "Bring me a servo actuator, a maintenance power cell and a control component, and I'll have him walking again.", "choices": [
+          { "id": "accept", "text": "We'll find the parts.", "next": "accepted", "actions": [ { "do": "startQuest", "id": "sq_broken_guardian" } ] },
+          { "id": "where", "text": "Where would we even look?", "next": "where" },
+          { "id": "later", "text": "Not right now.", "next": "later" }
+        ] },
+        { "id": "where", "speaker": "oren", "text": "Metro maintenance bay for the actuator. The market stalls hid cells under the counters. Control boards, try the rooftop sheds.", "choices": [
+          { "id": "accept2", "text": "We'll bring them back.", "next": "accepted", "actions": [ { "do": "startQuest", "id": "sq_broken_guardian" } ] },
+          { "id": "later2", "text": "Maybe later.", "next": "later" }
+        ] },
+        { "id": "accepted", "speaker": "oren", "text": "Good. He'd do the same for you, if he could." },
+        { "id": "later", "speaker": "oren", "text": "He's not going anywhere. Neither am I." },
+        { "id": "progress", "speaker": "oren", "text": "Actuator from the metro, power cell from the market, control board from the rooftops. BOLT's patient. I'm less so." },
+        { "id": "ready", "speaker": "oren", "text": "That's all of it. Go on, you do the honours. He'll want to see a new face when he wakes." },
+        { "id": "after", "speaker": "oren", "text": "BOLT's been walking the perimeter all night. First time I've slept in years.", "conditions": ["flag:bolt_repaired"], "else": "early" }
+      ]
+    },
+    {
+      "id": "dlg_mira", "npc": "mira", "start": "route",
+      "nodes": [
+        { "id": "route", "branch": [
+          { "if": ["quest:sq_last_signal:none", "flag:swap_unlocked"], "goto": "offer" },
+          { "if": ["quest:sq_last_signal:active", "item:q_anya_recording"], "goto": "turnin" },
+          { "if": ["quest:sq_last_signal:active"], "goto": "progress" },
+          { "if": ["quest:sq_last_signal:done"], "goto": "after" },
+          { "goto": "early" }
+        ] },
+        { "id": "early", "speaker": "mira", "text": "Shh. I'm listening. There's always something on the band if you're patient." },
+        { "id": "offer", "speaker": "mira", "text": "You two are from before, aren't you? Then maybe you can tell me what this is.", "next": "o2" },
+        { "id": "o2", "speaker": "lyra", "text": "There's still a transmitter active.", "next": "o3" },
+        { "id": "o3", "speaker": "kael", "text": "After all this time?", "next": "o4" },
+        { "id": "o4", "speaker": "lyra", "text": "Someone wanted to be heard.", "next": "o5" },
+        { "id": "o5", "speaker": "kael", "text": "Then let's listen.", "next": "o6" },
+        { "id": "o6", "speaker": "mira", "text": "It's the old relay tower above the market. There's a ladder behind the noodle stalls. Will you go?", "choices": [
+          { "id": "yes", "text": "We'll find it.", "next": "yes", "actions": [ { "do": "startQuest", "id": "sq_last_signal" } ] },
+          { "id": "who", "text": "Who do you think it is?", "next": "who" },
+          { "id": "no", "text": "Not yet.", "next": "no" }
+        ] },
+        { "id": "who", "speaker": "mira", "text": "My sister ran that relay. Anya. She never came home. I know it's stupid to hope.", "choices": [
+          { "id": "yes2", "text": "It isn't stupid. We'll go.", "next": "yes", "actions": [ { "do": "startQuest", "id": "sq_last_signal" } ] },
+          { "id": "no2", "text": "We'll come back for it.", "next": "no" }
+        ] },
+        { "id": "yes", "speaker": "mira", "text": "Thank you. The signal's weak, so you might need to power the relay to trace it properly." },
+        { "id": "no", "speaker": "mira", "text": "It's been broadcasting for seven years. I suppose it can wait a little longer." },
+        { "id": "progress", "speaker": "mira", "text": "Still there. Still repeating. The relay tower's above the market, past the noodle stalls." },
+        { "id": "turnin", "speaker": "anya", "text": "Relay Tower Three, this is Anya Sato. If anyone's out there: the Core isn't killing us. It's keeping us.", "next": "t2" },
+        { "id": "t2", "speaker": "anya", "text": "Tell Mira I'm still... I'm still listening.", "next": "t3" },
+        { "id": "t3", "speaker": "mira", "text": "That's her. That's my sister. She stayed on the air until the very end.", "next": "t4" },
+        { "id": "t4", "speaker": "mira", "text": "Take this. It's her relay tuner. She'd want it on someone who can actually see what she was looking for." },
+        { "id": "after", "speaker": "mira", "text": "I play her message every night now. It's easier to sleep when someone says goodnight." }
+      ]
+    },
+    {
+      "id": "dlg_tomas", "npc": "tomas", "start": "route",
+      "nodes": [
+        { "id": "route", "branch": [
+          { "if": ["quest:sq_memory_fragments:none", "flag:swap_unlocked"], "goto": "offer" },
+          { "if": ["quest:sq_memory_fragments:active", "item:lore_rec_02", "item:lore_rec_03", "item:lore_rec_05"], "goto": "turnin" },
+          { "if": ["quest:sq_memory_fragments:active"], "goto": "progress" },
+          { "if": ["quest:sq_memory_fragments:done"], "goto": "after" },
+          { "goto": "early" }
+        ] },
+        { "id": "early", "speaker": "tomas", "text": "Market's closed, friend. Has been for seven years." },
+        { "id": "offer", "speaker": "tomas", "text": "I trade in memories. People left pieces of themselves all over this city, on little blue recording cores.", "next": "o2" },
+        { "id": "o2", "speaker": "tomas", "text": "Three of them I've been hunting for years: Market Day, Last Train, and a lullaby someone recorded in the research labs. Find them?", "choices": [
+          { "id": "yes", "text": "We'll keep an eye out.", "next": "yes", "actions": [ { "do": "startQuest", "id": "sq_memory_fragments" } ] },
+          { "id": "why", "text": "Why do they matter to you?", "next": "why" }
+        ] },
+        { "id": "why", "speaker": "tomas", "text": "Because the camp is forgetting what the city sounded like when it was alive. Somebody has to remember for them.", "choices": [
+          { "id": "yes2", "text": "Then we'll help you remember.", "next": "yes", "actions": [ { "do": "startQuest", "id": "sq_memory_fragments" } ] }
+        ] },
+        { "id": "yes", "speaker": "tomas", "text": "Look for the blue glow. If Echo Sight is the trick I think it is, some of them will be hiding." },
+        { "id": "progress", "speaker": "tomas", "text": "Market Day, Last Train, Lullaby. The market, the metro and the labs. Three little blue lights." },
+        { "id": "turnin", "speaker": "tomas", "text": "You found them. All three.", "next": "t2" },
+        { "id": "t2", "speaker": "vendor", "text": "Real oranges, from the greenhouse decks! Two credits, and I'm robbing myself!", "next": "t3" },
+        { "id": "t3", "speaker": "tomas", "text": "I'll play these for the camp tonight. Here, an Aether core. Fair trade for three lifetimes.", "choices": [
+          { "id": "stay", "text": "Mind if we listen too?", "next": "stay" },
+          { "id": "go", "text": "Take care of them, Tomas.", "next": "go" }
+        ] },
+        { "id": "stay", "speaker": "tomas", "text": "I'd like that. Come back when this is over. There'll be music." },
+        { "id": "go", "speaker": "tomas", "text": "Always." },
+        { "id": "after", "speaker": "tomas", "text": "The kids asked me to play the lullaby three times last night. I didn't mind." }
+      ]
+    },
+    {
+      "id": "dlg_nia", "npc": "nia", "start": "route",
+      "nodes": [
+        { "id": "route", "branch": [
+          { "if": ["quest:sq_hidden_vault:none"], "goto": "offer" },
+          { "if": ["quest:sq_hidden_vault:done"], "goto": "after" },
+          { "goto": "progress" }
+        ] },
+        { "id": "offer", "speaker": "nia", "text": "You can see me? Everyone stopped seeing me.", "next": "o2" },
+        { "id": "o2", "speaker": "lyra", "text": "We see you. What's your name?", "next": "o3" },
+        { "id": "o3", "speaker": "nia", "text": "Nia. My mom worked under the Vault. She said the walls down there sing when nobody's listening.", "next": "o4" },
+        { "id": "o4", "speaker": "nia", "text": "There's one wall that sings the loudest. She said it was a door. Will you find it for me?", "actions": [ { "do": "startQuest", "id": "sq_hidden_vault" } ] },
+        { "id": "progress", "speaker": "nia", "text": "Under the Vault. Listen for the loudest wall." },
+        { "id": "after", "speaker": "nia", "text": "She said she's sorry she was late? That's okay. She's always late." }
+      ]
+    },
+    {
+      "id": "dlg_bolt", "npc": "bolt", "start": "route",
+      "nodes": [
+        { "id": "route", "branch": [ { "if": ["flag:bolt_repaired"], "goto": "on" }, { "goto": "off" } ] },
+        { "id": "off", "speaker": "system", "text": "Maintenance unit BOLT-7. Actuator failure. Unit offline." },
+        { "id": "on", "speaker": "bolt", "text": "Perimeter secure. Camp morale estimated at forty-one percent. Improving." }
+      ]
+    },
+
+    { "id": "lore_rec_01", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "pa", "text": "Good morning, Aether-9. Line B is running on schedule. Today's resonance index is green.", "next": "n2" },
+      { "id": "n2", "speaker": "pa", "text": "Remember, the Core does not sleep, so you can. Have a wonderful shift." } ] },
+    { "id": "lore_rec_02", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "vendor", "text": "Real oranges, from the greenhouse decks! Two credits, and I'm robbing myself!", "next": "n2" },
+      { "id": "n2", "speaker": "vendor", "text": "No, no, the lights always flicker on Thursdays. It's the reactor breathing, that's all." } ] },
+    { "id": "lore_rec_03", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "pa", "text": "This is the final Line B service of the evening. All passengers, please remain calm.", "next": "n2" },
+      { "id": "n2", "speaker": "pa", "text": "The tunnel lighting is not malfunctioning. Please remain on the train. Please remain..." } ] },
+    { "id": "lore_rec_04", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "researcher", "text": "Lab seven, day three-forty. Resonance drift is up four percent. Maren says that's within tolerance.", "next": "n2" },
+      { "id": "n2", "speaker": "researcher", "text": "I don't think tolerance means what it used to mean around here." } ] },
+    { "id": "lore_rec_05", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "parent", "text": "Hush now, the lights went out, that's all. Close your eyes and count the stars we can't see.", "next": "n2" },
+      { "id": "n2", "speaker": "parent", "text": "One for the Core, two for the city, three for you and me." } ] },
+    { "id": "lore_rec_06", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "tech", "text": "Vault watch, end of shift. The Guardian rotated its head toward the lift twice tonight. That's new.", "next": "n2" },
+      { "id": "n2", "speaker": "tech", "text": "Maren says it's learning. I asked her what it's learning. She didn't answer." } ] },
+    { "id": "lore_log_echo", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "maren", "text": "Project Echo, proposal. Aether resonance preserves information. Every pattern that enters the Core is retained, perfectly.", "next": "n2" },
+      { "id": "n2", "speaker": "maren", "text": "If a pattern can be retained, a mind can be retained. I am requesting authorisation for a controlled trial." } ] },
+    { "id": "lore_log_keys", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "maren", "text": "Two staff members show resonance compatibility above ninety percent. Survey lead Voss. Systems engineer Vale.", "next": "n2" },
+      { "id": "n2", "speaker": "maren", "text": "The Core responds to them the way it responds to nothing else. If anyone can speak to it, they can." } ] },
+    { "id": "lore_log_cascade", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "maren", "text": "Cascade projection, revision nine. Containment failure is no longer a risk. It is a certainty.", "next": "n2" },
+      { "id": "n2", "speaker": "maren", "text": "Estimated time to cascade: eleven hours. Evacuation is impossible. There is nowhere to go." } ] },
+    { "id": "lore_log_final", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "maren", "text": "If you're reading this, you found the office. Good. Then you know what I did, and you know what's left to do." } ] },
+    { "id": "lore_hidden_vault", "lore": true, "start": "n1", "nodes": [
+      { "id": "n1", "speaker": "maren", "text": "My testament. I chose for four thousand people because there was no time to ask them. Whoever releases them, ask them for me. Ask if I chose right." } ] }
+  ]
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Echoes of Aether</title>
+    <meta name="description" content="Echoes of Aether - a third-person sci-fi action-adventure." />
+    <style>
+      html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #05070a; }
+      #app { position: fixed; inset: 0; }
+      #game-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+      #boot { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; color: #8fa3b5;
+        font: 500 13px/1.4 system-ui, sans-serif; letter-spacing: 0.3em; text-transform: uppercase; background: #05070a; z-index: 50; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="boot">Initializing</div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

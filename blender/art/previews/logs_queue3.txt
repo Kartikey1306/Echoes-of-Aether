@@ -1,0 +1,8 @@
+[queue] rooftops start 20:45:15
+[queue] rooftops exit 143 20:59:01 0 errors
+[queue] facility start 20:59:02
+[queue] facility exit 0 21:18:38 0 errors
+[queue] plaza start 21:18:38
+[queue] plaza exit 0 21:33:43 0 errors
+[queue] items start 21:33:43
+[queue] items exit 0 21:42:03 0 errors

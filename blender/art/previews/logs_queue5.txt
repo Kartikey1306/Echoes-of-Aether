@@ -1,0 +1,10 @@
+[queue] plaza start 00:46:16
+[queue] plaza exit 0 00:53:08 0 errors
+[queue] rooftops start 00:53:08
+[queue] rooftops exit 0 00:58:30 0 errors
+[queue] metro start 00:58:30
+[queue] metro exit 0 01:04:54 0 errors
+[queue] facility start 01:04:54
+[queue] facility exit 0 01:12:04 0 errors
+[queue] logo start 01:12:04
+[queue] logo exit 0 01:13:30 0 errors

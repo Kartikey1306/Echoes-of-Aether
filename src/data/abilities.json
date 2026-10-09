@@ -1,0 +1,24 @@
+{
+  "abilities": [
+    { "id": "pulse", "character": "kael", "name": "Aether Pulse", "slot": "ability", "description": "Slam your interface into the ground and release a shockwave that damages, knocks back and staggers nearby enemies.", "energy": 35, "cooldown": 6, "unlock": "start", "icon": "ab_pulse" },
+    { "id": "dash", "character": "kael", "name": "Phase Dash", "slot": "dash", "description": "Phase forward through space. Invulnerable while phasing.", "energy": 0, "cooldown": 1.4, "unlock": "m2_dead_signal", "icon": "ab_dash" },
+    { "id": "core_break", "character": "kael", "name": "Core Break", "slot": "ultimate", "description": "Leap and drive the Core's power into the ground, devastating everything nearby.", "energy": 0, "cooldown": 0, "unlock": "up_core_attunement", "icon": "ab_corebreak" },
+    { "id": "echo", "character": "lyra", "name": "Echo Sight", "slot": "ability", "description": "Attune to Aether echoes. Reveals hidden objects, collectibles, secret paths, lore, and phased enemies.", "energy": 25, "cooldown": 4, "unlock": "m3_researcher", "icon": "ab_echo" },
+    { "id": "step", "character": "lyra", "name": "Phase Step", "slot": "dash", "description": "A fast evasive step. Longer invulnerability than Phase Dash, shorter distance.", "energy": 0, "cooldown": 1.0, "unlock": "m2_dead_signal", "icon": "ab_step" },
+    { "id": "resonance", "character": "lyra", "name": "Resonance Burst", "slot": "ultimate", "description": "Release stored resonance in a spinning burst that shreds shields and stuns enemies.", "energy": 0, "cooldown": 0, "unlock": "up_core_attunement", "icon": "ab_resonance" }
+  ],
+  "tree": [
+    { "id": "pulse_radius", "ability": "pulse", "name": "Wide Pulse", "description": "Aether Pulse radius +40%.", "cost": 1, "requires": [] },
+    { "id": "pulse_damage", "ability": "pulse", "name": "Heavy Pulse", "description": "Aether Pulse damage +50%.", "cost": 2, "requires": ["pulse_radius"] },
+    { "id": "pulse_stagger", "ability": "pulse", "name": "Concussive Pulse", "description": "Aether Pulse staggers even elite enemies and knocks back further.", "cost": 2, "requires": ["pulse_damage"] },
+    { "id": "dash_distance", "ability": "dash", "name": "Long Phase", "description": "Phase Dash distance +40%.", "cost": 1, "requires": [] },
+    { "id": "dash_cooldown", "ability": "dash", "name": "Quick Phase", "description": "Phase Dash cooldown -35%.", "cost": 2, "requires": ["dash_distance"] },
+    { "id": "dash_double", "ability": "dash", "name": "Twin Phase", "description": "Store a second Phase Dash charge.", "cost": 3, "requires": ["dash_cooldown"] },
+    { "id": "echo_range", "ability": "echo", "name": "Far Sight", "description": "Echo Sight reveal range +50%.", "cost": 1, "requires": [] },
+    { "id": "echo_duration", "ability": "echo", "name": "Lingering Echo", "description": "Echo Sight lasts 6 seconds longer.", "cost": 2, "requires": ["echo_range"] },
+    { "id": "echo_detect", "ability": "echo", "name": "Deep Echo", "description": "Hidden caches and collectibles within 60 m are marked on your HUD while Echo Sight is active.", "cost": 2, "requires": ["echo_duration"] },
+    { "id": "step_distance", "ability": "step", "name": "Long Step", "description": "Phase Step distance +40%.", "cost": 1, "requires": [] },
+    { "id": "step_cooldown", "ability": "step", "name": "Quick Step", "description": "Phase Step cooldown -35%.", "cost": 2, "requires": ["step_distance"] },
+    { "id": "step_iframes", "ability": "step", "name": "Ghost Step", "description": "Phase Step invulnerability lasts twice as long, and a perfect dodge refunds energy.", "cost": 2, "requires": ["step_cooldown"] }
+  ]
+}

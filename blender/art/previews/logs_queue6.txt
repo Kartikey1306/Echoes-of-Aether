@@ -1,0 +1,2 @@
+[queue] marketing start 01:15:10
+[queue] marketing exit 143 01:27:23 0 errors

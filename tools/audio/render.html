@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EOA offline audio render</title>
+</head>
+<body>
+  <p>Offline audio render host for tools/audio/render.mjs.</p>
+  <script type="module">
+    import * as R from './adapter.js';
+    window.R = R;
+    window.__ready = true;
+  </script>
+</body>
+</html>

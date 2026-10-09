@@ -1,0 +1,2354 @@
+{
+ "aim_l": {
+  "range": [
+   1,
+   22
+  ],
+  "max": {
+   "elbowLeft": [
+    52.2,
+    7
+   ],
+   "kneeLeft": [
+    3.6,
+    21
+   ],
+   "raiseLeft": [
+    63.0,
+    19
+   ],
+   "hipLeft": [
+    29.8,
+    1
+   ],
+   "wristLeft": [
+    51.6,
+    1
+   ],
+   "armrollLeft": [
+    41.0,
+    15
+   ],
+   "elbowRight": [
+    138.2,
+    9
+   ],
+   "kneeRight": [
+    19.0,
+    9
+   ],
+   "raiseRight": [
+    83.9,
+    9
+   ],
+   "hipRight": [
+    24.3,
+    9
+   ],
+   "wristRight": [
+    45.5,
+    5
+   ],
+   "armrollRight": [
+    55.5,
+    1
+   ]
+  }
+ },
+ "aim_r": {
+  "range": [
+   1,
+   22
+  ],
+  "max": {
+   "elbowLeft": [
+    138.2,
+    9
+   ],
+   "kneeLeft": [
+    19.0,
+    9
+   ],
+   "raiseLeft": [
+    86.1,
+    9
+   ],
+   "hipLeft": [
+    24.0,
+    9
+   ],
+   "wristLeft": [
+    45.5,
+    5
+   ],
+   "armrollLeft": [
+    55.5,
+    1
+   ],
+   "elbowRight": [
+    52.2,
+    7
+   ],
+   "kneeRight": [
+    3.6,
+    21
+   ],
+   "raiseRight": [
+    62.0,
+    19
+   ],
+   "hipRight": [
+    29.8,
+    1
+   ],
+   "wristRight": [
+    51.5,
+    21
+   ],
+   "armrollRight": [
+    42.2,
+    15
+   ]
+  }
+ },
+ "climb": {
+  "range": [
+   1,
+   28
+  ],
+  "max": {
+   "elbowLeft": [
+    87.5,
+    9
+   ],
+   "kneeLeft": [
+    111.5,
+    15
+   ],
+   "raiseLeft": [
+    46.6,
+    9
+   ],
+   "hipLeft": [
+    71.1,
+    17
+   ],
+   "wristLeft": [
+    18.0,
+    7
+   ],
+   "armrollLeft": [
+    29.2,
+    1
+   ],
+   "elbowRight": [
+    94.1,
+    21
+   ],
+   "kneeRight": [
+    37.4,
+    13
+   ],
+   "raiseRight": [
+    27.2,
+    13
+   ],
+   "hipRight": [
+    21.0,
+    17
+   ],
+   "wristRight": [
+    19.4,
+    23
+   ],
+   "armrollRight": [
+    18.8,
+    15
+   ]
+  }
+ },
+ "combat_idle": {
+  "range": [
+   1,
+   35
+  ],
+  "max": {
+   "elbowLeft": [
+    136.4,
+    23
+   ],
+   "kneeLeft": [
+    47.6,
+    29
+   ],
+   "raiseLeft": [
+    31.6,
+    11
+   ],
+   "hipLeft": [
+    19.6,
+    19
+   ],
+   "wristLeft": [
+    10.5,
+    27
+   ],
+   "armrollLeft": [
+    46.3,
+    7
+   ],
+   "elbowRight": [
+    148.6,
+    23
+   ],
+   "kneeRight": [
+    35.5,
+    1
+   ],
+   "raiseRight": [
+    49.5,
+    3
+   ],
+   "hipRight": [
+    18.8,
+    3
+   ],
+   "wristRight": [
+    29.2,
+    11
+   ],
+   "armrollRight": [
+    3.1,
+    9
+   ]
+  }
+ },
+ "dash": {
+  "range": [
+   1,
+   12
+  ],
+  "max": {
+   "elbowLeft": [
+    129.9,
+    7
+   ],
+   "kneeLeft": [
+    73.0,
+    9
+   ],
+   "raiseLeft": [
+    51.6,
+    1
+   ],
+   "hipLeft": [
+    34.4,
+    1
+   ],
+   "wristLeft": [
+    21.0,
+    1
+   ],
+   "armrollLeft": [
+    67.5,
+    11
+   ],
+   "elbowRight": [
+    118.6,
+    1
+   ],
+   "kneeRight": [
+    88.9,
+    5
+   ],
+   "raiseRight": [
+    50.9,
+    7
+   ],
+   "hipRight": [
+    37.4,
+    1
+   ],
+   "wristRight": [
+    45.5,
+    5
+   ],
+   "armrollRight": [
+    76.4,
+    7
+   ]
+  }
+ },
+ "death": {
+  "range": [
+   1,
+   46
+  ],
+  "max": {
+   "elbowLeft": [
+    107.7,
+    35
+   ],
+   "kneeLeft": [
+    33.3,
+    9
+   ],
+   "raiseLeft": [
+    48.1,
+    39
+   ],
+   "hipLeft": [
+    30.2,
+    19
+   ],
+   "wristLeft": [
+    41.5,
+    39
+   ],
+   "armrollLeft": [
+    58.6,
+    11
+   ],
+   "elbowRight": [
+    118.0,
+    45
+   ],
+   "kneeRight": [
+    15.6,
+    9
+   ],
+   "raiseRight": [
+    32.8,
+    39
+   ],
+   "hipRight": [
+    28.9,
+    19
+   ],
+   "wristRight": [
+    28.9,
+    23
+   ],
+   "armrollRight": [
+    60.4,
+    25
+   ]
+  }
+ },
+ "fall": {
+  "range": [
+   1,
+   25
+  ],
+  "max": {
+   "elbowLeft": [
+    96.0,
+    13
+   ],
+   "kneeLeft": [
+    23.9,
+    25
+   ],
+   "raiseLeft": [
+    127.6,
+    1
+   ],
+   "hipLeft": [
+    30.2,
+    13
+   ],
+   "wristLeft": [
+    41.6,
+    19
+   ],
+   "armrollLeft": [
+    55.1,
+    25
+   ],
+   "elbowRight": [
+    82.7,
+    9
+   ],
+   "kneeRight": [
+    8.1,
+    1
+   ],
+   "raiseRight": [
+    111.9,
+    25
+   ],
+   "hipRight": [
+    23.4,
+    13
+   ],
+   "wristRight": [
+    31.8,
+    5
+   ],
+   "armrollRight": [
+    32.5,
+    25
+   ]
+  }
+ },
+ "fire_l": {
+  "range": [
+   1,
+   10
+  ],
+  "max": {
+   "elbowLeft": [
+    77.1,
+    5
+   ],
+   "kneeLeft": [
+    3.6,
+    9
+   ],
+   "raiseLeft": [
+    62.7,
+    1
+   ],
+   "hipLeft": [
+    30.2,
+    9
+   ],
+   "wristLeft": [
+    51.8,
+    5
+   ],
+   "armrollLeft": [
+    40.9,
+    1
+   ],
+   "elbowRight": [
+    144.7,
+    5
+   ],
+   "kneeRight": [
+    20.2,
+    3
+   ],
+   "raiseRight": [
+    88.6,
+    7
+   ],
+   "hipRight": [
+    24.6,
+    7
+   ],
+   "wristRight": [
+    45.7,
+    5
+   ],
+   "armrollRight": [
+    51.6,
+    9
+   ]
+  }
+ },
+ "fire_r": {
+  "range": [
+   1,
+   10
+  ],
+  "max": {
+   "elbowLeft": [
+    144.7,
+    5
+   ],
+   "kneeLeft": [
+    20.2,
+    3
+   ],
+   "raiseLeft": [
+    91.0,
+    7
+   ],
+   "hipLeft": [
+    24.3,
+    9
+   ],
+   "wristLeft": [
+    45.7,
+    5
+   ],
+   "armrollLeft": [
+    51.4,
+    9
+   ],
+   "elbowRight": [
+    77.1,
+    5
+   ],
+   "kneeRight": [
+    3.6,
+    9
+   ],
+   "raiseRight": [
+    61.7,
+    1
+   ],
+   "hipRight": [
+    30.3,
+    9
+   ],
+   "wristRight": [
+    51.7,
+    5
+   ],
+   "armrollRight": [
+    42.1,
+    1
+   ]
+  }
+ },
+ "hit": {
+  "range": [
+   1,
+   11
+  ],
+  "max": {
+   "elbowLeft": [
+    147.9,
+    11
+   ],
+   "kneeLeft": [
+    47.2,
+    7
+   ],
+   "raiseLeft": [
+    89.2,
+    11
+   ],
+   "hipLeft": [
+    12.9,
+    11
+   ],
+   "wristLeft": [
+    16.6,
+    11
+   ],
+   "armrollLeft": [
+    29.7,
+    11
+   ],
+   "elbowRight": [
+    135.2,
+    9
+   ],
+   "kneeRight": [
+    87.3,
+    11
+   ],
+   "raiseRight": [
+    118.2,
+    9
+   ],
+   "hipRight": [
+    42.5,
+    11
+   ],
+   "wristRight": [
+    14.7,
+    7
+   ],
+   "armrollRight": [
+    64.5,
+    9
+   ]
+  }
+ },
+ "idle": {
+  "range": [
+   1,
+   159
+  ],
+  "max": {
+   "elbowLeft": [
+    13.5,
+    111
+   ],
+   "kneeLeft": [
+    23.3,
+    31
+   ],
+   "raiseLeft": [
+    7.3,
+    99
+   ],
+   "hipLeft": [
+    9.3,
+    13
+   ],
+   "wristLeft": [
+    24.1,
+    19
+   ],
+   "armrollLeft": [
+    28.4,
+    111
+   ],
+   "elbowRight": [
+    18.2,
+    119
+   ],
+   "kneeRight": [
+    22.9,
+    87
+   ],
+   "raiseRight": [
+    5.1,
+    99
+   ],
+   "hipRight": [
+    9.9,
+    39
+   ],
+   "wristRight": [
+    7.8,
+    19
+   ],
+   "armrollRight": [
+    16.5,
+    55
+   ]
+  }
+ },
+ "interact": {
+  "range": [
+   1,
+   22
+  ],
+  "max": {
+   "elbowLeft": [
+    138.6,
+    11
+   ],
+   "kneeLeft": [
+    30.8,
+    9
+   ],
+   "raiseLeft": [
+    33.9,
+    9
+   ],
+   "hipLeft": [
+    25.9,
+    11
+   ],
+   "wristLeft": [
+    5.5,
+    11
+   ],
+   "armrollLeft": [
+    68.9,
+    19
+   ],
+   "elbowRight": [
+    128.6,
+    17
+   ],
+   "kneeRight": [
+    14.2,
+    1
+   ],
+   "raiseRight": [
+    103.7,
+    11
+   ],
+   "hipRight": [
+    25.7,
+    7
+   ],
+   "wristRight": [
+    18.2,
+    1
+   ],
+   "armrollRight": [
+    65.9,
+    19
+   ]
+  }
+ },
+ "jump": {
+  "range": [
+   1,
+   13
+  ],
+  "max": {
+   "elbowLeft": [
+    64.2,
+    13
+   ],
+   "kneeLeft": [
+    44.4,
+    1
+   ],
+   "raiseLeft": [
+    138.4,
+    7
+   ],
+   "hipLeft": [
+    23.3,
+    13
+   ],
+   "wristLeft": [
+    41.1,
+    13
+   ],
+   "armrollLeft": [
+    67.1,
+    7
+   ],
+   "elbowRight": [
+    80.3,
+    13
+   ],
+   "kneeRight": [
+    36.0,
+    1
+   ],
+   "raiseRight": [
+    129.5,
+    5
+   ],
+   "hipRight": [
+    17.3,
+    13
+   ],
+   "wristRight": [
+    31.8,
+    13
+   ],
+   "armrollRight": [
+    56.8,
+    7
+   ]
+  }
+ },
+ "k_heavy": {
+  "range": [
+   1,
+   29
+  ],
+  "max": {
+   "elbowLeft": [
+    98.5,
+    11
+   ],
+   "kneeLeft": [
+    33.2,
+    5
+   ],
+   "raiseLeft": [
+    107.5,
+    9
+   ],
+   "hipLeft": [
+    48.6,
+    5
+   ],
+   "wristLeft": [
+    54.7,
+    13
+   ],
+   "armrollLeft": [
+    65.4,
+    1
+   ],
+   "elbowRight": [
+    126.9,
+    5
+   ],
+   "kneeRight": [
+    44.5,
+    5
+   ],
+   "raiseRight": [
+    115.3,
+    9
+   ],
+   "hipRight": [
+    50.0,
+    5
+   ],
+   "wristRight": [
+    43.7,
+    1
+   ],
+   "armrollRight": [
+    33.9,
+    9
+   ]
+  }
+ },
+ "k_light1": {
+  "range": [
+   1,
+   17
+  ],
+  "max": {
+   "elbowLeft": [
+    137.5,
+    1
+   ],
+   "kneeLeft": [
+    36.4,
+    1
+   ],
+   "raiseLeft": [
+    50.9,
+    17
+   ],
+   "hipLeft": [
+    22.1,
+    3
+   ],
+   "wristLeft": [
+    11.7,
+    5
+   ],
+   "armrollLeft": [
+    49.2,
+    9
+   ],
+   "elbowRight": [
+    125.0,
+    17
+   ],
+   "kneeRight": [
+    49.7,
+    13
+   ],
+   "raiseRight": [
+    105.3,
+    7
+   ],
+   "hipRight": [
+    37.4,
+    3
+   ],
+   "wristRight": [
+    26.9,
+    5
+   ],
+   "armrollRight": [
+    43.9,
+    3
+   ]
+  }
+ },
+ "k_light2": {
+  "range": [
+   1,
+   17
+  ],
+  "max": {
+   "elbowLeft": [
+    128.8,
+    1
+   ],
+   "kneeLeft": [
+    77.7,
+    17
+   ],
+   "raiseLeft": [
+    92.7,
+    7
+   ],
+   "hipLeft": [
+    33.0,
+    1
+   ],
+   "wristLeft": [
+    20.5,
+    5
+   ],
+   "armrollLeft": [
+    61.5,
+    11
+   ],
+   "elbowRight": [
+    133.5,
+    17
+   ],
+   "kneeRight": [
+    65.5,
+    17
+   ],
+   "raiseRight": [
+    92.4,
+    1
+   ],
+   "hipRight": [
+    35.8,
+    15
+   ],
+   "wristRight": [
+    24.7,
+    1
+   ],
+   "armrollRight": [
+    52.6,
+    5
+   ]
+  }
+ },
+ "k_light3": {
+  "range": [
+   1,
+   20
+  ],
+  "max": {
+   "elbowLeft": [
+    129.1,
+    15
+   ],
+   "kneeLeft": [
+    54.5,
+    7
+   ],
+   "raiseLeft": [
+    54.3,
+    3
+   ],
+   "hipLeft": [
+    33.0,
+    11
+   ],
+   "wristLeft": [
+    12.7,
+    19
+   ],
+   "armrollLeft": [
+    60.3,
+    9
+   ],
+   "elbowRight": [
+    134.0,
+    19
+   ],
+   "kneeRight": [
+    61.4,
+    5
+   ],
+   "raiseRight": [
+    97.7,
+    9
+   ],
+   "hipRight": [
+    48.3,
+    3
+   ],
+   "wristRight": [
+    57.5,
+    5
+   ],
+   "armrollRight": [
+    39.4,
+    7
+   ]
+  }
+ },
+ "k_pulse": {
+  "range": [
+   1,
+   27
+  ],
+  "max": {
+   "elbowLeft": [
+    105.2,
+    13
+   ],
+   "kneeLeft": [
+    90.5,
+    1
+   ],
+   "raiseLeft": [
+    54.9,
+    5
+   ],
+   "hipLeft": [
+    78.2,
+    1
+   ],
+   "wristLeft": [
+    37.9,
+    17
+   ],
+   "armrollLeft": [
+    86.7,
+    9
+   ],
+   "elbowRight": [
+    119.4,
+    7
+   ],
+   "kneeRight": [
+    97.4,
+    5
+   ],
+   "raiseRight": [
+    74.4,
+    7
+   ],
+   "hipRight": [
+    59.7,
+    27
+   ],
+   "wristRight": [
+    35.9,
+    1
+   ],
+   "armrollRight": [
+    55.7,
+    7
+   ]
+  }
+ },
+ "k_ult": {
+  "range": [
+   1,
+   49
+  ],
+  "max": {
+   "elbowLeft": [
+    95.8,
+    27
+   ],
+   "kneeLeft": [
+    92.1,
+    37
+   ],
+   "raiseLeft": [
+    138.2,
+    19
+   ],
+   "hipLeft": [
+    80.0,
+    35
+   ],
+   "wristLeft": [
+    40.6,
+    25
+   ],
+   "armrollLeft": [
+    65.8,
+    19
+   ],
+   "elbowRight": [
+    95.9,
+    49
+   ],
+   "kneeRight": [
+    91.9,
+    37
+   ],
+   "raiseRight": [
+    127.5,
+    17
+   ],
+   "hipRight": [
+    75.2,
+    35
+   ],
+   "wristRight": [
+    31.3,
+    23
+   ],
+   "armrollRight": [
+    56.8,
+    19
+   ]
+  }
+ },
+ "kneel_work": {
+  "range": [
+   1,
+   43
+  ],
+  "max": {
+   "elbowLeft": [
+    112.9,
+    25
+   ],
+   "kneeLeft": [
+    119.2,
+    5
+   ],
+   "raiseLeft": [
+    69.6,
+    21
+   ],
+   "hipLeft": [
+    84.5,
+    23
+   ],
+   "wristLeft": [
+    20.4,
+    29
+   ],
+   "armrollLeft": [
+    66.3,
+    1
+   ],
+   "elbowRight": [
+    126.4,
+    31
+   ],
+   "kneeRight": [
+    118.6,
+    19
+   ],
+   "raiseRight": [
+    39.5,
+    1
+   ],
+   "hipRight": [
+    26.5,
+    19
+   ],
+   "wristRight": [
+    23.9,
+    25
+   ],
+   "armrollRight": [
+    36.6,
+    21
+   ]
+  }
+ },
+ "l_echo": {
+  "range": [
+   1,
+   23
+  ],
+  "max": {
+   "elbowLeft": [
+    89.5,
+    1
+   ],
+   "kneeLeft": [
+    69.6,
+    23
+   ],
+   "raiseLeft": [
+    45.3,
+    9
+   ],
+   "hipLeft": [
+    68.3,
+    9
+   ],
+   "wristLeft": [
+    12.2,
+    5
+   ],
+   "armrollLeft": [
+    68.5,
+    1
+   ],
+   "elbowRight": [
+    69.9,
+    1
+   ],
+   "kneeRight": [
+    82.1,
+    9
+   ],
+   "raiseRight": [
+    26.0,
+    3
+   ],
+   "hipRight": [
+    63.9,
+    11
+   ],
+   "wristRight": [
+    6.2,
+    11
+   ],
+   "armrollRight": [
+    64.6,
+    5
+   ]
+  }
+ },
+ "l_heavy": {
+  "range": [
+   1,
+   24
+  ],
+  "max": {
+   "elbowLeft": [
+    109.1,
+    19
+   ],
+   "kneeLeft": [
+    120.8,
+    13
+   ],
+   "raiseLeft": [
+    38.6,
+    3
+   ],
+   "hipLeft": [
+    112.7,
+    13
+   ],
+   "wristLeft": [
+    26.4,
+    1
+   ],
+   "armrollLeft": [
+    52.5,
+    1
+   ],
+   "elbowRight": [
+    102.9,
+    19
+   ],
+   "kneeRight": [
+    94.2,
+    23
+   ],
+   "raiseRight": [
+    55.0,
+    11
+   ],
+   "hipRight": [
+    74.0,
+    23
+   ],
+   "wristRight": [
+    15.3,
+    21
+   ],
+   "armrollRight": [
+    64.3,
+    17
+   ]
+  }
+ },
+ "l_quick1": {
+  "range": [
+   1,
+   12
+  ],
+  "max": {
+   "elbowLeft": [
+    145.5,
+    9
+   ],
+   "kneeLeft": [
+    56.1,
+    11
+   ],
+   "raiseLeft": [
+    74.7,
+    5
+   ],
+   "hipLeft": [
+    29.6,
+    7
+   ],
+   "wristLeft": [
+    26.4,
+    7
+   ],
+   "armrollLeft": [
+    43.9,
+    1
+   ],
+   "elbowRight": [
+    137.1,
+    3
+   ],
+   "kneeRight": [
+    76.0,
+    11
+   ],
+   "raiseRight": [
+    48.8,
+    9
+   ],
+   "hipRight": [
+    54.1,
+    11
+   ],
+   "wristRight": [
+    44.3,
+    11
+   ],
+   "armrollRight": [
+    37.0,
+    5
+   ]
+  }
+ },
+ "l_quick2": {
+  "range": [
+   1,
+   13
+  ],
+  "max": {
+   "elbowLeft": [
+    142.0,
+    5
+   ],
+   "kneeLeft": [
+    113.6,
+    7
+   ],
+   "raiseLeft": [
+    31.4,
+    9
+   ],
+   "hipLeft": [
+    76.1,
+    7
+   ],
+   "wristLeft": [
+    6.1,
+    1
+   ],
+   "armrollLeft": [
+    52.1,
+    1
+   ],
+   "elbowRight": [
+    136.2,
+    1
+   ],
+   "kneeRight": [
+    60.1,
+    1
+   ],
+   "raiseRight": [
+    48.0,
+    13
+   ],
+   "hipRight": [
+    40.7,
+    13
+   ],
+   "wristRight": [
+    28.1,
+    9
+   ],
+   "armrollRight": [
+    56.8,
+    5
+   ]
+  }
+ },
+ "l_ult": {
+  "range": [
+   1,
+   41
+  ],
+  "max": {
+   "elbowLeft": [
+    66.5,
+    41
+   ],
+   "kneeLeft": [
+    91.1,
+    9
+   ],
+   "raiseLeft": [
+    108.2,
+    3
+   ],
+   "hipLeft": [
+    129.6,
+    11
+   ],
+   "wristLeft": [
+    38.0,
+    21
+   ],
+   "armrollLeft": [
+    69.8,
+    31
+   ],
+   "elbowRight": [
+    65.8,
+    13
+   ],
+   "kneeRight": [
+    100.4,
+    33
+   ],
+   "raiseRight": [
+    103.9,
+    11
+   ],
+   "hipRight": [
+    148.1,
+    29
+   ],
+   "wristRight": [
+    42.4,
+    11
+   ],
+   "armrollRight": [
+    73.1,
+    27
+   ]
+  }
+ },
+ "land": {
+  "range": [
+   1,
+   13
+  ],
+  "max": {
+   "elbowLeft": [
+    95.7,
+    1
+   ],
+   "kneeLeft": [
+    87.1,
+    11
+   ],
+   "raiseLeft": [
+    72.3,
+    1
+   ],
+   "hipLeft": [
+    82.5,
+    9
+   ],
+   "wristLeft": [
+    40.0,
+    3
+   ],
+   "armrollLeft": [
+    9.8,
+    5
+   ],
+   "elbowRight": [
+    77.0,
+    1
+   ],
+   "kneeRight": [
+    88.0,
+    11
+   ],
+   "raiseRight": [
+    66.2,
+    1
+   ],
+   "hipRight": [
+    77.2,
+    11
+   ],
+   "wristRight": [
+    24.8,
+    9
+   ],
+   "armrollRight": [
+    29.9,
+    7
+   ]
+  }
+ },
+ "lie": {
+  "range": [
+   1,
+   31
+  ],
+  "max": {
+   "elbowLeft": [
+    20.1,
+    1
+   ],
+   "kneeLeft": [
+    72.9,
+    23
+   ],
+   "raiseLeft": [
+    68.0,
+    31
+   ],
+   "hipLeft": [
+    18.2,
+    1
+   ],
+   "wristLeft": [
+    3.6,
+    7
+   ],
+   "armrollLeft": [
+    38.5,
+    11
+   ],
+   "elbowRight": [
+    18.6,
+    29
+   ],
+   "kneeRight": [
+    53.5,
+    5
+   ],
+   "raiseRight": [
+    65.4,
+    19
+   ],
+   "hipRight": [
+    32.9,
+    5
+   ],
+   "wristRight": [
+    26.6,
+    7
+   ],
+   "armrollRight": [
+    38.7,
+    11
+   ]
+  }
+ },
+ "npc_crossed": {
+  "range": [
+   1,
+   91
+  ],
+  "max": {
+   "elbowLeft": [
+    125.3,
+    43
+   ],
+   "kneeLeft": [
+    20.7,
+    79
+   ],
+   "raiseLeft": [
+    16.7,
+    43
+   ],
+   "hipLeft": [
+    16.3,
+    79
+   ],
+   "wristLeft": [
+    33.4,
+    11
+   ],
+   "armrollLeft": [
+    109.0,
+    77
+   ],
+   "elbowRight": [
+    115.4,
+    43
+   ],
+   "kneeRight": [
+    14.0,
+    29
+   ],
+   "raiseRight": [
+    37.2,
+    41
+   ],
+   "hipRight": [
+    9.6,
+    73
+   ],
+   "wristRight": [
+    42.7,
+    39
+   ],
+   "armrollRight": [
+    96.9,
+    5
+   ]
+  }
+ },
+ "npc_hips": {
+  "range": [
+   1,
+   97
+  ],
+  "max": {
+   "elbowLeft": [
+    98.3,
+    97
+   ],
+   "kneeLeft": [
+    10.7,
+    95
+   ],
+   "raiseLeft": [
+    52.3,
+    1
+   ],
+   "hipLeft": [
+    24.0,
+    67
+   ],
+   "wristLeft": [
+    12.1,
+    55
+   ],
+   "armrollLeft": [
+    99.6,
+    63
+   ],
+   "elbowRight": [
+    97.1,
+    3
+   ],
+   "kneeRight": [
+    18.2,
+    59
+   ],
+   "raiseRight": [
+    52.5,
+    69
+   ],
+   "hipRight": [
+    13.1,
+    13
+   ],
+   "wristRight": [
+    4.6,
+    9
+   ],
+   "armrollRight": [
+    109.9,
+    23
+   ]
+  }
+ },
+ "npc_look": {
+  "range": [
+   1,
+   172
+  ],
+  "max": {
+   "elbowLeft": [
+    38.3,
+    33
+   ],
+   "kneeLeft": [
+    47.7,
+    9
+   ],
+   "raiseLeft": [
+    24.2,
+    67
+   ],
+   "hipLeft": [
+    22.0,
+    109
+   ],
+   "wristLeft": [
+    22.6,
+    33
+   ],
+   "armrollLeft": [
+    44.3,
+    97
+   ],
+   "elbowRight": [
+    40.8,
+    13
+   ],
+   "kneeRight": [
+    57.6,
+    141
+   ],
+   "raiseRight": [
+    13.5,
+    87
+   ],
+   "hipRight": [
+    37.3,
+    133
+   ],
+   "wristRight": [
+    9.1,
+    135
+   ],
+   "armrollRight": [
+    24.3,
+    19
+   ]
+  }
+ },
+ "npc_react": {
+  "range": [
+   1,
+   44
+  ],
+  "max": {
+   "elbowLeft": [
+    128.4,
+    3
+   ],
+   "kneeLeft": [
+    25.1,
+    1
+   ],
+   "raiseLeft": [
+    46.8,
+    15
+   ],
+   "hipLeft": [
+    23.7,
+    15
+   ],
+   "wristLeft": [
+    30.1,
+    13
+   ],
+   "armrollLeft": [
+    89.2,
+    1
+   ],
+   "elbowRight": [
+    132.4,
+    1
+   ],
+   "kneeRight": [
+    17.2,
+    1
+   ],
+   "raiseRight": [
+    27.5,
+    23
+   ],
+   "hipRight": [
+    25.3,
+    35
+   ],
+   "wristRight": [
+    12.8,
+    1
+   ],
+   "armrollRight": [
+    92.1,
+    7
+   ]
+  }
+ },
+ "npc_work": {
+  "range": [
+   1,
+   49
+  ],
+  "max": {
+   "elbowLeft": [
+    86.3,
+    45
+   ],
+   "kneeLeft": [
+    18.0,
+    25
+   ],
+   "raiseLeft": [
+    11.8,
+    15
+   ],
+   "hipLeft": [
+    32.3,
+    27
+   ],
+   "wristLeft": [
+    14.3,
+    17
+   ],
+   "armrollLeft": [
+    58.7,
+    1
+   ],
+   "elbowRight": [
+    88.8,
+    33
+   ],
+   "kneeRight": [
+    3.6,
+    49
+   ],
+   "raiseRight": [
+    15.7,
+    27
+   ],
+   "hipRight": [
+    24.8,
+    1
+   ],
+   "wristRight": [
+    37.8,
+    5
+   ],
+   "armrollRight": [
+    57.8,
+    27
+   ]
+  }
+ },
+ "phase_step": {
+  "range": [
+   1,
+   10
+  ],
+  "max": {
+   "elbowLeft": [
+    85.7,
+    3
+   ],
+   "kneeLeft": [
+    59.5,
+    5
+   ],
+   "raiseLeft": [
+    49.2,
+    7
+   ],
+   "hipLeft": [
+    17.4,
+    3
+   ],
+   "wristLeft": [
+    18.6,
+    9
+   ],
+   "armrollLeft": [
+    41.0,
+    3
+   ],
+   "elbowRight": [
+    61.3,
+    9
+   ],
+   "kneeRight": [
+    33.8,
+    9
+   ],
+   "raiseRight": [
+    52.0,
+    7
+   ],
+   "hipRight": [
+    17.0,
+    9
+   ],
+   "wristRight": [
+    18.8,
+    5
+   ],
+   "armrollRight": [
+    45.7,
+    1
+   ]
+  }
+ },
+ "pickup": {
+  "range": [
+   1,
+   23
+  ],
+  "max": {
+   "elbowLeft": [
+    73.7,
+    1
+   ],
+   "kneeLeft": [
+    68.8,
+    11
+   ],
+   "raiseLeft": [
+    20.4,
+    1
+   ],
+   "hipLeft": [
+    96.7,
+    11
+   ],
+   "wristLeft": [
+    31.0,
+    9
+   ],
+   "armrollLeft": [
+    51.0,
+    13
+   ],
+   "elbowRight": [
+    76.2,
+    23
+   ],
+   "kneeRight": [
+    78.8,
+    11
+   ],
+   "raiseRight": [
+    93.9,
+    11
+   ],
+   "hipRight": [
+    98.4,
+    11
+   ],
+   "wristRight": [
+    52.8,
+    23
+   ],
+   "armrollRight": [
+    40.6,
+    23
+   ]
+  }
+ },
+ "run": {
+  "range": [
+   1,
+   19
+  ],
+  "max": {
+   "elbowLeft": [
+    137.1,
+    7
+   ],
+   "kneeLeft": [
+    111.6,
+    13
+   ],
+   "raiseLeft": [
+    42.2,
+    17
+   ],
+   "hipLeft": [
+    66.3,
+    15
+   ],
+   "wristLeft": [
+    20.3,
+    17
+   ],
+   "armrollLeft": [
+    72.5,
+    17
+   ],
+   "elbowRight": [
+    121.6,
+    15
+   ],
+   "kneeRight": [
+    92.9,
+    5
+   ],
+   "raiseRight": [
+    48.5,
+    7
+   ],
+   "hipRight": [
+    64.2,
+    7
+   ],
+   "wristRight": [
+    22.1,
+    5
+   ],
+   "armrollRight": [
+    58.1,
+    7
+   ]
+  }
+ },
+ "sit": {
+  "range": [
+   1,
+   78
+  ],
+  "max": {
+   "elbowLeft": [
+    99.7,
+    53
+   ],
+   "kneeLeft": [
+    100.8,
+    13
+   ],
+   "raiseLeft": [
+    48.4,
+    11
+   ],
+   "hipLeft": [
+    82.5,
+    15
+   ],
+   "wristLeft": [
+    14.5,
+    1
+   ],
+   "armrollLeft": [
+    44.5,
+    5
+   ],
+   "elbowRight": [
+    102.7,
+    61
+   ],
+   "kneeRight": [
+    87.6,
+    65
+   ],
+   "raiseRight": [
+    42.9,
+    35
+   ],
+   "hipRight": [
+    81.1,
+    61
+   ],
+   "wristRight": [
+    12.7,
+    77
+   ],
+   "armrollRight": [
+    42.7,
+    45
+   ]
+  }
+ },
+ "sprint": {
+  "range": [
+   1,
+   12
+  ],
+  "max": {
+   "elbowLeft": [
+    126.5,
+    5
+   ],
+   "kneeLeft": [
+    72.8,
+    7
+   ],
+   "raiseLeft": [
+    45.7,
+    11
+   ],
+   "hipLeft": [
+    42.4,
+    5
+   ],
+   "wristLeft": [
+    19.1,
+    9
+   ],
+   "armrollLeft": [
+    65.7,
+    9
+   ],
+   "elbowRight": [
+    109.1,
+    11
+   ],
+   "kneeRight": [
+    85.9,
+    3
+   ],
+   "raiseRight": [
+    54.4,
+    5
+   ],
+   "hipRight": [
+    34.7,
+    11
+   ],
+   "wristRight": [
+    45.9,
+    3
+   ],
+   "armrollRight": [
+    75.0,
+    5
+   ]
+  }
+ },
+ "stagger": {
+  "range": [
+   1,
+   27
+  ],
+  "max": {
+   "elbowLeft": [
+    152.7,
+    7
+   ],
+   "kneeLeft": [
+    113.8,
+    7
+   ],
+   "raiseLeft": [
+    107.4,
+    1
+   ],
+   "hipLeft": [
+    82.5,
+    7
+   ],
+   "wristLeft": [
+    20.8,
+    1
+   ],
+   "armrollLeft": [
+    28.8,
+    1
+   ],
+   "elbowRight": [
+    149.9,
+    25
+   ],
+   "kneeRight": [
+    104.9,
+    7
+   ],
+   "raiseRight": [
+    129.1,
+    19
+   ],
+   "hipRight": [
+    93.6,
+    7
+   ],
+   "wristRight": [
+    25.6,
+    5
+   ],
+   "armrollRight": [
+    62.3,
+    23
+   ]
+  }
+ },
+ "talk": {
+  "range": [
+   1,
+   97
+  ],
+  "max": {
+   "elbowLeft": [
+    31.8,
+    91
+   ],
+   "kneeLeft": [
+    23.6,
+    57
+   ],
+   "raiseLeft": [
+    6.8,
+    21
+   ],
+   "hipLeft": [
+    7.6,
+    73
+   ],
+   "wristLeft": [
+    13.7,
+    47
+   ],
+   "armrollLeft": [
+    17.9,
+    13
+   ],
+   "elbowRight": [
+    29.2,
+    91
+   ],
+   "kneeRight": [
+    13.7,
+    69
+   ],
+   "raiseRight": [
+    4.1,
+    21
+   ],
+   "hipRight": [
+    15.6,
+    21
+   ],
+   "wristRight": [
+    16.0,
+    67
+   ],
+   "armrollRight": [
+    28.1,
+    69
+   ]
+  }
+ },
+ "wake": {
+  "range": [
+   1,
+   105
+  ],
+  "max": {
+   "elbowLeft": [
+    77.5,
+    41
+   ],
+   "kneeLeft": [
+    146.5,
+    75
+   ],
+   "raiseLeft": [
+    76.1,
+    79
+   ],
+   "hipLeft": [
+    117.9,
+    47
+   ],
+   "wristLeft": [
+    54.1,
+    41
+   ],
+   "armrollLeft": [
+    84.5,
+    35
+   ],
+   "elbowRight": [
+    89.3,
+    41
+   ],
+   "kneeRight": [
+    154.8,
+    73
+   ],
+   "raiseRight": [
+    64.7,
+    5
+   ],
+   "hipRight": [
+    125.0,
+    75
+   ],
+   "wristRight": [
+    58.9,
+    75
+   ],
+   "armrollRight": [
+    136.6,
+    71
+   ]
+  }
+ },
+ "walk": {
+  "range": [
+   1,
+   32
+  ],
+  "max": {
+   "elbowLeft": [
+    43.1,
+    19
+   ],
+   "kneeLeft": [
+    68.1,
+    23
+   ],
+   "raiseLeft": [
+    25.4,
+    1
+   ],
+   "hipLeft": [
+    40.4,
+    17
+   ],
+   "wristLeft": [
+    21.7,
+    17
+   ],
+   "armrollLeft": [
+    61.4,
+    27
+   ],
+   "elbowRight": [
+    49.8,
+    31
+   ],
+   "kneeRight": [
+    68.9,
+    7
+   ],
+   "raiseRight": [
+    22.7,
+    15
+   ],
+   "hipRight": [
+    39.9,
+    1
+   ],
+   "wristRight": [
+    17.0,
+    3
+   ],
+   "armrollRight": [
+    51.8,
+    31
+   ]
+  }
+ },
+ "wave": {
+  "range": [
+   1,
+   49
+  ],
+  "max": {
+   "elbowLeft": [
+    37.0,
+    13
+   ],
+   "kneeLeft": [
+    13.2,
+    5
+   ],
+   "raiseLeft": [
+    22.3,
+    21
+   ],
+   "hipLeft": [
+    14.2,
+    3
+   ],
+   "wristLeft": [
+    21.6,
+    9
+   ],
+   "armrollLeft": [
+    31.0,
+    49
+   ],
+   "elbowRight": [
+    103.8,
+    37
+   ],
+   "kneeRight": [
+    12.1,
+    43
+   ],
+   "raiseRight": [
+    80.5,
+    11
+   ],
+   "hipRight": [
+    29.1,
+    43
+   ],
+   "wristRight": [
+    16.0,
+    35
+   ],
+   "armrollRight": [
+    56.2,
+    49
+   ]
+  }
+ }
+}

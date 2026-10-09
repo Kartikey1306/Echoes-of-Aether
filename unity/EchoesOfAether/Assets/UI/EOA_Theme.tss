@@ -1,0 +1,4 @@
+/* Runtime theme for the EOA PanelSettings. No Unity default theme is imported on purpose: every control the
+   game uses is styled in eoa.uss, and text colours/fonts inherit from the root. */
+@import url("Styles/eoa.uss");
+@import url("Styles/eoa_fonts.uss");

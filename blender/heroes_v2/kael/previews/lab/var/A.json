@@ -1,0 +1,2 @@
+{"add": [["mouth/mouth-scale-horiz-decr", 0.25], ["mouth/mouth-upperlip-volume-incr", 0.3], ["mouth/mouth-lowerlip-volume-incr", 0.3],
+ ["eyes/l-eye-scale-incr", 0.12], ["eyes/r-eye-scale-incr", 0.12], ["neck/measure-neck-circ-incr", 0.05], ["head/head-fat-decr", 0.3]]}

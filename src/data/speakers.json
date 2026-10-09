@@ -1,0 +1,21 @@
+{
+  "speakers": [
+    { "id": "narrator", "name": "Narrator", "portrait": "none", "color": "#c9d4de", "voice": { "pitch": 0.85, "rate": 0.88, "prefer": ["Daniel", "Arthur", "Google UK English Male", "Alex"] } },
+    { "id": "kael", "name": "Kael Voss", "portrait": "kael", "color": "#6ec3ff", "voice": { "pitch": 0.82, "rate": 0.98, "prefer": ["Aaron", "Alex", "Google US English", "Fred", "Tom"] } },
+    { "id": "lyra", "name": "Giva Vale", "portrait": "lyra", "color": "#b79bff", "voice": { "pitch": 1.05, "rate": 1.02, "prefer": ["Samantha", "Ava", "Allison", "Google US English", "Victoria"] } },
+    { "id": "oren", "name": "Oren Hale", "portrait": "oren", "color": "#e0b47c", "voice": { "pitch": 0.7, "rate": 0.9, "prefer": ["Fred", "Ralph", "Daniel", "Alex"] } },
+    { "id": "mira", "name": "Mira Sato", "portrait": "mira", "color": "#ff9a80", "voice": { "pitch": 1.2, "rate": 1.05, "prefer": ["Karen", "Moira", "Tessa", "Samantha"] } },
+    { "id": "tomas", "name": "Tomas Reyes", "portrait": "tomas", "color": "#a7d68a", "voice": { "pitch": 0.95, "rate": 0.95, "prefer": ["Rishi", "Daniel", "Alex"] } },
+    { "id": "nia", "name": "Nia", "portrait": "nia", "color": "#a9c4ff", "voice": { "pitch": 1.6, "rate": 0.95, "prefer": ["Samantha", "Karen"] } },
+    { "id": "maren", "name": "Dr. Ilse Maren", "portrait": "maren", "color": "#8ff0e0", "voice": { "pitch": 1.0, "rate": 0.92, "prefer": ["Kate", "Serena", "Moira", "Samantha"] } },
+    { "id": "anya", "name": "Anya Sato", "portrait": "none", "color": "#ffc3b0", "voice": { "pitch": 1.15, "rate": 1.0, "prefer": ["Tessa", "Karen", "Samantha"] } },
+    { "id": "bolt", "name": "BOLT", "portrait": "bolt", "color": "#ffd36a", "voice": { "pitch": 0.4, "rate": 0.85, "prefer": ["Zarvox", "Trinoids", "Fred"] } },
+    { "id": "guardian", "name": "Aether Guardian", "portrait": "guardian", "color": "#ff7a7a", "voice": { "pitch": 0.2, "rate": 0.75, "prefer": ["Zarvox", "Fred"] } },
+    { "id": "system", "name": "System", "portrait": "none", "color": "#62d4ff", "voice": { "pitch": 1.0, "rate": 1.1, "prefer": [] } },
+    { "id": "pa", "name": "Transit PA", "portrait": "none", "color": "#d0d8e0", "voice": { "pitch": 1.0, "rate": 1.0, "prefer": ["Samantha"] } },
+    { "id": "parent", "name": "Unknown Parent", "portrait": "none", "color": "#d6c4ff", "voice": { "pitch": 1.1, "rate": 0.85, "prefer": ["Samantha"] } },
+    { "id": "vendor", "name": "Stall Keeper", "portrait": "none", "color": "#e8d29a", "voice": { "pitch": 0.9, "rate": 1.1, "prefer": ["Daniel"] } },
+    { "id": "tech", "name": "Vault Technician", "portrait": "none", "color": "#a8e0d0", "voice": { "pitch": 0.95, "rate": 1.0, "prefer": ["Alex"] } },
+    { "id": "researcher", "name": "Lab 7 Researcher", "portrait": "none", "color": "#b8d0e8", "voice": { "pitch": 1.0, "rate": 1.0, "prefer": ["Alex"] } }
+  ]
+}

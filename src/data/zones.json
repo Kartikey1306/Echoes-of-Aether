@@ -1,0 +1,22 @@
+{
+  "zones": [
+    { "id": "plaza", "name": "Central Plaza", "subtitle": "The Fallen District", "art": "art/loading/plaza.jpg", "music": "explore", "ambience": "rain_city",
+      "hints": ["Hold Sprint to run. Tap it once Phase Dash is unlocked to phase through attacks.", "The survivors' camp is a safe save point. Use the terminal by the generator.", "Talk to Oren, Mira and Tomas. Each of them has something worth finding."],
+      "quote": "\"The Core does not sleep, so you can.\" - Aether-9 transit announcement" },
+    { "id": "metro", "name": "Abandoned Metro", "subtitle": "Line B Transit", "art": "art/loading/metro.jpg", "music": "tension", "ambience": "metro_drip",
+      "hints": ["Drones keep their distance. Use Aether Bolt or wait for them to dive.", "Junctions in the control room route power. Follow the lit conduits.", "Sentinels telegraph their slams with a red glow. Dodge through it."],
+      "quote": "\"Please remain on the train. Please remain...\" - Final Line B announcement" },
+    { "id": "facility", "name": "Research Facility", "subtitle": "Aether Research Division", "art": "art/loading/facility.jpg", "music": "tension", "ambience": "facility_hum",
+      "hints": ["Research terminals hold logs that explain what happened here.", "Echo Sight reveals doors, caches and recordings that are otherwise invisible.", "Elite enemies shrug off light attacks. Break their poise with heavy attacks and Aether Pulse."],
+      "quote": "\"If a pattern can be retained, a mind can be retained.\" - Dr. Ilse Maren" },
+    { "id": "vault", "name": "Underground Aether Vault", "subtitle": "Containment Level", "art": "art/loading/vault.jpg", "music": "tension", "ambience": "vault_hum",
+      "hints": ["Energy vents pulse on a rhythm. Watch the glow, then cross.", "Phase Stalkers vanish before they strike. Echo Sight shows where they are.", "Ultimates charge as you deal and take damage."],
+      "quote": "\"Maren says it's learning. I asked her what it's learning.\" - Vault technician" },
+    { "id": "rooftops", "name": "Rooftop Sector", "subtitle": "Above the Market", "art": "art/loading/rooftops.jpg", "music": "sidequest", "ambience": "wind_roof",
+      "hints": ["Some gaps are too wide to jump. Phase Dash covers the distance.", "Ladders and ledges are marked with a faint amber strip.", "Fall off the roofs and you'll lose some health, but you'll be put back on the last safe ledge."],
+      "quote": "\"If anyone's out there: the Core isn't killing us. It's keeping us.\" - Anya Sato" },
+    { "id": "core", "name": "Aether Core", "subtitle": "The Heart of Aether-9", "art": "art/loading/core.jpg", "music": "boss", "ambience": "core_drone",
+      "hints": ["The Guardian's core is only exposed after its slam attacks.", "Swap characters to reset your combo and use the other ability.", "There is no shame in Story difficulty."],
+      "quote": "\"It isn't running. It's waiting.\" - Giva Vale" }
+  ]
+}

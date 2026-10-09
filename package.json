@@ -1,0 +1,27 @@
+{
+  "name": "echoes-of-aether",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Echoes of Aether - third-person sci-fi action-adventure",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173",
+    "typecheck": "tsc --noEmit",
+    "validate": "node tools/validation/validate.mjs",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.21.0",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/rajdhani": "^5.3.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63",
+    "@types/three": "^0.186.0",
+    "typescript": "5.9",
+    "vite": "^7.3.6"
+  }
+}

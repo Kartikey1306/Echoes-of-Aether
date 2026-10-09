@@ -1,0 +1,6 @@
+<linker>
+  <!-- Game data is deserialised with Newtonsoft via reflection. -->
+  <assembly fullname="Assembly-CSharp" preserve="all"/>
+  <assembly fullname="Newtonsoft.Json" preserve="all"/>
+  <assembly fullname="Unity.AI.Navigation" preserve="all"/>
+</linker>

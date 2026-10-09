@@ -1,0 +1,20 @@
+export default async (page, shot, log, base) => {
+  const t0 = Date.now();
+  await page.goto(base + '?autostart=kael&skipintro=1&slot=3', { waitUntil: 'load' });
+  await page.waitForFunction(() => window.__ready === true || window.__bootError, null, { timeout: 180000 });
+  const err = await page.evaluate(() => window.__bootError ?? null);
+  if (err) log('BOOT ERROR', err);
+  await page.waitForFunction(() => window.__eoa?.state().mode === 'play', null, { timeout: 120000 });
+  log('in play after ms', Date.now() - t0);
+  await page.waitForTimeout(2000);
+  log(JSON.stringify(await page.evaluate(() => { const s = window.__eoa.state(); return { zone: s.zone, pos: s.pos, fps: s.fps, stats: s.stats, quests: Object.keys(s.quests), cand: s.candidate }; })));
+  await shot('plaza_start');
+  await page.evaluate(() => { window.__eoa.face(Math.PI * 0.25); });
+  await page.waitForTimeout(1200);
+  await shot('plaza_ne');
+  await page.evaluate(() => { window.__eoa.teleport(0, 0.8, 12); window.__eoa.face(Math.PI); });
+  await page.waitForTimeout(1500);
+  await shot('plaza_monument');
+  log('errors', JSON.stringify(await page.evaluate(() => window.__eoa.errors())));
+  log('warnings', JSON.stringify((await page.evaluate(() => window.__eoa.warnings())).slice(0, 10)));
+};

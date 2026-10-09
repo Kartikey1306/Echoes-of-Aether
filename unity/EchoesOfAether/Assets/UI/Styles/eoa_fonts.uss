@@ -1,0 +1,49 @@
+/* Font roles. Shipped referencing the OFL TTFs (UI Toolkit builds dynamic font assets from them at runtime).
+   Tools > EOA > Setup UI (UISetup.Run) creates TextCore SDF FontAssets next to each TTF and rewrites every
+   "-unity-font" line below to also set "-unity-font-definition" to the matching *_SDF.asset.
+   Body: Inter. Headings, buttons, labels: Rajdhani. */
+
+.eoa-root {
+    -unity-font: url("../Fonts/Inter/Inter-Regular.ttf");
+    -unity-font-definition: url("../Fonts/Inter/Inter-Regular_SDF.asset");
+}
+
+/* Inter Medium (500) */
+.btn-sub, .btn.dlg-choice, .cs-tab-r, .debug, .picker-hex {
+    -unity-font: url("../Fonts/Inter/Inter-Medium.ttf");
+    -unity-font-definition: url("../Fonts/Inter/Inter-Medium_SDF.asset");
+}
+
+/* Inter SemiBold (600): symbols missing from Rajdhani (check marks, arrows). */
+.node-c, .keycap.sym {
+    -unity-font: url("../Fonts/Inter/Inter-SemiBold.ttf");
+    -unity-font-definition: url("../Fonts/Inter/Inter-SemiBold_SDF.asset");
+}
+
+/* Inter Italic */
+.quote, .credits-quote {
+    -unity-font: url("../Fonts/Inter/Inter-Italic.ttf");
+    -unity-font-definition: url("../Fonts/Inter/Inter-Italic_SDF.asset");
+}
+
+/* Rajdhani Medium (500) */
+.map-label, .minimap-zone, .ab-lbl, .vit-num-l, .vit-num-r {
+    -unity-font: url("../Fonts/Rajdhani/Rajdhani-Medium.ttf");
+    -unity-font-definition: url("../Fonts/Rajdhani/Rajdhani-Medium_SDF.asset");
+}
+
+/* Rajdhani SemiBold (600) */
+.kicker, .btn, .btn-small, .tab, .seg-btn, .bind-btn, .bind-col, .cs-role, .zone-sub, .loading-stage-l, .loading-stage-r,
+.slider-val, .prompt-text, .ebar-n, .bossbar-ph, .toast.k-quest, .saveind, .skip, .dlg-cont-t, .stat-l, .slot-thumb-t,
+.slot-st, .detail-rar, .credits-h2, .credits-skip, .qb-k, .dz-lab, .tree-ab, .skills-points-l, .map-north, .sw-pick, .marker-d {
+    -unity-font: url("../Fonts/Rajdhani/Rajdhani-SemiBold.ttf");
+    -unity-font-definition: url("../Fonts/Rajdhani/Rajdhani-SemiBold_SDF.asset");
+}
+
+/* Rajdhani Bold (700) */
+.h1, .h2, .title, .title-sub, .cs-name, .cs-tab-n, .cs-ab-t, .zone-name, .vit-name, .slot-cdt, .charges, .keycap, .pu-t,
+.bossbar-n, .qb-t, .dlg-nm, .subs-who, .stat-v, .section-title, .slot-t, .detail-nm, .qd-t, .lore-h, .tree-h, .node-n,
+.points, .death-t, .credits-h1, .confirm-t, .tracker-title, .tag, .item-q, .portrait-initial, .dlg-pt-initial, .legend-title {
+    -unity-font: url("../Fonts/Rajdhani/Rajdhani-Bold.ttf");
+    -unity-font-definition: url("../Fonts/Rajdhani/Rajdhani-Bold_SDF.asset");
+}

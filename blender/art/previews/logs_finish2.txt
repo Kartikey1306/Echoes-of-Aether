@@ -1,0 +1,17 @@
+[queue] plaza start 00:21:26
+[queue] plaza exit 0 00:26:15 0 errors
+[queue] rooftops start 00:26:15
+[queue] rooftops exit 0 00:29:30 0 errors
+[finish2] marketing start 00:29:30
+[finish2] marketing exit 0 00:41:17
+[queue] metro start 00:41:34
+[queue] metro exit 0 00:44:42 0 errors
+[queue] facility start 00:44:42
+[queue] facility exit 0 00:47:50 0 errors
+[queue] vault start 00:47:50
+[queue] vault exit 0 00:50:25 0 errors
+[queue] core start 00:50:25
+[queue] core exit 0 00:52:41 0 errors
+[queue] sheet start 00:52:41
+[queue] sheet exit 0 00:52:43 0 errors
+[finish2] all done 00:52:43

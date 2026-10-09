@@ -1,0 +1,43 @@
+{
+ "Garment_Top": [
+  "Kael_Top_Mask.png",
+  "Kael_Top_Normal.png"
+ ],
+ "Garment_Pants": [
+  "Kael_Pants_Mask.png",
+  "Kael_Pants_Normal.png"
+ ],
+ "Armor": [
+  "Kael_Armor_BaseColor.png",
+  "Kael_Armor_Normal.png",
+  "Kael_Armor_MaskMap.png"
+ ],
+ "Boots": [
+  "Kael_Boots_BaseColor.png",
+  "Kael_Boots_Normal.png",
+  "Kael_Boots_MaskMap.png"
+ ],
+ "Gloves": [
+  "Kael_Gloves_BaseColor.png",
+  "Kael_Gloves_Normal.png",
+  "Kael_Gloves_MaskMap.png"
+ ],
+ "Cloth_Gear": [
+  "Kael_Gear_BaseColor.png",
+  "Kael_Gear_Normal.png",
+  "Kael_Gear_MaskMap.png"
+ ],
+ "Cloth_Jacket": [
+  "Kael_Jacket_BaseColor.png",
+  "Kael_Jacket_Normal.png",
+  "Kael_Jacket_MaskMap.png"
+ ],
+ "Cloth_Brass": [
+  "Kael_Brass_BaseColor.png",
+  "Kael_Brass_Normal.png",
+  "Kael_Brass_MaskMap.png"
+ ],
+ "Holo": [
+  "Kael_Holo.png"
+ ]
+}

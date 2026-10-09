@@ -1,0 +1,224 @@
+[
+ {
+  "shape": "corr_LeftForeArm_x_125",
+  "bone": "mixamorig:LeftForeArm",
+  "parent": "mixamorig:LeftArm",
+  "axis": [
+   -0.74594,
+   -0.08079,
+   -0.66109
+  ],
+  "from": 15,
+  "to": 125,
+  "meshes": [
+   "Top"
+  ]
+ },
+ {
+  "shape": "corr_LeftLeg_x_130",
+  "bone": "mixamorig:LeftLeg",
+  "parent": "mixamorig:LeftUpLeg",
+  "axis": [
+   1.0,
+   0.0,
+   0.0
+  ],
+  "from": 15,
+  "to": 130,
+  "meshes": [
+   "Pants"
+  ]
+ },
+ {
+  "shape": "corr_LeftArm_y_95",
+  "bone": "mixamorig:LeftArm",
+  "parent": "mixamorig:Spine2",
+  "axis": [
+   0.0,
+   -1.0,
+   0.0
+  ],
+  "from": 20,
+  "to": 95,
+  "meshes": [
+   "Top",
+   "Jacket"
+  ]
+ },
+ {
+  "shape": "corr_LeftArm_x_90",
+  "bone": "mixamorig:LeftArm",
+  "parent": "mixamorig:Spine2",
+  "axis": [
+   -0.74849,
+   -0.0,
+   -0.66314
+  ],
+  "from": 20,
+  "to": 90,
+  "meshes": [
+   "Top",
+   "Jacket"
+  ]
+ },
+ {
+  "shape": "corr_LeftUpLeg_x_100",
+  "bone": "mixamorig:LeftUpLeg",
+  "parent": "mixamorig:Hips",
+  "axis": [
+   -1.0,
+   0.0,
+   0.0
+  ],
+  "from": 20,
+  "to": 100,
+  "meshes": [
+   "Pants",
+   "Top",
+   "Jacket"
+  ]
+ },
+ {
+  "shape": "corr_LeftHand_x_60",
+  "bone": "mixamorig:LeftHand",
+  "parent": "mixamorig:LeftForeArm",
+  "axis": [
+   0.45872,
+   0.69934,
+   -0.54818
+  ],
+  "from": 10,
+  "to": 60,
+  "meshes": [
+   "Gloves",
+   "Jacket"
+  ]
+ },
+ {
+  "shape": "corr_LeftHand_xn_60",
+  "bone": "mixamorig:LeftHand",
+  "parent": "mixamorig:LeftForeArm",
+  "axis": [
+   -0.45872,
+   -0.69934,
+   0.54818
+  ],
+  "from": 10,
+  "to": 60,
+  "meshes": [
+   "Gloves",
+   "Jacket"
+  ]
+ },
+ {
+  "shape": "corr_RightForeArm_x_125",
+  "bone": "mixamorig:RightForeArm",
+  "parent": "mixamorig:RightArm",
+  "axis": [
+   -0.74594,
+   0.08079,
+   0.66109
+  ],
+  "from": 15,
+  "to": 125,
+  "meshes": [
+   "Jacket"
+  ]
+ },
+ {
+  "shape": "corr_RightLeg_x_130",
+  "bone": "mixamorig:RightLeg",
+  "parent": "mixamorig:RightUpLeg",
+  "axis": [
+   1.0,
+   0.0,
+   0.0
+  ],
+  "from": 15,
+  "to": 130,
+  "meshes": [
+   "Pants"
+  ]
+ },
+ {
+  "shape": "corr_RightArm_y_95",
+  "bone": "mixamorig:RightArm",
+  "parent": "mixamorig:Spine2",
+  "axis": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "from": 20,
+  "to": 95,
+  "meshes": [
+   "Top",
+   "Jacket"
+  ]
+ },
+ {
+  "shape": "corr_RightArm_x_90",
+  "bone": "mixamorig:RightArm",
+  "parent": "mixamorig:Spine2",
+  "axis": [
+   -0.74849,
+   0.0,
+   0.66314
+  ],
+  "from": 20,
+  "to": 90,
+  "meshes": [
+   "Top",
+   "Jacket"
+  ]
+ },
+ {
+  "shape": "corr_RightUpLeg_x_100",
+  "bone": "mixamorig:RightUpLeg",
+  "parent": "mixamorig:Hips",
+  "axis": [
+   -1.0,
+   0.0,
+   0.0
+  ],
+  "from": 20,
+  "to": 100,
+  "meshes": [
+   "Pants",
+   "Top",
+   "Jacket"
+  ]
+ },
+ {
+  "shape": "corr_RightHand_x_60",
+  "bone": "mixamorig:RightHand",
+  "parent": "mixamorig:RightForeArm",
+  "axis": [
+   0.45872,
+   -0.69934,
+   0.54818
+  ],
+  "from": 10,
+  "to": 60,
+  "meshes": [
+   "Gloves",
+   "Jacket"
+  ]
+ },
+ {
+  "shape": "corr_RightHand_xn_60",
+  "bone": "mixamorig:RightHand",
+  "parent": "mixamorig:RightForeArm",
+  "axis": [
+   -0.45872,
+   0.69934,
+   -0.54818
+  ],
+  "from": 10,
+  "to": 60,
+  "meshes": [
+   "Gloves",
+   "Jacket"
+  ]
+ }
+]

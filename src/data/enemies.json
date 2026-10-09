@@ -1,0 +1,9 @@
+{
+  "enemies": [
+    { "id": "drone", "name": "Aether Drone", "health": 45, "poise": 20, "damage": 9, "speed": 5.5, "sight": 26, "attackRange": 16, "leash": 40, "tags": ["drone", "flying", "machine"], "drops": [{ "item": "pu_shield_fragment", "chance": 0.12 }] },
+    { "id": "sentinel", "name": "Corrupted Sentinel", "health": 130, "poise": 60, "damage": 18, "speed": 3.6, "sight": 22, "attackRange": 2.6, "leash": 36, "tags": ["sentinel", "melee", "machine"], "drops": [{ "item": "pu_shield_fragment", "chance": 0.2 }, { "item": "pu_overcharge", "chance": 0.06 }] },
+    { "id": "stalker", "name": "Phase Stalker", "health": 95, "poise": 40, "damage": 16, "speed": 6.2, "sight": 24, "attackRange": 2.3, "leash": 40, "tags": ["stalker", "melee", "phase"], "drops": [{ "item": "pu_phase_core", "chance": 0.15 }, { "item": "pu_shield_fragment", "chance": 0.15 }] },
+    { "id": "warden", "name": "The Warden", "health": 420, "poise": 160, "damage": 24, "speed": 3.4, "sight": 30, "attackRange": 3.0, "leash": 50, "tags": ["sentinel", "elite", "machine"], "drops": [{ "item": "aether_core", "chance": 1 }] },
+    { "id": "guardian", "name": "Aether Guardian", "health": 1600, "poise": 400, "damage": 30, "speed": 4.2, "sight": 80, "attackRange": 6.5, "leash": 200, "tags": ["guardian", "boss", "machine"], "drops": [] }
+  ]
+}

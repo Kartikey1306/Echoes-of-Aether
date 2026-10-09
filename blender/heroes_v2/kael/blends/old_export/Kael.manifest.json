@@ -1,0 +1,1334 @@
+{
+ "character": "kael",
+ "name": "Kael",
+ "gender": "male",
+ "height": 1.855,
+ "fbx": "Kael.fbx",
+ "meshes": [
+  {
+   "name": "Body",
+   "kind": "body",
+   "materials": [
+    "Skin"
+   ],
+   "verts": 4790,
+   "tris": 9492,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_chin_incr",
+    "m_chin_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_noseSize_incr",
+    "m_noseSize_decr",
+    "m_noseWidth_incr",
+    "m_noseWidth_decr",
+    "m_lips_incr",
+    "m_lips_decr",
+    "m_eyeSize_incr",
+    "m_eyeSize_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_blink_L",
+    "x_blink_R",
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown",
+    "x_browsUp",
+    "x_browsDown",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Brows",
+   "kind": "brows",
+   "materials": [
+    "Brows"
+   ],
+   "verts": 124,
+   "tris": 192,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_noseSize_decr",
+    "m_noseWidth_incr",
+    "m_eyeSize_incr",
+    "m_eyeSize_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_blink_L",
+    "x_blink_R",
+    "x_browsUp",
+    "x_browsDown",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Lashes",
+   "kind": "lashes",
+   "materials": [
+    "Lashes"
+   ],
+   "verts": 250,
+   "tris": 368,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_eyeSize_incr",
+    "m_eyeSize_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_blink_L",
+    "x_blink_R",
+    "x_browsUp",
+    "x_browsDown",
+    "x_squint"
+   ]
+  },
+  {
+   "name": "Facial_beard",
+   "kind": "facial",
+   "materials": [
+    "Facial_beard"
+   ],
+   "verts": 6305,
+   "tris": 5524,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_chin_incr",
+    "m_chin_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_noseSize_incr",
+    "m_noseSize_decr",
+    "m_noseWidth_incr",
+    "m_noseWidth_decr",
+    "m_lips_incr",
+    "m_lips_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown"
+   ]
+  },
+  {
+   "name": "Facial_moustache",
+   "kind": "facial",
+   "materials": [
+    "Facial_moustache"
+   ],
+   "verts": 1598,
+   "tris": 1364,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_cheeks_decr",
+    "m_noseSize_incr",
+    "m_noseSize_decr",
+    "m_noseWidth_incr",
+    "m_noseWidth_decr",
+    "m_lips_incr",
+    "m_lips_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown"
+   ]
+  },
+  {
+   "name": "Hair_afro",
+   "kind": "hair",
+   "materials": [
+    "Hair_afro"
+   ],
+   "verts": 2196,
+   "tris": 2192,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_cheeks_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr"
+   ]
+  },
+  {
+   "name": "Hair_bob",
+   "kind": "hair",
+   "materials": [
+    "Hair_bob"
+   ],
+   "verts": 1653,
+   "tris": 2248,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_chin_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_noseSize_incr",
+    "m_noseSize_decr",
+    "m_noseWidth_incr",
+    "m_noseWidth_decr",
+    "m_eyeSize_incr",
+    "m_eyeSize_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown",
+    "x_browsUp",
+    "x_browsDown"
+   ]
+  },
+  {
+   "name": "Hair_bobshort",
+   "kind": "hair",
+   "materials": [
+    "Hair_bobshort"
+   ],
+   "verts": 5203,
+   "tris": 8474,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_chin_decr",
+    "m_cheeks_decr",
+    "m_noseSize_incr",
+    "m_noseSize_decr",
+    "m_noseWidth_incr",
+    "m_noseWidth_decr",
+    "m_lips_incr",
+    "m_eyeSize_incr",
+    "m_eyeSize_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown",
+    "x_browsUp",
+    "x_browsDown"
+   ]
+  },
+  {
+   "name": "Hair_braid",
+   "kind": "hair",
+   "materials": [
+    "Hair_braid"
+   ],
+   "verts": 4493,
+   "tris": 5518,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_smile",
+    "x_browsUp"
+   ]
+  },
+  {
+   "name": "Hair_bun",
+   "kind": "hair",
+   "materials": [
+    "Hair_bun"
+   ],
+   "verts": 13803,
+   "tris": 16640,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_browHeight_incr",
+    "m_age_incr"
+   ]
+  },
+  {
+   "name": "Hair_buzz",
+   "kind": "hair",
+   "materials": [
+    "Hair_buzz"
+   ],
+   "verts": 865,
+   "tris": 1050,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_smile",
+    "x_browsUp"
+   ]
+  },
+  {
+   "name": "Hair_curly",
+   "kind": "hair",
+   "materials": [
+    "Hair_curly"
+   ],
+   "verts": 5384,
+   "tris": 10799,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_eyeSize_incr",
+    "m_eyeSize_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_browsUp",
+    "x_browsDown"
+   ]
+  },
+  {
+   "name": "Hair_frenchbraid",
+   "kind": "hair",
+   "materials": [
+    "Hair_frenchbraid"
+   ],
+   "verts": 12349,
+   "tris": 13362,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_browHeight_incr",
+    "m_age_incr"
+   ]
+  },
+  {
+   "name": "Hair_long",
+   "kind": "hair",
+   "materials": [
+    "Hair_long"
+   ],
+   "verts": 3239,
+   "tris": 4108,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_smile",
+    "x_browsUp"
+   ]
+  },
+  {
+   "name": "Hair_messy",
+   "kind": "hair",
+   "materials": [
+    "Hair_messy"
+   ],
+   "verts": 832,
+   "tris": 1092,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_noseSize_incr",
+    "m_noseSize_decr",
+    "m_noseWidth_incr",
+    "m_noseWidth_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_browsUp",
+    "x_browsDown"
+   ]
+  },
+  {
+   "name": "Hair_ponytail",
+   "kind": "hair",
+   "materials": [
+    "Hair_ponytail"
+   ],
+   "verts": 3718,
+   "tris": 5352,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_cheeks_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen"
+   ]
+  },
+  {
+   "name": "Hair_short",
+   "kind": "hair",
+   "materials": [
+    "Hair_short"
+   ],
+   "verts": 1755,
+   "tris": 3344,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_eyeSize_incr",
+    "m_eyeSize_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_browsUp",
+    "x_browsDown"
+   ]
+  },
+  {
+   "name": "Hair_swept",
+   "kind": "hair",
+   "materials": [
+    "Hair_swept"
+   ],
+   "verts": 2984,
+   "tris": 3678,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_browHeight_incr",
+    "m_age_incr",
+    "x_mouthOpen"
+   ]
+  },
+  {
+   "name": "Hair_undercut",
+   "kind": "hair",
+   "materials": [
+    "Hair_undercut"
+   ],
+   "verts": 1011,
+   "tris": 1922,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_noseSize_incr",
+    "m_noseSize_decr",
+    "m_noseWidth_incr",
+    "m_noseWidth_decr",
+    "m_eyeSize_incr",
+    "m_eyeSize_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_browsUp",
+    "x_browsDown"
+   ]
+  },
+  {
+   "name": "Hair_wavy",
+   "kind": "hair",
+   "materials": [
+    "Hair_wavy"
+   ],
+   "verts": 7530,
+   "tris": 13999,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_chin_incr",
+    "m_chin_decr",
+    "m_cheeks_incr",
+    "m_cheeks_decr",
+    "m_eyeSize_incr",
+    "m_eyeSize_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_smile",
+    "x_frown",
+    "x_browsUp"
+   ]
+  },
+  {
+   "name": "Eyes",
+   "kind": "eyes",
+   "materials": [
+    "Eyes"
+   ],
+   "verts": 814,
+   "tris": 1524,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_eyeSize_incr",
+    "m_eyeSize_decr",
+    "m_browHeight_incr",
+    "m_browHeight_decr",
+    "m_age_incr"
+   ]
+  },
+  {
+   "name": "Teeth",
+   "kind": "teeth",
+   "materials": [
+    "Teeth"
+   ],
+   "verts": 915,
+   "tris": 1424,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_chin_decr",
+    "m_age_incr",
+    "x_mouthOpen",
+    "x_smile"
+   ]
+  },
+  {
+   "name": "Tongue",
+   "kind": "tongue",
+   "materials": [
+    "Tongue"
+   ],
+   "verts": 136,
+   "tris": 268,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "x_mouthOpen"
+   ]
+  },
+  {
+   "name": "Belt",
+   "kind": "gear",
+   "materials": [
+    "Belt",
+    "Metal",
+    "Glow",
+    "Garment_Pants",
+    "Armor"
+   ],
+   "verts": 789,
+   "tris": 1450,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr"
+   ]
+  },
+  {
+   "name": "Boots",
+   "kind": "boots",
+   "materials": [
+    "Boots",
+    "Metal",
+    "Armor"
+   ],
+   "verts": 3030,
+   "tris": 5824,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr"
+   ]
+  },
+  {
+   "name": "ChestPlate",
+   "kind": "armor",
+   "materials": [
+    "Armor",
+    "Metal",
+    "Gloves"
+   ],
+   "verts": 692,
+   "tris": 1264,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr"
+   ]
+  },
+  {
+   "name": "ChestRig",
+   "kind": "gear",
+   "materials": [
+    "Garment_Top",
+    "Belt",
+    "Metal",
+    "Glow2",
+    "Glow"
+   ],
+   "verts": 1992,
+   "tris": 3668,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr"
+   ]
+  },
+  {
+   "name": "Collar",
+   "kind": "gear",
+   "materials": [
+    "Garment_Top"
+   ],
+   "verts": 400,
+   "tris": 776,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_chin_incr",
+    "m_chin_decr",
+    "m_age_incr",
+    "x_mouthOpen"
+   ]
+  },
+  {
+   "name": "Conduit",
+   "kind": "gear",
+   "materials": [
+    "Glow",
+    "Glow2"
+   ],
+   "verts": 648,
+   "tris": 966,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr"
+   ]
+  },
+  {
+   "name": "Cyberware",
+   "kind": "gear",
+   "materials": [
+    "Glow",
+    "Metal"
+   ],
+   "verts": 183,
+   "tris": 274,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_jaw_incr",
+    "m_jaw_decr",
+    "m_age_incr",
+    "x_mouthOpen"
+   ]
+  },
+  {
+   "name": "ForearmGuardR",
+   "kind": "armor",
+   "materials": [
+    "Metal",
+    "Gloves",
+    "Glow",
+    "Armor"
+   ],
+   "verts": 1699,
+   "tris": 3236,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr"
+   ]
+  },
+  {
+   "name": "Gloves",
+   "kind": "gloves",
+   "materials": [
+    "Gloves"
+   ],
+   "verts": 4226,
+   "tris": 8360,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr"
+   ]
+  },
+  {
+   "name": "Interface",
+   "kind": "armor",
+   "materials": [
+    "Armor",
+    "Screen",
+    "Metal"
+   ],
+   "verts": 143,
+   "tris": 242,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr"
+   ]
+  },
+  {
+   "name": "KneePadL",
+   "kind": "armor",
+   "materials": [
+    "Armor",
+    "Metal",
+    "Gloves",
+    "Belt"
+   ],
+   "verts": 714,
+   "tris": 1332,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr"
+   ]
+  },
+  {
+   "name": "KneePadR",
+   "kind": "armor",
+   "materials": [
+    "Armor",
+    "Metal",
+    "Gloves",
+    "Belt"
+   ],
+   "verts": 714,
+   "tris": 1332,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr"
+   ]
+  },
+  {
+   "name": "Pants",
+   "kind": "garment",
+   "materials": [
+    "Garment_Pants"
+   ],
+   "verts": 2747,
+   "tris": 5372,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr",
+    "m_jaw_decr"
+   ]
+  },
+  {
+   "name": "PauldronL",
+   "kind": "armor",
+   "materials": [
+    "Armor",
+    "Metal",
+    "Gloves"
+   ],
+   "verts": 705,
+   "tris": 1276,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr"
+   ]
+  },
+  {
+   "name": "PauldronLameL",
+   "kind": "armor",
+   "materials": [
+    "Armor",
+    "Metal"
+   ],
+   "verts": 756,
+   "tris": 1452,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr"
+   ]
+  },
+  {
+   "name": "PauldronLameR",
+   "kind": "armor",
+   "materials": [
+    "Armor",
+    "Metal"
+   ],
+   "verts": 504,
+   "tris": 968,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr"
+   ]
+  },
+  {
+   "name": "PauldronR",
+   "kind": "armor",
+   "materials": [
+    "Armor",
+    "Metal",
+    "Gloves"
+   ],
+   "verts": 481,
+   "tris": 854,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr"
+   ]
+  },
+  {
+   "name": "Top",
+   "kind": "garment",
+   "materials": [
+    "Garment_Top"
+   ],
+   "verts": 3576,
+   "tris": 6866,
+   "shapes": [
+    "m_muscle_incr",
+    "m_muscle_decr",
+    "m_weight_incr",
+    "m_weight_decr",
+    "m_shoulders_incr",
+    "m_shoulders_decr",
+    "m_hips_incr",
+    "m_hips_decr"
+   ]
+  }
+ ],
+ "textures": {
+  "Hair_curly": [
+   "Hair_curly_Color.png"
+  ],
+  "Hair_wavy": [
+   "Hair_wavy_Color.png"
+  ],
+  "Hair_bun": [
+   "Hair_bun_Color.png"
+  ],
+  "Hair_frenchbraid": [
+   "Hair_frenchbraid_Color.png"
+  ],
+  "Facial_beard": [
+   "Facial_beard_Color.png"
+  ],
+  "Garment_Top": [
+   "Kael_Top_Mask.png",
+   "Kael_Top_Normal.png"
+  ],
+  "Garment_Pants": [
+   "Kael_Pants_Mask.png",
+   "Kael_Pants_Normal.png"
+  ],
+  "Armor": [
+   "Kael_Armor_BaseColor.png",
+   "Kael_Armor_Normal.png",
+   "Kael_Armor_MaskMap.png"
+  ],
+  "Boots": [
+   "Kael_Boots_BaseColor.png",
+   "Kael_Boots_Normal.png",
+   "Kael_Boots_MaskMap.png"
+  ],
+  "Gloves": [
+   "Kael_Gloves_BaseColor.png",
+   "Kael_Gloves_Normal.png",
+   "Kael_Gloves_MaskMap.png"
+  ],
+  "Skin": [
+   "Skin_medium.png",
+   "Skin_Normal.png",
+   "Skin_MaskMap.png"
+  ],
+  "Eyes": [
+   "Eye_grey.png"
+  ],
+  "Hair_afro": [
+   "Hair_afro_Color.png"
+  ],
+  "Hair_bob": [
+   "Hair_bob_Color.png"
+  ],
+  "Hair_bobshort": [
+   "Hair_bobshort_Color.png"
+  ],
+  "Hair_braid": [
+   "Hair_braid_Color.png"
+  ],
+  "Hair_buzz": [
+   "Hair_buzz_Color.png"
+  ],
+  "Hair_long": [
+   "Hair_long_Color.png"
+  ],
+  "Hair_messy": [
+   "Hair_messy_Color.png"
+  ],
+  "Hair_ponytail": [
+   "Hair_ponytail_Color.png"
+  ],
+  "Hair_short": [
+   "Hair_short_Color.png"
+  ],
+  "Hair_swept": [
+   "Hair_swept_Color.png"
+  ],
+  "Hair_undercut": [
+   "Hair_undercut_Color.png"
+  ],
+  "Facial_moustache": [
+   "Facial_moustache_Color.png"
+  ],
+  "Brows": [
+   "Brows_eyebrow001.png",
+   "Brows_eyebrow001.png"
+  ],
+  "Lashes": [
+   "Lashes_eyelashes02.png"
+  ],
+  "Teeth": [
+   "Teeth_teeth.png"
+  ],
+  "Tongue": [
+   "Tongue_tongue01_diffuse.png"
+  ]
+ },
+ "defaultHair": "curly",
+ "hairStyles": [
+  "afro",
+  "bob",
+  "bobshort",
+  "braid",
+  "bun",
+  "buzz",
+  "curly",
+  "frenchbraid",
+  "long",
+  "messy",
+  "ponytail",
+  "short",
+  "swept",
+  "undercut",
+  "wavy"
+ ],
+ "facialHair": [
+  "beard",
+  "moustache"
+ ],
+ "morphs": [
+  "m_age_incr",
+  "m_browHeight_decr",
+  "m_browHeight_incr",
+  "m_cheeks_decr",
+  "m_cheeks_incr",
+  "m_chin_decr",
+  "m_chin_incr",
+  "m_eyeSize_decr",
+  "m_eyeSize_incr",
+  "m_hips_decr",
+  "m_hips_incr",
+  "m_jaw_decr",
+  "m_jaw_incr",
+  "m_lips_decr",
+  "m_lips_incr",
+  "m_muscle_decr",
+  "m_muscle_incr",
+  "m_noseSize_decr",
+  "m_noseSize_incr",
+  "m_noseWidth_decr",
+  "m_noseWidth_incr",
+  "m_shoulders_decr",
+  "m_shoulders_incr",
+  "m_weight_decr",
+  "m_weight_incr"
+ ],
+ "expressions": [
+  "x_blink_L",
+  "x_blink_R",
+  "x_browsDown",
+  "x_browsUp",
+  "x_frown",
+  "x_mouthOpen",
+  "x_smile",
+  "x_squint"
+ ],
+ "hiddenBodyFacesRemoved": 8632,
+ "visibleTris": 69579,
+ "pipeline": "hd-2026-10",
+ "skins": {
+  "light": "Skin_light.png",
+  "medium": "Skin_medium.png",
+  "tan": "Skin_tan.png",
+  "dark": "Skin_dark.png"
+ },
+ "skinMaps": {
+  "normal": "Skin_Normal.png",
+  "maskMap": "Skin_MaskMap.png",
+  "stubble": "Skin_Stubble.png"
+ },
+ "eyeLayout": {
+  "note": "iris centred at uv (0.5, 0.5); ellipse d = sqrt(4*du^2 + dv^2) < 0.085 (matches CharacterModel.ApplyEyes)",
+  "variants": [
+   "Eye_grey.png",
+   "Eye_brown.png",
+   "Eye_blue.png",
+   "Eye_green.png"
+  ]
+ },
+ "palette": {
+  "outfit": "#4d5243",
+  "accent": "#1f2126",
+  "armor": "#a9a59a",
+  "glow": "#00e5ff",
+  "glow2": "#ff2bd6",
+  "skin": "#b98a6e",
+  "hair": "#1d1714",
+  "eyes": "#5b3a22"
+ },
+ "hairAlphaCutoff": {
+  "default": 0.4,
+  "curly": 0.4,
+  "wavy": 0.35,
+  "bun": 0.38,
+  "frenchbraid": 0.38,
+  "beard": 0.35,
+  "Brows": 0.4,
+  "Lashes": 0.3
+ },
+ "hairDye": {
+  "wavy": "Hair_wavy_Dye.png"
+ },
+ "optionalParts": {
+  "ChestRig": "plate-carrier vest over the jacket (toggle with ChestPlate or always on)",
+  "Cyberware": "temple implant lines and neck port (Metal + Glow); always on"
+ },
+ "materialDefs": {
+  "Hair_curly": {
+   "type": "hair",
+   "baseMap": "Hair_curly_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_wavy": {
+   "type": "hair",
+   "baseMap": "Hair_wavy_Color.png",
+   "alphaClip": 0.35,
+   "tint": "hair"
+  },
+  "Hair_bun": {
+   "type": "hair",
+   "baseMap": "Hair_bun_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_frenchbraid": {
+   "type": "hair",
+   "baseMap": "Hair_frenchbraid_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Garment_Top": {
+   "type": "garment",
+   "mask": "Kael_Top_Mask.png",
+   "normal": "Kael_Top_Normal.png",
+   "tint": "outfit/accent (runtime composite)"
+  },
+  "Garment_Pants": {
+   "type": "garment",
+   "mask": "Kael_Pants_Mask.png",
+   "normal": "Kael_Pants_Normal.png",
+   "tint": "outfit/accent (runtime composite)"
+  },
+  "Armor": {
+   "type": "lit",
+   "baseMap": "Kael_Armor_BaseColor.png",
+   "normal": "Kael_Armor_Normal.png",
+   "maskMap": "Kael_Armor_MaskMap.png",
+   "maskMapLayout": "R metallic, G occlusion, B paint mask, A smoothness",
+   "tint": "armor"
+  },
+  "Boots": {
+   "type": "lit",
+   "baseMap": "Kael_Boots_BaseColor.png",
+   "normal": "Kael_Boots_Normal.png",
+   "maskMap": "Kael_Boots_MaskMap.png",
+   "maskMapLayout": "R metallic, G occlusion, B paint mask, A smoothness",
+   "tint": null
+  },
+  "Gloves": {
+   "type": "lit",
+   "baseMap": "Kael_Gloves_BaseColor.png",
+   "normal": "Kael_Gloves_Normal.png",
+   "maskMap": "Kael_Gloves_MaskMap.png",
+   "maskMapLayout": "R metallic, G occlusion, B paint mask, A smoothness",
+   "tint": "outfit*0.75"
+  },
+  "Hair_afro": {
+   "type": "hair",
+   "baseMap": "Hair_afro_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_bob": {
+   "type": "hair",
+   "baseMap": "Hair_bob_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_bobshort": {
+   "type": "hair",
+   "baseMap": "Hair_bobshort_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_braid": {
+   "type": "hair",
+   "baseMap": "Hair_braid_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_buzz": {
+   "type": "hair",
+   "baseMap": "Hair_buzz_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_long": {
+   "type": "hair",
+   "baseMap": "Hair_long_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_messy": {
+   "type": "hair",
+   "baseMap": "Hair_messy_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_ponytail": {
+   "type": "hair",
+   "baseMap": "Hair_ponytail_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_short": {
+   "type": "hair",
+   "baseMap": "Hair_short_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_swept": {
+   "type": "hair",
+   "baseMap": "Hair_swept_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Hair_undercut": {
+   "type": "hair",
+   "baseMap": "Hair_undercut_Color.png",
+   "alphaClip": 0.4,
+   "tint": "hair"
+  },
+  "Skin": {
+   "type": "skin",
+   "normal": "Skin_Normal.png",
+   "maskMap": "Skin_MaskMap.png",
+   "emission": "Skin_Tattoo.png"
+  },
+  "Metal": {
+   "type": "lit",
+   "color": "#a7adb5",
+   "metallic": 1.0,
+   "smoothness": 0.68
+  },
+  "Glow": {
+   "type": "emissive",
+   "tint": "glow"
+  },
+  "Glow2": {
+   "type": "emissive",
+   "tint": "glow2"
+  },
+  "Screen": {
+   "type": "emissive",
+   "tint": "glow*0.6"
+  }
+ },
+ "tattoo": "Skin_Tattoo.png",
+ "tattooMask": "Skin_TattooMask.png",
+ "tattooColor": [
+  0.0,
+  0.898,
+  1.0
+ ]
+}
